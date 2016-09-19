@@ -5,7 +5,7 @@ let Webpack = require('webpack'),
 	WebpackDevMiddleware = require('webpack-dev-middleware'),
 	WebpackHotMiddleware = require('webpack-hot-middleware');
 
-let config = require('../build/debug');
+let config = require('../tasks/debug');
 
 let express = new Express,
 	webpack = new Webpack(config);
