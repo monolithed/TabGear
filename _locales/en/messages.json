@@ -1,0 +1,9 @@
+{
+	"remove": {
+		"message": "Remove extension"
+	},
+
+	"close": {
+		"message": "Close tab"
+	}
+}
