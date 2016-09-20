@@ -1,17 +1,18 @@
-import { CALL_API, Schemas } from '../middleware/api';
+import { Schemas } from '../middleware/api';
 
-export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE';
+export const RESET_ERRORS = 'RESET_ERRORS';
+export const ITEMS_LOCKED = 'ITEMS_LOCKED';
+export const ITEMS_LOADED = 'ITEMS_LOADED';
+export const ITEMS_FAILED = 'ITEMS_FAILED';
 
-export function loadTabs () {
-	return (dispatch, getState) => {
-		return dispatch({
-			type: RESET_ERROR_MESSAGE
-		});
+export function items () {
+	return (dispatch, state) => {
+		dispatch({ type: ITEMS_LOCKED });
 	};
-}
+};
 
-export function resetErrorMessage () {
-	return {
-		type: RESET_ERROR_MESSAGE
+export function error () {
+	return (dispatch, state) => {
+		return dispatch({ type: RESET_ERRORS });
 	};
 };

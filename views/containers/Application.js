@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import Index from '../components/Index'
-import { resetErrorMessage } from '../actions'
+import Index from '../components/Index';
+import { error } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
@@ -32,15 +32,11 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	error: PropTypes.string,
-	resetErrorMessage: PropTypes.func.isRequired
+	error: PropTypes.string
 }
 
-function mapStateToProps (state, ownProps) {
-	return {
-		error: state.error,
-		inputValue  : ownProps.location.pathname.substring(1)
-	}
-}
+let errors = ({ error }, properties) => {
+	return { error };
+};
 
-export default connect(mapStateToProps, { resetErrorMessage })(Application);
+export default connect(errors, { error })(Application);
