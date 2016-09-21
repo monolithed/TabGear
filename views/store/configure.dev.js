@@ -4,7 +4,7 @@ import createLogger from 'redux-logger';
 
 import api from '../middleware/api';
 import rootReducer from '../reducers';
-import DevTools from '../containers/DevTools';
+import DevTools from '../components/DevTools';
 
 export default function (state) {
 	let middleware = applyMiddleware(thunk, api, createLogger()),

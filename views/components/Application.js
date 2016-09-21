@@ -1,16 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Index from '../components/Index';
-import { error } from '../actions';
+import Index from './Index';
+// import { items } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
 		super(props)
 	}
 
-	renderErrorMessage () {
-		const { error } = this.props;
+	errors () {
+		let { error } = this.props;
 
 		if (!error) {
 			return null;
@@ -25,18 +25,20 @@ class Application extends Component {
 		return (
 			<div>
 				<Index total={ total } />
-				{ this.renderErrorMessage() }
+				{ this.errors() }
 			</div>
 		)
 	}
 }
 
 Application.propTypes = {
-	error: PropTypes.string
+	total: PropTypes.number
+	// error: PropTypes.string
 }
 
-let errors = ({ error }, properties) => {
-	return { error };
+let items = (state, properties) => {
+	debugger
+	return { items: state.items };
 };
 
-export default connect(errors, { error })(Application);
+export default connect(items)(Application);

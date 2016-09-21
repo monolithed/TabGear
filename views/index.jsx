@@ -4,7 +4,7 @@ import RedBox from 'redbox-react';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import Root from './containers/Root';
+import Root from './components/Root';
 import Store from './store/configure';
 
 let store = Store(),
