@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from './Index';
-// import { items } from '../actions';
+import { errors } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
@@ -20,25 +21,31 @@ class Application extends Component {
 	}
 
 	render () {
-		let { total = 0 } = this.props;
+		let { total = 0, items, errorAction } = this.props;
 
 		return (
 			<div>
-				<Index total={ total } />
+				<Index total={ total } items={ items } />
 				{ this.errors() }
+				<button onClick={ errorAction }>reset</button>
 			</div>
 		)
 	}
 }
 
 Application.propTypes = {
-	total: PropTypes.number
-	// error: PropTypes.string
+	total: PropTypes.number,
+	items: PropTypes.object,
+	error: PropTypes.func
 }
 
-let items = (state, properties) => {
-	debugger
+let mapStateToProps = (state, properties) => {
 	return { items: state.items };
 };
 
-export default connect(items)(Application);
+let mapDispatchToProps = dispatch => {
+	return {
+		errorAction: bindActionCreators(errors, dispatch),
+	}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Application);

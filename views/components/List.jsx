@@ -18,12 +18,12 @@ class List extends Component {
 	items (name) {
 		let { items } = this.props;
 
-		return items.map(({ url, title, icon, id, active }, index) => {
+		return items.map((item, index) => {
 			return (
 				<li className={ name } key={ index }>
-					<a className={ `${name}-link` } href={ url } onClick={ this.onClick.bind(this) }>
-						<img className={ `${name}-icon` } src={ icon } alt="" />
-						<span className={ `${name}-text` }> { title } </span>
+					<a className={ `${name}-link` } href={ item.get('url') } onClick={ this.onClick.bind(this) }>
+						<img className={ `${name}-icon` } src={ item.get('icon') } alt="" />
+						<span className={ `${name}-text` }> { item.get('title') } </span>
 					</a>
 				</li>
 			);
@@ -40,7 +40,7 @@ class List extends Component {
 }
 
 List.propTypes = {
-	items: PropTypes.array.isRequired
+	items: PropTypes.object.isRequired
 }
 
 export default List;

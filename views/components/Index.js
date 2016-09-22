@@ -20,5 +20,5 @@ export default class Index extends Component {
 
 Index.propTypes = {
 	total: PropTypes.number.isRequired,
-	items: PropTypes.array.isRequired
+	items: PropTypes.object.isRequired
 };
