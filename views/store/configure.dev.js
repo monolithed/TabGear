@@ -4,13 +4,13 @@ import createLogger from 'redux-logger';
 
 import api from '../middleware/api';
 import rootReducer from '../reducers';
-import DevTools from '../components/DevTools';
+import DevTools from '../containers/DevTools';
 
-export default function (state) {
+export default function (preloadedState) {
 	let middleware = applyMiddleware(thunk, api, createLogger()),
 		composer = compose(middleware, DevTools.instrument());
 
-	const store = createStore(rootReducer, state, composer);
+	const store = createStore(rootReducer, preloadedState, composer);
 
 	// Enable Webpack hot module replacement for reducers
 	if (module.hot) {

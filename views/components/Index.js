@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-
 import List from './List.jsx';
 
 export default class Index extends Component {

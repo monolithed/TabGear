@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Index from './Index';
+import Index from '../components/Index';
 import { errors } from '../actions';
 
 class Application extends Component {
@@ -48,4 +48,5 @@ let mapDispatchToProps = dispatch => {
 		errorAction: bindActionCreators(errors, dispatch),
 	}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Application);

@@ -11,7 +11,6 @@ class List extends Component {
 	}
 
 	onClick (event) {
-		this.setState({ active: true });
 		event.preventDefault();
 	}
 
@@ -21,9 +20,19 @@ class List extends Component {
 		return items.map((item, index) => {
 			return (
 				<li className={ name } key={ index }>
-					<a className={ `${name}-link` } href={ item.get('url') } onClick={ this.onClick.bind(this) }>
-						<img className={ `${name}-icon` } src={ item.get('icon') } alt="" />
-						<span className={ `${name}-text` }> { item.get('title') } </span>
+					<a className={ `${name}-link ${ name }-incognito_${ item.get('incognito') }` }
+					   onClick={ this.onClick.bind(this) }
+					   href="#"
+					>
+
+						<img className={ `${name}-icon` }
+						     src={ item.get('favIconUrl') }
+						     alt=""
+						/>
+
+						<span className={ `${name}-text` }>
+							{ item.get('title') }
+						</span>
 					</a>
 				</li>
 			);
@@ -32,9 +41,7 @@ class List extends Component {
 
 	render () {
 		return <div className="tg-list">
-			{
-				this.items('tg-list__item')
-			}
+			{ this.items('tg-list__item') }
 		</div>;
 	}
 }
