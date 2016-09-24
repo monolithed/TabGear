@@ -6,23 +6,21 @@ export default store => next => action => {
 		return Object.assign({}, action, data);
 	};
 
-	let { type } = action, resolve;
+	let { type, id } = action;
 
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
-			// console.log(store.getState())
-
-			// debugger
 			if (process.env.NODE_ENV === 'production') {
-				let { id: tabs } = action.id;
+				if (id) {
+					id = Number.parseInt(id);
 
-				if (!tabs) {
-					return next({ type: ActionTypes.TAB_ID_NOT_FOUND });
+					chrome.tabs.highlight({ tabs: id }, () => {
+						next(action);
+					});
 				}
-
-				chrome.tabs.highlight({ tabs }, () => {
-					next(action);
-				});
+				else {
+					next({ type: ActionTypes.TAB_ID_NOT_FOUND });
+				}
 			}
 			else {
 				next(action);
@@ -31,22 +29,17 @@ export default store => next => action => {
 			break;
 
 		default:
+			action = actionWith({
+				type: ActionTypes.ITEMS_LOADED,
+				items,
+			});
+
 			if (process.env.NODE_ENV === 'production') {
 				chrome.tabs.query({}, items => {
-					action = actionWith({
-						type: ActionTypes.ITEMS_LOADED,
-						items,
-					});
-
 					next(action);
 				});
 			}
 			else {
-				action = actionWith({
-					type: ActionTypes.ITEMS_LOADED,
-					items,
-				});
-
 				next(action);
 			}
 	}
