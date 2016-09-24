@@ -9,7 +9,7 @@ export default function (state = '', action) {
 			return error;
 
 		case ActionTypes.ITEMS_LOADED:
-			return 'LOADED';
+			return 'LOADED!';
 
 		default:
 			return state;
