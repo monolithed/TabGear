@@ -10,7 +10,7 @@ export default function (initialState) {
 	let middleware = null;
 
 	if (process.env.NODE_ENV === 'production') {
-		let middleware = applyMiddleware(thunk, api);
+		middleware = applyMiddleware(thunk, api);
 	}
 	else {
 		middleware = applyMiddleware(thunk, api, reduxLogger());
