@@ -15,7 +15,7 @@
 	},
 
 	"scripts": {
-		"build": "webpack --progress --display-error-details --config tasks/client.js",
+		"build": "NODE_ENV=production webpack -p --progress --display-error-details --config tasks/client.js",
 		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js",
 		"start": "node debug/server.js"
 	},

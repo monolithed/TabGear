@@ -29,6 +29,6 @@
 		},
 
 		"default_title": "Tab gear",
-		"default_popup": "./views/index.html"
+		"default_popup": "./index.html"
 	}
 }

@@ -15,25 +15,24 @@ module.exports = {
 	],
 
 	output: {
-		path      : `${DIR_NAME}/cache/static`,
-		filename  : 'build.js',
-		publicPath: '/static/'
+		path    : `${DIR_NAME}/cache`,
+		filename: 'build.js',
 	},
 
 	resolve: {
 		extensions: ['', '.js', '.jsx']
 	},
 
-	devtool: 'source-map',
-	target : 'web',
+	// devtool: 'source-map',
+	// target : 'web',
 
 	plugins: [
 		new Webpack.optimize.OccurenceOrderPlugin(),
-		// new Webpack.optimize.DedupePlugin(),
+		new Webpack.optimize.DedupePlugin(),
 
 		new Webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: false
+				NODE_ENV: JSON.stringify("production")
 			}
 		}),
 

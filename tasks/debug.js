@@ -40,7 +40,7 @@ module.exports = {
 
 		new Webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: true
+				NODE_ENV: JSON.stringify("development")
 			}
 		}),
 

@@ -12,14 +12,14 @@ let store = Store(),
 
 let history = syncHistoryWithStore(browserHistory, store);
 
-if (process.env.NODE_ENV) {
+if (process.env.NODE_ENV == 'production') {
+	ReactDOM.render(<Root store={ store } history={ history } />, index);
+}
+else {
 	try {
 		ReactDOM.render(<Root store={ store } history={ history } />, index);
 	}
 	catch (error) {
 		ReactDOM.render(<RedBox error={ error } />, index);
 	}
-}
-else {
-	ReactDOM.render(<Root store={ store } history={ history } />, index);
 }
