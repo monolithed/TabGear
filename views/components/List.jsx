@@ -9,7 +9,7 @@ class List extends Component {
 			active: false
 		}
 
-		this.onTab = this.onClick.bind(this);
+		this.onTab = this.onTab.bind(this);
 	}
 
 	onTab (event) {
