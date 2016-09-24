@@ -23,14 +23,12 @@ class Application extends Component {
 	}
 
 	render () {
-		let { total = 0, items, errorAction, onTab } = this.props;
+		let { total = 0, items, onTab } = this.props;
 
 		return (
 			<div>
 				<Index total={ total } items={ items } onTab={ onTab } />
 				{ this.errors() }
-
-				<button onClick={ errorAction }>reset</button>
 			</div>
 		);
 	}

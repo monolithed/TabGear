@@ -10,10 +10,17 @@ export default store => next => action => {
 
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
-			action = actionWith({ type });
+			// console.log(store.getState())
 
+			// debugger
 			if (process.env.NODE_ENV === 'production') {
-				chrome.tabs.highlight({ tabs: action.id }, () => {
+				let { id: tabs } = action.id;
+
+				if (!tabs) {
+					return next({ type: ActionTypes.TAB_ID_NOT_FOUND });
+				}
+
+				chrome.tabs.highlight({ tabs }, () => {
 					next(action);
 				});
 			}

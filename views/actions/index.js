@@ -14,8 +14,9 @@ export function errors () {
 	};
 };
 
-export function onTab (data) {
+export function onTab (id) {
 	return {
-		type: ActionTypes.SWITCH_TAB
+		type: ActionTypes.SWITCH_TAB,
+		id
 	};
 };
