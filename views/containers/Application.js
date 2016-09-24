@@ -3,11 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from '../components/Index';
-import { errors, onTab } from '../actions';
+import { items, onTab } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
 		super(props);
+
+		this.props.onLoad();
 	}
 
 	errors () {
@@ -47,7 +49,7 @@ let mapStateToProps = (state, properties) => {
 
 let mapDispatchToProps = dispatch => {
 	return {
-		errorAction: bindActionCreators(errors, dispatch),
+		onLoad: bindActionCreators(items, dispatch),
 		onTab: bindActionCreators(onTab, dispatch),
 	}
 }

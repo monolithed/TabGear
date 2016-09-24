@@ -12,12 +12,10 @@ class List extends Component {
 		this.onClick = this.onClick.bind(this);
 	}
 
-	onClick (event) {
-		let { onTab } = this.props;
-		let { id } = event.target.dataset;
+	onTab (event) {
+		let { id } = ;
 
-		onTab(id);
-
+		this.props.onTab(id);
 		event.preventDefault();
 	}
 
@@ -28,7 +26,7 @@ class List extends Component {
 			return (
 				<li className={ name } key={ index }>
 					<a className={ `${name}-link ${ name }-incognito_${ incognito }` }
-					   onClick={ this.onClick }
+					   onClick={ this.onTab }
 					   data-id={ id }
 					   href="#"
 					>
