@@ -1,7 +1,6 @@
-import { List } from 'immutable';
 import * as ActionTypes from '../actions';
 
-export default function items (state = List(), action) {
+export default function items (state = [], action) {
 	let { type, items, error } = action;
 
 	switch (type) {
@@ -9,7 +8,7 @@ export default function items (state = List(), action) {
 			return state;
 
 		case ActionTypes.ITEMS_LOADED:
-			return state.merge(items);
+			return items;
 
 		default:
 			return state;

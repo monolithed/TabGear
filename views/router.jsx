@@ -3,4 +3,4 @@ import { Route } from 'react-router';
 
 import Application from './containers/Application';
 
-export default (<Route path="/" component={ Application } />);
+export default <Route path="/" component={ Application } />;

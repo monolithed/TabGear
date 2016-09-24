@@ -1,8 +1,16 @@
-export const RESET_ERRORS = 'RESET_ERRORS';
-export const ITEMS_LOCKED = 'ITEMS_LOCKED';
-export const ITEMS_LOADED = 'ITEMS_LOADED';
-export const ITEMS_FAILED = 'ITEMS_FAILED';
+import * as ActionTypes from '../constants';
 
 export function errors () {
-	return { type: RESET_ERRORS };
+	return {
+		type: ActionTypes.RESET_ERRORS
+	};
 };
+
+export function onTab (id) {
+	return {
+		type: ActionTypes.SWITCH_TAB,
+		id
+	};
+};
+
+export * from '../constants';

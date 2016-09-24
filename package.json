@@ -15,8 +15,7 @@
 	},
 
 	"scripts": {
-		"build": "webpack --display-error-details --config build/client.js",
-		"install": "sh hooks/outdated.sh",
+		"build": "webpack --progress --display-error-details --config tasks/client.js",
 		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js",
 		"start": "node debug/server.js"
 	},
@@ -29,7 +28,6 @@
 
 	"dependencies": {
 		"history": "^3.0.0",
-		"immutable": "^3.8.1",
 		"lodash": "^4.13.1",
 		"normalize.css": "^4.2.0",
 
@@ -76,7 +74,7 @@
 		"redux-devtools-log-monitor": "^1.0.11",
 		"redux-thunk": "^2.1.0",
 
-		"webpack": "^1.11.9",
+		"webpack": "^1.13.2",
 		"webpack-dev-middleware": "^1.2.0",
 		"webpack-hot-middleware": "^2.2.0",
 		"html-webpack-plugin": "^2.22.0",

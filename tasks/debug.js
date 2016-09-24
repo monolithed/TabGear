@@ -1,12 +1,10 @@
-let path = require('path');
-let fs = require('fs');
+let path = require('path'),
+	fs = require('fs');
 
 let Webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
-// var PostCSSUrl = require('postcss-url');
-// let PostCSSFont = require('postcss-fontpath');
 let Autoprefixer = require('autoprefixer');
 
 const DIR_NAME = path.join(__dirname, '..');

@@ -8,31 +8,33 @@ class List extends Component {
 		this.state = {
 			active: false
 		}
+
+		this.onClick = this.onClick.bind(this);
 	}
 
 	onClick (event) {
+		let { onTab } = this.props;
+		let { id } = event.target.dataset;
+
+		onTab(id);
+
 		event.preventDefault();
 	}
 
 	items (name) {
 		let { items } = this.props;
 
-		return items.map((item, index) => {
+		return items.map(({ id, title, incognito, favIconUrl }, index) => {
 			return (
 				<li className={ name } key={ index }>
-					<a className={ `${name}-link ${ name }-incognito_${ item.get('incognito') }` }
-					   onClick={ this.onClick.bind(this) }
+					<a className={ `${name}-link ${ name }-incognito_${ incognito }` }
+					   onClick={ this.onClick }
+					   data-id={ id }
 					   href="#"
 					>
 
-						<img className={ `${name}-icon` }
-						     src={ item.get('favIconUrl') }
-						     alt=""
-						/>
-
-						<span className={ `${name}-text` }>
-							{ item.get('title') }
-						</span>
+						<img className={ `${name}-icon` } src={ favIconUrl } alt="" />
+						<span className={ `${name}-text` }> { title } </span>
 					</a>
 				</li>
 			);
@@ -47,7 +49,8 @@ class List extends Component {
 }
 
 List.propTypes = {
-	items: PropTypes.object.isRequired
+	onTab: PropTypes.func.isRequired,
+	items: PropTypes.array.isRequired
 }
 
 export default List;

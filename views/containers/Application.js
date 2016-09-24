@@ -3,11 +3,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from '../components/Index';
-import { errors } from '../actions';
+import { errors, onTab } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
-		super(props)
+		super(props);
 	}
 
 	errors () {
@@ -21,22 +21,24 @@ class Application extends Component {
 	}
 
 	render () {
-		let { total = 0, items, errorAction } = this.props;
+		let { total = 0, items, errorAction, onTab } = this.props;
 
 		return (
 			<div>
-				<Index total={ total } items={ items } />
+				<Index total={ total } items={ items } onTab={ onTab } />
 				{ this.errors() }
+
 				<button onClick={ errorAction }>reset</button>
 			</div>
-		)
+		);
 	}
 }
 
 Application.propTypes = {
-	total: PropTypes.number,
-	items: PropTypes.object,
-	error: PropTypes.func
+	total: PropTypes.number.required,
+	items: PropTypes.array.required,
+	// onTab: PropTypes.func.required,
+	// error: PropTypes.func.required
 }
 
 let mapStateToProps = (state, properties) => {
@@ -46,6 +48,7 @@ let mapStateToProps = (state, properties) => {
 let mapDispatchToProps = dispatch => {
 	return {
 		errorAction: bindActionCreators(errors, dispatch),
+		onTab: bindActionCreators(onTab, dispatch),
 	}
 }
 

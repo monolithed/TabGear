@@ -1,10 +1,10 @@
-var path = require('path'),
+let path = require('path'),
 	fs = require('fs');
 
-var Webpack = require('webpack');
+let Webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
-var PostCSSImport = require('postcss-import');
+let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
 
 const DIR_NAME = path.join(__dirname, '..');
@@ -25,6 +25,7 @@ module.exports = {
 	},
 
 	devtool: 'source-map',
+	target : 'web',
 
 	plugins: [
 		new Webpack.optimize.OccurenceOrderPlugin(),
@@ -53,8 +54,12 @@ module.exports = {
 
 			{
 				test   : /\.css$/,
-				loader : 'style-loader!css-loader!postcss-loader',
-				include: `${DIR_NAME}/views`
+				loaders: ['style', 'css', 'postcss']
+			},
+
+			{
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				loader: 'file-loader'
 			}
 		]
 	},

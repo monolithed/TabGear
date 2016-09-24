@@ -3,7 +3,7 @@ import List from './List.jsx';
 
 export default class Index extends Component {
 	render () {
-		let { items } = this.props;
+		let { items, onTab } = this.props;
 
 		return (
 			<div className="tg-body">
@@ -11,7 +11,7 @@ export default class Index extends Component {
 					Tab Gear found { this.props.total } active tabs:
 				</div>
 
-				<List items={ items } />
+				<List items={ items } onTab={ onTab} />
 			</div>
 		);
 	}
@@ -19,5 +19,6 @@ export default class Index extends Component {
 
 Index.propTypes = {
 	total: PropTypes.number.isRequired,
-	items: PropTypes.object.isRequired
+	items: PropTypes.array.isRequired,
+	onTab: PropTypes.func.isRequired
 };
