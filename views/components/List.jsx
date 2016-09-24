@@ -9,11 +9,11 @@ class List extends Component {
 			active: false
 		}
 
-		this.onClick = this.onClick.bind(this);
+		this.onTab = this.onClick.bind(this);
 	}
 
 	onTab (event) {
-		let { id } = ;
+		let { id } = event.target.dataset;
 
 		this.props.onTab(id);
 		event.preventDefault();
