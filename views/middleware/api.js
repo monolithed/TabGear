@@ -29,17 +29,22 @@ export default store => next => action => {
 			break;
 
 		default:
-			action = actionWith({
-				type: ActionTypes.ITEMS_LOADED,
-				items,
-			});
-
 			if (process.env.NODE_ENV === 'production') {
 				chrome.tabs.query({}, items => {
+					action = actionWith({
+						type: ActionTypes.ITEMS_LOADED,
+						items,
+					});
+
 					next(action);
 				});
 			}
 			else {
+				action = actionWith({
+					type: ActionTypes.ITEMS_LOADED,
+					items,
+				});
+
 				next(action);
 			}
 	}
