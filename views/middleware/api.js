@@ -1,4 +1,4 @@
-import { items } from '../stabs';
+import { items } from '../stubs';
 import * as ActionTypes from '../actions';
 
 export default store => next => action => {
