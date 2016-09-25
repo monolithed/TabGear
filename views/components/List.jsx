@@ -13,7 +13,7 @@ class List extends Component {
 	}
 
 	onTab (event) {
-		let { index } = event.target.dataset;
+		let { index } = event.currentTarget.dataset;
 
 		this.props.onTab(index);
 		event.preventDefault();
