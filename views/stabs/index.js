@@ -5,6 +5,7 @@ export const items = [
 		favIconUrl: 'https://www.google.com/images/branding/product/ico/maps_32dp.ico',
 		index : 0,
 		active: false,
+		highlighted: false,
 		incognito: false
 	},
 
@@ -13,6 +14,7 @@ export const items = [
 		url   : 'https://google.com',
 		favIconUrl: 'https://www.google.com/images/icons/product/chrome-32.png',
 		index : 1,
+		highlighted: true,
 		active: false
 	}
 ];

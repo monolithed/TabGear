@@ -12,6 +12,8 @@ export default store => next => action => {
 		case ActionTypes.SWITCH_TAB:
 			if (process.env.NODE_ENV === 'production') {
 				if (index) {
+					console.log('index', index)
+
 					chrome.tabs.highlight({ tabs: index }, items => {
 						let error = chrome.runtime.lastError;
 

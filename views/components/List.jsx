@@ -14,7 +14,7 @@ class List extends Component {
 
 	onTab (event) {
 		let { index } = event.target.dataset;
-debugger
+
 		this.props.onTab(index);
 		event.preventDefault();
 	}
@@ -22,12 +22,14 @@ debugger
 	items (name) {
 		let { items } = this.props;
 
-		return items.map(({ index, title, incognito, favIconUrl }, key) => {
+		return items.map(({ index, title, incognito, favIconUrl, highlighted }, key) => {
 			return (
-				<li className={ name } key={ key }>
-					<a className={ `${name}-link ${ name }-incognito_${ incognito }` }
-					   onClick={ this.onTab }
+				<li className={ `${name} ${name}-incognito_${incognito} ${name}-highlighted_${highlighted}` }
+				    key={ key }
+				>
+					<a className={ `${name}-link` }
 					   data-index={ index }
+					   onClick={ this.onTab }
 					   href="#"
 					>
 
