@@ -6,16 +6,26 @@ export default store => next => action => {
 		return Object.assign({}, action, data);
 	};
 
-	let { type, id } = action;
+	let { type, index } = action;
 
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
+			console.log('index', index)
 			if (process.env.NODE_ENV === 'production') {
-				if (id) {
-					id = Number.parseInt(id);
+				if (index) {
+					chrome.tabs.highlight({ tabs: index }, items => {
+						let error = chrome.runtime.lastError;
 
-					chrome.tabs.highlight({ tabs: id }, () => {
-						next(action);
+						if (error) {
+							next({ type: ActionTypes.TAB_ID_EXCEPTION });
+						}
+						else {
+							// action = actionWith({ items });
+							next(action);
+						}
+
+			console.log('error', error)
+			console.log('items', items)
 					});
 				}
 				else {
@@ -33,7 +43,7 @@ export default store => next => action => {
 				chrome.tabs.query({}, items => {
 					action = actionWith({
 						type: ActionTypes.ITEMS_LOADED,
-						items,
+						items
 					});
 
 					next(action);

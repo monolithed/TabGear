@@ -6,3 +6,4 @@ export const ITEMS_FAILED = 'ITEMS_FAILED';
 export const SWITCH_TAB = 'SWITCH_TAB';
 export const CLOSE_TABS = 'CLOSE_TABS';
 export const TAB_ID_NOT_FOUND = 'TAB_ID_NOT_FOUND';
+export const TAB_ID_EXCEPTION = 'TAB_ID_EXCEPTION';

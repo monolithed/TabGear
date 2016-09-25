@@ -22,12 +22,12 @@ class List extends Component {
 	items (name) {
 		let { items } = this.props;
 
-		return items.map(({ id, title, incognito, favIconUrl }, index) => {
+		return items.map(({ index, title, incognito, favIconUrl }, key) => {
 			return (
-				<li className={ name } key={ index }>
+				<li className={ name } key={ key }>
 					<a className={ `${name}-link ${ name }-incognito_${ incognito }` }
 					   onClick={ this.onTab }
-					   data-id={ id }
+					   data-id={ index }
 					   href="#"
 					>
 

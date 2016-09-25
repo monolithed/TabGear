@@ -8,17 +8,16 @@ export default class Index extends Component {
 		return (
 			<div className="tg-body">
 				<div className="tg-title">
-					Tab Gear found { this.props.total } active tabs:
+					Tab Gear found { items.length } active tabs:
 				</div>
 
-				<List items={ items } onTab={ onTab} />
+				<List items={ items } onTab={ onTab } />
 			</div>
 		);
 	}
 }
 
 Index.propTypes = {
-	total: PropTypes.number.isRequired,
 	items: PropTypes.array.isRequired,
 	onTab: PropTypes.func.isRequired
 };

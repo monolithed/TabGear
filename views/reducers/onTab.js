@@ -9,6 +9,7 @@ export default function (state = '', action) {
 			return id;
 
 		case ActionTypes.TAB_ID_NOT_FOUND:
+		case ActionTypes.TAB_ID_EXCEPTION:
 			return type;
 
 		default:

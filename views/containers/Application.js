@@ -23,11 +23,11 @@ class Application extends Component {
 	}
 
 	render () {
-		let { total = 0, items, onTab } = this.props;
+		let { items, onTab } = this.props;
 
 		return (
 			<div>
-				<Index total={ total } items={ items } onTab={ onTab } />
+				<Index items={ items } onTab={ onTab } />
 				{ this.errors() }
 			</div>
 		);
@@ -35,10 +35,9 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	total: PropTypes.number.required,
 	items: PropTypes.array.required,
-	// onTab: PropTypes.func.required,
-	// error: PropTypes.func.required
+	onTab: PropTypes.func.required,
+	error: PropTypes.string
 }
 
 let mapStateToProps = (state, properties) => {
