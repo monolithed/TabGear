@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from '../components/Index';
-import { items, onTab } from '../actions';
+import { items, onOpen, onClose } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
@@ -23,11 +23,11 @@ class Application extends Component {
 	}
 
 	render () {
-		let { items, onTab } = this.props;
+		let { items, onOpen, onClose } = this.props;
 
 		return (
 			<div>
-				<Index items={ items } onTab={ onTab } />
+				<Index items={ items } onOpen={ onOpen } onClose={ onClose } />
 				{ this.errors() }
 			</div>
 		);
@@ -36,7 +36,8 @@ class Application extends Component {
 
 Application.propTypes = {
 	items: PropTypes.array.required,
-	onTab: PropTypes.func.required,
+	onOpen: PropTypes.func.required,
+	onClose: PropTypes.func.required,
 	error: PropTypes.string
 }
 
@@ -47,8 +48,9 @@ let mapStateToProps = (state, properties) => {
 let mapDispatchToProps = dispatch => {
 	return {
 		onLoad: bindActionCreators(items, dispatch),
-		onTab: bindActionCreators(onTab, dispatch),
-	}
-}
+		onOpen: bindActionCreators(onOpen, dispatch),
+		onClose: bindActionCreators(onClose, dispatch),
+	};
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Application);

@@ -14,9 +14,16 @@ export function errors () {
 	};
 };
 
-export function onTab (index) {
+export function onOpen (index) {
 	return {
 		type: ActionTypes.SWITCH_TAB,
 		index
+	};
+};
+
+export function onClose (id) {
+	return {
+		type: ActionTypes.CLOSE_TAB,
+		id
 	};
 };

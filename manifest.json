@@ -1,6 +1,6 @@
 {
 	"name": "Tab Gear",
-	"description": "Tabs management",
+	"description": "Chrome extension for tab management",
 	"version": "0.0.1",
 
 	"homepage_url": "https://github.com/monolithed/tab-gear",
@@ -18,17 +18,19 @@
 	],
 
 	"icons": {
-		"16": "./files/16.png",
-		"48": "./files/48.png",
-		"128": "./files/128.png"
+		"16": "./files/icons/16.png",
+		"48": "./files/icons/48.png",
+		"128": "./files/icons/128.png"
 	},
 
 	"browser_action": {
 		"default_icon": {
-			"38": "./files/128.png"
+			"38": "./files/icons/128.png"
 		},
 
 		"default_title": "Tab gear",
 		"default_popup": "./index.html"
-	}
+	},
+
+	"content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;"
 }
