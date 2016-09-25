@@ -16,7 +16,7 @@ export function errors () {
 
 export function onOpen (index) {
 	return {
-		type: ActionTypes.SWITCH_TAB,
+		type: ActionTypes.OPEN_TAB,
 		index
 	};
 };
