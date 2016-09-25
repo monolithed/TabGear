@@ -14,9 +14,9 @@ export function errors () {
 	};
 };
 
-export function onTab (id) {
+export function onTab (index) {
 	return {
 		type: ActionTypes.SWITCH_TAB,
-		id
+		index
 	};
 };

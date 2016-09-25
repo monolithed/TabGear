@@ -10,7 +10,6 @@ export default store => next => action => {
 
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
-			console.log('index', index)
 			if (process.env.NODE_ENV === 'production') {
 				if (index) {
 					chrome.tabs.highlight({ tabs: index }, items => {
@@ -23,9 +22,6 @@ export default store => next => action => {
 							// action = actionWith({ items });
 							next(action);
 						}
-
-			console.log('error', error)
-			console.log('items', items)
 					});
 				}
 				else {

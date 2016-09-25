@@ -13,9 +13,9 @@ class List extends Component {
 	}
 
 	onTab (event) {
-		let { id } = event.target.dataset;
-
-		this.props.onTab(id);
+		let { index } = event.target.dataset;
+debugger
+		this.props.onTab(index);
 		event.preventDefault();
 	}
 
@@ -27,7 +27,7 @@ class List extends Component {
 				<li className={ name } key={ key }>
 					<a className={ `${name}-link ${ name }-incognito_${ incognito }` }
 					   onClick={ this.onTab }
-					   data-id={ index }
+					   data-index={ index }
 					   href="#"
 					>
 
