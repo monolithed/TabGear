@@ -7,12 +7,12 @@ export default function (action, next) {
 		if (id) {
 			let tabs = [];
 
-			if (type === ActionTypes.CLOSE_TAB) {
-				id = Number.parseInt(id);
-				tabs.push(id);
+			if (type === ActionTypes.RESET_TABS) {
+				tabs = items.map(({ id }) => id);
 			}
 			else {
-				tabs = items.map(({ id }) => id);
+				id = Number.parseInt(id);
+				tabs.push(id);
 			}
 
 			try {
@@ -26,7 +26,17 @@ export default function (action, next) {
 						});
 					}
 					else {
-						next(action);
+						if (type === ActionTypes.RESET_TABS) {
+							chrome.tabs.create({
+								url: 'chrome://newtab'
+							},
+							tab => {
+								next(action);
+							});
+						}
+						else {
+							next(action);
+						}
 					}
 				});
 			}

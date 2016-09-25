@@ -8,7 +8,10 @@ export default function (action, next) {
 			index = Number.parseInt(index);
 
 			try {
-				chrome.tabs.highlight({ tabs: [ index ] }, window => {
+				chrome.tabs.highlight({
+					tabs: [ index ]
+				},
+				window => {
 					let error = chrome.runtime.lastError;
 
 					if (error) {
