@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants';
 
 export * from '../constants';
 
-export function items () {
+export function load () {
 	return {
 		type: ActionTypes.ITEMS_LOCKED
 	};

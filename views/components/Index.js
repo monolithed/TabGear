@@ -7,18 +7,18 @@ export default class Index extends Component {
 	constructor (properties) {
 		super(properties);
 
-		this.onReset = this.onReset.bind(this);
+		this.reset = this.reset.bind(this);
 	}
 
-	onReset (event) {
-		let { items } = this.props;
+	reset (event) {
+		let { items, actions } = this.props;
 
-		this.props.onReset(items);
+		actions.reset(items);
 		event.preventDefault();
 	}
 
 	render () {
-		let { items, onOpen, onClose } = this.props;
+		let { items, actions } = this.props;
 
 		return (
 			<div className="tg-body">
@@ -27,20 +27,18 @@ export default class Index extends Component {
 				</div>
 
 				<div className="tg-panel">
-					<a className="tg-panel-link" href="#" onClick={ this.onReset }>
+					<a className="tg-panel-link" href="#" onClick={ this.reset }>
 						Close all tabs
 					</a>
 				</div>
 
-				<List items={ items } onOpen={ onOpen } onClose={ onClose } />
+				<List items={ items } actions={ actions } />
 			</div>
 		);
 	}
 }
 
 Index.propTypes = {
-	items: PropTypes.array.isRequired,
-	onOpen: PropTypes.func.isRequired,
-	onReset: PropTypes.func.isRequired,
-	onClose: PropTypes.func.isRequired
+	items  : PropTypes.array.isRequired,
+	actions: PropTypes.object.isRequired
 };

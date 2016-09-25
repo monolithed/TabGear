@@ -5,30 +5,34 @@ class List extends Component {
 	constructor (properties) {
 		super(properties);
 
-		this.onOpen = this.onOpen.bind(this);
-		this.onClose = this.onClose.bind(this);
+		this.open = this.open.bind(this);
+		this.close = this.close.bind(this);
 	}
 
-	onOpen (event) {
+	open (event) {
 		let { index } = event.currentTarget.dataset;
+		let { actions } = this.props;
 
-		this.props.onOpen(index);
+		actions.open(index);
 		event.preventDefault();
 	}
 
-	onClose (event) {
+	close (event) {
 		let { id } = event.currentTarget.dataset;
+		let { actions } = this.props;
 
-		this.props.onClose(id);
+		actions.close(id);
 
 		event.stopPropagation()
 		event.preventDefault();
 	}
 
-	items (name) {
+	load (name) {
 		let { items } = this.props;
 
-		return items.map(({ id, index, title, incognito, favIconUrl, highlighted }, key) => {
+		return items.map((items, key) => {
+			let { id, index, title, incognito, favIconUrl, highlighted } = items;
+
 			return (
 				<li className={
 					`${name} ${name}-state_${incognito && 'incognito'} ${name}-state_${highlighted && 'highlighted'}`
@@ -38,14 +42,14 @@ class List extends Component {
 					<a className={ `${name}-link` }
 					   data-index={ index }
 					   href="#"
-					   onClick={ this.onOpen }
+					   onClick={ this.open }
 					>
 
 						<img className={ `${name}-icon` } src={ favIconUrl } alt="" />
 						<span className={ `${name}-text` }> { title } </span>
 						<span className={ `${name}-close` }
 						      data-id={ id }
-						      onClick={ this.onClose }
+						      onClick={ this.close }
 						> </span>
 					</a>
 				</li>
@@ -55,15 +59,14 @@ class List extends Component {
 
 	render () {
 		return <div className="tg-list">
-			{ this.items('tg-list__item') }
+			{ this.load('tg-list__item') }
 		</div>;
 	}
 }
 
 List.propTypes = {
-	onOpen: PropTypes.func.isRequired,
-	onClose: PropTypes.func.isRequired,
-	items: PropTypes.array.isRequired
-}
+	items  : PropTypes.array.isRequired,
+	actions: PropTypes.object.isRequired
+};
 
 export default List;
