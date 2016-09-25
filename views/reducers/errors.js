@@ -1,7 +1,7 @@
 import * as ActionTypes from '../actions';
 
 export default function (state = '', action) {
-	let { type, items, error } = action;
+	let { type, error } = action;
 
 	switch (type) {
 		case ActionTypes.ITEMS_FAILED:
