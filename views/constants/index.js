@@ -6,7 +6,7 @@ export const ITEMS_FAILED = 'ITEMS_FAILED';
 
 export const OPEN_TAB = 'OPEN_TAB';
 export const CLOSE_TAB = 'CLOSE_TAB';
-export const CLOSE_TABS = 'CLOSE_TABS';
+export const RESET_TABS = 'RESET_TABS';
 export const TAB_ID_NOT_FOUND = 'TAB_ID_NOT_FOUND';
 export const TAB_INDEX_NOT_FOUND = 'TAB_INDEX_NOT_FOUND';
 export const TAB_OPEN_EXCEPTION = 'TAB_OPEN_EXCEPTION';

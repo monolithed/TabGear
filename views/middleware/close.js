@@ -1,14 +1,22 @@
 import * as ActionTypes from '../actions';
 
 export default function (action, next) {
-	let { id } = action;
+	let { id, items, type } = action;
 
 	if (process.env.NODE_ENV === 'production') {
 		if (id) {
-			id = Number.parseInt(id);
+			let tabs = [];
+
+			if (type === ActionTypes.CLOSE_TAB) {
+				id = Number.parseInt(id);
+				tabs.push(id);
+			}
+			else {
+				tabs = items.map(({ id }) => id);
+			}
 
 			try {
-				chrome.tabs.remove([ id ], window => {
+				chrome.tabs.remove(tabs, window => {
 					let error = chrome.runtime.lastError;
 
 					if (error) {

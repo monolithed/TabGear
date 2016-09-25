@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from '../components/Index';
-import { items, onOpen, onClose } from '../actions';
+import { items, onOpen, onClose, onReset } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
@@ -23,11 +23,17 @@ class Application extends Component {
 	}
 
 	render () {
-		let { items, onOpen, onClose } = this.props;
+		let { items, onOpen, onClose, onReset } = this.props;
 
 		return (
 			<div>
-				<Index items={ items } onOpen={ onOpen } onClose={ onClose } />
+				<Index
+					items={ items }
+					onOpen={ onOpen }
+					onClose={ onClose }
+					onReset={ onReset }
+				/>
+
 				{ this.errors() }
 			</div>
 		);
@@ -35,10 +41,13 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	items: PropTypes.array.required,
-	onOpen: PropTypes.func.required,
-	onClose: PropTypes.func.required,
-	error: PropTypes.string
+	// items  : PropTypes.array.required,
+	// onOpen : PropTypes.func.required,
+	// onReset: PropTypes.func.required,
+	// onClose: PropTypes.func.required,
+	// onLoad : PropTypes.func.required,
+	// items  : PropTypes.func.required,
+	// error  : PropTypes.string
 }
 
 let mapStateToProps = (state, properties) => {
@@ -47,9 +56,10 @@ let mapStateToProps = (state, properties) => {
 
 let mapDispatchToProps = dispatch => {
 	return {
-		onLoad: bindActionCreators(items, dispatch),
-		onOpen: bindActionCreators(onOpen, dispatch),
+		onLoad : bindActionCreators(items, dispatch),
+		onOpen : bindActionCreators(onOpen, dispatch),
 		onClose: bindActionCreators(onClose, dispatch),
+		onReset: bindActionCreators(onReset, dispatch)
 	};
 };
 

@@ -2,16 +2,18 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import middleware from '../middleware';
+import Middleware from '../middleware';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
 
 export default function (initialState) {
+	let middleware = Middleware;
+
 	if (process.env.NODE_ENV === 'production') {
-		middleware = applyMiddleware(thunk, api);
+		middleware = applyMiddleware(thunk, middleware);
 	}
 	else {
-		middleware = applyMiddleware(thunk, api, reduxLogger());
+		middleware = applyMiddleware(thunk, middleware, reduxLogger());
 		middleware = compose(middleware, DevTools.instrument());
 
 		// Enable Webpack hot module replacement for reducers

@@ -27,3 +27,10 @@ export function onClose (id) {
 		id
 	};
 };
+
+export function onReset (items) {
+	return {
+		type: ActionTypes.RESET_TABS,
+		items
+	};
+};

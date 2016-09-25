@@ -12,6 +12,7 @@ export default store => next => action => {
 
 	switch (type) {
 		case ActionTypes.CLOSE_TAB:
+		case ActionTypes.RESET_TABS:
 			return close(action, next);
 
 		case ActionTypes.OPEN_TAB:
