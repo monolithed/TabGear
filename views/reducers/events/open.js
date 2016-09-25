@@ -1,5 +1,4 @@
-import { List } from 'immutable';
-import * as ActionTypes from '../actions';
+import * as ActionTypes from '../../actions';
 
 export default function (state = '', action) {
 	let { type, index } = action;

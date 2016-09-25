@@ -20,6 +20,8 @@ class List extends Component {
 		let { id } = event.currentTarget.dataset;
 
 		this.props.onClose(id);
+
+		event.stopPropagation()
 		event.preventDefault();
 	}
 

@@ -14,21 +14,21 @@ export function errors () {
 	};
 };
 
-export function onOpen (index) {
+export function open (index) {
 	return {
 		type: ActionTypes.OPEN_TAB,
 		index
 	};
 };
 
-export function onClose (id) {
+export function close (id) {
 	return {
 		type: ActionTypes.CLOSE_TAB,
 		id
 	};
 };
 
-export function onReset (items) {
+export function reset (items) {
 	return {
 		type: ActionTypes.RESET_TABS,
 		items

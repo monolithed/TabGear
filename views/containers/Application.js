@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from '../components/Index';
-import { items, onOpen, onClose, onReset } from '../actions';
+import { items, open, close, reset } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
@@ -57,9 +57,9 @@ let mapStateToProps = (state, properties) => {
 let mapDispatchToProps = dispatch => {
 	return {
 		onLoad : bindActionCreators(items, dispatch),
-		onOpen : bindActionCreators(onOpen, dispatch),
-		onClose: bindActionCreators(onClose, dispatch),
-		onReset: bindActionCreators(onReset, dispatch)
+		onOpen : bindActionCreators(open, dispatch),
+		onClose: bindActionCreators(close, dispatch),
+		onReset: bindActionCreators(reset, dispatch)
 	};
 };
 
