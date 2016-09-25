@@ -10,7 +10,7 @@ export default function (state = '', action) {
 				throw new Error('Could not found index');
 			}
 
-			return index;
+			return Number.parseInt(index);
 
 		case ActionTypes.TAB_ID_NOT_FOUND:
 		case ActionTypes.TAB_ID_EXCEPTION:

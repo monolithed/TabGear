@@ -11,20 +11,28 @@ export default store => next => action => {
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
 			if (process.env.NODE_ENV === 'production') {
-				if (index) {
-					console.log('index', index)
+				if (index !== undefined) {
+					try {
+						chrome.tabs.highlight({ tabs: index }, items => {
+							let error = chrome.runtime.lastError;
 
-					chrome.tabs.highlight({ tabs: index }, items => {
-						let error = chrome.runtime.lastError;
-
-						if (error) {
-							next({ type: ActionTypes.TAB_ID_EXCEPTION });
-						}
-						else {
-							// action = actionWith({ items });
-							next(action);
-						}
-					});
+							if (error) {
+								next({
+									type: ActionTypes.TAB_ID_EXCEPTION,
+									error
+								});
+							}
+							else {
+								next(action);
+							}
+						});
+					} 
+					catch ({ message }) {
+						next({
+							type: ActionTypes.TAB_ID_EXCEPTION,
+							error: message
+						});
+					}
 				}
 				else {
 					next({ type: ActionTypes.TAB_ID_NOT_FOUND });
