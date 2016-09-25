@@ -6,11 +6,7 @@ export default function (state = '', action) {
 
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
-			if (!index) {
-				throw new Error('Could not found index');
-			}
-
-			return Number.parseInt(index);
+			return index;
 
 		case ActionTypes.TAB_ID_NOT_FOUND:
 		case ActionTypes.TAB_ID_EXCEPTION:

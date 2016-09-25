@@ -11,7 +11,9 @@ export default store => next => action => {
 	switch (type) {
 		case ActionTypes.SWITCH_TAB:
 			if (process.env.NODE_ENV === 'production') {
-				if (index !== undefined) {
+				if (index) {
+					index = Number.parseInt(index);
+
 					try {
 						chrome.tabs.highlight({ tabs: index }, items => {
 							let error = chrome.runtime.lastError;
@@ -26,7 +28,7 @@ export default store => next => action => {
 								next(action);
 							}
 						});
-					} 
+					}
 					catch ({ message }) {
 						next({
 							type: ActionTypes.TAB_ID_EXCEPTION,
