@@ -2,13 +2,11 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import api from '../middleware/api';
+import middleware from '../middleware';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
 
 export default function (initialState) {
-	let middleware = null;
-
 	if (process.env.NODE_ENV === 'production') {
 		middleware = applyMiddleware(thunk, api);
 	}
