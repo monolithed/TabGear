@@ -32,5 +32,5 @@
 		"default_popup": "./index.html"
 	},
 
-	"content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src data: blob: https://*"
+	"content_security_policy": "default-src 'self' blob:; font-src * data: blob:; script-src 'self'; style-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'"
 }

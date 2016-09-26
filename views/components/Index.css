@@ -31,7 +31,13 @@ body {
 		text-align: right;
 	}
 
-		.tg-panel-link {
+		.tg-panel-link,
+		.tg-panel-link:active,
+		.tg-panel-link:visited {
 			color: #6d6d6d;
 			font: normal 12px/18px helvetica, arial, sans-serif;
+		}
+
+		.tg-panel-link:hover {
+			color: #6f6f6f;
 		}
