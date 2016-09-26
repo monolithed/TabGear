@@ -20,16 +20,10 @@ export default store => next => action => {
 
 		return api[method](action, next);
 	}
-	catch ({ message }) {
-		let error = chrome.runtime.lastError;
-
-		if (error) {
-			message = error;
-		}
-
+	catch (error) {
 		next({
 			type : ActionTypes.CHROME_API_EXCEPTION,
-			error: message
+			error: chrome.runtime.lastError || error.message
 		});
 	}
 };
