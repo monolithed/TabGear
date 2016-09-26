@@ -52,6 +52,11 @@ module.exports = {
 			},
 
 			{
+				test   : /\.css$/,
+				loaders: ['style', 'css', 'postcss']
+			},
+
+			{
 				test   : /\.(jpe?g|png)(\?[a-z0-9=&.]+)?$/,
 				loader: 'url-loader?limit=10000&mimetype=application/font-woff'
 			},
