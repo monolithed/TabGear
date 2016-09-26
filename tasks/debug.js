@@ -68,8 +68,13 @@ module.exports = {
 			},
 
 			{
+				test   : /\.(jpe?g|png)(\?[a-z0-9=&.]+)?$/,
+				loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+			},
+
+			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-				loader: 'file-loader?limit=10000&mimetype=application/font-woff'
+				loader: 'base64-font-loader'
 			}
 		]
 	},

@@ -30,5 +30,7 @@
 
 		"default_title": "Tab gear",
 		"default_popup": "./index.html"
-	}
+	},
+
+	"content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;"
 }
