@@ -1,24 +1,35 @@
 import * as ActionTypes from '../actions';
+import { items } from '../stubs';
 
-import close from './close';
-import open from './open';
-import load from './load';
+import api from './api';
 
-/**
- * @see https://developer.chrome.com/extensions/tabs
- */
 export default store => next => action => {
-	let { type, index, id } = action;
+	let { type } = action;
 
-	switch (type) {
-		case ActionTypes.CLOSE_TAB:
-		case ActionTypes.RESET_TABS:
-			return close(action, next);
+	if (process.env.NODE_ENV !== 'production') {
+		return next({ items, ...action });
+	}
 
-		case ActionTypes.OPEN_TAB:
-			return open(action, next);
+	try {
+		let method = {
+			CLOSE_TAB   : 'close',
+			RESET_TABS  : 'reset',
+			OPEN_TAB    : 'open',
+			ITEMS_LOADED: 'load'
+		};
 
-		default:
-			return load(action, next);
+		return api[method](action, next);
+	}
+	catch ({ message }) {
+		let error = chrome.runtime.lastError;
+
+		if (error) {
+			message = error;
+		}
+
+		next({
+			type : ActionTypes.CHROME_API_EXCEPTION,
+			error: message
+		});
 	}
 };

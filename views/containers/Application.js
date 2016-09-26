@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Index from '../components/Index';
-import * as Actions from '../actions';
+import actions from '../actions';
 
 class Application extends Component {
 	constructor (props) {
@@ -46,7 +46,7 @@ let mapStateToProps = (state, properties) => {
 
 let mapDispatchToProps = dispatch => {
 	return {
-		actions: bindActionCreators(Actions, dispatch)
+		actions: bindActionCreators(actions, dispatch)
 	};
 };
 

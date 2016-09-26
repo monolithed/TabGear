@@ -5,6 +5,8 @@
 		"react"
 	],
 
+	"plugins": ["transform-object-rest-spread"],
+
 	"env": {
 		"development": {
 			"presets": ["react-hmre"]

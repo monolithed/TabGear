@@ -1,36 +1,66 @@
-import * as ActionTypes from '../constants';
+import * as ActionTypes from '../constants/ActionTypes';
 
-export * from '../constants';
+export default {
+	/**
+	 * Loads data
+	 *
+	 * @returns {Object}
+	 */
+	load () {
+		return {
+			type: ActionTypes.ITEMS_LOADED
+		};
+	},
 
-export function load () {
-	return {
-		type: ActionTypes.ITEMS_LOCKED
-	};
+	/**
+	 * Shows error
+	 *
+	 * @returns {Object}
+	 */
+	errors () {
+		return {
+			type: ActionTypes.SHOW_ERRORS
+		};
+	},
+
+	/**
+	 * Highlights the given tabs
+	 *
+	 * @param {string} index — the tab index to highlight
+	 * @returns {Object}
+	 */
+	open (index) {
+		return {
+			type: ActionTypes.OPEN_TAB,
+			index
+		};
+	},
+
+	/**
+	 * Closes selected tab
+	 *
+	 * @param {string} id — the tab id to close
+	 * @returns {Object}
+	 */
+	close (id) {
+		return {
+			type: ActionTypes.CLOSE_TAB,
+			id
+		};
+	},
+
+	/**
+	 * Close all tabs
+	 *
+	 * @param {Array} items — the list of tabs to close
+	 * @returns {Object}
+	 */
+	reset (items) {
+		return {
+			type: ActionTypes.RESET_TABS,
+			items
+		};
+	}
 };
 
-export function errors () {
-	return {
-		type: ActionTypes.RESET_ERRORS
-	};
-};
-
-export function open (index) {
-	return {
-		type: ActionTypes.OPEN_TAB,
-		index
-	};
-};
-
-export function close (id) {
-	return {
-		type: ActionTypes.CLOSE_TAB,
-		id
-	};
-};
-
-export function reset (items) {
-	return {
-		type: ActionTypes.RESET_TABS,
-		items
-	};
-};
+export * from '../constants/ActionTypes';
