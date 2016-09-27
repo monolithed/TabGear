@@ -1,3 +1,4 @@
+import camelCase from 'camelcase';
 import * as ActionTypes from '../actions';
 import { items } from '../stubs';
 
@@ -11,12 +12,7 @@ export default store => next => action => {
 	}
 
 	try {
-		let method = {
-			CLOSE_TAB   : 'close',
-			RESET_TABS  : 'reset',
-			OPEN_TAB    : 'open',
-			ITEMS_LOADED: 'load'
-		};
+		let method = camelCase(type);
 
 		return api[method](action, next);
 	}

@@ -9,10 +9,10 @@ class Application extends Component {
 	constructor (props) {
 		super(props);
 
-		this.props.actions.load();
+		this.props.actions.showTabs();
 	}
 
-	errors () {
+	showErrors () {
 		let { error } = this.props;
 
 		if (!error) {
@@ -29,7 +29,7 @@ class Application extends Component {
 			<div>
 				<Index items={ items } actions={ actions } />
 
-				{ this.errors() }
+				{ this.showErrors() }
 			</div>
 		);
 	}

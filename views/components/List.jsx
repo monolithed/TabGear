@@ -5,29 +5,44 @@ class List extends Component {
 	constructor (properties) {
 		super(properties);
 
-		this.open = this.open.bind(this);
-		this.close = this.close.bind(this);
+		this.switchTab = this.switchTab.bind(this);
+		this.closeTab = this.closeTab.bind(this);
 	}
 
-	open (event) {
+	/**
+	 * Highlights the given tabs
+	 *
+	 * @param {Event} event
+	 */
+	switchTab (event) {
 		let { index } = event.currentTarget.dataset;
 		let { actions } = this.props;
 
-		actions.open(index);
+		actions.switchTab(index);
 		event.preventDefault();
 	}
 
-	close (event) {
+	/**
+	 * Closes selected tab
+	 *
+	 * @param {Event} event
+	 */
+	closeTab (event) {
 		let { id } = event.currentTarget.dataset;
 		let { actions } = this.props;
 
-		actions.close(id);
+		actions.closeTab(id);
 
 		event.stopPropagation()
 		event.preventDefault();
 	}
 
-	load (name) {
+	/**
+	 * Loads data
+	 *
+	 * @param {string} name
+	 */
+	showTabs (name) {
 		let { items } = this.props;
 
 		return items.map((items, key) => {
@@ -42,14 +57,14 @@ class List extends Component {
 					<a className={ `${name}-link` }
 					   data-index={ index }
 					   href="#"
-					   onClick={ this.open }
+					   onClick={ this.switchTab }
 					>
 
 						<img className={ `${name}-icon` } src={ favIconUrl } alt="" />
 						<span className={ `${name}-text` }> { title } </span>
 						<span className={ `${name}-close` }
 						      data-id={ id }
-						      onClick={ this.close }
+						      onClick={ this.closeTab }
 						> </span>
 					</a>
 				</li>
@@ -59,7 +74,7 @@ class List extends Component {
 
 	render () {
 		return <div className="tg-list">
-			{ this.load('tg-list__item') }
+			{ this.showTabs('tg-list__item') }
 		</div>;
 	}
 }

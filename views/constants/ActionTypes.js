@@ -1,10 +1,11 @@
 export const ITEMS_LOCKED = 'ITEMS_LOCKED';
-export const ITEMS_LOADED = 'ITEMS_LOADED';
+export const SHOW_TABS = 'SHOW_TABS';
 export const ITEMS_FAILED = 'ITEMS_FAILED';
 
-export const OPEN_TAB = 'OPEN_TAB';
+export const SWITCH_TAB = 'SWITCH_TAB';
 export const CLOSE_TAB = 'CLOSE_TAB';
-export const RESET_TABS = 'RESET_TABS';
+export const CLOSE_ALL_TABS = 'CLOSE_ALL_TABS';
+
 export const TAB_ID_NOT_FOUND = 'TAB_ID_NOT_FOUND';
 export const TAB_ITEMS_NOT_FOUND = 'TAB_ITEMS_NOT_FOUND';
 export const TAB_INDEX_NOT_FOUND = 'TAB_INDEX_NOT_FOUND';

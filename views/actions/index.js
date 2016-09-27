@@ -2,22 +2,22 @@ import * as ActionTypes from '../constants/ActionTypes';
 
 export default {
 	/**
-	 * Loads data
+	 * Show tabs
 	 *
 	 * @returns {Object}
 	 */
-	load () {
+	showTabs () {
 		return {
-			type: ActionTypes.ITEMS_LOADED
+			type: ActionTypes.SHOW_TABS
 		};
 	},
 
 	/**
-	 * Shows error
+	 * Show errors
 	 *
 	 * @returns {Object}
 	 */
-	errors () {
+	showErrors () {
 		return {
 			type: ActionTypes.SHOW_ERRORS
 		};
@@ -29,9 +29,9 @@ export default {
 	 * @param {string} index — the tab index to highlight
 	 * @returns {Object}
 	 */
-	open (index) {
+	switchTab (index) {
 		return {
-			type: ActionTypes.OPEN_TAB,
+			type: ActionTypes.SWITCH_TAB,
 			index
 		};
 	},
@@ -42,7 +42,7 @@ export default {
 	 * @param {string} id — the tab id to close
 	 * @returns {Object}
 	 */
-	close (id) {
+	closeTab (id) {
 		return {
 			type: ActionTypes.CLOSE_TAB,
 			id
@@ -55,9 +55,9 @@ export default {
 	 * @param {Array} items — the list of tabs to close
 	 * @returns {Object}
 	 */
-	reset (items) {
+	closeAllTabs (items) {
 		return {
-			type: ActionTypes.RESET_TABS,
+			type: ActionTypes.CLOSE_ALL_TABS,
 			items
 		};
 	}

@@ -13,9 +13,9 @@ export default {
 	 * @param {Object} action
 	 * @param {Function} next
 	 */
-	load (action, next) {
+	showTabs (action, next) {
 		chrome.tabs.query({}, items => {
-			next({ type: ActionTypes.ITEMS_LOADED, items });
+			next({ type: ActionTypes.SHOW_TABS, items });
 		});
 	},
 
@@ -25,7 +25,7 @@ export default {
 	 * @param {Object} action
 	 * @param {Function} next
 	 */
-	open (action, next) {
+	switchTab (action, next) {
 		let { index } = action;
 
 		if (index) {
@@ -49,7 +49,7 @@ export default {
 	 * @param {Object} action
 	 * @param {Function} next
 	 */
-	close (action, next) {
+	closeTab (action, next) {
 		let { id } = action;
 
 		if (id) {
@@ -70,7 +70,7 @@ export default {
 	 * @param {Object} action
 	 * @param {Function} next
 	 */
-	reset (action, next) {
+	closeAllTabs (action, next) {
 		let { items } = action;
 
 		if (items) {

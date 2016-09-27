@@ -15,7 +15,7 @@ export default {
 			case ActionTypes.ITEMS_LOCKED:
 				return state;
 
-			case ActionTypes.ITEMS_LOADED:
+			case ActionTypes.SHOW_TABS:
 				return items;
 
 			default:

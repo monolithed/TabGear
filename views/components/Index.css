@@ -7,6 +7,21 @@ body {
 	width: 450px;
 }
 
+.tg-link,
+.tg-link:active,
+.tg-link:visited {
+	color: #6d6d6d;
+	font: normal 12px/18px helvetica, arial, sans-serif;
+}
+
+.tg-header-link:hover {
+	color: #6f6f6f;
+}
+
+	.tg-link_block {
+
+	}
+
 .tg-body {
 	margin: 0 auto;
 	width: 90%;
@@ -26,18 +41,7 @@ body {
 		border: #ddd;
 	}
 
-	.tg-panel {
+	.tg-header {
 		margin: 15px;
 		text-align: right;
 	}
-
-		.tg-panel-link,
-		.tg-panel-link:active,
-		.tg-panel-link:visited {
-			color: #6d6d6d;
-			font: normal 12px/18px helvetica, arial, sans-serif;
-		}
-
-		.tg-panel-link:hover {
-			color: #6f6f6f;
-		}

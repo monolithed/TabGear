@@ -7,13 +7,30 @@ export default class Index extends Component {
 	constructor (properties) {
 		super(properties);
 
-		this.reset = this.reset.bind(this);
+		this.closeAllTabs = this.closeAllTabs.bind(this);
 	}
 
-	reset (event) {
+	/**
+	 * Close all tabs
+	 *
+	 * @param {Event} event
+	 */
+	closeAllTabs (event) {
 		let { items, actions } = this.props;
 
-		actions.reset(items);
+		actions.closeAllTabs(items);
+		event.preventDefault();
+	}
+
+	/**
+	 * Close all tabs
+	 *
+	 * @param {Event} event
+	 */
+	openExtensions (event) {
+		let { items, actions } = this.props;
+
+		actions.closeAllTabs(items);
 		event.preventDefault();
 	}
 
@@ -26,13 +43,23 @@ export default class Index extends Component {
 					Tab Gear found { items.length } active tabs:
 				</div>
 
-				<div className="tg-panel">
-					<a className="tg-panel-link" href="#" onClick={ this.reset }>
+				<div className="tg-header">
+					<a className="tg-link" href="#" onClick={ this.closeAllTabs } tabIndex="-1">
 						Close all tabs
 					</a>
 				</div>
 
 				<List items={ items } actions={ actions } />
+
+				<div className="tg-footer">
+					<a className="tg-link tg-link_block" href="chrome://extensions" target="_blank">
+						Open extensions
+					</a>
+
+					<a className="tg-link tg-link_block" href="#" onClick={ this.closeAllTabs }>
+						Discard memory
+					</a>
+				</div>
 			</div>
 		);
 	}

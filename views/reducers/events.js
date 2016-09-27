@@ -8,7 +8,7 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	load (state = [], action) {
+	showTabs (state = [], action) {
 		return state;
 	},
 
@@ -19,14 +19,14 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	errors (state = '', action) {
+	showErrors (state = '', action) {
 		let { type, error } = action;
 
 		switch (type) {
 			case ActionTypes.ITEMS_FAILED:
 				return error;
 
-			case ActionTypes.ITEMS_LOADED:
+			case ActionTypes.SHOW_TABS:
 				return '';
 
 			default:
@@ -41,11 +41,11 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	open (state = '', action) {
+	switchTab (state = '', action) {
 		let { type, index } = action;
 
 		switch (type) {
-			case ActionTypes.OPEN_TAB:
+			case ActionTypes.SWITCH_TAB:
 				return index;
 
 			case ActionTypes.TAB_INDEX_NOT_FOUND:
@@ -64,7 +64,7 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	close (state = '', action) {
+	closeTab (state = '', action) {
 		let { type, id } = action;
 
 		switch (type) {
@@ -87,7 +87,7 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	reset (state = [], action) {
+	closeAllTabs (state = [], action) {
 		let { type, items } = action;
 
 		switch (type) {
@@ -95,7 +95,7 @@ export default {
 			case ActionTypes.TAB_CLOSE_EXCEPTION:
 				return type;
 
-			case ActionTypes.RESET_TABS:
+			case ActionTypes.CLOSE_ALL_TABS:
 				return items;
 
 			default:
