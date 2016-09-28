@@ -1,5 +1,4 @@
 import * as ActionTypes from '../actions';
-import { items } from '../stubs';
 
 /**
  * API
