@@ -15,6 +15,21 @@ export default class Index extends Component {
 
 		this.showCredentials =
 			this.showCredentials.bind(this);
+
+		this.closeAllTabs =
+			this.closeAllTabs.bind(this);
+	}
+
+	/**
+	 * Close all tabs
+	 *
+	 * @param {Event} event
+	 */
+	closeAllTabs (event) {
+		let { items, actions } = this.props;
+
+		actions.closeAllTabs(items);
+		event.preventDefault();
 	}
 
 	/**
@@ -71,16 +86,16 @@ export default class Index extends Component {
 				<List items={ items } actions={ actions } />
 
 				<div className="tg-footer">
+					<a className="tg-link tg-link_block" href="#" onClick={ this.showCredentials }>
+						About
+					</a>
+
 					<a className="tg-link tg-link_block" href="#" onClick={ this.openExtensions }>
 						Open extensions
 					</a>
 
 					<a className="tg-link tg-link_block" href="#" onClick={ this.discardTabs }>
 						Discard tabs
-					</a>
-
-					<a className="tg-link tg-link_block" href="#" onClick={ this.showCredentials }>
-						About
 					</a>
 				</div>
 			</div>

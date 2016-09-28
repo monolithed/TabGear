@@ -138,11 +138,11 @@ export default {
 	/**
 	 * Open browser extensions
 	 *
-	 * @param {undefined} state
+	 * @param {boolean} state
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	openExtensions (state, action) {
+	openExtensions (state = false, action) {
 		let { type, items, error } = action;
 
 		switch (type) {
@@ -160,11 +160,11 @@ export default {
 	/**
 	 * Show credentials
 	 *
-	 * @param {undefined} state
+	 * @param {boolean} state
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	showCredentials (state, action) {
+	showCredentials (state = false, action) {
 		let { type, error} = action;
 
 		switch (type) {
