@@ -100,8 +100,8 @@ export default {
 		let { items } = action;
 
 		if (items) {
-			for (let item of items) {
-				chrome.tabs.discard(tabs, tab => {
+			for (let tab of items) {
+				chrome.tabs.discard(tab.id, tab => {
 					next(action);
 				});
 			}
@@ -118,8 +118,22 @@ export default {
 	 * @param {Function} next
 	 */
 	openExtensions (action, next) {
-		chrome.tabs.create({ url: 'chrome://extensions' }, tab => {
-			next(action);
+		let url = 'chrome://extensions/';
+
+		chrome.tabs.query({ url }, ([ tab ]) => {
+			if (tab) {
+				chrome.tabs.highlight({
+					tabs: [ tab.index ]
+				},
+				window => {
+					next(action);
+				});
+			}
+			else {
+				chrome.tabs.create({ url }, tab => {
+					next(action);
+				});
+			}
 		});
 	},
 
