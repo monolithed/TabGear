@@ -36,8 +36,8 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	items  : PropTypes.array.required,
-	actions: PropTypes.object.required
+	items  : PropTypes.array.isRequired,
+	actions: PropTypes.object.isRequired
 };
 
 let mapStateToProps = (state, properties) => {

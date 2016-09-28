@@ -10,11 +10,11 @@ export default {
 	 * Loads data
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	showTabs (action, next) {
+	showTabs (action, dispatch) {
 		chrome.tabs.query({}, items => {
-			next({ type: ActionTypes.SHOW_TABS, items });
+			dispatch({ type: ActionTypes.SHOW_TABS, items });
 		});
 	},
 
@@ -22,9 +22,9 @@ export default {
 	 * Highlights the given tabs
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	switchTab (action, next) {
+	switchTab (action, dispatch) {
 		let { index } = action;
 
 		if (index) {
@@ -34,11 +34,11 @@ export default {
 				tabs: [ index ]
 			},
 			window => {
-				next(action);
+				dispatch(action);
 			});
 		}
 		else {
-			next({ type: ActionTypes.TAB_INDEX_NOT_FOUND });
+			dispatch({ type: ActionTypes.TAB_INDEX_NOT_FOUND });
 		}
 	},
 
@@ -46,20 +46,20 @@ export default {
 	 * Closes selected tab
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	closeTab (action, next) {
+	closeTab (action, dispatch) {
 		let { id } = action;
 
 		if (id) {
 			id = Number.parseInt(id);
 
 			chrome.tabs.remove(id, window => {
-				next(action);
+				dispatch(action);
 			});
 		}
 		else {
-			next({ type: ActionTypes.TAB_ID_NOT_FOUND });
+			dispatch({ type: ActionTypes.TAB_ID_NOT_FOUND });
 		}
 	},
 
@@ -67,9 +67,9 @@ export default {
 	 * Close all tabs
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	closeAllTabs (action, next) {
+	closeAllTabs (action, dispatch) {
 		let { items } = action;
 
 		if (items) {
@@ -80,12 +80,12 @@ export default {
 					url: 'chrome://newtab'
 				},
 				tab => {
-					next(action);
+					dispatch(action);
 				});
 			});
 		}
 		else {
-			next({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
+			dispatch({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
 		}
 	},
 
@@ -93,20 +93,20 @@ export default {
 	 * Discard all tabs
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	discardTabs (action, next) {
+	discardTabs (action, dispatch) {
 		let { items } = action;
 
 		if (items) {
 			for (let tab of items) {
 				chrome.tabs.discard(tab.id, tab => {
-					next(action);
+					dispatch(action);
 				});
 			}
 		}
 		else {
-			next({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
+			dispatch({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
 		}
 	},
 
@@ -114,9 +114,9 @@ export default {
 	 * Open browser extensions
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	openExtensions (action, next) {
+	openExtensions (action, dispatch) {
 		let url = 'chrome://extensions/';
 
 		chrome.tabs.query({ url }, ([ tab ]) => {
@@ -125,12 +125,12 @@ export default {
 					tabs: [ tab.index ]
 				},
 				window => {
-					next(action);
+					dispatch(action);
 				});
 			}
 			else {
 				chrome.tabs.create({ url }, tab => {
-					next(action);
+					dispatch(action);
 				});
 			}
 		});
@@ -140,9 +140,9 @@ export default {
 	 * Show credentials
 	 *
 	 * @param {Object} action
-	 * @param {Function} next
+	 * @param {Function} dispatch
 	 */
-	showCredentials (action, next) {
-		next(action);
+	showCredentials (action, dispatch) {
+		dispatch(action);
 	}
 };

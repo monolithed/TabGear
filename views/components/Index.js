@@ -17,7 +17,7 @@ export default class Index extends Component {
 			this.showCredentials.bind(this);
 
 		this.closeAllTabs =
-			this.closeAllTabs.bind(this);
+			this.showCredentials.bind(this);
 	}
 
 	/**
