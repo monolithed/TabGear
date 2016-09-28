@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import './List.css';
+import './index.css';
 
-class List extends Component {
+class Tabs extends Component {
 	constructor (properties) {
 		super(properties);
 
@@ -82,9 +82,9 @@ class List extends Component {
 	}
 }
 
-List.propTypes = {
+Tabs.propTypes = {
 	items  : PropTypes.array.isRequired,
 	actions: PropTypes.object.isRequired
 };
 
-export default List;
+export default Tabs;

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
-import List from './List';
-import './Index.css';
+import Tabs from './Tabs';
+import './index.css';
 
 export default class Index extends Component {
 	constructor (properties) {
@@ -83,7 +83,7 @@ export default class Index extends Component {
 					</a>
 				</div>
 
-				<List items={ items } actions={ actions } />
+				<Tabs items={ items } actions={ actions } />
 
 				<div className="tg-footer">
 					<a className="tg-link tg-link_block" href="#" onClick={ this.showCredentials }>
