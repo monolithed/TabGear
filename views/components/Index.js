@@ -28,7 +28,7 @@ export default class Index extends Component {
 	closeAllTabs (event) {
 		let { items, actions } = this.props;
 
-		actions.closeAllTabs(items);
+		actions.Index.closeAllTabs(items);
 		event.preventDefault();
 	}
 
@@ -40,7 +40,7 @@ export default class Index extends Component {
 	discardTabs (event) {
 		let { items, actions } = this.props;
 
-		actions.discardTabs(items);
+		actions.Index.discardTabs(items);
 		event.preventDefault();
 	}
 
@@ -52,7 +52,7 @@ export default class Index extends Component {
 	showCredentials (event) {
 		let { actions } = this.props;
 
-		actions.showCredentials();
+		actions.Index.showCredentials();
 		event.preventDefault();
 	}
 
@@ -64,7 +64,7 @@ export default class Index extends Component {
 	openExtensions (event) {
 		let { actions } = this.props;
 
-		actions.openExtensions();
+		actions.Index.openExtensions();
 		event.preventDefault();
 	}
 
@@ -83,7 +83,7 @@ export default class Index extends Component {
 					</a>
 				</div>
 
-				<Tabs items={ items } actions={ actions } />
+				<Tabs items={ items } actions={ actions.Tabs } />
 
 				<div className="tg-footer">
 					<a className="tg-link tg-link_block" href="#" onClick={ this.showCredentials }>

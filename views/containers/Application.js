@@ -2,14 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Index from '../components/Index';
-import actions from '../actions';
+import Components from '../components/Index';
+import { Tabs, Index } from '../actions';
 
 class Application extends Component {
 	constructor (props) {
 		super(props);
 
-		this.props.actions.showTabs();
+		this.props.Tabs.showTabs();
 	}
 
 	showErrors () {
@@ -23,11 +23,12 @@ class Application extends Component {
 	}
 
 	render () {
-		let { items, actions } = this.props;
+		let { items, Tabs, Index } = this.props;
+		let actions = { Tabs, Index };
 
 		return (
 			<div>
-				<Index items={ items } actions={ actions } />
+				<Components items={ items } actions={ actions } />
 
 				{ this.showErrors() }
 			</div>
@@ -36,17 +37,22 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	items  : PropTypes.array.isRequired,
-	actions: PropTypes.object.isRequired
+	items: PropTypes.array.isRequired
 };
 
 let mapStateToProps = (state, properties) => {
-	return { items: state.items };
+	let { items, about } = state;
+
+	return {
+		items,
+		// about
+	};
 };
 
 let mapDispatchToProps = dispatch => {
 	return {
-		actions: bindActionCreators(actions, dispatch)
+		Index: bindActionCreators(Index, dispatch),
+		Tabs: bindActionCreators(Tabs, dispatch)
 	};
 };
 

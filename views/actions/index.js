@@ -1,17 +1,6 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
-export default {
-	/**
-	 * Show tabs
-	 *
-	 * @returns {Object}
-	 */
-	showTabs () {
-		return {
-			type: ActionTypes.SHOW_TABS
-		};
-	},
-
+export const Index = {
 	/**
 	 * Show errors
 	 *
@@ -24,28 +13,24 @@ export default {
 	},
 
 	/**
-	 * Highlights the given tabs
+	 * Open browser extensions
 	 *
-	 * @param {string} index — the tab index to highlight
 	 * @returns {Object}
 	 */
-	switchTab (index) {
+	openExtensions () {
 		return {
-			type: ActionTypes.SWITCH_TAB,
-			index
+			type: ActionTypes.OPEN_EXTENSIONS
 		};
 	},
 
 	/**
-	 * Closes selected tab
+	 * Show credentials
 	 *
-	 * @param {string} id — the tab id to close
 	 * @returns {Object}
 	 */
-	closeTab (id) {
+	showCredentials () {
 		return {
-			type: ActionTypes.CLOSE_TAB,
-			id
+			type: ActionTypes.SHOW_CREDENTIALS
 		};
 	},
 
@@ -73,29 +58,8 @@ export default {
 			type: ActionTypes.DISCARD_TABS,
 			items
 		};
-	},
-
-	/**
-	 * Open browser extensions
-	 *
-	 * @returns {Object}
-	 */
-	openExtensions () {
-		return {
-			type: ActionTypes.OPEN_EXTENSIONS
-		};
-	},
-
-	/**
-	 * Show credentials
-	 *
-	 * @returns {Object}
-	 */
-	showCredentials () {
-		return {
-			type: ActionTypes.SHOW_CREDENTIALS
-		};
 	}
 };
 
+export * from './Tabs';
 export * from '../constants/ActionTypes';
