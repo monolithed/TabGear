@@ -19,7 +19,7 @@ body {
 }
 
 	.tg-link_block {
-
+		margin-left: 10px;
 	}
 
 .tg-body {
@@ -41,7 +41,15 @@ body {
 		border: #ddd;
 	}
 
+	.tg-header,
+	.tg-footer {
+		text-align: right;
+	}
+
 	.tg-header {
 		margin: 15px;
-		text-align: right;
+	}
+
+	.tg-footer {
+		margin-top: -30px;
 	}
