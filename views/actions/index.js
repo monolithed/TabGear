@@ -60,6 +60,41 @@ export default {
 			type: ActionTypes.CLOSE_ALL_TABS,
 			items
 		};
+	},
+
+	/**
+	 * Discards the tabs from memory
+	 *
+	 * @param {Array} items — the list of tabs to close
+	 * @returns {Object}
+	 */
+	discardTabs (items) {
+		return {
+			type: ActionTypes.DISCARD_TABS,
+			items
+		};
+	},
+
+	/**
+	 * Open browser extensions
+	 *
+	 * @returns {Object}
+	 */
+	openExtensions () {
+		return {
+			type: ActionTypes.OPEN_EXTENSIONS
+		};
+	},
+
+	/**
+	 * Show credentials
+	 *
+	 * @returns {Object}
+	 */
+	showCredentials () {
+		return {
+			type: ActionTypes.SHOW_CREDENTIALS
+		};
 	}
 };
 

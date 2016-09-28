@@ -7,30 +7,49 @@ export default class Index extends Component {
 	constructor (properties) {
 		super(properties);
 
-		this.closeAllTabs = this.closeAllTabs.bind(this);
+		this.openExtensions =
+			this.openExtensions.bind(this);
+
+		this.discardTabs =
+			this.discardTabs.bind(this);
+
+		this.showCredentials =
+			this.showCredentials.bind(this);
 	}
 
 	/**
-	 * Close all tabs
+	 * Discard all tabs
 	 *
 	 * @param {Event} event
 	 */
-	closeAllTabs (event) {
+	discardTabs (event) {
 		let { items, actions } = this.props;
 
-		actions.closeAllTabs(items);
+		actions.discardTabs(items);
 		event.preventDefault();
 	}
 
 	/**
-	 * Close all tabs
+	 * Show credentials
+	 *
+	 * @param {Event} event
+	 */
+	showCredentials (event) {
+		let { actions } = this.props;
+
+		actions.showCredentials();
+		event.preventDefault();
+	}
+
+	/**
+	 * Open browser extensions
 	 *
 	 * @param {Event} event
 	 */
 	openExtensions (event) {
-		let { items, actions } = this.props;
+		let { actions } = this.props;
 
-		actions.closeAllTabs(items);
+		actions.openExtensions();
 		event.preventDefault();
 	}
 
@@ -52,12 +71,16 @@ export default class Index extends Component {
 				<List items={ items } actions={ actions } />
 
 				<div className="tg-footer">
-					<a className="tg-link tg-link_block" href="chrome://extensions" target="_blank">
+					<a className="tg-link tg-link_block" href="#" onClick={ this.openExtensions }>
 						Open extensions
 					</a>
 
-					<a className="tg-link tg-link_block" href="#" onClick={ this.closeAllTabs }>
-						Discard memory
+					<a className="tg-link tg-link_block" href="#" onClick={ this.discardTabs }>
+						Discard tabs
+					</a>
+
+					<a className="tg-link tg-link_block" href="#" onClick={ this.showCredentials }>
+						About
 					</a>
 				</div>
 			</div>

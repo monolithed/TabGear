@@ -88,5 +88,48 @@ export default {
 		else {
 			next({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
 		}
+	},
+
+	/**
+	 * Discard all tabs
+	 *
+	 * @param {Object} action
+	 * @param {Function} next
+	 */
+	discardTabs (action, next) {
+		let { items } = action;
+
+		if (items) {
+			for (let item of items) {
+				chrome.tabs.discard(tabs, tab => {
+					next(action);
+				});
+			}
+		}
+		else {
+			next({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
+		}
+	},
+
+	/**
+	 * Open browser extensions
+	 *
+	 * @param {Object} action
+	 * @param {Function} next
+	 */
+	openExtensions (action, next) {
+		chrome.tabs.create({ url: 'chrome://extensions' }, tab => {
+			next(action);
+		});
+	},
+
+	/**
+	 * Show credentials
+	 *
+	 * @param {Object} action
+	 * @param {Function} next
+	 */
+	showCredentials (action, next) {
+		next(action);
 	}
 };

@@ -5,8 +5,11 @@ class List extends Component {
 	constructor (properties) {
 		super(properties);
 
-		this.switchTab = this.switchTab.bind(this);
-		this.closeTab = this.closeTab.bind(this);
+		this.switchTab =
+			this.switchTab.bind(this);
+
+		this.closeTab =
+			this.closeTab.bind(this);
 	}
 
 	/**

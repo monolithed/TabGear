@@ -9,7 +9,15 @@ export default {
 	 * @returns {*}
 	 */
 	showTabs (state = [], action) {
-		return state;
+		let { type, error } = action;
+
+		switch (type) {
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
+
+			default:
+				return state;
+		}
 	},
 
 	/**
@@ -42,15 +50,15 @@ export default {
 	 * @returns {*}
 	 */
 	switchTab (state = '', action) {
-		let { type, index } = action;
+		let { type, index, error } = action;
 
 		switch (type) {
 			case ActionTypes.SWITCH_TAB:
 				return index;
 
 			case ActionTypes.TAB_INDEX_NOT_FOUND:
-			case ActionTypes.TAB_ID_EXCEPTION:
-				return type;
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
 
 			default:
 				return state;
@@ -65,12 +73,13 @@ export default {
 	 * @returns {*}
 	 */
 	closeTab (state = '', action) {
-		let { type, id } = action;
+		let { type, id, error } = action;
 
 		switch (type) {
 			case ActionTypes.TAB_ID_NOT_FOUND:
 			case ActionTypes.TAB_CLOSE_EXCEPTION:
-				return type;
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
 
 			case ActionTypes.CLOSE_TAB:
 				return id;
@@ -88,15 +97,82 @@ export default {
 	 * @returns {*}
 	 */
 	closeAllTabs (state = [], action) {
-		let { type, items } = action;
+		let { type, items, error } = action;
 
 		switch (type) {
-			case ActionTypes.TAB_ID_NOT_FOUND:
-			case ActionTypes.TAB_CLOSE_EXCEPTION:
-				return type;
+			case ActionTypes.TAB_ITEMS_NOT_FOUND:
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
 
 			case ActionTypes.CLOSE_ALL_TABS:
 				return items;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
+	 * Discards the tabs from memory
+	 *
+	 * @param {Array} state — the list of tabs to discard
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	discardTabs (state = [], action) {
+		let { type, items, error } = action;
+
+		switch (type) {
+			case ActionTypes.TAB_ITEMS_NOT_FOUND:
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
+
+			case ActionTypes.DISCARD_TABS:
+				return items;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
+	 * Open browser extensions
+	 *
+	 * @param {undefined} state
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	openExtensions (state, action) {
+		let { type, items, error } = action;
+
+		switch (type) {
+			case ActionTypes.TAB_CLOSE_EXCEPTION:
+				return error;
+
+			case ActionTypes.OPEN_EXTENSIONS:
+				return true;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
+	 * Show credentials
+	 *
+	 * @param {undefined} state
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	showCredentials (state, action) {
+		let { type, error} = action;
+
+		switch (type) {
+			case ActionTypes.UNKNOWN_ERROR:
+				return error;
+
+			case ActionTypes.SHOW_CREDENTIALS:
+				return true;
 
 			default:
 				return state;
