@@ -3,13 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Components from '../components/Index';
-import { Tabs, Index } from '../actions';
+import * as Actions from '../actions';
 
 class Application extends Component {
 	constructor (props) {
 		super(props);
 
-		this.props.Tabs.showTabs();
+		this.props.actions.Tabs.showTabs();
 	}
 
 	showErrors () {
@@ -23,8 +23,8 @@ class Application extends Component {
 	}
 
 	render () {
-		let { items, Tabs, Index } = this.props;
-		let actions = { Tabs, Index };
+		let { items, actions } = this.props;
+		// let actions = { Tabs, Index };
 
 		return (
 			<div>
@@ -50,10 +50,13 @@ let mapStateToProps = (state, properties) => {
 };
 
 let mapDispatchToProps = dispatch => {
-	return {
-		Index: bindActionCreators(Index, dispatch),
-		Tabs: bindActionCreators(Tabs, dispatch)
-	};
+	let actions = {};
+
+	for (let name of Object.keys(Actions)) {
+		actions[name] = bindActionCreators(Actions[name], dispatch);
+	}
+
+	return { actions };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Application);

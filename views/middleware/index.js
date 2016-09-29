@@ -1,5 +1,5 @@
 import camelCase from 'camelcase';
-import * as ActionTypes from '../actions';
+import * as ActionTypes from '../constants/ActionTypes';
 import { items } from '../stubs';
 
 import api from './api';

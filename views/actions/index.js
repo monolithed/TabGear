@@ -62,4 +62,4 @@ export const Index = {
 };
 
 export * from './Tabs';
-export * from '../constants/ActionTypes';
+
