@@ -6,7 +6,6 @@ import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
 
-
 export default class Index extends Component {
 	constructor (properties) {
 		super(properties);
@@ -16,7 +15,7 @@ export default class Index extends Component {
 		let { store, actions, view } = this.props;
 
 		return <div className="tg-index">
-					<Title total={ store.tabs.length } />
+					<Title store={ store } view={ view } />
 					<Header actions={ actions } store={ store} />
 					<Body store={ store} actions={ actions} view={ view } />
 					<Footer store={ store} actions={ actions} />

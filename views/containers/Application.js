@@ -11,7 +11,9 @@ class Application extends Component {
 	constructor (props) {
 		super(props);
 
-		this.props.actions.Tabs.showTabs();
+		let { store, actions, view } = this.props;
+
+		actions.Tabs.showTabs(store.tabs);
 	}
 
 	render () {
