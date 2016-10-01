@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import events from './events';
-import items from './items';
 
-export default combineReducers({ ...items, ...events });
+import Tabs from './Tabs';
+import Layout from './Layout';
+
+export default combineReducers({ ...Tabs, ...Layout });

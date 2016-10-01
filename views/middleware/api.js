@@ -13,8 +13,8 @@ export default {
 	 * @param {Function} dispatch
 	 */
 	showTabs (action, dispatch) {
-		chrome.tabs.query({}, items => {
-			dispatch({ type: ActionTypes.SHOW_TABS, items });
+		chrome.tabs.query({}, tabs => {
+			dispatch({ type: ActionTypes.SHOW_TABS, tabs });
 		});
 	},
 
@@ -70,10 +70,10 @@ export default {
 	 * @param {Function} dispatch
 	 */
 	closeAllTabs (action, dispatch) {
-		let { items } = action;
+		let { tabs } = action;
 
-		if (items) {
-			let tabs = items.map(({ id }) => id);
+		if (tabs) {
+			let tabs = tabs.map(({ id }) => id);
 
 			chrome.tabs.remove(tabs, window => {
 				chrome.tabs.create({
@@ -96,10 +96,10 @@ export default {
 	 * @param {Function} dispatch
 	 */
 	discardTabs (action, dispatch) {
-		let { items } = action;
+		let { tabs } = action;
 
-		if (items) {
-			for (let tab of items) {
+		if (tabs) {
+			for (let tab of tabs) {
 				chrome.tabs.discard(tab.id, tab => {
 					dispatch(action);
 				});

@@ -1,4 +1,4 @@
-export const items = [
+export const tabs = [
 	{
 		title : 'Google Maps',
 		url   : 'https://maps.google.com',

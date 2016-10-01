@@ -36,32 +36,6 @@ export const Tabs = {
 			type: ActionTypes.CLOSE_TAB,
 			id
 		};
-	},
-
-	/**
-	 * Close all tabs
-	 *
-	 * @param {Array} items — the list of tabs to close
-	 * @returns {Object}
-	 */
-	closeAllTabs (items) {
-		return {
-			type: ActionTypes.CLOSE_ALL_TABS,
-			items
-		};
-	},
-
-	/**
-	 * Discards the tabs from memory
-	 *
-	 * @param {Array} items — the list of tabs to close
-	 * @returns {Object}
-	 */
-	discardTabs (items) {
-		return {
-			type: ActionTypes.DISCARD_TABS,
-			items
-		};
-	},
+	}
 };
 

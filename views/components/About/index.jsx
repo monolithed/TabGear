@@ -7,7 +7,7 @@ class About extends Component {
 	}
 
 	render () {
-
+		return <div>monolithed@gmail.com</div>;
 	}
 }
 

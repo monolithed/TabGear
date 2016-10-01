@@ -1,11 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 
 import Tabs from './Tabs';
+import About from './About';
+import Error from './Error';
 import './index.css';
 
 export default class Index extends Component {
 	constructor (properties) {
 		super(properties);
+
+		this.state = { view: 'tabs' };
 
 		this.openExtensions =
 			this.openExtensions.bind(this);
@@ -17,7 +21,7 @@ export default class Index extends Component {
 			this.showCredentials.bind(this);
 
 		this.closeAllTabs =
-			this.showCredentials.bind(this);
+			this.closeAllTabs.bind(this);
 	}
 
 	/**
@@ -26,9 +30,9 @@ export default class Index extends Component {
 	 * @param {Event} event
 	 */
 	closeAllTabs (event) {
-		let { items, actions } = this.props;
+		let { tabs, actions } = this.props;
 
-		actions.Index.closeAllTabs(items);
+		actions.Layout.closeAllTabs(tabs);
 		event.preventDefault();
 	}
 
@@ -38,9 +42,9 @@ export default class Index extends Component {
 	 * @param {Event} event
 	 */
 	discardTabs (event) {
-		let { items, actions } = this.props;
+		let { tabs, actions } = this.props;
 
-		actions.Index.discardTabs(items);
+		actions.Layout.discardTabs(tabs);
 		event.preventDefault();
 	}
 
@@ -52,7 +56,9 @@ export default class Index extends Component {
 	showCredentials (event) {
 		let { actions } = this.props;
 
-		actions.Index.showCredentials();
+		this.setState({ view: 'about' });
+
+		actions.Layout.showCredentials();
 		event.preventDefault();
 	}
 
@@ -64,17 +70,33 @@ export default class Index extends Component {
 	openExtensions (event) {
 		let { actions } = this.props;
 
-		actions.Index.openExtensions();
+		actions.Layout.openExtensions();
 		event.preventDefault();
 	}
 
+	getComponent () {
+		let { tabs, actions, view } = this.props;
+
+		switch (view) {
+			case 'load':
+			case 'tabs':
+				return <Tabs tabs={ tabs } actions={ actions.Tabs } />;
+
+			case 'about':
+				return <About actions={ actions.About } />;
+
+			default:
+				return <Error actions={ actions.Error } />;
+		}
+	}
+
 	render () {
-		let { items, actions } = this.props;
+		let { tabs, actions, view } = this.props;
 
 		return (
 			<div className="tg-body">
 				<div className="tg-title">
-					Tab Gear found { items.length } active tabs:
+					Tab Gear found { tabs.length } active tabs:
 				</div>
 
 				<div className="tg-header">
@@ -83,7 +105,7 @@ export default class Index extends Component {
 					</a>
 				</div>
 
-				<Tabs items={ items } actions={ actions.Tabs } />
+				{ this.getComponent() }
 
 				<div className="tg-footer">
 					<a className="tg-link tg-link_block" href="#" onClick={ this.showCredentials }>
@@ -104,6 +126,6 @@ export default class Index extends Component {
 }
 
 Index.propTypes = {
-	items  : PropTypes.array.isRequired,
+	tabs  : PropTypes.array.isRequired,
 	actions: PropTypes.object.isRequired
 };

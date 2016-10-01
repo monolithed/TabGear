@@ -46,10 +46,10 @@ class Tabs extends Component {
 	 * @param {string} name
 	 */
 	showTabs (name) {
-		let { items } = this.props;
+		let { tabs } = this.props;
 
-		return items.map((items, key) => {
-			let { id, index, title, incognito, favIconUrl, highlighted } = items;
+		return tabs.map((tabs, key) => {
+			let { id, index, title, incognito, favIconUrl, highlighted } = tabs;
 
 			return (
 				<li className={
@@ -83,7 +83,7 @@ class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-	items  : PropTypes.array.isRequired,
+	tabs  : PropTypes.array.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

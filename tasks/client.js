@@ -6,6 +6,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
 
 const DIR_NAME = path.join(__dirname, '..');
 
@@ -29,6 +30,7 @@ module.exports = {
 	plugins: [
 		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.optimize.DedupePlugin(),
+		new UnusedFilesWebpackPlugin(),
 
 		new Webpack.DefinePlugin({
 			'process.env': {

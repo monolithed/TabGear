@@ -1,6 +1,6 @@
 import camelCase from 'camelcase';
 import * as ActionTypes from '../constants/ActionTypes';
-import { items } from '../stubs';
+import { tabs } from '../stubs';
 
 import api from './api';
 
@@ -8,7 +8,7 @@ export default store => dispatch => action => {
 	let { type } = action;
 
 	if (process.env.NODE_ENV !== 'production') {
-		return dispatch({ items, ...action });
+		return dispatch({ tabs, ...action });
 	}
 
 	try {

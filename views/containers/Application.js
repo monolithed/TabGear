@@ -12,41 +12,21 @@ class Application extends Component {
 		this.props.actions.Tabs.showTabs();
 	}
 
-	showErrors () {
-		let { error } = this.props;
-
-		if (!error) {
-			return null;
-		}
-
-		return (<b>{ error }</b>);
-	}
-
 	render () {
-		let { items, actions } = this.props;
-		// let actions = { Tabs, Index };
+		let { tabs, actions, view } = this.props;
 
-		return (
-			<div>
-				<Components items={ items } actions={ actions } />
-
-				{ this.showErrors() }
-			</div>
-		);
+		return <Components tabs={ tabs } view={ view } actions={ actions } />;
 	}
 }
 
 Application.propTypes = {
-	items: PropTypes.array.isRequired
+	tabs: PropTypes.array.isRequired
 };
 
 let mapStateToProps = (state, properties) => {
-	let { items, about } = state;
+	let { loadData: tabs, view } = state;
 
-	return {
-		items,
-		// about
-	};
+	return { tabs, view };
 };
 
 let mapDispatchToProps = dispatch => {
