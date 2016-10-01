@@ -1,0 +1,14 @@
+.tg-link,
+.tg-link:active,
+.tg-link:visited {
+	color: #6d6d6d;
+	font: normal 12px/18px helvetica, arial, sans-serif;
+}
+
+.tg-header-link:hover {
+	color: #6f6f6f;
+}
+
+	.tg-link_block {
+		margin-left: 10px;
+	}

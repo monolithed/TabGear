@@ -2,54 +2,48 @@
 	box-sizing: border-box;
 }
 
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
 body {
 	background-color: #e9e9e9;
 	width: 450px;
 }
 
-.tg-link,
-.tg-link:active,
-.tg-link:visited {
-	color: #6d6d6d;
-	font: normal 12px/18px helvetica, arial, sans-serif;
-}
-
-.tg-header-link:hover {
-	color: #6f6f6f;
-}
-
-	.tg-link_block {
-		margin-left: 10px;
-	}
-
-.tg-body {
+.tg-index {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 14px;
+	line-height: 21px;
 	margin: 0 auto;
 	width: 90%;
 }
 
-	.tg-title {
-		background-color: #eee;
-		border-radius: 5px;
-		color: #666;
-		font-size: 20px;
-		margin: 25px auto 0 auto;
-		padding: 10px;
+.tg-panel {
+	margin: 15px 0;
+	text-align: right;
+}
+
+.tg-list {
+	line-height: 22px;
+	padding-left: 25px;
+}
+	.tg-list li {
+		display: flex;
 	}
 
-	.tg-title,
-	.tg-list {
-		border: #ddd;
+	.tg-list li:before {
+		color: #565050;
+		content: '\2714 ';
+		padding-right: 10px;
 	}
 
-	.tg-header,
-	.tg-footer {
-		text-align: right;
+	.tg-block {
+		margin-bottom: 15px;
 	}
 
-	.tg-header {
-		margin: 15px;
-	}
-
-	.tg-footer {
-		margin-top: -30px;
+	.tg-block_small {
+		font-size: 13px;
 	}

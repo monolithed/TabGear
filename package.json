@@ -38,6 +38,7 @@
 		"react-router-redux": "^4.0.5",
 
 		"redux": "^3.0.5",
+		"debug": "^2.2.0",
 		"redux-logger": "^2.2.1"
 	},
 

@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Components from '../components/Index';
 import * as Actions from '../actions';
 
+window.localStorage.debug = 'tg:*';
+
 class Application extends Component {
 	constructor (props) {
 		super(props);
@@ -13,20 +15,20 @@ class Application extends Component {
 	}
 
 	render () {
-		let { tabs, actions, view } = this.props;
+		let { store, actions, view } = this.props;
 
-		return <Components tabs={ tabs } view={ view } actions={ actions } />;
+		return <Components store={ store } view={ view } actions={ actions } />;
 	}
 }
 
 Application.propTypes = {
-	tabs: PropTypes.array.isRequired
+	store: PropTypes.object.isRequired
 };
 
 let mapStateToProps = (state, properties) => {
 	let { loadData: tabs, view } = state;
 
-	return { tabs, view };
+	return { store: { tabs }, view };
 };
 
 let mapDispatchToProps = dispatch => {
