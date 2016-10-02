@@ -11,13 +11,21 @@ export default class Index extends Component {
 		super(properties);
 	}
 
+	/**
+	 * Get children components
+	 *
+	 * @returns {Array<Component>}
+	 */
+	getComponents () {
+		let component = [Title, Header, Body, Footer];
+
+		return component.map((Component, key) => {
+			return <Component { ...this.props } key={ key } />;
+		});
+	}
+
 	render () {
-		return <div className="tg-index">
-					<Title { ...this.props } />
-					<Header { ...this.props } />
-					<Body { ...this.props } />
-					<Footer { ...this.props } />
-				</div>;
+		return <div className="tg-index"> { this.getComponents() } </div>;
 	}
 }
 
