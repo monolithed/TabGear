@@ -3,7 +3,9 @@ import './index.css';
 
 class Search extends Component {
 	render () {
-		return <div> <input type="text" placeholder="Search tab..." /> </div>;
+		return <div>
+			<input className="tg-search" type="text" placeholder="Search..." autoFocus="autoFocus" />
+		</div>;
 	}
 }
 

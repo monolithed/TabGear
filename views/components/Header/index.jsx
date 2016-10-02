@@ -72,7 +72,7 @@ export default class Header extends Component {
 					      text="Back" filter={ this.showBack() } mods={[ 'back' ]} />
 
 					<Link onClick={ this.closeAllTabs }
-					      text="Close all tabs" mods={[ 'block' ]} index="-1" />
+					      text="Close all tabs" mods={[ 'block' ]} />
 				</div>;
 	}
 }

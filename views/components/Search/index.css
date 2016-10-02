@@ -1,0 +1,17 @@
+.tg-search {
+	color: #555;
+	font: normal 14px/22px Helvetica, Arial, sans-serif;
+	padding: 15px;
+	border: none;
+	outline: none;
+	transition:
+		box-shadow .2s cubic-bezier(.4, 0, 1, 1),
+		background-color .2s cubic-bezier(.4, 0, .2, 1),
+		color .2s cubic-bezier(.4, 0, .2, 1);
+	width: 100%;
+	will-change: box-shadow;
+}
+
+.tg-search:focus {
+	box-shadow: 0 14px 18px -4px #373a40;
+}
