@@ -7,7 +7,7 @@ class About extends Component {
 	}
 
 	render () {
-		return <div className="tg-about">
+		return <div className="tg-box">
 			<p className="tg-block">Tag Gears is an extension for Google Chrome that provides an intuitive tabs management</p>
 			<p className="tg-block">Some of the features that will come handy:</p>
 

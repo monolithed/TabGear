@@ -1,5 +1,6 @@
 // General events
 export const SHOW_TABS = 'SHOW_TABS';
+export const SHOW_DIALOG = 'SHOW_DIALOG';
 export const SHOW_ERRORS = 'SHOW_ERRORS';
 export const SWITCH_TAB = 'SWITCH_TAB';
 export const CLOSE_TAB = 'CLOSE_TAB';
@@ -16,6 +17,7 @@ export const TAB_OPEN_EXCEPTION = 'TAB_OPEN_EXCEPTION';
 export const TAB_CLOSE_EXCEPTION = 'TAB_CLOSE_EXCEPTION';
 export const ITEMS_LOCKED = 'ITEMS_LOCKED';
 export const ITEMS_FAILED = 'ITEMS_FAILED';
+export const IGNORE_TAB_DIALOG = 'IGNORE_TAB_DIALOG';
 
 export const RESET_ERRORS = 'RESET_ERRORS';
 export const CHROME_API_EXCEPTION = 'CHROME_API_EXCEPTION';

@@ -40,6 +40,9 @@ export default {
 			case ActionTypes.SHOW_CREDENTIALS:
 				return 'About';
 
+			case ActionTypes.SHOW_DIALOG:
+				return 'Dialog';
+
 			case ActionTypes.SHOW_ERRORS:
 				return 'Error';
 
@@ -128,6 +131,44 @@ export default {
 
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
+				return true;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
+	 * Show dialog
+	 *
+	 * @param {Array} state
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	showDialog (state = [], action) {
+		let { type, tabs, error} = action;
+
+		switch (type) {
+			case ActionTypes.SHOW_DIALOG:
+				return true;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
+	 * Ignore the tab dialog
+	 *
+	 * @param {boolean} state
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	ignoreTabDialog (state = false, action) {
+		let { type, tabs, error} = action;
+
+		switch (type) {
+			case ActionTypes.IGNORE_TAB_DIALOG:
 				return true;
 
 			default:

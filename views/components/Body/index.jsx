@@ -4,11 +4,12 @@ import './index.css';
 import Tabs from '../Tabs';
 import Loading from '../Loading';
 import About from '../About';
+import Dialog from '../Dialog';
 import Error from '../Error';
 
 class Body extends Component {
 	getComponent () {
-		let components = [Loading, Tabs, About, Error],
+		let components = [Loading, Tabs, Dialog, About, Error],
 			component = null;
 
 		components.forEach((Component, key) => {

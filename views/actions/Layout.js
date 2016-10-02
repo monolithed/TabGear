@@ -15,6 +15,32 @@ export const Layout = {
 	},
 
 	/**
+	 * Ignore the tab dialog
+	 *
+	 * @param {boolean} state
+	 * @returns {Object}
+	 */
+	ignoreTabDialog (state = false) {
+		return {
+			type: ActionTypes.IGNORE_TAB_DIALOG,
+			state
+		};
+	},
+
+	/**
+	 * Show the dialog to prevent closing multiple tabs
+	 *
+	 * @param {Array} tabs — the list of tabs to close
+	 * @returns {Object}
+	 */
+	showDialog (tabs) {
+		return {
+			type: ActionTypes.SHOW_DIALOG,
+			tabs
+		};
+	},
+
+	/**
 	 * Open browser extensions
 	 *
 	 * @returns {Object}

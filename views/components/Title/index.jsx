@@ -10,6 +10,9 @@ export default class Title extends Component {
 			case 'Error':
 				return 'Error';
 
+			case 'Dialog':
+				return 'Warning';
+
 			case 'Loading':
 				return 'Loading...';
 

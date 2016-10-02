@@ -26,6 +26,58 @@ body {
 	text-align: right;
 }
 
+.tg-box {
+	padding: 15px;
+}
+
+.tg-button {
+	display: inline-block;
+	background-color: #2196F3;
+	box-shadow:
+			0 2px 2px 0 rgba(0, 0, 0, .14),
+			0 3px 1px -2px rgba(0, 0, 0, .2),
+			0 1px 5px 0 rgba(0, 0, 0, .12);
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	font: 500 14px/36px "Roboto", "Helvetica", "Arial", sans-serif;
+	height: 36px;
+	letter-spacing: 0;
+	overflow: hidden;
+	outline: none;
+	padding: 0 16px;
+	position: relative;
+	margin: 0;
+	min-width: 64px;
+	text-transform: uppercase;
+	transition:
+		box-shadow .2s cubic-bezier(.4, 0, 1, 1),
+		background-color .2s cubic-bezier(.4, 0, .2, 1),
+		color .2s cubic-bezier(.4, 0, .2, 1);
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	will-change: box-shadow;
+}
+
+.tg-button:hover {
+	background: #169aff;
+	box-shadow:
+		0 2px 2px 0 rgba(113, 101, 101, 0.14),
+		0 3px 1px -2px rgba(0, 0, 0, .2),
+		0 1px 5px 0 rgb(191, 191, 191);
+}
+
+.tg-button:active {
+	background: #58acef;
+}
+
+.tg-label {
+	font-size: 13px;
+	padding-left: 4px;
+}
+
 .tg-list {
 	line-height: 22px;
 	padding-left: 25px;
