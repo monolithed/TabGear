@@ -12,3 +12,14 @@
 	.tg-link_block {
 		margin-left: 10px;
 	}
+
+	.tg-link_back {
+		display: block;
+		float: left;
+	}
+
+		.tg-link_back:before {
+			content: '\2190';
+			margin-right: 5px;
+			display: inline-block;
+		}

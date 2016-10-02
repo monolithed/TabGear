@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import './index.css';
 
-let Link = ({ text, filter, index, onClick }) => {
+let Link = ({ text, mods = [], filter, index, onClick }) => {
 	if (filter !== false) {
-		return <a className="tg-link tg-link_block" href="#" tabIndex={ index } onClick={ onClick }>
+		let classes = ['tg-link', ...mods].join(' tg-link_');
+
+		return <a className={ classes } href="#" tabIndex={ index } onClick={ onClick }>
 			{ text }
 		</a>;
 	}

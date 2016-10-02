@@ -26,7 +26,7 @@ export default {
 	/**
 	 * Detect view
 	 *
-	 * @param {string} state — the error string
+	 * @param {string} state — event
 	 * @param {Object} action
 	 * @returns {*}
 	 */

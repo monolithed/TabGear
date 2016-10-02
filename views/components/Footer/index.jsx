@@ -80,9 +80,9 @@ export default class Footer extends Component {
 	render () {
 		return <div className="tg-panel">
 					<Link onClick={ this.showCredentials } text="About" />
-					<Link onClick={ this.openExtensions } text="Open extensions" />
+					<Link onClick={ this.openExtensions } text="Open extensions" mods={[ 'block' ]} />
 					<Link onClick={ this.discardTabs } text="Discard tabs" filter={
-						this.filter('discard') } />
+						this.filter('discard') } mods={[ 'block' ]} />
 				</div>;
 	}
 }
