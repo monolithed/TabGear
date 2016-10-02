@@ -38,15 +38,25 @@ export default class Header extends Component {
 		event.preventDefault();
 	}
 
+	/**
+	 * Show the back link?
+	 *
+	 * @param {boolean}
+	 */
+	showBack () {
+		return this.props.view === 'about';
+	}
+
 	render () {
 		return <div className="tg-panel">
-					<Link onClick={ this.showTabs } text="Back" mods={[ 'back' ]} />
+					<Link onClick={ this.showTabs } text="Back" filter={ this.showBack() } mods={[ 'back' ]} />
 					<Link onClick={ this.closeAllTabs } text="Close all tabs" mods={[ 'block' ]} tabIndex="-1" />
 				</div>;
 	}
 }
 
 Header.propTypes = {
+	view   : PropTypes.string.isRequired,
 	store  : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };

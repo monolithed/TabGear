@@ -12,13 +12,11 @@ export default class Index extends Component {
 	}
 
 	render () {
-		let { store, actions, view } = this.props;
-
 		return <div className="tg-index">
-					<Title store={ store } view={ view } />
-					<Header actions={ actions } store={ store} />
-					<Body store={ store} actions={ actions} view={ view } />
-					<Footer store={ store} actions={ actions} />
+					<Title { ...this.props } />
+					<Header { ...this.props } />
+					<Body { ...this.props } />
+					<Footer { ...this.props } />
 				</div>;
 	}
 }
