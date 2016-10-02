@@ -39,7 +39,7 @@ class Dialog extends Component {
 		return <div className="tg-box tg-dialog">
 				<p className="tg-block">Are you sure you want to close all tabs?</p>
 
-				<button className="tg-button" onClick={ this.closeAllTabs }>Confirm</button>
+				<button className="tg-button" onClick={ this.closeAllTabs } autoFocus="autoFocus">Confirm</button>
 
 				<p className="tg-block">
 					<input type="checkbox" id="confirm" ref="ignore" onChange={ this.ignoreTabDialog } />
