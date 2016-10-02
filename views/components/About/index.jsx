@@ -18,6 +18,7 @@ class About extends Component {
 				<li>Displays the number of tabs you currently have open in all your Chrome windows.</li>
 				<li>Highlighting your current and incognito tabs.</li>
 				<li>Quick navigation with Tab and Shift+Tab keys.</li>
+				<li>Press Ctrl+Shift+T or ⌘+⇧+T keys to show or hide the browser action popup.</li>
 				<li>Closing tabs.</li>
 				<li>Closing all open tabs.</li>
 				<li>Quick opening your extensions.</li>

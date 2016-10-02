@@ -11,7 +11,7 @@ class Application extends Component {
 	constructor (props) {
 		super(props);
 
-		let { store, actions, view } = this.props;
+		let { store, actions } = this.props;
 
 		actions.Tabs.showTabs(store.tabs);
 	}
@@ -24,7 +24,9 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	store: PropTypes.object.isRequired
+	store  : PropTypes.object,
+	view   : PropTypes.string,
+	actions: PropTypes.object
 };
 
 let mapStateToProps = (state, properties) => {

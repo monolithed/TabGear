@@ -8,13 +8,11 @@ import Error from '../Error';
 
 class Body extends Component {
 	getComponent () {
-		let { view } = this.props;
-
 		let components = [Loading, Tabs, About, Error],
 			component = null;
 
 		components.forEach((Component, key) => {
-			if (view === Component.displayName) {
+			if (this.props.view === Component.displayName) {
 				component = <Component { ...this.props } key={key} />;
 			}
 		});

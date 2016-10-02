@@ -14,7 +14,10 @@ let Link = ({ text, mods = [], filter, index, onClick }) => {
 }
 
 Link.propTypes = {
-	text: PropTypes.string.isRequired,
+	text   : PropTypes.string.isRequired,
+	mods   : PropTypes.array,
+	filter : PropTypes.bool,
+	index  : PropTypes.number,
 	onClick: PropTypes.func.isRequired
 };
 

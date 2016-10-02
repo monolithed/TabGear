@@ -32,5 +32,13 @@
 		"default_popup": "./index.html"
 	},
 
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+T"
+			}
+		}
+	},
+
 	"content_security_policy": "default-src 'self' blob:; font-src * data: blob:; script-src 'self'; style-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'"
 }

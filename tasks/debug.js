@@ -42,16 +42,7 @@ module.exports = {
 			'process.env': {
 				NODE_ENV: JSON.stringify("development")
 			}
-		}),
-
-		/*
-		new HtmlWebpackPlugin({
-			title   : 'Ахмат-Хаджи Кадыров',
-			filename: 'views/index.html',
-			showErrors: true,
-			template: require('html-webpack-template'),
 		})
-		*/
 	],
 
 	module: {
