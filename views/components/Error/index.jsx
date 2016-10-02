@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import './index.css';
 
-let Error = ({ error }) => {
-	return <div> { error } </div>;
-};
+class Error extends Component {
+	render () {
+		return <div> Error! </div>;
+	}
+}
 
 Error.propTypes = {};
 

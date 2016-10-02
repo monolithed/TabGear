@@ -4,16 +4,16 @@ import './index.css';
 export default class Title extends Component {
 	getTitle (view, store) {
 		switch (view) {
-			case 'about':
+			case 'About':
 				return 'About';
 
-			case 'error':
+			case 'Error':
 				return 'Error';
 
-			case 'load':
+			case 'Loading':
 				return 'Loading...';
 
-			case 'tabs':
+			case 'Tabs':
 				return `${store.tabs.length} active tabs`;
 
 			default:

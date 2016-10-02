@@ -40,7 +40,7 @@ export default class Footer extends Component {
 	showCredentials (event) {
 		let { actions } = this.props;
 
-		this.setState({ view: 'about' });
+		this.setState({ view: 'About' });
 
 		actions.Layout.showCredentials();
 		event.preventDefault();

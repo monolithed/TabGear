@@ -2,29 +2,30 @@ import React, { Component, PropTypes } from 'react';
 
 import './index.css';
 import Tabs from '../Tabs';
+import Loading from '../Loading';
 import About from '../About';
 import Error from '../Error';
 
-let Body = ({ store, actions, view }) => {
-	let block = null
+class Body extends Component {
+	getComponent () {
+		switch (this.props.view) {
+			case 'Loading':
+				return <Loading { ...this.props } />;
 
-	switch (view) {
-		// case 'load':
-		// 	break
+			case 'Tabs':
+				return <Tabs { ...this.props } />;
 
-		case 'tabs':
-			block = <Tabs tabs={ store.tabs } actions={ actions.Tabs } />;
-			break;
+			case 'About':
+				return <About { ...this.props } />;
 
-		case 'about':
-			block = <About actions={ actions.About } />;
-			break;
-
-		default:
-			block = <Error actions={ actions.Error } />;
+			default:
+				return <Error { ...this.props } />;
+		}
 	}
 
-	return <div className="tg-body"> { block } </div>;
+	render () {
+		return <div className="tg-body"> { this.getComponent() } </div>;
+	}
 }
 
 Body.propTypes = {

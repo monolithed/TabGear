@@ -30,18 +30,18 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	view (state = 'load', action) {
+	view (state = 'Loading', action) {
 		let { type, error } = action;
 
 		switch (type) {
 			case ActionTypes.SHOW_TABS:
-				return 'tabs';
+				return 'Tabs';
 
 			case ActionTypes.SHOW_CREDENTIALS:
-				return 'about';
+				return 'About';
 
 			case ActionTypes.SHOW_ERRORS:
-				return 'error';
+				return 'Error';
 
 			default:
 				return state;

@@ -44,7 +44,7 @@ export default class Header extends Component {
 	 * @param {boolean}
 	 */
 	showBack () {
-		return this.props.view === 'about';
+		return this.props.view === 'About';
 	}
 
 	render () {

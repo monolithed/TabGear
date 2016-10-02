@@ -21,7 +21,7 @@ class Tabs extends Component {
 		let { index } = event.currentTarget.dataset;
 		let { actions } = this.props;
 
-		actions.switchTab(index);
+		actions.Tabs.switchTab(index);
 		event.preventDefault();
 	}
 
@@ -34,7 +34,7 @@ class Tabs extends Component {
 		let { id } = event.currentTarget.dataset;
 		let { actions } = this.props;
 
-		actions.closeTab(id);
+		actions.Tabs.closeTab(id);
 
 		event.stopPropagation()
 		event.preventDefault();
@@ -46,9 +46,9 @@ class Tabs extends Component {
 	 * @param {string} name
 	 */
 	showTabs (name) {
-		let { tabs } = this.props;
+		let { store } = this.props;
 
-		return tabs.map((tab, key) => {
+		return store.tabs.map((tab, key) => {
 			let { id, index, title, incognito, favIconUrl, highlighted } = tab;
 
 			let state = [name];
@@ -80,7 +80,7 @@ class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-	tabs  : PropTypes.array.isRequired,
+	store  : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 
