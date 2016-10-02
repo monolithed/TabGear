@@ -17,9 +17,9 @@ export default class Index extends Component {
 	 * @returns {Array<Component>}
 	 */
 	getComponents () {
-		let component = [Title, Header, Body, Footer];
+		let components = [Title, Header, Body, Footer];
 
-		return component.map((Component, key) => {
+		return components.map((Component, key) => {
 			return <Component { ...this.props } key={ key } />;
 		});
 	}

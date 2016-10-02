@@ -8,19 +8,18 @@ import Error from '../Error';
 
 class Body extends Component {
 	getComponent () {
-		switch (this.props.view) {
-			case 'Loading':
-				return <Loading { ...this.props } />;
+		let { view } = this.props;
 
-			case 'Tabs':
-				return <Tabs { ...this.props } />;
+		let components = [Loading, Tabs, About, Error],
+			component = null;
 
-			case 'About':
-				return <About { ...this.props } />;
+		components.forEach((Component, key) => {
+			if (view === Component.displayName) {
+				component = <Component { ...this.props } key={key} />;
+			}
+		});
 
-			default:
-				return <Error { ...this.props } />;
-		}
+		return component;
 	}
 
 	render () {
