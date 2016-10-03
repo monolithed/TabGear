@@ -13,6 +13,12 @@
 		margin-left: 10px;
 	}
 
+	.tg-link_external {
+		color: #1d82de;
+		font-size: 14px;
+		line-height: 21px;
+	}
+
 	.tg-link_back {
 		display: block;
 		float: left;

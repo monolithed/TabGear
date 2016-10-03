@@ -2,13 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import debug from 'debug';
 
 import './index.css';
+import * as ActionTypes from '../../constants/ActionTypes';
 import Link from '../Link';
 
 export default class Footer extends Component {
 	constructor (properties) {
 		super(...arguments);
 
-		this.state = { view: 'tabs' };
+		this.state = { type: ActionTypes.SHOW_TABS };
 
 		this.openExtensions =
 			this.openExtensions.bind(this);
@@ -40,7 +41,7 @@ export default class Footer extends Component {
 	showCredentials (event) {
 		let { actions } = this.props;
 
-		this.setState({ view: 'About' });
+		this.setState({ type: ActionTypes.SHOW_CREDENTIALS });
 
 		actions.Layout.showCredentials();
 		event.preventDefault();

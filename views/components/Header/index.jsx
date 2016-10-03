@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import './index.css';
+import * as ActionTypes from '../../constants/ActionTypes';
 import Link from '../Link';
 
 export default class Header extends Component {
@@ -64,7 +65,12 @@ export default class Header extends Component {
 	 * @param {boolean}
 	 */
 	showBack () {
-		return /^(About|Dialog)$/.test(this.props.view);
+		let types = [
+			ActionTypes.SHOW_CREDENTIALS,
+			ActionTypes.SHOW_DIALOG
+		];
+
+		return types.includes(this.props.type);
 	}
 
 	render () {
@@ -79,7 +85,7 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-	view   : PropTypes.string.isRequired,
+	type   : PropTypes.string.isRequired,
 	store  : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };

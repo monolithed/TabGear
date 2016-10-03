@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as ActionTypes from '../../constants/ActionTypes';
 
 import './index.css';
 import Tabs from '../Tabs';
@@ -6,19 +7,35 @@ import Loading from '../Loading';
 import About from '../About';
 import Dialog from '../Dialog';
 import Error from '../Error';
+import Text from '../Text';
 
 class Body extends Component {
 	getComponent () {
-		let components = [Loading, Tabs, Dialog, About, Error],
-			component = null;
+		let { store, actions, type } = this.props;
 
-		components.forEach((Component, key) => {
-			if (this.props.view === Component.displayName) {
-				component = <Component { ...this.props } key={key} />;
-			}
-		});
+		switch (type) {
+			case ActionTypes.SHOW_TABS:
+				return <Tabs store={ store } actions={ actions } />;
 
-		return component;
+			case ActionTypes.SEARCH_TABS:
+				if (store.tabs.length) {
+					return <Tabs store={ store } actions={ actions } />;
+				}
+
+				return <Text value="Nothing found..." />;
+
+			case ActionTypes.ITEMS_LOCKED:
+				return <Loading store={ store } />;
+
+			case ActionTypes.SHOW_DIALOG:
+				return <Dialog store={ store } actions={ actions } />;
+
+			case ActionTypes.SHOW_CREDENTIALS:
+				return <About />;
+
+			default:
+				return <Error />;
+		}
 	}
 
 	render () {
@@ -28,7 +45,7 @@ class Body extends Component {
 
 Body.propTypes = {
 	store  : PropTypes.object.isRequired,
-	view   : PropTypes.string.isRequired,
+	type   : PropTypes.string.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

@@ -1,22 +1,26 @@
 import React, { Component, PropTypes } from 'react';
+import * as ActionTypes from '../../constants/ActionTypes';
+
 import './index.css';
 
 export default class Title extends Component {
-	getTitle (view, store) {
-		switch (view) {
-			case 'About':
+	getTitle (type, store) {
+
+		switch (type) {
+			case ActionTypes.SHOW_CREDENTIALS:
 				return 'About';
 
-			case 'Error':
+			case ActionTypes.SHOW_ERRORS:
 				return 'Error';
 
-			case 'Dialog':
+			case ActionTypes.SHOW_DIALOG:
 				return 'Warning';
 
-			case 'Loading':
+			case ActionTypes.ITEMS_LOCKED:
 				return 'Loading...';
 
-			case 'Tabs':
+			case ActionTypes.SHOW_TABS:
+			case ActionTypes.SEARCH_TABS:
 				return `${store.tabs.length} active tabs`;
 
 			default:
@@ -25,15 +29,15 @@ export default class Title extends Component {
 	}
 
 	render () {
-		let { store, view } = this.props;
+		let { store, type } = this.props;
 
-		return <div className="tg-title"> Tab Gear: { this.getTitle(view, store) }</div>;
+		return <div className="tg-title"> Tab Gear: { this.getTitle(type, store) }</div>;
 	}
 }
 
 Title.propTypes = {
 	store: PropTypes.object.isRequired,
-	view: PropTypes.string.isRequired
+	type: PropTypes.string.isRequired
 };
 
 export default Title;

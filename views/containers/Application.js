@@ -17,15 +17,15 @@ class Application extends Component {
 	}
 
 	render () {
-		let { store, actions, view } = this.props;
+		let { store, actions, type } = this.props;
 
-		return <Components store={ store } view={ view } actions={ actions } />;
+		return <Components store={ store } type={ type } actions={ actions } />;
 	}
 }
 
 Application.propTypes = {
 	store  : PropTypes.object,
-	view   : PropTypes.string,
+	type   : PropTypes.string,
 	actions: PropTypes.object
 };
 
@@ -33,10 +33,10 @@ let mapStateToProps = (state, properties) => {
 	let {
 		loadData: tabs,
 		searchData: search,
-		view
+		type
 	} = state;
 
-	return { store: { tabs, search }, view };
+	return { store: { tabs, search }, type };
 };
 
 let mapDispatchToProps = dispatch => {

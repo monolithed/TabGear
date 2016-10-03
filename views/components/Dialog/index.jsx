@@ -49,6 +49,9 @@ class Dialog extends Component {
 	}
 }
 
-Dialog.propTypes = {};
+Dialog.propTypes = {
+	store  : PropTypes.object.isRequired,
+	actions: PropTypes.object.isRequired
+};
 
 export default Dialog;

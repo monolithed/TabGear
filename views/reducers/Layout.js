@@ -26,29 +26,12 @@ export default {
 	/**
 	 * Detect view
 	 *
-	 * @param {string} state — event
+	 * @param {string} state
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	view (state = 'Loading', action) {
-		let { type, error } = action;
-
-		switch (type) {
-			case ActionTypes.SHOW_TABS:
-				return 'Tabs';
-
-			case ActionTypes.SHOW_CREDENTIALS:
-				return 'About';
-
-			case ActionTypes.SHOW_DIALOG:
-				return 'Dialog';
-
-			case ActionTypes.SHOW_ERRORS:
-				return 'Error';
-
-			default:
-				return state;
-		}
+	type (state, action) {
+		return action.type;
 	},
 
 	/**

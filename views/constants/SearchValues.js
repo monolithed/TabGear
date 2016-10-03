@@ -1,1 +1,1 @@
-export const MIN_TABS_FOR_SEARCH = 0;
+export const MIN_TABS_FOR_SEARCH = 2;

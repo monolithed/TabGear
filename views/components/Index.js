@@ -7,10 +7,24 @@ import Search from './Search';
 import Body from './Body';
 import Footer from './Footer';
 import * as SearchValues from '../constants/SearchValues';
+import * as ActionTypes from '../constants/ActionTypes';
 
 export default class Index extends Component {
 	constructor (properties) {
 		super(...arguments);
+	}
+
+	/**
+	 *  Detects search bar
+	 *  @returns {boolean}
+	 */
+	showSearch () {
+		let { type, store } = this.props;
+		let { SHOW_TABS, SEARCH_TABS } = ActionTypes;
+		let { MIN_TABS_FOR_SEARCH } = SearchValues;
+
+		return ![SHOW_TABS, SEARCH_TABS].includes(type) ||
+			(type !== SEARCH_TABS && store.tabs.length <= MIN_TABS_FOR_SEARCH);
 	}
 
 	/**
@@ -27,9 +41,9 @@ export default class Index extends Component {
 			Footer
 		];
 
-		let { view, store } = this.props;
+		let { type, store } = this.props;
 
-		if (view !== 'Tabs'/* || store.tabs.length <= SearchValues.MIN_TABS_FOR_SEARCH*/) {
+		if (this.showSearch()) {
 			components.splice(2, 1);
 		}
 
@@ -45,6 +59,6 @@ export default class Index extends Component {
 
 Index.propTypes = {
 	store  : PropTypes.object.isRequired,
-	view   : PropTypes.string.isRequired,
+	type   : PropTypes.string.isRequired,
 	actions: PropTypes.object.isRequired
 };

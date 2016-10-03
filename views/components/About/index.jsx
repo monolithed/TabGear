@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+
 import './index.css';
+import Link from '../Link';
+import Text from '../Text';
 
 class About extends Component {
 	constructor (properties) {
@@ -27,7 +30,7 @@ class About extends Component {
 			</ul>
 
 			<p className="tg-block_small">All rights reserved. © LLC Pobedit Microsystems<br />
-			For Issues or Feature requests, mail to: <a href="mailto:monolihed@gmail.com">monolihed@gmail.com</a>
+			For Issues or Feature requests, mail to: <Link href="mailto:monolihed@gmail.com" text="monolihed@gmail.com" mods={[ 'external' ]} />
 			</p>
 		</div>;
 	}
