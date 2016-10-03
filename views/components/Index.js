@@ -10,7 +10,7 @@ import * as SearchValues from '../constants/SearchValues';
 
 export default class Index extends Component {
 	constructor (properties) {
-		super(properties);
+		super(...arguments);
 	}
 
 	/**

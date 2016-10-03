@@ -8,8 +8,8 @@ import * as Actions from '../actions';
 window.localStorage.debug = 'tg:*';
 
 class Application extends Component {
-	constructor (props) {
-		super(props);
+	constructor (properties) {
+		super(...arguments);
 
 		let { store, actions } = this.props;
 

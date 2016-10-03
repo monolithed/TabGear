@@ -3,7 +3,7 @@ import './index.css';
 
 class Dialog extends Component {
 	constructor (properties) {
-		super(properties);
+		super(...arguments);
 
 		this.closeAllTabs =
 			this.closeAllTabs.bind(this);

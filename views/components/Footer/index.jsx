@@ -6,7 +6,7 @@ import Link from '../Link';
 
 export default class Footer extends Component {
 	constructor (properties) {
-		super(properties);
+		super(...arguments);
 
 		this.state = { view: 'tabs' };
 

@@ -142,7 +142,17 @@ export default {
 	 * @param {Object} action
 	 * @param {Function} dispatch
 	 */
-	showCredentials (action, dispatch) {
-		dispatch(action);
-	}
+	// showCredentials (action, dispatch) {
+	// 	dispatch(action);
+	// },
+
+	/**
+	 * Search tabs
+	 *
+	 * @param {Object} action
+	 * @param {Function} dispatch
+	 */
+	// searchTabs (action, dispatch) {
+	// 	dispatch(action);
+	// }
 };

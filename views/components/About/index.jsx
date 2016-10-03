@@ -3,7 +3,7 @@ import './index.css';
 
 class About extends Component {
 	constructor (properties) {
-		super(properties);
+		super(...arguments);
 	}
 
 	render () {

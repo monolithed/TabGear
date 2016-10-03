@@ -5,7 +5,7 @@ import Link from '../Link';
 
 export default class Header extends Component {
 	constructor (properties) {
-		super(properties);
+		super(...arguments);
 
 		this.closeAllTabs =
 			this.closeAllTabs.bind(this);

@@ -15,6 +15,7 @@ export default {
 			case ActionTypes.ITEMS_LOCKED:
 				return state;
 
+			case ActionTypes.SEARCH_TABS:
 			case ActionTypes.SHOW_TABS:
 				return tabs;
 
@@ -34,6 +35,7 @@ export default {
 		let { type, error, tabs } = action;
 
 		switch (type) {
+			case ActionTypes.SEARCH_TABS:
 			case ActionTypes.SHOW_TABS:
 				return tabs;
 

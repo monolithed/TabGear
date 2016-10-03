@@ -3,7 +3,7 @@ import './index.css';
 
 class Tabs extends Component {
 	constructor (properties) {
-		super(properties);
+		super(...arguments);
 
 		this.switchTab =
 			this.switchTab.bind(this);
