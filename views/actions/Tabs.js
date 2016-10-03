@@ -4,11 +4,13 @@ export const Tabs = {
 	/**
 	 * Show tabs
 	 *
+	 * @param {Array}
 	 * @returns {Object}
 	 */
-	showTabs () {
+	showTabs (tabs) {
 		return {
-			type: ActionTypes.SHOW_TABS
+			type: ActionTypes.SHOW_TABS,
+			tabs
 		};
 	},
 

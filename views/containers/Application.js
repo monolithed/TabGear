@@ -30,9 +30,13 @@ Application.propTypes = {
 };
 
 let mapStateToProps = (state, properties) => {
-	let { loadData: tabs, view } = state;
+	let {
+		loadData: tabs,
+		searchData: search,
+		view
+	} = state;
 
-	return { store: { tabs }, view };
+	return { store: { tabs, search }, view };
 };
 
 let mapDispatchToProps = dispatch => {

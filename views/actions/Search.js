@@ -4,14 +4,14 @@ export const Search = {
 	/**
 	 * Search tabs
 	 *
-	 * @param {Array} tabs
+	 * @param {Array} search
 	 * @param {string} text
 	 * @returns {Object}
 	 */
-	searchTabs (tabs, text) {
+	searchTabs (search, text) {
 		return {
 			type: ActionTypes.SEARCH_TABS,
-			tabs,
+			search,
 			text
 		};
 	}

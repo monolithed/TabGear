@@ -8,7 +8,7 @@ export default store => dispatch => action => {
 	let { type } = action;
 
 	if (process.env.NODE_ENV !== 'production') {
-		return dispatch({ tabs, ...action });
+		return dispatch({ ...action, tabs });
 	}
 
 	try {

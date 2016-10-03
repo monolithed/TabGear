@@ -13,7 +13,7 @@ class Search extends Component {
 		let { store, actions } = this.props;
 
 		actions.Search.searchTabs(store.tabs, event.target.value);
-		actions.Tabs.showTabs(store.tabs);
+		actions.Tabs.showTabs(store.search);
 	}
 
 	render () {

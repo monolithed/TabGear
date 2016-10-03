@@ -9,13 +9,15 @@ export default {
 	 * @returns {*}
 	 */
 	loadData (state = [], action) {
-		let { type, tabs, error } = action;
+		let { type, tabs, error, search } = action;
 
 		switch (type) {
 			case ActionTypes.ITEMS_LOCKED:
 				return state;
 
 			case ActionTypes.SEARCH_TABS:
+				return search;
+
 			case ActionTypes.SHOW_TABS:
 				return tabs;
 
@@ -32,10 +34,12 @@ export default {
 	 * @returns {*}
 	 */
 	showTabs (state = [], action) {
-		let { type, error, tabs } = action;
+		let { type, error, tabs, search = [] } = action;
 
 		switch (type) {
 			case ActionTypes.SEARCH_TABS:
+				return search;
+
 			case ActionTypes.SHOW_TABS:
 				return tabs;
 
