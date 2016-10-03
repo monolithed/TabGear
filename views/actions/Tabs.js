@@ -7,10 +7,24 @@ export const Tabs = {
 	 * @param {Array}
 	 * @returns {Object}
 	 */
-	showTabs (tabs) {
+	showTabs (tabs, text) {
 		return {
 			type: ActionTypes.SHOW_TABS,
-			tabs
+			tabs,
+		};
+	},
+
+	/**
+	 * Search tabs
+	 *
+	 * @param {Array}
+	 * @returns {Object}
+	 */
+	searchTabs (tabs, text) {
+		return {
+			type: ActionTypes.SEARCH_TABS,
+			tabs,
+			text
 		};
 	},
 

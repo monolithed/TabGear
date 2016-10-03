@@ -1,4 +1,5 @@
 import * as ActionTypes from '../constants/ActionTypes';
+import Fuse from 'fuse.js';
 
 export default {
 	/**
@@ -9,42 +10,31 @@ export default {
 	 * @returns {*}
 	 */
 	loadData (state = [], action) {
-		let { type, tabs, error, search } = action;
+		let { type, tabs, error, text } = action;
 
 		switch (type) {
 			case ActionTypes.ITEMS_LOCKED:
 				return state;
 
-			case ActionTypes.SEARCH_TABS:
-				return search;
-
 			case ActionTypes.SHOW_TABS:
 				return tabs;
 
-			default:
-				return state;
-		}
-	},
-
-	/**
-	 * Loads data
-	 *
-	 * @param {Array} state
-	 * @param {Object} action
-	 * @returns {*}
-	 */
-	showTabs (state = [], action) {
-		let { type, error, tabs, search = [] } = action;
-
-		switch (type) {
 			case ActionTypes.SEARCH_TABS:
-				return search;
+				if (!text) {
+					return tabs;
+				}
 
-			case ActionTypes.SHOW_TABS:
-				return tabs;
+				let verbose = process.env.NODE_ENV !== 'production';
 
-			case ActionTypes.CHROME_API_EXCEPTION:
-				return error;
+				let fuse = new Fuse(tabs, {
+					verbose,
+					threshold    : 0.3,
+					caseSensitive: false,
+					shouldSort   : true,
+					keys         : [ 'title' ]
+				});
+
+				return fuse.search(text);
 
 			default:
 				return state;
@@ -96,5 +86,28 @@ export default {
 			default:
 				return state;
 		}
-	}
+	},
+
+	/**
+	 * Close all tabs
+	 *
+	 * @param {Array} state — the list of tabs to close
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	closeAllTabs (state = [], action) {
+		let { type, tabs, error } = action;
+
+		switch (type) {
+			case ActionTypes.TAB_ITEMS_NOT_FOUND:
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
+
+			case ActionTypes.CLOSE_ALL_TABS:
+				return tabs;
+
+			default:
+				return state;
+		}
+	},
 };

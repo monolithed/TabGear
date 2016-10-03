@@ -37,6 +37,7 @@ export default class Header extends Component {
 
 		if (this.ignoreDialog) {
 			actions.Layout.closeAllTabs(tabs);
+			actions.Tabs.showTabs(tabs);
 		}
 		else {
 			actions.Layout.showDialog(tabs);

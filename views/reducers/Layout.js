@@ -52,29 +52,6 @@ export default {
 	},
 
 	/**
-	 * Close all tabs
-	 *
-	 * @param {Array} state — the list of tabs to close
-	 * @param {Object} action
-	 * @returns {*}
-	 */
-	closeAllTabs (state = [], action) {
-		let { type, tabs, error } = action;
-
-		switch (type) {
-			case ActionTypes.TAB_ITEMS_NOT_FOUND:
-			case ActionTypes.CHROME_API_EXCEPTION:
-				return error;
-
-			case ActionTypes.CLOSE_ALL_TABS:
-				return tabs;
-
-			default:
-				return state;
-		}
-	},
-
-	/**
 	 * Discards the tabs from memory
 	 *
 	 * @param {Array} state — the list of tabs to discard

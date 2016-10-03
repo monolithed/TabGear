@@ -12,8 +12,7 @@ class Search extends Component {
 	searchTabs (event) {
 		let { store, actions } = this.props;
 
-		actions.Search.searchTabs(store.tabs, event.target.value);
-		actions.Tabs.showTabs(store.search);
+		actions.Tabs.searchTabs(store.tabs, event.target.value);
 	}
 
 	render () {
@@ -24,6 +23,9 @@ class Search extends Component {
 	}
 }
 
-Search.propTypes = {};
+Search.propTypes = {
+	store  : PropTypes.object.isRequired,
+	actions: PropTypes.object.isRequired
+};
 
 export default Search;

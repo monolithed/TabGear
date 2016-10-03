@@ -29,7 +29,7 @@ export default class Index extends Component {
 
 		let { view, store } = this.props;
 
-		if (view !== 'Tabs' || store.tabs.length <= SearchValues.MIN_TABS_FOR_SEARCH) {
+		if (view !== 'Tabs'/* || store.tabs.length <= SearchValues.MIN_TABS_FOR_SEARCH*/) {
 			components.splice(2, 1);
 		}
 
