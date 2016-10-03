@@ -15,6 +15,7 @@ class Body extends Component {
 
 		switch (type) {
 			case ActionTypes.SHOW_TABS:
+			case ActionTypes.OPEN_EXTENSIONS:
 				return <Tabs store={ store } actions={ actions } />;
 
 			case ActionTypes.SEARCH_TABS:
