@@ -10,7 +10,8 @@ export const Layout = {
 	closeAllTabs (tabs) {
 		return {
 			type: ActionTypes.CLOSE_ALL_TABS,
-			tabs
+			api: true,
+			tabs,
 		};
 	},
 
@@ -47,7 +48,8 @@ export const Layout = {
 	 */
 	openExtensions () {
 		return {
-			type: ActionTypes.OPEN_EXTENSIONS
+			type: ActionTypes.OPEN_EXTENSIONS,
+			api: true,
 		};
 	},
 
@@ -71,6 +73,7 @@ export const Layout = {
 	discardTabs (tabs) {
 		return {
 			type: ActionTypes.DISCARD_TABS,
+			api: true,
 			tabs
 		};
 	}

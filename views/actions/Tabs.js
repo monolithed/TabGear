@@ -10,6 +10,7 @@ export const Tabs = {
 	showTabs (tabs, text) {
 		return {
 			type: ActionTypes.SHOW_TABS,
+			api: true,
 			tabs,
 		};
 	},
@@ -37,6 +38,7 @@ export const Tabs = {
 	switchTab (index) {
 		return {
 			type: ActionTypes.SWITCH_TAB,
+			api: true,
 			index
 		};
 	},
@@ -50,6 +52,7 @@ export const Tabs = {
 	closeTab (id) {
 		return {
 			type: ActionTypes.CLOSE_TAB,
+			api: true,
 			id
 		};
 	}

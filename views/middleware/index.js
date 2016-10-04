@@ -2,19 +2,23 @@ import camelCase from 'camelcase';
 import * as ActionTypes from '../constants/ActionTypes';
 import { tabs } from '../stubs';
 
-import api from './api';
+import methods from './api';
 
 export default store => dispatch => action => {
-	let { type } = action;
+	let { type, api } = action;
 
 	if (process.env.NODE_ENV !== 'production') {
 		return dispatch({ ...action, tabs });
 	}
 
 	try {
-		let method = camelCase(type);
+		if (api) {
+			let name = camelCase(type);
 
-		return api[method](action, dispatch);
+			return methods[name](action, dispatch);
+		}
+
+		return dispatch({ ...action, tabs });
 	}
 	catch (error) {
 		dispatch({
