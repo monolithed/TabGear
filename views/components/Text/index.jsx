@@ -3,7 +3,11 @@ import './index.css';
 
 class Text extends Component {
 	render () {
-		return <div className="tg-box"> { this.props.value } </div>;
+		let { className = '' } = this.props;
+
+		return <div className={ `tg-box ${className}` }>
+			{ this.props.children }
+		</div>;
 	}
 }
 

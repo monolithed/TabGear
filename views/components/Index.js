@@ -18,13 +18,23 @@ export default class Index extends Component {
 	 *  Detects search bar
 	 *  @returns {boolean}
 	 */
-	showSearch () {
+	hasSearch () {
 		let { type, store } = this.props;
-		let { SHOW_TABS, SEARCH_TABS } = ActionTypes;
-		let { MIN_TABS_FOR_SEARCH } = SearchValues;
 
-		return ![SHOW_TABS, SEARCH_TABS].includes(type) ||
-			(type !== SEARCH_TABS && store.tabs.length <= MIN_TABS_FOR_SEARCH);
+		switch (type) {
+			case ActionTypes.SHOW_CREDENTIALS:
+			case ActionTypes.SHOW_DIALOG:
+			case ActionTypes.SHOW_ERRORS:
+			case ActionTypes.ITEMS_LOCKED:
+				return false;
+
+			default:
+				if (type !== ActionTypes.SEARCH_TABS && store.tabs.length <= SearchValues.MIN_TABS_FOR_SEARCH) {
+					return false;
+				}
+		}
+
+		return true;
 	}
 
 	/**
@@ -36,15 +46,14 @@ export default class Index extends Component {
 		let components = [
 			Title,
 			Header,
-			Search,
 			Body,
 			Footer
 		];
 
 		let { type, store } = this.props;
 
-		if (this.showSearch()) {
-			components.splice(2, 1);
+		if (this.hasSearch()) {
+			components.splice(2, 0, Search);
 		}
 
 		return components.map((Component, key) => {

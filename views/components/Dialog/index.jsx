@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
 import './index.css';
+import Text from '../Text';
 
 class Dialog extends Component {
 	constructor (properties) {
@@ -36,7 +38,7 @@ class Dialog extends Component {
 	}
 
 	render () {
-		return <div className="tg-box tg-dialog">
+		return <Text className="tg-dialog">
 				<p className="tg-block">Are you sure you want to close all tabs?</p>
 
 				<button className="tg-button" onClick={ this.closeAllTabs } autoFocus="autoFocus">Confirm</button>
@@ -45,7 +47,7 @@ class Dialog extends Component {
 					<input type="checkbox" id="confirm" ref="ignore" onChange={ this.ignoreTabDialog } />
 					<label htmlFor="confirm" className="tg-label">Prevent additional confirmation</label>
 				</p>
-			</div>;
+			</Text>;
 	}
 }
 

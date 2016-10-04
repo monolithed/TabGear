@@ -64,7 +64,7 @@ export default class Header extends Component {
 	 *
 	 * @param {boolean}
 	 */
-	showBack () {
+	hasBack () {
 		let types = [
 			ActionTypes.SHOW_CREDENTIALS,
 			ActionTypes.SHOW_DIALOG
@@ -76,7 +76,7 @@ export default class Header extends Component {
 	render () {
 		return <div className="tg-panel">
 					<Link onClick={ this.showTabs }
-					      text="Back" filter={ this.showBack() } mods={[ 'back' ]} />
+					      text="Back" filter={ this.hasBack() } mods={[ 'back' ]} />
 
 					<Link onClick={ this.closeAllTabs }
 					      text="Close all tabs" mods={[ 'block' ]} />

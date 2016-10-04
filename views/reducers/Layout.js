@@ -24,7 +24,7 @@ export default {
 	},
 
 	/**
-	 * Detect view
+	 * Detect type
 	 *
 	 * @param {string} state
 	 * @param {Object} action

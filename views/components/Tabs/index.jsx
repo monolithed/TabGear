@@ -63,7 +63,7 @@ class Tabs extends Component {
 
 			state = state.join(` ${name}-state_`);
 
-			return <li className={ `${name} ${state}` } key={ key }>
+			return <li className={ state } key={ key }>
 					<a className={ `${name}-link` } data-index={ index } href="#" onClick={ this.switchTab }>
 
 						<img className={ `${name}-icon` } src={ favIconUrl } alt="" />

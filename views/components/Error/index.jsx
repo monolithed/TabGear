@@ -6,10 +6,10 @@ import Text from '../Text';
 
 class Error extends Component {
 	render () {
-		return <div className="tg-box">
+		return <Text>
 					<p>Something went wrong!<br />
 						Please contact us at <Link href="mailto:monolihed@gmail.com" text="monolihed@gmail.com" mods={[ 'external' ]} />.</p>
-				</div>;
+				</Text>;
 	}
 }
 

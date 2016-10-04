@@ -19,12 +19,8 @@ export default class Title extends Component {
 			case ActionTypes.ITEMS_LOCKED:
 				return 'Loading...';
 
-			case ActionTypes.SHOW_TABS:
-			case ActionTypes.SEARCH_TABS:
-				return `${store.tabs.length} active tabs`;
-
 			default:
-				return '';
+				return `${store.tabs.length} active tabs`;
 		}
 	}
 

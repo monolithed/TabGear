@@ -5,7 +5,7 @@ import './index.css';
 
 class Loading extends Component {
 	render () {
-		return <Text value="Loading..." />;
+		return <Text>Loading...</Text>;
 	}
 }
 

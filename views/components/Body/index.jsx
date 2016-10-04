@@ -14,17 +14,6 @@ class Body extends Component {
 		let { store, actions, type } = this.props;
 
 		switch (type) {
-			case ActionTypes.SHOW_TABS:
-			case ActionTypes.OPEN_EXTENSIONS:
-				return <Tabs store={ store } actions={ actions } />;
-
-			case ActionTypes.SEARCH_TABS:
-				if (store.tabs.length) {
-					return <Tabs store={ store } actions={ actions } />;
-				}
-
-				return <Text value="Nothing found..." />;
-
 			case ActionTypes.ITEMS_LOCKED:
 				return <Loading store={ store } />;
 
@@ -34,8 +23,15 @@ class Body extends Component {
 			case ActionTypes.SHOW_CREDENTIALS:
 				return <About />;
 
-			default:
+			case ActionTypes.SHOW_ERRORS:
 				return <Error />;
+
+			default:
+				if (ActionTypes.SEARCH_TABS && !store.tabs.length) {
+					return <Text>Nothing found...</Text>;
+				}
+
+				return <Tabs store={ store } actions={ actions } />;
 		}
 	}
 
