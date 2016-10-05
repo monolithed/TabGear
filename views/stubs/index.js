@@ -1,6 +1,6 @@
 export const tabs = [
 	{
-		title : 'Google Cloud Platform',
+		title : 'Google Cloud Computing, Hosting Services & APIs  |  Google Cloud Platform',
 		url   : 'https://cloud.google.com',
 		favIconUrl: 'https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico',
 		id : 0,

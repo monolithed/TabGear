@@ -21,6 +21,10 @@ module.exports = {
 		publicPath: '/static/'
 	},
 
+	externals: {
+		"chrome-stub": "chrome"
+	},
+
 	resolve: {
 		extensions: ['', '.js', '.jsx', '.css']
 	},
@@ -37,6 +41,10 @@ module.exports = {
 		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.HotModuleReplacementPlugin(),
 		new Webpack.NoErrorsPlugin(),
+
+		new Webpack.ProvidePlugin({
+			'chrome-stub/browser': 'chrome'
+		}),
 
 		new Webpack.DefinePlugin({
 			'process.env': {

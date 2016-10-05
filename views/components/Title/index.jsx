@@ -3,6 +3,8 @@ import * as ActionTypes from '../../constants/ActionTypes';
 
 import './index.css';
 
+// import chrome from 'chrome-stub';
+
 export default class Title extends Component {
 	getTitle (type, store) {
 
