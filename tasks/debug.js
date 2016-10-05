@@ -12,6 +12,7 @@ const DIR_NAME = path.join(__dirname, '..');
 module.exports = {
 	entry: [
 		'webpack-hot-middleware/client',
+		'./_locales/ru/messages.json',
 		'./views/index.jsx'
 	],
 
@@ -21,12 +22,13 @@ module.exports = {
 		publicPath: '/static/'
 	},
 
-	externals: {
-		"chrome-stub": "chrome"
-	},
-
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.css']
+		extensions: ['', '.js', '.jsx', '.json', '.css'],
+
+		alias: {
+			'sinon': 'sinon/pkg/sinon',
+			'chrome': 'chrome-stub'
+		}
 	},
 
 	debug  : true,
@@ -43,7 +45,7 @@ module.exports = {
 		new Webpack.NoErrorsPlugin(),
 
 		new Webpack.ProvidePlugin({
-			'chrome-stub/browser': 'chrome'
+			'chrome': 'chrome-stub'
 		}),
 
 		new Webpack.DefinePlugin({
@@ -54,11 +56,25 @@ module.exports = {
 	],
 
 	module: {
+		noParse: [
+			/sinon/
+		],
+
 		loaders: [
 			{
 				test: /\.(js|jsx)$/,
 				loaders: ['babel'],
 				include: `${DIR_NAME}/views`
+			},
+
+			{
+				test: /sinon.*\.js$/,
+				loader: 'imports?define=>false,require=>false'
+			},
+
+			{
+				test   : /\.json/,
+				loaders: ['json']
 			},
 
 			{
