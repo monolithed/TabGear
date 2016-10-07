@@ -7,8 +7,14 @@ import Text from '../Text';
 class Error extends Component {
 	render () {
 		return <Text>
-					<p>Something went wrong!<br />
-						Please contact us at <Link href="mailto:monolihed@gmail.com" text="monolihed@gmail.com" mods={[ 'external' ]} />.</p>
+					<p>
+						{ chrome.i18n.getMessage('Something went wrong!') }
+						<br />
+						{ chrome.i18n.getMessage('Please contact us at') }
+						<Link href="mailto:monolihed@gmail.com" mods={[ 'external' ]}>
+							monolithed@gmail.com
+						</Link>.
+					</p>
 				</Text>;
 	}
 }

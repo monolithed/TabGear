@@ -5,6 +5,8 @@ import RedBox from 'redbox-react';
 import Root from './containers/Root';
 import Store from './store/configure';
 
+import './stubs';
+
 let store = Store(),
 	index = document.getElementById('root');
 
@@ -18,11 +20,4 @@ else {
 	catch (error) {
 		ReactDOM.render(<RedBox error={ error } />, index);
 	}
-
-	let locale = require('../_locales/ru/messages.json');
-
-	chrome.i18n.getMessages = value => {
-		return value;
-		// return locale[value].message;
-	};
 }

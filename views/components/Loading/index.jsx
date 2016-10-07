@@ -5,7 +5,7 @@ import './index.css';
 
 class Loading extends Component {
 	render () {
-		return <Text>Loading...</Text>;
+		return <Text> { chrome.i18n.getMessage('Loading…') } </Text>;
 	}
 }
 

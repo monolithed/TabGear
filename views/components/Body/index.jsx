@@ -28,7 +28,9 @@ class Body extends Component {
 
 			default:
 				if (ActionTypes.SEARCH_TABS && !store.tabs.length) {
-					return <Text>Nothing found...</Text>;
+					return <Text>
+						{ chrome.i18n.getMessage('Nothing found…') }
+					</Text>
 				}
 
 				return <Tabs store={ store } actions={ actions } />;

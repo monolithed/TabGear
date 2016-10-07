@@ -11,7 +11,7 @@ export default {
 	 */
 	loadData (state = [], action) {
 		let { type, tabs, error, text } = action;
-
+debugger
 		switch (type) {
 			case ActionTypes.ITEMS_LOCKED:
 				return state;

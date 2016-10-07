@@ -17,7 +17,7 @@ class Search extends Component {
 
 	render () {
 		return <div>
-			<input className="tg-search" type="text" placeholder="Search..."
+			<input className="tg-search" type="text" placeholder={ chrome.i18n.getMessage('Search…') }
 			       autoFocus="autoFocus" onInput={ this.searchTabs } />
 		</div>;
 	}

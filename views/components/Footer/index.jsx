@@ -80,10 +80,18 @@ export default class Footer extends Component {
 
 	render () {
 		return <div className="tg-panel">
-					<Link onClick={ this.showCredentials } text="About" />
-					<Link onClick={ this.openExtensions } text="Open extensions" mods={[ 'block' ]} />
-					<Link onClick={ this.discardTabs } text="Discard tabs" filter={
-						this.filter('discard') } mods={[ 'block' ]} />
+					<Link onClick={ this.showCredentials }>
+						{ chrome.i18n.getMessage('About') }
+					</Link>
+
+					<Link onClick={ this.openExtensions } mods={[ 'block' ]}>
+						{ chrome.i18n.getMessage('Open extensions') }
+					</Link>
+
+					<Link onClick={ this.discardTabs } filter={
+						this.filter('discard') } mods={[ 'block' ]}>
+						{ chrome.i18n.getMessage('Discard tabs') }
+					</Link>
 				</div>;
 	}
 }
