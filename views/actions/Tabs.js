@@ -16,6 +16,21 @@ export const Tabs = {
 	},
 
 	/**
+	 * Disable tabs
+	 *
+	 * @param {Array} tabs
+	 * @param {boolean} state
+	 * @returns {Object}
+	 */
+	disableTabs (tabs, state) {
+		return {
+			type: ActionTypes.DISABLE_TABS,
+			tabs,
+			state
+		};
+	},
+
+	/**
 	 * Search tabs
 	 *
 	 * @param {Array}

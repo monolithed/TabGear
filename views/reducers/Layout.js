@@ -2,6 +2,25 @@ import * as ActionTypes from '../constants/ActionTypes';
 
 export default {
 	/**
+	 * Disable box
+	 *
+	 * @param {boolean} state
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	disable (state = false, action) {
+		let { type, error } = action;
+
+		switch (type) {
+			case ActionTypes.DISABLE_TABS:
+				return action.state;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
 	 * Shows error
 	 *
 	 * @param {string} state — the error string
@@ -105,7 +124,7 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	showDialog (state = [], action) {
+	showDialog (state = false, action) {
 		let { type, tabs, error} = action;
 
 		switch (type) {

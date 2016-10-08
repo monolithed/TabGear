@@ -17,6 +17,7 @@ export default {
 				return state;
 
 			case ActionTypes.SHOW_TABS:
+			case ActionTypes.DISABLE_TABS:
 				return tabs;
 
 			case ActionTypes.SEARCH_TABS:

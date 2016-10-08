@@ -14,8 +14,8 @@ chrome.tabs.query.yields([
 		title : 'Google Plus',
 		url   : 'https://developers.google.com/+/',
 		favIconUrl: 'https://developers.google.com/site-assets/logo-google-plus-white.svg',
-		id : 0,
-		index : 0,
+		id : 1,
+		index : 1,
 		active: false,
 		highlighted: false,
 		incognito: false
@@ -25,8 +25,8 @@ chrome.tabs.query.yields([
 		title : 'Google Play',
 		url   : 'https://play.google.com',
 		favIconUrl: 'https://developers.google.com/_static/cc7442d8c7/images/favicon.png',
-		id : 1,
-		index : 1,
+		id : 2,
+		index : 2,
 		active: false,
 		highlighted: false,
 		incognito: false
@@ -36,17 +36,6 @@ chrome.tabs.query.yields([
 		title : 'Google Maps',
 		url   : 'https://maps.google.com',
 		favIconUrl: 'https://www.google.com/images/branding/product/ico/maps_32dp.ico',
-		id : 2,
-		index : 2,
-		active: false,
-		highlighted: false,
-		incognito: false
-	},
-
-	{
-		title : 'Google Developers',
-		url   : 'https://developers.google.com/web/',
-		favIconUrl: 'https://developers.google.com/web/images/web-fundamentals-icon192x192.png',
 		id : 3,
 		index : 3,
 		active: false,
@@ -87,11 +76,22 @@ chrome.tabs.query.yields([
 	},
 
 	{
+		title : 'Google Developers',
+		url   : 'https://developers.google.com/web/',
+		favIconUrl: 'https://developers.google.com/web/images/web-fundamentals-icon192x192.png',
+		id : 8,
+		index : 8,
+		active: false,
+		highlighted: false,
+		incognito: false
+	},
+
+	{
 		title : 'Google Firebase',
 		url   : 'https://firebase.google.com/',
 		favIconUrl: 'https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png',
-		id : 7,
-		index : 7,
+		id : 8,
+		index : 8,
 		highlighted: false,
 		active: false
 	}
