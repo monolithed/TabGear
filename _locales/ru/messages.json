@@ -123,6 +123,10 @@
 		"message": "Назад"
 	},
 
+	"close": {
+		"message": "Закрыть"
+	},
+
 	"close_all_tabs": {
 		"message": "Закрыть все вкладки"
 	},

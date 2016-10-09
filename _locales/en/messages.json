@@ -123,6 +123,10 @@
 		"message": "Back"
 	},
 
+	"close": {
+		"message": "Close"
+	},
+
 	"close_all_tabs": {
 		"message": "Close all tabs"
 	},

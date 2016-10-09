@@ -64,13 +64,22 @@ class Tabs extends Component {
 			state = state.join(` ${name}-state_`);
 
 			return <li className={ state } key={ key }>
-					<a className={ `${name}-link` } data-index={ index } href="#" onClick={ this.switchTab }>
+						<a className={ `${name}-link` }
+						   data-index={ index }
+						   href="#"
+						   onClick={ this.switchTab }>
 
-						<img className={ `${name}-icon` } src={ favIconUrl } alt="" />
-						<span className={ `${name}-text` }> { title } </span>
-						<span className={ `${name}-close` } data-id={ id } onClick={ this.closeTab }> </span>
-					</a>
-				</li>;
+							<img className={ `${name}-icon` }
+							     src={ favIconUrl } alt="" />
+
+							<span className={ `${name}-text` }> { title } </span>
+
+							<span className={ `${name}-close` }
+							      data-id={ id }
+							      title={ chrome.i18n.getMessage('close') }
+							      onClick={ this.closeTab }> </span>
+						</a>
+					</li>;
 		});
 	}
 
