@@ -17,9 +17,7 @@ class Application extends Component {
 	}
 
 	render () {
-		let { store, actions, type } = this.props;
-
-		return <Components store={ store } type={ type } actions={ actions } />;
+		return <Components { ...this.props } />;
 	}
 }
 
