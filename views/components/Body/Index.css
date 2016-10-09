@@ -1,5 +1,7 @@
+@import "../decor.css";
+
 .tg-body {
-	background: #fff;
+	background: var(--body-color);
 	min-height: 50px;
 	position: relative;
 }

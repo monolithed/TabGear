@@ -1,12 +1,15 @@
+@import "../decor.css";
+
 .tg-link,
 .tg-link:active,
 .tg-link:visited {
-	color: #6d6d6d;
-	font: normal 12px/18px helvetica, arial, sans-serif;
+	color: var(--link-color);
+	font-size: var(--link-font-size);
+	line-height: var(--link-line-height);
 }
 
 .tg-header-link:hover {
-	color: #6f6f6f;
+	color: var(--link-hover-color);
 }
 
 	.tg-link_block {
@@ -14,9 +17,9 @@
 	}
 
 	.tg-link_external {
-		color: #1d82de;
-		font-size: 14px;
-		line-height: 21px;
+		color: var(--link-external-color);
+		font-size: var(--link-external-font-size);
+		line-height: var(--link-external-line-height);
 	}
 
 	.tg-link_back {

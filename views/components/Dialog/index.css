@@ -1,4 +1,6 @@
+@import "../decor.css";
+
 .tg-dialog {
-	color: rgba(0,0,0,.87);
+	color: var(--dialog-color);
 	text-align: center;
 }

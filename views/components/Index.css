@@ -1,3 +1,5 @@
+@import "./decor.css";
+
 * {
 	box-sizing: border-box;
 }
@@ -9,14 +11,12 @@ ul {
 }
 
 body {
-	background-color: #e9e9e9;
+	background-color: var(--body-background-color);
+	font: var(--body-font);
 	width: 450px;
 }
 
 .tg-index {
-	font-family: helvetica, arial, sans-serif;
-	font-size: 14px;
-	line-height: 21px;
 	margin: 0 auto;
 	width: 90%;
 }
@@ -27,22 +27,24 @@ body {
 }
 
 .tg-box {
-	color: #525252;
+	color: var(--body-box-color);
 	padding: 15px;
 }
 
 .tg-button {
 	display: inline-block;
-	background-color: #2196F3;
+	background-color: var(--button-background-color);
 	box-shadow:
 			0 2px 2px 0 rgba(0, 0, 0, .14),
 			0 3px 1px -2px rgba(0, 0, 0, .2),
 			0 1px 5px 0 rgba(0, 0, 0, .12);
 	border: none;
 	border-radius: 2px;
-	color: #fff;
+	color: var(--button-color);
 	cursor: pointer;
-	font: 500 14px/36px "Roboto", "Helvetica", "Arial", sans-serif;
+	font-family: var(--button-font-family);
+	font-size: var(--button-font-size);
+	line-height: var(--button-line-height);
 	height: 36px;
 	letter-spacing: 0;
 	overflow: hidden;
@@ -63,7 +65,7 @@ body {
 }
 
 .tg-button:hover {
-	background: #169aff;
+	background: var(--button-hover-color);
 	box-shadow:
 		0 2px 2px 0 rgba(113, 101, 101, 0.14),
 		0 3px 1px -2px rgba(0, 0, 0, .2),
@@ -71,7 +73,7 @@ body {
 }
 
 .tg-button:active {
-	background: #58acef;
+	background: var(--button-active-color);
 }
 
 .tg-label {
@@ -88,7 +90,7 @@ body {
 	}
 
 	.tg-list li:before {
-		color: #565050;
+		color: var(--list-color);
 		content: '\2714 ';
 		padding-right: 10px;
 	}

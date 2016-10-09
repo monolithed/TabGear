@@ -1,13 +1,16 @@
+@import "../decor.css";
+
 .tg-search {
 	position: relative;
 }
 
 	.tg-search__input {
-		color: #555;
-		font: normal 14px/22px Helvetica, Arial, sans-serif;
+		color: var(--search-color);
+		font-size: var(--search-font-size);
+		line-height: var(--search-line-height);
 		padding: 15px;
 		border: none;
-		border-bottom: 1px solid #2196F3;
+		border-bottom: 1px solid var(--search-bottom-color);
 		outline: none;
 		transition:
 			border-bottom .2s cubic-bezier(.4, 0, 1, 1),
@@ -19,8 +22,8 @@
 	}
 
 	.tg-search__input:focus {
-		box-shadow: 0 -12px 15px -16px rgba(16, 16, 16, 0.32);
-		border-bottom-color: #fff;
+		box-shadow: 0 -12px 15px -16px var(--search-box-focus-color);
+		border-bottom-color: var(--search-bottom-focus-color);
 	}
 
 	.tg-search__clear {
@@ -29,10 +32,11 @@
 	}
 
 	.tg-search__clear:after {
-		content: '✕';
-		color: #6b6b6b;
+		content: var(--close-content);
+		color: var(--search-clear-color);
 		cursor: pointer;
-		font: normal 16px/16px close, sans-serif;
+		font-size: var(--search-clear-font-size);
+		line-height: var(--search-clear-line-height);
 		position: absolute;
 		right: 15px;
 		top: 19px;
@@ -45,5 +49,5 @@
 		}
 
 		.tg-search__clear_active:hover:after {
-			color: #555;
+			color: var(--search-color);
 		}
