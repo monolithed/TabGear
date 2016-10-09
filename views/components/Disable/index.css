@@ -3,7 +3,8 @@
 }
 
 	.tg-disable-box.active {
-		background-color: rgba(16, 16, 16, 0.47);
+		background-color: rgba(16, 16, 16, 0.32);
+		box-shadow: inset 0px 9px 15px -9px rgba(16, 16, 16, 0.57);
 		position: absolute;
 		top: 0;
 		left: 0;
