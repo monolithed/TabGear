@@ -66,6 +66,25 @@ export default {
 	},
 
 	/**
+	 * Disables tab list
+	 *
+	 * @param {boolean} state
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	disable (state = false, action) {
+		let { type, error } = action;
+
+		switch (type) {
+			case ActionTypes.DISABLE_TABS:
+				return action.state;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
 	 * Closes selected tab — the tab id to close
 	 *
 	 * @param {string} state

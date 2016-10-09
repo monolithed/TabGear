@@ -18,7 +18,7 @@ class Body extends Component {
 	}
 
 	componentWillReceiveProps (nextProps) {
-		if (nextProps.value !== this.props.value) {
+		if (nextProps.value === this.props.value) {
 			let { disable } = nextProps.store;
 
 			this.setState({ disable });

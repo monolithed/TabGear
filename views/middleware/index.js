@@ -1,10 +1,11 @@
 import camelCase from 'camelcase';
 import * as ActionTypes from '../constants/ActionTypes';
-import { tabs } from '../stubs';
 
 import methods from './api';
 
 export default store => dispatch => action => {
+	let state = store.getState();
+
 	let { type, api } = action;
 
 	try {
@@ -14,7 +15,7 @@ export default store => dispatch => action => {
 			return methods[name](action, dispatch);
 		}
 
-		return dispatch({ ...action, tabs });
+		return dispatch({ ...action, tabs: state.loadData });
 	}
 	catch (error) {
 		dispatch({

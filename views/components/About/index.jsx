@@ -61,7 +61,7 @@ class About extends Component {
 						{ chrome.i18n.getMessage('All rights reserved. © LLC Pobedit Microsystems') }
 						<br />
 						{ chrome.i18n.getMessage('For Issues or Feature requests, mail to:') }
-
+						&nbsp;
 						<Link href="mailto:monolihed@gmail.com" mods={[ 'external' ]}>
 							monolihed@gmail.com
 						</Link>
