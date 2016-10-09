@@ -1,20 +1,49 @@
 .tg-search {
-	color: #555;
-	font: normal 14px/22px Helvetica, Arial, sans-serif;
-	padding: 15px;
-	border: none;
-	border-bottom: 1px solid #2196F3;
-	outline: none;
-	transition:
-		border-bottom .2s cubic-bezier(.4, 0, 1, 1),
-		box-shadow .2s cubic-bezier(.4, 0, 1, 1),
-		background-color .2s cubic-bezier(.4, 0, .2, 1),
-		color .2s cubic-bezier(.4, 0, .2, 1);
-	width: 100%;
-	will-change: box-shadow;
+	position: relative;
 }
 
-.tg-search:focus {
-	box-shadow: 0 -12px 15px -16px rgba(16, 16, 16, 0.32);
-	border-bottom-color: #fff;
-}
+	.tg-search__input {
+		color: #555;
+		font: normal 14px/22px Helvetica, Arial, sans-serif;
+		padding: 15px;
+		border: none;
+		border-bottom: 1px solid #2196F3;
+		outline: none;
+		transition:
+			border-bottom .2s cubic-bezier(.4, 0, 1, 1),
+			box-shadow .2s cubic-bezier(.4, 0, 1, 1),
+			background-color .2s cubic-bezier(.4, 0, .2, 1),
+			color .2s cubic-bezier(.4, 0, .2, 1);
+		width: 100%;
+		will-change: box-shadow;
+	}
+
+	.tg-search__input:focus {
+		box-shadow: 0 -12px 15px -16px rgba(16, 16, 16, 0.32);
+		border-bottom-color: #fff;
+	}
+
+	.tg-search__clear {
+		opacity: 0;
+		transition: opacity .3s ease-in;
+	}
+
+	.tg-search__clear:after {
+		content: '✕';
+		color: #6b6b6b;
+		cursor: pointer;
+		font: normal 16px/16px close, sans-serif;
+		position: absolute;
+		right: 15px;
+		top: 19px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+		.tg-search__clear_active {
+			opacity: 1;
+		}
+
+		.tg-search__clear_active:hover:after {
+			color: #555;
+		}
