@@ -5,10 +5,17 @@ class Search extends Component {
 	constructor () {
 		super(...arguments);
 
-		this.state = { clear: false };
+		this.state = {
+			clear: false,
+			value: '',
+			active: false
+		};
 
 		this.searchTabs =
 			this.searchTabs.bind(this);
+
+		this.clearSearch =
+			this.clearSearch.bind(this);
 
 		this.onFocus =
 			this.onFocus.bind(this);
@@ -31,11 +38,17 @@ class Search extends Component {
 		this.setState({ clear: false });
 	}
 
+	clearSearch (event) {
+		this.setState({ value: '' });
+	}
+
 	searchTabs (event) {
 		let { store, actions } = this.props;
+		let { value } = event.target;
 
 		actions.Tabs.disableTabs(store, false);
-		actions.Tabs.searchTabs(store.tabs, event.target.value);
+		actions.Tabs.searchTabs(store.tabs, value);
+		this.setState({ value});
 
 		event.stopPropagation();
 	}
@@ -49,12 +62,13 @@ class Search extends Component {
 
 		return <div className="tg-search">
 					<input className="tg-search__input" type="text"
+					       value={ this.state.value }
 					       placeholder={ chrome.i18n.getMessage('search') }
 					       onFocus={ this.onFocus }
 					       onBlur={ this.onBlur}
 					       onInput={ this.searchTabs } />
 
-				<div className={ clear } > </div>
+				<div className={ clear } onClick={ this.clearSearch }> </div>
 			</div>;
 	}
 }
