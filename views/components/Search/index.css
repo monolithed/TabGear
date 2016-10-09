@@ -10,7 +10,6 @@
 		line-height: var(--search-line-height);
 		padding: 15px;
 		border: none;
-		border-bottom: 1px solid var(--search-bottom-color);
 		outline: none;
 		transition:
 			border-bottom .2s cubic-bezier(.4, 0, 1, 1),

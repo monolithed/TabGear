@@ -7,7 +7,7 @@ export default {
 	 *
 	 * @param {Array} state
 	 * @param {Object} action
-	 * @returns {*}
+	 * @returns {Array}
 	 */
 	loadData (state = [], action) {
 		let { type, tabs, error, text } = action;
@@ -20,9 +20,25 @@ export default {
 			case ActionTypes.DISABLE_TABS:
 				return tabs;
 
+			default:
+				return state;
+		}
+	},
+
+	/**
+	 * Search results
+	 *
+	 * @param {Array} state
+	 * @param {Object} action
+	 * @returns {Array}
+	 */
+	searchResults (state = [], action) {
+		let { type, tabs, text } = action;
+
+		switch (type) {
 			case ActionTypes.SEARCH_TABS:
 				if (!text) {
-					return tabs;
+					return [];
 				}
 
 				let verbose = process.env.NODE_ENV !== 'production';
@@ -38,7 +54,7 @@ export default {
 				return fuse.search(text);
 
 			default:
-				return state;
+				return [];
 		}
 	},
 

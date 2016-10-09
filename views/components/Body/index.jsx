@@ -18,11 +18,9 @@ class Body extends Component {
 	}
 
 	componentWillReceiveProps (nextProps) {
-		if (nextProps.value === this.props.value) {
-			let { disable } = nextProps.store;
+		let { disable } = nextProps.store;
 
-			this.setState({ disable });
-		}
+		this.setState({ disable: disable });
 	}
 
 	getComponent () {
@@ -41,20 +39,40 @@ class Body extends Component {
 			case ActionTypes.SHOW_ERRORS:
 				return <Error />;
 
+			case ActionTypes.DISABLE_TABS:
 			case ActionTypes.SEARCH_TABS:
 				if (!store.tabs.length) {
 					return <Text> { chrome.i18n.getMessage('nothing_found') } </Text>
 				}
 
+				let { disable } = this.state;
+				let state = '';
+
+				if (store.searchResults.length > 0) {
+					state = 'is-active';
+				}
+				else if (disable) {
+					state = 'is-empty';
+				}
+
+				return <div>
+						<Tabs tabs={ store.tabs } actions={ actions } />
+
+						<Disable state={ disable }>
+							<Tabs tabs={ store.searchResults } actions={ actions } state={ state } />
+						</Disable>
+					</div>
+
 			default:
-				return <Tabs store={ store } actions={ actions } />;
+				return <Tabs tabs={ store.tabs } actions={ actions } />;
 		}
 	}
 
 	render () {
+		let { store, actions } = this.props;
+
 		return <div className="tg-body">
 					{ this.getComponent() }
-					<Disable state={ this.state.disable } />
 				</div>;
 	}
 }

@@ -6,9 +6,7 @@ class Search extends Component {
 		super(...arguments);
 
 		this.state = {
-			clear: false,
-			value: '',
-			active: false
+			value: ''
 		};
 
 		this.searchTabs =
@@ -27,18 +25,21 @@ class Search extends Component {
 	onFocus (event) {
 		let { actions, store } = this.props;
 
-		actions.Tabs.disableTabs(store, true);
-		this.setState({ clear: true });
+		let state = store.tabs.length != store.searchResults.length;
+
+		actions.Tabs.disableTabs(store, state);
 	}
 
 	onBlur (event) {
 		let { actions, store } = this.props;
 
 		actions.Tabs.disableTabs(store, false);
-		this.setState({ clear: false });
 	}
 
 	clearSearch (event) {
+		let { store, actions } = this.props;
+
+		actions.Tabs.searchTabs(store.tabs);
 		this.setState({ value: '' });
 	}
 
@@ -46,7 +47,6 @@ class Search extends Component {
 		let { store, actions } = this.props;
 		let { value } = event.target;
 
-		actions.Tabs.disableTabs(store, false);
 		actions.Tabs.searchTabs(store.tabs, value);
 		this.setState({ value});
 
@@ -55,14 +55,15 @@ class Search extends Component {
 
 	render () {
 		let clear = 'tg-search__clear';
+		let { value } = this.state;
 
-		if (this.state.clear) {
+		if (value.length > 0) {
 			clear += ' tg-search__clear_active'
 		}
 
 		return <div className="tg-search">
 					<input className="tg-search__input" type="text"
-					       value={ this.state.value }
+					       value={ value }
 					       placeholder={ chrome.i18n.getMessage('search') }
 					       onFocus={ this.onFocus }
 					       onBlur={ this.onBlur}

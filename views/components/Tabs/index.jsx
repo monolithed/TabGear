@@ -46,9 +46,9 @@ class Tabs extends Component {
 	 * @param {string} name
 	 */
 	showTabs (name) {
-		let { store } = this.props;
+		let { tabs } = this.props;
 
-		return store.tabs.map((tab, key) => {
+		return tabs.map((tab, key) => {
 			let { id, index, title, incognito, favIconUrl, highlighted } = tab;
 
 			let state = [name];
@@ -75,12 +75,17 @@ class Tabs extends Component {
 	}
 
 	render () {
-		return <ul className="tg-tabs"> { this.showTabs('tg-tabs__item') } </ul>;
+		let className = `tg-tabs ${this.props.state}`;
+
+		return <ul className={ className }>
+					{ this.showTabs('tg-tabs__item') }
+				</ul>;
 	}
 }
 
 Tabs.propTypes = {
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.array.isRequired,
+	state  : PropTypes.string,
 	actions: PropTypes.object.isRequired
 };
 

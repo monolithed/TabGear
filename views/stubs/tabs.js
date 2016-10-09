@@ -1,4 +1,4 @@
-chrome.tabs.query.yields([
+export default [
 	{
 		title : 'Google Cloud Computing, Hosting Services & APIs  |  Google Cloud Platform',
 		url   : 'https://cloud.google.com',
@@ -95,4 +95,4 @@ chrome.tabs.query.yields([
 		highlighted: false,
 		active: false
 	}
-]);
+];

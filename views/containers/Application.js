@@ -28,12 +28,13 @@ Application.propTypes = {
 };
 
 let mapStateToProps = (state, properties) => {
-	let { loadData: tabs, type, disable } = state;
+	let { loadData: tabs, type, disable, searchResults } = state;
 
 	return {
 		store: {
 			tabs,
-			disable
+			disable,
+			searchResults
 		},
 
 		type
