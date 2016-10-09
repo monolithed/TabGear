@@ -9,6 +9,28 @@ class About extends Component {
 		super(...arguments);
 	}
 
+	getFeatures () {
+		let features = [
+			'feature_tab_list',
+			'feature_incognito',
+			'feature_discarding',
+			'feature_total_tabs',
+			'feature_highlighting',
+			'feature_prevent_closing',
+			'feature_i18n',
+			'feature_navigation',
+			'feature_confirmation',
+			'feature_shortcuts',
+			'feature_close_tabs',
+			'feature_close_all_tabs',
+			'feature_open_extensions'
+		];
+
+		return features.map(feature => {
+			return <li className="tg-list__item"> { chrome.i18n.getMessage(feature) } </li>;
+		});
+	}
+
 	render () {
 		return <Text>
 					<p className="tg-block">
@@ -19,42 +41,7 @@ class About extends Component {
 					</p>
 
 					<ul className="tg-list">
-						<li>
-							{ chrome.i18n.getMessage('feature_tab_list') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_incognito') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_discarding') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_total_tabs') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_highlighting') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_prevent_closing') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_navigation') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_confirmation') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_shortcuts') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_close_tabs') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_close_all_tabs') }
-						</li>
-						<li>
-							{ chrome.i18n.getMessage('feature_open_extensions') }
-						</li>
+						{ this.getFeatures() }
 					</ul>
 
 					<p className="tg-block_small">

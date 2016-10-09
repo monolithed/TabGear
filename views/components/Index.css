@@ -82,14 +82,14 @@ body {
 }
 
 .tg-list {
-	line-height: 22px;
+	line-height: 28px;
 	padding-left: 25px;
 }
-	.tg-list li {
+	.tg-list__item {
 		display: flex;
 	}
 
-	.tg-list li:before {
+	.tg-list__item:before {
 		color: var(--list-color);
 		content: '\2714 ';
 		padding-right: 10px;

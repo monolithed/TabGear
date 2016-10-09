@@ -19,6 +19,10 @@
 		"message": "List of all open tabs."
 	},
 
+	"feature_i18n": {
+		"message": "Localization for English and Russian languages."
+	},
+
 	"feature_incognito": {
 		"message": "See incognito tabs."
 	},
