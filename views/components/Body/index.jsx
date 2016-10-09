@@ -43,7 +43,7 @@ class Body extends Component {
 
 			case ActionTypes.SEARCH_TABS:
 				if (!store.tabs.length) {
-					return <Text> { chrome.i18n.getMessage('Nothing found…') } </Text>
+					return <Text> { chrome.i18n.getMessage('nothing_found') } </Text>
 				}
 
 			default:

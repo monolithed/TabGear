@@ -7,22 +7,22 @@ export default class Title extends Component {
 	getTitle (type, store) {
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
-				return chrome.i18n.getMessage('About');
+				return chrome.i18n.getMessage('about');
 
 			case ActionTypes.SHOW_ERRORS:
-				return chrome.i18n.getMessage('Error');
+				return chrome.i18n.getMessage('error');
 
 			case ActionTypes.SHOW_DIALOG:
-				return chrome.i18n.getMessage('Warning');
+				return chrome.i18n.getMessage('warning');
 
 			case ActionTypes.ITEMS_LOCKED:
-				return chrome.i18n.getMessage('Loading…');
+				return chrome.i18n.getMessage('loading');
 
 			default:
 				let { length } = store.tabs;
 				let plural = length !== 1 ? 's' : '';
 
-				return chrome.i18n.getMessage(`You have $1 active tab${ plural }`, [ length ]) ;
+				return chrome.i18n.getMessage(`active_tab${ plural }`, [ length ]) ;
 		}
 	}
 

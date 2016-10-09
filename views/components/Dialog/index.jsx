@@ -40,17 +40,17 @@ class Dialog extends Component {
 	render () {
 		return <Text className="tg-dialog">
 				<p className="tg-block">
-					{ chrome.i18n.getMessage('Are you sure you want to close all tabs?') }
+					{ chrome.i18n.getMessage('attention_closing') }
 				</p>
 
 				<button className="tg-button" onClick={ this.closeAllTabs } autoFocus="autoFocus">
-					{ chrome.i18n.getMessage('Confirm') }
+					{ chrome.i18n.getMessage('confirm') }
 				</button>
 
 				<p className="tg-block">
 					<input type="checkbox" id="confirm" ref="ignore" onChange={ this.ignoreTabDialog } />
 					<label htmlFor="confirm" className="tg-label">
-						{ chrome.i18n.getMessage('Prevent additional confirmation') }
+						{ chrome.i18n.getMessage('prevent_confirmation') }
 					</label>
 				</p>
 			</Text>;

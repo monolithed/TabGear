@@ -1,9 +1,133 @@
 {
-	"remove": {
-		"message": "Удалить расширение"
+	"active_tab": {
+		"message": "У вас $1 открытая вкладка"
 	},
 
-	"closeTab": {
-		"message": "Закрыть вкладку"
+	"active_tabs": {
+		"message": "У вас $1 открытых вкладок"
+	},
+
+	"description": {
+		"message": "Tag Gears это расширение для Google Chrome, которое позволяет интуитивно управлять вкладками браузера"
+	},
+
+	"features": {
+		"message": "Некоторые возможности приложения:"
+	},
+
+	"feature_tab_list": {
+		"message": "Список всех открытых вкладок."
+	},
+
+	"feature_incognito": {
+		"message": "Отображение вкладок режима Инкогнито."
+	},
+
+	"feature_discarding": {
+		"message": "Осводождение владок. Позволяет браузеру автоматически освобождать занимаемую вкладками память, при этом сам вкладки не закрываются."
+	},
+
+	"feature_total_tabs": {
+		"message": "Отображение общего количества открытых вкладок во всех окнах браузера."
+	},
+
+	"feature_highlighting": {
+		"message": "Подстветка текущих и Инкогнито вкладок."
+	},
+
+	"feature_prevent_closing": {
+		"message": "Вы хотите предотвратить случайное закрытие все вкладок? Это возможно и конфигурируемо!"
+	},
+
+	"feature_navigation": {
+		"message": "Быстрая навигация с помощью клавиш Tab и Shift+Tab."
+	},
+
+	"feature_confirmation": {
+		"message": "Используйте клавишу Enter для подтверждения действий."
+	},
+
+	"feature_shortcuts": {
+		"message": "Используйте сочетание клавиш Ctrl+Shift+T или ⌘+⇧+T чтобы показать или скрыть приложение."
+	},
+
+	"feature_close_tabs": {
+		"message": "Закрытие конкретной вкладки."
+	},
+
+	"feature_close_all_tabs": {
+		"message": "Закрытие всех вкладок."
+	},
+
+	"feature_open_extensions": {
+		"message": "Быстрый переход на страницу расширений браузера."
+	},
+
+	"copyright": {
+		"message": "Все права защищены. © LLC Pobedit Microsystems"
+	},
+
+	"issues": {
+		"message": "О проблемах и пожелениях сообщайте на адрес:"
+	},
+
+	"attention_closing": {
+		"message": "Вы действительно хотите закрыть все кладки?"
+	},
+
+	"confirm": {
+		"message": "Подтвердить"
+	},
+
+	"prevent_confirmation": {
+		"message": "Предотвратить дополнительное подтверждение"
+	},
+
+	"wrong": {
+		"message": "Что-то пошло не так!"
+	},
+
+	"contact": {
+		"message": "Пожалуйста свяжитесь с нами"
+	},
+
+	"about": {
+		"message": "О приложении"
+	},
+
+	"error": {
+		"message": "Ошибка"
+	},
+
+	"warning": {
+		"message": "Предупреждение"
+	},
+
+	"open_extensions": {
+		"message": "Открыть расширения"
+	},
+
+	"discard_tabs": {
+		"message": "Осободить вкладки"
+	},
+
+	"nothing_found": {
+		"message": "Ничего не найдено…"
+	},
+
+	"back": {
+		"message": "Назад"
+	},
+
+	"close_all_tabs": {
+		"message": "Закрыть все вкладки"
+	},
+
+	"loading": {
+		"message": "Загрузка…"
+	},
+
+	"search": {
+		"message": "Поиск…"
 	}
 }

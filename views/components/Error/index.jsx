@@ -8,9 +8,9 @@ class Error extends Component {
 	render () {
 		return <Text>
 					<p>
-						{ chrome.i18n.getMessage('Something went wrong!') }
+						{ chrome.i18n.getMessage('wrong') }
 						<br />
-						{ chrome.i18n.getMessage('Please contact us at') }
+						{ chrome.i18n.getMessage('contact') }
 						<Link href="mailto:monolihed@gmail.com" mods={[ 'external' ]}>
 							monolithed@gmail.com
 						</Link>.

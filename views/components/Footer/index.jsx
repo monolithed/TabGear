@@ -62,7 +62,7 @@ export default class Footer extends Component {
 		switch (event) {
 			case 'discard':
 				try {
-					return chrome.tabs.discard;
+					return typeof chrome.tabs.discard !== 'undefined';
 				}
 				catch (error) {
 					debug('tg:error')('Could not find chrome.tabs.discard method');
@@ -76,16 +76,16 @@ export default class Footer extends Component {
 	render () {
 		return <div className="tg-panel">
 					<Link onClick={ this.showCredentials }>
-						{ chrome.i18n.getMessage('About') }
+						{ chrome.i18n.getMessage('about') }
 					</Link>
 
 					<Link onClick={ this.openExtensions } mods={[ 'block' ]}>
-						{ chrome.i18n.getMessage('Open extensions') }
+						{ chrome.i18n.getMessage('open_extensions') }
 					</Link>
 
 					<Link onClick={ this.discardTabs } filter={
 						this.filter('discard') } mods={[ 'block' ]}>
-						{ chrome.i18n.getMessage('Discard tabs') }
+						{ chrome.i18n.getMessage('discard_tabs') }
 					</Link>
 				</div>;
 	}

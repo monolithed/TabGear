@@ -76,11 +76,11 @@ export default class Header extends Component {
 	render () {
 		return <div className="tg-panel">
 					<Link onClick={ this.showTabs } filter={ this.hasBack() } mods={[ 'back' ]}>
-						{ chrome.i18n.getMessage('Back') }
+						{ chrome.i18n.getMessage('back') }
 					</Link>
 
 					<Link onClick={ this.closeAllTabs } mods={[ 'block' ]}>
-						{ chrome.i18n.getMessage('Close all tabs') }
+						{ chrome.i18n.getMessage('close_all_tabs') }
 					</Link>
 				</div>;
 	}

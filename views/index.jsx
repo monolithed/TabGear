@@ -5,8 +5,6 @@ import RedBox from 'redbox-react';
 import Root from './containers/Root';
 import Store from './store/configure';
 
-import './stubs';
-
 let store = Store(),
 	index = document.getElementById('root');
 
@@ -14,6 +12,8 @@ if (process.env.NODE_ENV == 'production') {
 	ReactDOM.render(<Root store={ store } />, index);
 }
 else {
+	require('./stubs');
+
 	try {
 		ReactDOM.render(<Root store={ store } />, index);
 	}

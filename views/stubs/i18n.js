@@ -1,4 +1,4 @@
-import locale from '../../_locales/en/messages.json';
+import locale from '../../_locales/ru/messages.json';
 
 chrome.i18n.getMessage = (key, positions = []) => {
 	let { message } = locale[key];

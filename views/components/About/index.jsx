@@ -12,59 +12,59 @@ class About extends Component {
 	render () {
 		return <Text>
 					<p className="tg-block">
-						{ chrome.i18n.getMessage('Tag Gears is an extension for Google Chrome that provides an intuitive tabs management') }
+						{ chrome.i18n.getMessage('description') }
 					</p>
 					<p className="tg-block">
-						{ chrome.i18n.getMessage('Some of the features that will come handy:') }
+						{ chrome.i18n.getMessage('features') }
 					</p>
 
 					<ul className="tg-list">
 						<li>
-							{ chrome.i18n.getMessage('List of all open tabs.') }
+							{ chrome.i18n.getMessage('feature_tab_list') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('See incognito tabs.') }
+							{ chrome.i18n.getMessage('feature_incognito') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Tab discarding. Allows Chrome to automatically discard tabs that aren\'t of great interest to you when it\'s detected that system memory is running pretty low.') }
+							{ chrome.i18n.getMessage('feature_discarding') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Displays the number of tabs you currently have open in all your Chrome windows.') }
+							{ chrome.i18n.getMessage('feature_total_tabs') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Highlighting your current and incognito tabs.') }
+							{ chrome.i18n.getMessage('feature_highlighting') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Do you want to prevent closing multiple tabs? It\'s possible by default and configurable!') }
+							{ chrome.i18n.getMessage('feature_prevent_closing') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Quick navigation with Tab and Shift+Tab keys.') }
+							{ chrome.i18n.getMessage('feature_navigation') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Use Enter key for action confirmation') }
+							{ chrome.i18n.getMessage('feature_confirmation') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Press Ctrl+Shift+T or ⌘+⇧+T keys to show or hide the browser action popup.') }
+							{ chrome.i18n.getMessage('feature_shortcuts') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Closing tabs.') }
+							{ chrome.i18n.getMessage('feature_close_tabs') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Closing all open tabs.') }
+							{ chrome.i18n.getMessage('feature_close_all_tabs') }
 						</li>
 						<li>
-							{ chrome.i18n.getMessage('Quick opening your extensions.') }
+							{ chrome.i18n.getMessage('feature_open_extensions') }
 						</li>
 					</ul>
 
 					<p className="tg-block_small">
-						{ chrome.i18n.getMessage('All rights reserved. © LLC Pobedit Microsystems') }
-						<br />
-						{ chrome.i18n.getMessage('For Issues or Feature requests, mail to:') }
+						{ chrome.i18n.getMessage('issues') }
 						&nbsp;
 						<Link href="mailto:monolihed@gmail.com" mods={[ 'external' ]}>
 							monolihed@gmail.com
 						</Link>
+						<br />
+						{ chrome.i18n.getMessage('copyright') }
 					</p>
 				</Text>;
 	}

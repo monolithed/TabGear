@@ -1,133 +1,133 @@
 {
-	"You have $1 active tab": {
+	"active_tab": {
 		"message": "You have $1 active tab"
 	},
 
-	"You have $1 active tabs": {
+	"active_tabs": {
 		"message": "You have $1 active tabs"
 	},
 
-	"Tag Gears is an extension for Google Chrome that provides an intuitive tabs management": {
+	"description": {
 		"message": "Tag Gears is an extension for Google Chrome that provides an intuitive tabs management"
 	},
 
-	"Some of the features that will come handy:": {
+	"features": {
 		"message": "Some of the features that will come handy:"
 	},
 
-	"List of all open tabs.": {
+	"feature_tab_list": {
 		"message": "List of all open tabs."
 	},
 
-	"See incognito tabs.": {
+	"feature_incognito": {
 		"message": "See incognito tabs."
 	},
 
-	"Tab discarding. Allows Chrome to automatically discard tabs that aren't of great interest to you when it's detected that system memory is running pretty low.": {
+	"feature_discarding": {
 		"message": "Tab discarding. Allows Chrome to automatically discard tabs that aren't of great interest to you when it's detected that system memory is running pretty low."
 	},
 
-	"Displays the number of tabs you currently have open in all your Chrome windows.": {
+	"feature_total_tabs": {
 		"message": "Displays the number of tabs you currently have open in all your Chrome windows."
 	},
 
-	"Highlighting your current and incognito tabs.": {
+	"feature_highlighting": {
 		"message": "Highlighting your current and incognito tabs."
 	},
 
-	"Do you want to prevent closing multiple tabs? It's possible by default and configurable!": {
+	"feature_prevent_closing": {
 		"message": "Do you want to prevent closing multiple tabs? It's possible by default and configurable!"
 	},
 
-	"Quick navigation with Tab and Shift+Tab keys.": {
+	"feature_navigation": {
 		"message": "Quick navigation with Tab and Shift+Tab keys."
 	},
 
-	"Use Enter key for action confirmation": {
-		"message": "Use Enter key for action confirmation"
+	"feature_confirmation": {
+		"message": "Use Enter key for action confirmation."
 	},
 
-	"Press Ctrl+Shift+T or ⌘+⇧+T keys to show or hide the browser action popup.": {
+	"feature_shortcuts": {
 		"message": "Press Ctrl+Shift+T or ⌘+⇧+T keys to show or hide the browser action popup."
 	},
 
-	"Closing tabs.": {
+	"feature_close_tabs": {
 		"message": "Closing tabs."
 	},
 
-	"Closing all open tabs.": {
+	"feature_close_all_tabs": {
 		"message": "Closing all open tabs."
 	},
 
-	"Quick opening your extensions.": {
+	"feature_open_extensions": {
 		"message": "Quick opening your extensions."
 	},
 
-	"All rights reserved. © LLC Pobedit Microsystems": {
+	"copyright": {
 		"message": "All rights reserved. © LLC Pobedit Microsystems"
 	},
 
-	"For Issues or Feature requests, mail to:": {
+	"issues": {
 		"message": "For Issues or Feature requests, mail to:"
 	},
 
-	"Are you sure you want to close all tabs?": {
+	"attention_closing": {
 		"message": "Are you sure you want to close all tabs?"
 	},
 
-	"Confirm": {
+	"confirm": {
 		"message": "Confirm"
 	},
 
-	"Prevent additional confirmation": {
+	"prevent_confirmation": {
 		"message": "Prevent additional confirmation"
 	},
 
-	"Something went wrong!": {
+	"wrong": {
 		"message": "Something went wrong!"
 	},
 
-	"Please contact us at": {
+	"contact": {
 		"message": "Please contact us at"
 	},
 
-	"About": {
+	"about": {
 		"message": "About"
 	},
 
-	"Error": {
+	"error": {
 		"message": "Error"
 	},
 
-	"Warning": {
+	"warning": {
 		"message": "Warning"
 	},
 
-	"Open extensions": {
+	"open_extensions": {
 		"message": "Open extensions"
 	},
 
-	"Discard tabs": {
+	"discard_tabs": {
 		"message": "Discard tabs"
 	},
 
-	"Nothing found…": {
+	"nothing_found": {
 		"message": "Nothing found…"
 	},
 
-	"Back": {
+	"back": {
 		"message": "Back"
 	},
 
-	"Close all tabs": {
+	"close_all_tabs": {
 		"message": "Close all tabs"
 	},
 
-	"Loading…": {
+	"loading": {
 		"message": "Loading…"
 	},
 
-	"Search…": {
+	"search": {
 		"message": "Search…"
 	}
 }
