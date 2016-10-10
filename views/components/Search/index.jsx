@@ -58,7 +58,7 @@ class Search extends Component {
 		let { value } = this.state;
 
 		if (value.length > 0) {
-			clear += ' tg-search__clear_active'
+			clear += ' is-active'
 		}
 
 		return <div className="tg-search">

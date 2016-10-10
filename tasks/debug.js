@@ -81,13 +81,12 @@ module.exports = {
 				loaders: ['style', 'css', 'postcss']
 			},
 
-/*
+			/*
 			{
-				test   : /\.(jpe?g|png)(\?[a-z0-9=&.]+)?$/,
+				test   : /\.(jpe?g|png|woff)(\?[a-z0-9=&.]+)?$/,
 				loader: 'url-loader',
 				query: {
-					limit: 10000,
-					mimetype: 'application/font-woff'
+					limit: 10000
 				}
 			},
 
@@ -95,7 +94,7 @@ module.exports = {
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				loader: 'base64-font-loader'
 			}
-*/
+			*/
 		]
 	},
 

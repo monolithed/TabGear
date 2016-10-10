@@ -39,12 +39,12 @@ class Body extends Component {
 			case ActionTypes.SHOW_ERRORS:
 				return <Error />;
 
-			case ActionTypes.DISABLE_TABS:
 			case ActionTypes.SEARCH_TABS:
 				if (!store.tabs.length) {
 					return <Text> { chrome.i18n.getMessage('nothing_found') } </Text>
 				}
 
+			default:
 				let { disable } = this.state;
 				let state = '';
 
@@ -56,24 +56,20 @@ class Body extends Component {
 				}
 
 				return <div>
-						<Tabs tabs={ store.tabs } actions={ actions } />
+							<Tabs tabs={ store.tabs } actions={ actions } />
 
-						<Disable state={ disable }>
-							<Tabs tabs={ store.searchResults } actions={ actions } state={ state } />
-						</Disable>
-					</div>
+							<Disable state={ disable }>
+								<Tabs tabs={ store.searchResults } actions={ actions } state={ state } />
+							</Disable>
+						</div>
 
-			default:
-				return <Tabs tabs={ store.tabs } actions={ actions } />;
 		}
 	}
 
 	render () {
 		let { store, actions } = this.props;
 
-		return <div className="tg-body">
-					{ this.getComponent() }
-				</div>;
+		return <div className="tg-body"> { this.getComponent() } </div>;
 	}
 }
 

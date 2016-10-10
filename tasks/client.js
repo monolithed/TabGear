@@ -57,17 +57,20 @@ module.exports = {
 				loaders: ['style', 'css', 'postcss']
 			},
 
-/*
+			/*
 			{
-				test   : /\.(jpe?g|png)(\?[a-z0-9=&.]+)?$/,
-				loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+				test   : /\.(jpe?g|png|woff)(\?[a-z0-9=&.]+)?$/,
+				loader: 'url-loader',
+				query: {
+					limit: 10000
+				}
 			},
 
 			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				loader: 'base64-font-loader'
 			}
-*/
+			*/
 		]
 	},
 

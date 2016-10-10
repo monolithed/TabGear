@@ -84,7 +84,7 @@ class Tabs extends Component {
 	}
 
 	render () {
-		let className = `tg-tabs ${this.props.state}`;
+		let className = `tg-tabs ${this.props.state || ''}`;
 
 		return <ul className={ className }>
 					{ this.showTabs('tg-tabs__item') }

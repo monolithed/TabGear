@@ -9,20 +9,30 @@
 	margin: 0 auto;
 	list-style: none;
 	padding: 0;
+	transition: border-top .8s ease-out;
+	will-change: border-top;
 }
 
-	.tg-tabs.is-active {
-		border-top: 1px solid var(--tab-item-border-color);
+	.tg-tabs.is-active,
+	.tg-tabs.is-empty {
+		border-top: 1px solid var(--search-line-color);
 	}
 
-	.tg-tabs.is-empty {
-		border-top: 1px solid var(--body-color);
+	.tg-tabs__search-results {
+		background: #fff;
+		box-shadow: 0 5px 10px var(--search-line-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 2;
 	}
 
 	.tg-tabs__item {
 		border-bottom: 1px solid var(--tab-item-border-color);
 		position: relative;
 		transition: background-color .3s ease-in-out;
+		will-change: background-color;
 		width: 100%;
 	}
 
@@ -63,7 +73,8 @@
 				top: var(--item-padding);
 				right: var(--item-padding);
 				text-transform: none;
-				transition: all 1s;
+				transition: opacity 1s ease-in-out;
+				/*will-change: opacity;*/
 				z-index: 0;
 			}
 
@@ -97,14 +108,3 @@
 	.tg-tabs__item:hover {
 		background-color: var(--tab-item-hover-color);
 	}
-
-	.tg-tabs__search-results {
-		background: #fff;
-		box-shadow: 0 5px 10px rgba(105, 103, 103, 0.13);
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 2;
-	}
-

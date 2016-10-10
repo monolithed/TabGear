@@ -5,7 +5,7 @@ let Disable = ({ state, children }) => {
 	let className = 'tg-disable-box';
 
 	if (state) {
-		className += ' active';
+		className += ' is-active';
 	}
 
 	return <div>
