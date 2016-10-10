@@ -7,11 +7,13 @@
 			0 3px 1px -2px rgba(0, 0, 0, .2),
 			0 1px 5px 0 rgba(0, 0, 0, .12);
 	color: var(--tab-title-color);
+	cursor: default;
 	border-radius: 1px;
 	font-size: 20px;
 	margin: 25px auto 0 auto;
 	padding: 15px 42px 15px 15px;
 	position: relative;
+	user-select: none;
 }
 
 .tg-title,
@@ -20,11 +22,12 @@
 }
 
 .tg-controls__more {
+	border-radius: 3px;
 	cursor: pointer;
+	overflow: hidden;
 	position: absolute;
 	right: 7px;
 	width: 22px;
-	border-radius: 3px;
 	text-align: center;
 	transition: background-color .3s ease-in-out;
 	/*will-change: background-color;*/

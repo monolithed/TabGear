@@ -4,6 +4,38 @@ import * as ActionTypes from '../../constants/ActionTypes';
 import './index.css';
 
 export default class Title extends Component {
+	constructor (properties) {
+		super(...arguments);
+
+		this.state = {
+			credentials: false
+		}
+
+		this.showCredentials =
+			this.showCredentials.bind(this);
+	}
+
+	/**
+	 * Show credentials
+	 *
+	 * @param {Event} event
+	 */
+	showCredentials (event) {
+		let { actions } = this.props;
+		let active = !this.state.credentials;
+
+		if (active) {
+			actions.Layout.showCredentials();
+		}
+		else {
+			actions.Tabs.showTabs();
+		}
+
+		this.setState({ credentials: active });
+
+		event.preventDefault();
+	}
+
 	getTitle (type, store) {
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
@@ -31,7 +63,8 @@ export default class Title extends Component {
 
 		return <div className="tg-title">
 					Tab Gear: { this.getTitle(type, store) }
-				<div className="tg-icon tg-controls__more">more_vert</div>
+					<div className="tg-icon tg-controls__more"
+				        onClick={ this.showCredentials }>more_vert</div>
 				</div>;
 	}
 }

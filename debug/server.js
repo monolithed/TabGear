@@ -21,7 +21,7 @@ middleware = new WebpackHotMiddleware(webpack);
 
 express.use(middleware);
 
-express.use(function (request, result) {
+express.use((request, result) => {
 	let file = path.join(__dirname, '../views/index.html');
 
 	result.sendFile(file);
@@ -29,7 +29,7 @@ express.use(function (request, result) {
 
 const port = 3000;
 
-express.listen(port, function (error) {
+express.listen(port, error => {
 	if (error) {
 		console.error(error);
 	}
