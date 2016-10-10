@@ -63,8 +63,6 @@
 				top: var(--item-padding);
 				right: var(--item-padding);
 				text-transform: none;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
 				transition: all 1s;
 				z-index: 0;
 			}

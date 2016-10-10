@@ -74,7 +74,7 @@ class Tabs extends Component {
 
 							<span className={ `${name}-text` }> { title } </span>
 
-							<span className={ `${name}-close` }
+							<span className={ `tg-icon ${name}-close` }
 							      data-id={ id }
 							      title={ chrome.i18n.getMessage('close') }
 							      onClick={ this.closeTab }> </span>

@@ -1,5 +1,4 @@
-let path = require('path'),
-	fs = require('fs');
+let path = require('path');
 
 let Webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -58,6 +57,7 @@ module.exports = {
 				loaders: ['style', 'css', 'postcss']
 			},
 
+/*
 			{
 				test   : /\.(jpe?g|png)(\?[a-z0-9=&.]+)?$/,
 				loader: 'url-loader?limit=10000&mimetype=application/font-woff'
@@ -67,6 +67,7 @@ module.exports = {
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				loader: 'base64-font-loader'
 			}
+*/
 		]
 	},
 

@@ -54,7 +54,7 @@ class Search extends Component {
 	}
 
 	render () {
-		let clear = 'tg-search__clear';
+		let clear = 'tg-icon tg-search__clear';
 		let { value } = this.state;
 
 		if (value.length > 0) {

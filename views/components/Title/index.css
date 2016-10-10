@@ -10,10 +10,29 @@
 	border-radius: 1px;
 	font-size: 20px;
 	margin: 25px auto 0 auto;
-	padding: 10px;
+	padding: 15px 42px 15px 15px;
+	position: relative;
 }
 
 .tg-title,
 .tg-list {
 	border: var(--tab-title-border-color);
+}
+
+.tg-controls__more {
+	cursor: pointer;
+	position: absolute;
+	right: 7px;
+	width: 22px;
+	border-radius: 3px;
+	text-align: center;
+	transition: background-color .3s ease-in-out;
+}
+
+.tg-controls__more:hover {
+	background-color: #1490f1;
+}
+
+.tg-controls__more:active {
+	box-shadow: inset 0 0 11px rgba(53, 134, 202, 0.6);
 }

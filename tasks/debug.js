@@ -1,5 +1,4 @@
-let path = require('path'),
-	fs = require('fs');
+let path = require('path');
 
 let Webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,9 +16,9 @@ module.exports = {
 	],
 
 	output: {
-		path      : `${DIR_NAME}/cache/static`,
+		path      : `${DIR_NAME}/cache`,
 		filename  : 'build.js',
-		publicPath: '/static/'
+		publicPath: '/'
 	},
 
 	resolve: {
@@ -82,15 +81,21 @@ module.exports = {
 				loaders: ['style', 'css', 'postcss']
 			},
 
+/*
 			{
 				test   : /\.(jpe?g|png)(\?[a-z0-9=&.]+)?$/,
-				loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+				loader: 'url-loader',
+				query: {
+					limit: 10000,
+					mimetype: 'application/font-woff'
+				}
 			},
 
 			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				loader: 'base64-font-loader'
 			}
+*/
 		]
 	},
 

@@ -1,10 +1,10 @@
 {
 	"active_tab": {
-		"message": "У вас $1 открытая вкладка"
+		"message": "$1 открытая вкладка"
 	},
 
 	"active_tabs": {
-		"message": "У вас $1 открытых вкладок"
+		"message": "$1 открытых вкладок"
 	},
 
 	"description": {

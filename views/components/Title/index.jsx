@@ -29,7 +29,10 @@ export default class Title extends Component {
 	render () {
 		let { store, type } = this.props;
 
-		return <div className="tg-title"> Tab Gear: { this.getTitle(type, store) }</div>;
+		return <div className="tg-title">
+					Tab Gear: { this.getTitle(type, store) }
+				<div className="tg-icon tg-controls__more">more_vert</div>
+				</div>;
 	}
 }
 
