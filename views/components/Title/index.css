@@ -30,7 +30,6 @@
 	width: 22px;
 	text-align: center;
 	transition: background-color .3s ease-in-out;
-	/*will-change: background-color;*/
 }
 
 .tg-controls__more:hover {

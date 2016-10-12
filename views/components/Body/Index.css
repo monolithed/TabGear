@@ -4,4 +4,5 @@
 	background: var(--body-color);
 	min-height: 50px;
 	position: relative;
+	will-change: background-color;
 }

@@ -11,8 +11,10 @@
 		padding: 15px;
 		border: none;
 		outline: none;
+		position: relative;
 		transition: box-shadow .4s cubic-bezier(.4, 0, 1, 1);
 		width: 100%;
+		/*z-index: 1;*/
 		/*will-change: box-shadow;*/
 	}
 
@@ -24,6 +26,7 @@
 		opacity: 0;
 		transition: opacity .3s ease-in;
 		/*will-change: opacity;*/
+		/*z-index: 1;*/
 	}
 
 	.tg-search__clear:after {
@@ -35,6 +38,7 @@
 		position: absolute;
 		right: 15px;
 		top: 19px;
+		/*z-index: 1;*/
 	}
 
 		.tg-search__clear.is-active {
