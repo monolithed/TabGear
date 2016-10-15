@@ -39,14 +39,18 @@
 	}
 
 	.tg-search__clear:after {
-		content: var(--close-content);
+		content: 'close';
 		color: var(--search-clear-color);
 		cursor: pointer;
-		font-size: var(--search-clear-font-size);
+		font-size: var(--close-glyph-font-size);
+		font-family: 'Material';
 		line-height: var(--search-clear-line-height);
 		position: absolute;
 		right: 15px;
 		top: 19px;
+		-webkit-font-feature-settings: 'liga';
+		-webkit-font-smoothing: antialiased;
+		/*z-index: 1;*/
 	}
 		.tg-search__clear:hover:after {
 			color: var(--search-color);

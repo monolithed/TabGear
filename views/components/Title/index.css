@@ -32,6 +32,10 @@
 	transition: background-color .3s ease-in-out;
 }
 
+.tg-controls__more:after {
+	content: 'more_vert';
+}
+
 .tg-controls__more:hover {
 	background-color: #1490f1;
 }

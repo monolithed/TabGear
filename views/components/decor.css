@@ -1,9 +1,9 @@
 :root {
 	--close-content: '✕';
 	--body-font: normal 14px/21px Roboto, helvetica, arial, sans-serif;
-	--search-font-size: 14px;
+	--search-font-size: 20px;
 	--search-line-height: 22px;
-	--search-clear-font-size: 16px;
+	--close-glyph-font-size: 20px;
 	--search-clear-line-height: 16px;
 	--link-font-size: 12px;
 	--link-line-height: 18px;

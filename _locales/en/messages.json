@@ -1,10 +1,26 @@
 {
-	"active_tab": {
-		"message": "$1 active tab"
+	"show_credentials": {
+		"message": "About"
+	},
+
+	"show_errors": {
+		"message": "Error"
+	},
+
+	"show_dialog": {
+		"message": "Warning"
+	},
+
+	"items_locked": {
+		"message": "Loading…"
 	},
 
 	"active_tabs": {
-		"message": "$1 active tabs"
+		"message": "Active tabs: $1"
+	},
+
+	"search_tabs": {
+		"message": "Found tabs: $1 of $2"
 	},
 
 	"description": {
@@ -95,18 +111,6 @@
 		"message": "Please contact us at "
 	},
 
-	"about": {
-		"message": "About"
-	},
-
-	"error": {
-		"message": "Error"
-	},
-
-	"warning": {
-		"message": "Warning"
-	},
-
 	"open_extensions": {
 		"message": "Open extensions"
 	},
@@ -129,10 +133,6 @@
 
 	"close_all_tabs": {
 		"message": "Close all tabs"
-	},
-
-	"loading": {
-		"message": "Loading…"
 	},
 
 	"search": {

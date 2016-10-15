@@ -1,10 +1,26 @@
 {
-	"active_tab": {
-		"message": "$1 открытая вкладка"
+	"show_credentials": {
+		"message": "О приложении"
+	},
+
+	"show_errors": {
+		"message": "Ошибка"
+	},
+
+	"show_dialog": {
+		"message": "Предупреждение"
+	},
+
+	"items_locked": {
+		"message": "Загрузка…"
 	},
 
 	"active_tabs": {
-		"message": "$1 открытых вкладок"
+		"message": "Открытых вкладок: $1"
+	},
+
+	"search_tabs": {
+		"message": "Найдено вкладок: $1"
 	},
 
 	"description": {
@@ -95,18 +111,6 @@
 		"message": "Пожалуйста свяжитесь с нами "
 	},
 
-	"about": {
-		"message": "О приложении"
-	},
-
-	"error": {
-		"message": "Ошибка"
-	},
-
-	"warning": {
-		"message": "Предупреждение"
-	},
-
 	"open_extensions": {
 		"message": "Открыть расширения"
 	},
@@ -129,10 +133,6 @@
 
 	"close_all_tabs": {
 		"message": "Закрыть все вкладки"
-	},
-
-	"loading": {
-		"message": "Загрузка…"
 	},
 
 	"search": {

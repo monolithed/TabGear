@@ -65,8 +65,10 @@
 
 			.tg-tabs__item-link:after,
 			.tg-tabs__item-close {
-				content: var(--close-content);
-				font-size: var(--tabs-font-size);
+				content: 'close';
+				color: var(--tab-item-link-color);
+				font-family: 'Material';
+				font-size: var(--close-glyph-font-size);
 				line-height: var(--tabs-line-height);
 				opacity: 0;
 				position: absolute;
@@ -76,10 +78,13 @@
 				transition: opacity 1s ease-in-out;
 				/*will-change: opacity;*/
 				z-index: 0;
+				-webkit-font-feature-settings: 'liga';
+				-webkit-font-smoothing: antialiased;
 			}
 
 			.tg-tabs__item-link:hover:after,
 			.tg-tabs__item-close:hover {
+				color: var(--search-color);
 				opacity: 1;
 			}
 

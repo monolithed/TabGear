@@ -45,22 +45,18 @@ export default class Title extends Component {
 	getTitle (type, store) {
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
-				return chrome.i18n.getMessage('about');
-
 			case ActionTypes.SHOW_ERRORS:
-				return chrome.i18n.getMessage('error');
-
 			case ActionTypes.SHOW_DIALOG:
-				return chrome.i18n.getMessage('warning');
-
 			case ActionTypes.ITEMS_LOCKED:
-				return chrome.i18n.getMessage('loading');
+			case ActionTypes.SEARCH_TABS:
+				return chrome.i18n.getMessage(type.toLowerCase(), [
+					store.searchResults.length,
+				]);
 
 			default:
-				let { length } = store.tabs;
-				let plural = length !== 1 ? 's' : '';
-
-				return chrome.i18n.getMessage(`active_tab${ plural }`, [ length ]) ;
+				return chrome.i18n.getMessage('active_tabs', [
+					store.tabs.length
+				]);
 		}
 	}
 
@@ -68,9 +64,10 @@ export default class Title extends Component {
 		let { store, type } = this.props;
 
 		return <div className="tg-title">
-					Tab Gear: { this.getTitle(type, store) }
+					{ this.getTitle(type, store) }
+
 					<div className="tg-icon tg-controls__more"
-				        onClick={ this.showCredentials }>more_vert</div>
+					     onClick={ this.showCredentials }> </div>
 				</div>;
 	}
 }
