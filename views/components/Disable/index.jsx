@@ -2,12 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import './index.css';
 
 let Disable = ({ state, children }) => {
-	let className = 'tg-disable-box';
+	let className = 'tg-disable-box ';
 
-	if (state) {
-		className += ' is-active';
-	}
-	else return null
+	className += state ? 'is-active' : 'is-inactive';
 
 	return <div>
 				<div className={ className }> </div>

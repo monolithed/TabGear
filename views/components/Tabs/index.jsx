@@ -22,6 +22,9 @@ class Tabs extends Component {
 		let { actions } = this.props;
 
 		actions.Tabs.switchTab(index);
+
+debugger
+		event.stopPropagation()
 		event.preventDefault();
 	}
 
@@ -41,11 +44,11 @@ class Tabs extends Component {
 	}
 
 	/**
-	 * Loads data
+	 * Get tabs
 	 *
 	 * @param {string} name
 	 */
-	showTabs (name) {
+	getItems (name) {
 		let { tabs } = this.props;
 
 		return tabs.map((tab, key) => {
@@ -87,7 +90,7 @@ class Tabs extends Component {
 		let className = `tg-tabs ${this.props.state || ''}`;
 
 		return <ul className={ className }>
-					{ this.showTabs('tg-tabs__item') }
+					{ this.getItems('tg-tabs__item') }
 				</ul>;
 	}
 }

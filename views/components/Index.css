@@ -139,4 +139,5 @@ body {
 .tg-react-appear.tg-react-appear-active {
 	opacity: 1;
 	transition: all .7s ease-in-out;
+	will-change: opacity;
 }
