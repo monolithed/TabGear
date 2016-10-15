@@ -22,7 +22,13 @@ export default class Title extends Component {
 	 */
 	showCredentials (event) {
 		let { actions, type } = this.props;
-		let active = type === ActionTypes.SHOW_TABS || type !== ActionTypes.SEARCH_TABS;
+
+		let types = [
+			ActionTypes.SHOW_TABS,
+			ActionTypes.DISABLE_TABS
+		];
+
+		let active = types.includes(type);
 
 		if (active) {
 			actions.Layout.showCredentials();
