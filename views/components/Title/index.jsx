@@ -43,21 +43,24 @@ export default class Title extends Component {
 	}
 
 	getTitle (type, store) {
+		let title = [];
+
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
 			case ActionTypes.SHOW_ERRORS:
 			case ActionTypes.SHOW_DIALOG:
 			case ActionTypes.ITEMS_LOCKED:
 			case ActionTypes.SEARCH_TABS:
-				return chrome.i18n.getMessage(type.toLowerCase(), [
-					store.searchResults.length,
-				]);
+				title = [type, store.searchResults.length];
+				break;
 
 			default:
-				return chrome.i18n.getMessage('active_tabs', [
-					store.tabs.length
-				]);
+				title = [ActionTypes.SHOW_TABS, store.tabs.length];
 		}
+
+		let [ key, value ] = title;
+
+		return chrome.i18n.getMessage(key.toLowerCase(), [ value ]);
 	}
 
 	render () {

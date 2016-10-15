@@ -15,7 +15,7 @@
 		"message": "Loading…"
 	},
 
-	"active_tabs": {
+	"show_tabs": {
 		"message": "Active tabs: $1"
 	},
 

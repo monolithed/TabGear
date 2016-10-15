@@ -15,7 +15,7 @@
 		"message": "Загрузка…"
 	},
 
-	"active_tabs": {
+	"show_tabs": {
 		"message": "Открытых вкладок: $1"
 	},
 
