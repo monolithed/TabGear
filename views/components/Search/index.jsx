@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as ActionTypes from '../../constants/ActionTypes';
 import './index.css';
 
 class Search extends Component {
@@ -6,7 +7,8 @@ class Search extends Component {
 		super(...arguments);
 
 		this.state = {
-			value: ''
+			value: '',
+			switchTab: false
 		};
 
 		this.searchTabs =
@@ -27,13 +29,16 @@ class Search extends Component {
 
 		let state = store.tabs.length != store.searchResults.length;
 
-		actions.Tabs.disableTabs(store, state);
+		actions.Tabs.disableTabs(store.tabs, state);
 	}
 
-	onBlur (event) {
-		let { actions, store } = this.props;
+	onBlur ({ relatedTarget }) {
+		let { actions, store, type } = this.props;
 
-		actions.Tabs.disableTabs(store, false);
+		// searchTabs event should be called before
+		if (!relatedTarget || relatedTarget.dataset.name !== 'tab') {
+			actions.Tabs.disableTabs(store.tabs, false);
+		}
 	}
 
 	clearSearch (event) {
@@ -47,9 +52,9 @@ class Search extends Component {
 		let { store, actions } = this.props;
 		let { value } = event.target;
 
-		actions.Tabs.searchTabs(store.tabs, value);
 		this.setState({ value});
 
+		actions.Tabs.searchTabs(store.tabs, value);
 		event.stopPropagation();
 	}
 

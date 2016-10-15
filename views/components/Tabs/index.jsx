@@ -19,9 +19,10 @@ class Tabs extends Component {
 	 */
 	switchTab (event) {
 		let { index } = event.currentTarget.dataset;
-		let { actions } = this.props;
+		let { actions, store } = this.props;
 
 		actions.Tabs.switchTab(index);
+		actions.Tabs.disableTabs(store.tabs, false);
 
 		event.stopPropagation()
 		event.preventDefault();
@@ -48,9 +49,9 @@ class Tabs extends Component {
 	 * @param {string} name
 	 */
 	getItems (name) {
-		let { tabs } = this.props;
+		let { items } = this.props;
 
-		return tabs.map((tab, key) => {
+		return items.map((tab, key) => {
 			let { id, index, title, incognito, favIconUrl, highlighted } = tab;
 
 			let state = [name];
@@ -67,8 +68,9 @@ class Tabs extends Component {
 
 			return <li className={ state } key={ key }>
 						<a className={ `${name}-link` }
-						   data-index={ index }
 						   href="#"
+						   data-index={ index }
+						   data-name="tab"
 						   onClick={ this.switchTab }>
 
 							<img className={ `${name}-icon` }
@@ -95,7 +97,8 @@ class Tabs extends Component {
 }
 
 Tabs.propTypes = {
-	tabs   : PropTypes.array.isRequired,
+	items  : PropTypes.array.isRequired,
+	store  : PropTypes.object.isRequired,
 	state  : PropTypes.string,
 	actions: PropTypes.object.isRequired
 };

@@ -57,10 +57,10 @@ class Body extends Component {
 				}
 
 				return <div>
-							<Tabs tabs={ store.tabs } actions={ actions } />
+							<Tabs items={ store.tabs } { ...this.props } />
 
 							<Disable state={ disable }>
-								<Tabs tabs={ store.searchResults } actions={ actions } state={ state } />
+								<Tabs items={ store.searchResults } { ...this.props }  />
 							</Disable>
 						</div>
 
@@ -70,8 +70,16 @@ class Body extends Component {
 	render () {
 		let { store, actions } = this.props;
 
+		const timeout = 700;
+
 		return <div className="tg-body">
-					<ReactCSSTransitionGroup transitionName="tg-react" transitionAppear={true}>
+					<ReactCSSTransitionGroup
+						transitionName="tg-react"
+						transitionAppear={true}
+						transitionAppearTimeout={ timeout }
+						transitionEnterTimeout={ timeout }
+						transitionLeaveTimeout={ timeout }
+					>
 						{ this.getComponent() }
 					</ReactCSSTransitionGroup>
 				</div>;
