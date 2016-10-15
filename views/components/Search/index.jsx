@@ -54,14 +54,14 @@ class Search extends Component {
 	}
 
 	render () {
-		let clear = 'tg-icon tg-search__clear';
+		let className = 'tg-search';
 		let { value } = this.state;
 
 		if (value.length > 0) {
-			clear += ' is-active'
+			className += ' is-active';
 		}
 
-		return <div className="tg-search">
+		return <div className={ className }>
 					<input className="tg-search__input" type="text"
 					       value={ value }
 					       placeholder={ chrome.i18n.getMessage('search') }
@@ -69,7 +69,7 @@ class Search extends Component {
 					       onBlur={ this.onBlur}
 					       onInput={ this.searchTabs } />
 
-				<div className={ clear } onClick={ this.clearSearch }> </div>
+				<div className="tg-icon tg-search__clear" onClick={ this.clearSearch }> </div>
 			</div>;
 	}
 }

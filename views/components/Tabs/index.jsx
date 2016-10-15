@@ -23,7 +23,6 @@ class Tabs extends Component {
 
 		actions.Tabs.switchTab(index);
 
-debugger
 		event.stopPropagation()
 		event.preventDefault();
 	}
