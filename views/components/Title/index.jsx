@@ -21,8 +21,8 @@ export default class Title extends Component {
 	 * @param {Event} event
 	 */
 	showCredentials (event) {
-		let { actions } = this.props;
-		let active = !this.state.credentials;
+		let { actions, type } = this.props;
+		let active = type === ActionTypes.SHOW_TABS || type !== ActionTypes.SEARCH_TABS;
 
 		if (active) {
 			actions.Layout.showCredentials();

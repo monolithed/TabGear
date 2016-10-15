@@ -131,3 +131,12 @@ body {
 	.tg-block_small {
 		font-size: 13px;
 	}
+
+.tg-react-appear {
+	opacity: 0.01;
+}
+
+.tg-react-appear.tg-react-appear-active {
+	opacity: 1;
+	transition: all .7s ease-in-out;
+}

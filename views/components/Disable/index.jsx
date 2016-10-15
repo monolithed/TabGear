@@ -7,6 +7,7 @@ let Disable = ({ state, children }) => {
 	if (state) {
 		className += ' is-active';
 	}
+	else return null
 
 	return <div>
 				<div className={ className }> </div>

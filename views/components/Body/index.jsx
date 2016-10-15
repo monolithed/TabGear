@@ -9,6 +9,7 @@ import Dialog from '../Dialog';
 import Disable from '../Disable';
 import Error from '../Error';
 import Text from '../Text';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Body extends Component {
 	constructor () {
@@ -69,7 +70,11 @@ class Body extends Component {
 	render () {
 		let { store, actions } = this.props;
 
-		return <div className="tg-body"> { this.getComponent() } </div>;
+		return <div className="tg-body">
+					<ReactCSSTransitionGroup transitionName="tg-react" transitionAppear={true}>
+						{ this.getComponent() }
+					</ReactCSSTransitionGroup>
+				</div>;
 	}
 }
 
