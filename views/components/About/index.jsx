@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import './index.css';
 import Link from '../Link';
 import Text from '../Text';
-import Share from '../Share';
+// import Share from '../Share';
 
 class About extends Component {
 	constructor (properties) {
@@ -58,7 +58,7 @@ class About extends Component {
 						{ chrome.i18n.getMessage('copyright') }
 					</p>
 
-					<Share />
+					{/*<Share />*/}
 
 				</Text>;
 	}
