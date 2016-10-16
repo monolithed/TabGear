@@ -74,12 +74,18 @@ export default class Header extends Component {
 	}
 
 	render () {
+		let closeMods = ['block'];
+
+		if (this.props.type === ActionTypes.SHOW_DIALOG) {
+			closeMods.push('hidden');
+		}
+
 		return <div className="tg-panel">
 					<Link onClick={ this.showTabs } filter={ this.hasBack() } mods={[ 'back' ]}>
 						{ chrome.i18n.getMessage('back') }
 					</Link>
 
-					<Link onClick={ this.closeAllTabs } mods={[ 'block' ]}>
+					<Link onClick={ this.closeAllTabs } mods={ closeMods }>
 						{ chrome.i18n.getMessage('close_all_tabs') }
 					</Link>
 				</div>;
