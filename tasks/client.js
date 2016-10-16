@@ -5,7 +5,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
-var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
+let UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
 
 const DIR_NAME = path.join(__dirname, '..');
 
@@ -24,13 +24,28 @@ module.exports = {
 		extensions: ['', '.js', '.jsx']
 	},
 
-	// devtool: 'source-map',
-	// target : 'web',
+	devtool: 'source-map',
+	target : 'web',
 
 	plugins: [
 		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.optimize.DedupePlugin(),
-		new UnusedFilesWebpackPlugin(),
+
+		new UnusedFilesWebpackPlugin({
+			globOptions: {
+				ignore: [
+					'./**/*',
+					'*.{md,html,json}',
+					'node_modules/**/*',
+					'_locales/**/*',
+					'cache/**/*',
+					'debug/**/*',
+					'files/**/*',
+					'tasks/**/*'
+
+				]
+			}
+		}),
 
 		new Webpack.DefinePlugin({
 			'process.env': {
