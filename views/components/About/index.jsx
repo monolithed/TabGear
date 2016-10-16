@@ -52,7 +52,7 @@ class About extends Component {
 
 					<p className="tg-block_small">
 						{ chrome.i18n.getMessage('issues') }
-						&nbsp;
+						{/*&nbsp;*/}
 
 						<Link href={ `mailto:${email}` } mods={ ['external'] }>
 							{ email }
