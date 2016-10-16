@@ -62,8 +62,9 @@
 			width: 100%;
 
 			&:focus {
-				outline: 1px solid var(--tab-item-link-focus-color);
-				box-shadow: 1px 2px 12px var(--tab-item-link-focus-color);
+				outline: none;
+				/*outline: 1px solid var(--tab-item-link-focus-color);*/
+				/*box-shadow: 1px 2px 12px var(--tab-item-link-focus-color);*/
 			}
 		}
 

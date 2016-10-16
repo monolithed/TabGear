@@ -19,12 +19,12 @@ class About extends Component {
 			'feature_highlighting',
 			'feature_prevent_closing',
 			'feature_i18n',
-			'feature_navigation',
 			'feature_confirmation',
 			'feature_shortcuts',
 			'feature_close_tabs',
 			'feature_close_all_tabs',
 			'feature_open_extensions'
+			// 'feature_navigation',
 		];
 
 		return features.map((feature, index) => {

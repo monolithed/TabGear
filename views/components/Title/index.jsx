@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import BEMHelper from 'react-bem-helper';
+
 import * as ActionTypes from '../../constants/ActionTypes';
 import './index.css';
 
@@ -82,7 +83,7 @@ export default class Title extends Component {
 						{ this.getTitle(type, store) }
 					</div>
 
-					<div className="tg-icon tg-controls__more" onClick={ this.showCredentials } />
+					<a href="#" tabIndex="1" className="tg-icon tg-controls__more" onClick={ this.showCredentials } />
 				</div>;
 	}
 }

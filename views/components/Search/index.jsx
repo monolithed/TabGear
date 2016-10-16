@@ -27,6 +27,34 @@ class Search extends Component {
 
 		this.onBlur =
 			this.onBlur.bind(this);
+
+		this.keepFocus =
+			this.keepFocus.bind(this);
+	}
+
+	shouldComponentUpdate () {
+		let types = [
+			ActionTypes.DISABLE_TABS,
+			ActionTypes.SEARCH_TABS
+		];
+
+		return types.includes(this.props.type);
+	}
+
+	componentDidMount () {
+		document.addEventListener('keydown', this.keepFocus);
+	}
+
+	componentWillUnmount () {
+		document.removeEventListener('keydown', this.keepFocus);
+	}
+
+	keepFocus (event) {
+		console.log(event.keyCode)
+
+		if (event.keyCode === 9) {
+			event.preventDefault();
+		}
 	}
 
 	onFocus (event) {
@@ -37,11 +65,12 @@ class Search extends Component {
 		actions.Tabs.disableTabs(store.tabs, state);
 	}
 
-	onBlur ({ relatedTarget }) {
+	onBlur (event) {
 		let { actions, store, type } = this.props;
 
-		// searchTabs event should be called before
-		if (!relatedTarget || relatedTarget.dataset.name !== 'tab') {
+		// searchTabs event should be called before.
+		// Also we shouldn't care about "focusin" event
+		if (!event.relatedTarget || event.relatedTarget.dataset.name !== 'tab') {
 			actions.Tabs.disableTabs(store.tabs, false);
 		}
 	}
@@ -64,6 +93,8 @@ class Search extends Component {
 	}
 
 	render () {
+		console.log(1111)
+
 		let { value } = this.state;
 
 		let state = {

@@ -27,7 +27,6 @@
 
 .tg-title__logo {
 	background: url('../../../files/icons/38.png') 0 0 no-repeat;
-
 	background-size: var(--size);
 	margin-right: 13px;
 	top: 12px;
@@ -37,11 +36,12 @@
 	height: var(--size);
 }
 
-
 .tg-controls__more {
 	border-radius: 3px;
 	cursor: pointer;
+	color: var(--tab-title-color);
 	overflow: hidden;
+	outline: none;
 	position: absolute;
 	top: 14px;
 	right: 7px;

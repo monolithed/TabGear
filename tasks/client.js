@@ -21,7 +21,7 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['', '.js', '.jsx']
+		extensions: ['', '.js', '.jsx', '.png']
 	},
 
 	devtool: 'source-map',
@@ -76,20 +76,10 @@ module.exports = {
 				loaders: ['style', 'css', 'postcss']
 			},
 
-			/*
 			{
-				test   : /\.(jpe?g|png|woff)(\?[a-z0-9=&.]+)?$/,
-				loader: 'url-loader',
-				query: {
-					limit: 10000
-				}
-			},
-
-			{
-				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-				loader: 'base64-font-loader'
+				test   : /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+				loader: 'base64-inline-loader'
 			}
-			*/
 		]
 	},
 

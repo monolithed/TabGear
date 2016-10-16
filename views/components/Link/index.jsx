@@ -20,10 +20,10 @@ let Link = ({ children, href = '#', mods = [], filter, index, onClick }) => {
 }
 
 Link.propTypes = {
-	children: PropTypes.node.isRequired,
+	children: PropTypes.node,
 	mods    : PropTypes.array,
 	filter  : PropTypes.bool,
-	index   : PropTypes.number,
+	index   : PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onClick : PropTypes.func
 };
 
