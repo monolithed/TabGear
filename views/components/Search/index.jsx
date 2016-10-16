@@ -1,10 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import * as ActionTypes from '../../constants/ActionTypes';
+import BEMHelper from 'react-bem-helper';
 import './index.css';
 
 class Search extends Component {
 	constructor () {
 		super(...arguments);
+
+		this.class = new BEMHelper({
+			name: 'tg-search'
+		});
 
 		this.state = {
 			value: '',
@@ -59,14 +64,15 @@ class Search extends Component {
 	}
 
 	render () {
-		let className = 'tg-search';
 		let { value } = this.state;
 
-		if (value.length > 0) {
-			className += ' is-active';
-		}
+		let state = {
+			extra: {
+				'is-active': value.length > 0
+			}
+		};
 
-		return <div className={ className }>
+		return <div { ...this.class(state) }>
 					<input className="tg-search__input" type="text"
 					       value={ value }
 					       placeholder={ chrome.i18n.getMessage('search') }
@@ -74,7 +80,7 @@ class Search extends Component {
 					       onBlur={ this.onBlur}
 					       onInput={ this.searchTabs } />
 
-				<div className="tg-icon tg-search__clear" onClick={ this.clearSearch }> </div>
+				<div className="tg-icon tg-search__clear" onClick={ this.clearSearch } />
 			</div>;
 	}
 }

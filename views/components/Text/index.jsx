@@ -1,16 +1,18 @@
 import React, { Component, PropTypes } from 'react';
+import BEMHelper from 'react-bem-helper';
 import './index.css';
 
-class Text extends Component {
-	render () {
-		let { className = '' } = this.props;
+let classes = new BEMHelper({
+	name: 'tg-box'
+});
 
-		return <div className={ `tg-box ${className}` }>
-			{ this.props.children }
-		</div>;
-	}
+let Text = ({ className = '', children }) => {
+	return <div { ...classes({ extra: className }) }> { children } </div>;
 }
 
-Text.propTypes = { };
+Text.propTypes = {
+	children : PropTypes.node.isRequired,
+	className: PropTypes.string
+};
 
 export default Text;

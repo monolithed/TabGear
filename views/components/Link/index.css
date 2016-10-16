@@ -8,25 +8,22 @@
 	line-height: var(--link-line-height);
 }
 
-.tg-header-link:hover {
-	color: var(--link-hover-color);
-}
-
-	.tg-link_block {
+.tg-link {
+	&--block {
 		margin-left: 10px;
 	}
 
-	.tg-link_hidden {
+	&--hidden {
 		visibility: hidden;
 	}
 
-	.tg-link_external {
+	&--external {
 		color: var(--link-external-color);
 		font-size: var(--link-external-font-size);
 		line-height: var(--link-external-line-height);
 	}
 
-	.tg-link_back {
+	&--back {
 		display: block;
 		float: left;
 
@@ -36,3 +33,5 @@
 			display: inline-block;
 		}
 	}
+}
+

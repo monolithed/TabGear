@@ -38,7 +38,7 @@ class Body extends Component {
 				return <About config={ config } />;
 
 			case ActionTypes.SHOW_ERRORS:
-				return <Error />;
+				return <Error config={ config } />;
 
 			case ActionTypes.SEARCH_TABS:
 				if (!store.tabs.length) {
@@ -46,25 +46,23 @@ class Body extends Component {
 				}
 
 			default:
-				let { disable } = this.state;
 				let state = '';
 
 				if (store.searchResults.length > 0) {
 					state = 'is-active';
 				}
-				else if (disable) {
+				else if (this.state.disable) {
 					state = 'is-empty';
 				}
 
 				return <div>
 							<Tabs items={ store.tabs } state={ state } { ...this.props } />
 
-							<Disable state={ disable }>
+							<Disable state={ state }>
 								<Tabs items={ store.searchResults } state={ state }
 								      { ...this.props }  />
 							</Disable>
-						</div>
-
+						</div>;
 		}
 	}
 

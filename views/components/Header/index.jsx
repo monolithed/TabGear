@@ -77,7 +77,7 @@ export default class Header extends Component {
 		let closeMods = ['block'];
 
 		if (this.props.type === ActionTypes.SHOW_DIALOG) {
-			closeMods.push('hidden');
+			closeMods.push('hide');
 		}
 
 		return <div className="tg-panel">

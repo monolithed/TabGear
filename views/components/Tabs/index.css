@@ -40,11 +40,11 @@
 		}
 	}
 
-		.tg-tabs__item-state_incognito {
+		.tg-tabs__item--incognito {
 			background-color: var(--tab-item-incognito-color);
 		}
 
-		.tg-tabs__item-state_highlighted {
+		.tg-tabs__item--highlighted {
 			background-color: var(--tab-item-highlighted-color);
 		}
 

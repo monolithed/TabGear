@@ -1,24 +1,30 @@
 import React, { Component, PropTypes } from 'react';
+import BEMHelper from 'react-bem-helper';
 import './index.css';
+
+let classes = new BEMHelper({
+	name: 'tg-link'
+});
 
 let Link = ({ children, href = '#', mods = [], filter, index, onClick }) => {
 	if (filter !== false) {
-		let classes = ['tg-link', ...mods].join(' tg-link_');
-
-		return <a className={ classes } href={ href } tabIndex={ index } onClick={ onClick }>
-			{ children }
-		</a>;
+		return <a { ...classes(null, mods) }
+		          href={ href }
+		          tabIndex={ index }
+		          onClick={ onClick }>
+					{ children }
+				</a>;
 	}
 
 	return null;
 }
 
 Link.propTypes = {
-	children: PropTypes.string.isRequired,
-	mods   : PropTypes.array,
-	filter : PropTypes.bool,
-	index  : PropTypes.number,
-	onClick: PropTypes.func
+	children: PropTypes.node.isRequired,
+	mods    : PropTypes.array,
+	filter  : PropTypes.bool,
+	index   : PropTypes.number,
+	onClick : PropTypes.func
 };
 
 export default Link;

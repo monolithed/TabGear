@@ -1,11 +1,15 @@
 import React, { Component, PropTypes } from 'react';
+import BEMHelper from 'react-bem-helper';
 import * as ActionTypes from '../../constants/ActionTypes';
-
 import './index.css';
 
 export default class Title extends Component {
 	constructor (properties) {
 		super(...arguments);
+
+		this.class = new BEMHelper({
+			name: 'tg-title'
+		});
 
 		this.state = {
 			credentials: false
@@ -71,15 +75,14 @@ export default class Title extends Component {
 	render () {
 		let { store, type } = this.props;
 
-		return <div className="tg-title">
-			<div className="tg-title__logo"></div>
+		return <div { ...this.class() }>
+					<div { ...this.class('logo') } />
 
-				<div className="tg-title__text">
-					{ this.getTitle(type, store) }
+					<div { ...this.class('text') }>
+						{ this.getTitle(type, store) }
 					</div>
 
-					<div className="tg-icon tg-controls__more"
-					     onClick={ this.showCredentials }> </div>
+					<div className="tg-icon tg-controls__more" onClick={ this.showCredentials } />
 				</div>;
 	}
 }

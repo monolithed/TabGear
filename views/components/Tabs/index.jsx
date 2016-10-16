@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react';
+import BEMHelper from 'react-bem-helper';
 import './index.css';
 
 class Tabs extends Component {
 	constructor (properties) {
 		super(...arguments);
+
+		this.class = new BEMHelper({
+			name: 'tg-tabs'
+		});
 
 		this.switchTab =
 			this.switchTab.bind(this);
@@ -54,7 +59,7 @@ class Tabs extends Component {
 		return items.map((tab, key) => {
 			let { id, index, title, incognito, favIconUrl, highlighted } = tab;
 
-			let state = [name];
+			let state = [];
 
 			if (incognito) {
 				state.push('incognito');
@@ -64,33 +69,27 @@ class Tabs extends Component {
 				state.push('highlighted');
 			}
 
-			state = state.join(` ${name}-state_`);
-
-			return <li className={ state } key={ key }>
-						<a className={ `${name}-link` }
-						   href="#"
+			return <li { ...this.class('item', state) } key={ key }>
+						<a { ...this.class('item-link') } href="#"
 						   data-index={ index }
 						   data-name="tab"
 						   onClick={ this.switchTab }>
 
-							<img className={ `${name}-icon` }
-							     src={ favIconUrl } alt="" />
+							<img { ...this.class('item-icon') } src={ favIconUrl } />
 
-							<span className={ `${name}-text` }> { title } </span>
+							<span { ...this.class('item-text') }> { title } </span>
 
-							<span className={ `tg-icon ${name}-close` }
+							<span { ...this.class('item-close', null, 'tg-icon') }
 							      data-id={ id }
 							      title={ chrome.i18n.getMessage('close') }
-							      onClick={ this.closeTab }> </span>
+							      onClick={ this.closeTab } />
 						</a>
 					</li>;
 		});
 	}
 
 	render () {
-		let className = `tg-tabs ${this.props.state || ''}`;
-
-		return <ul className={ className }>
+		return <ul { ...this.class({ extra: this.props.state }) }>
 					{ this.getItems('tg-tabs__item') }
 				</ul>;
 	}

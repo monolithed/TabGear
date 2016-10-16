@@ -1,21 +1,20 @@
 import React, { Component, PropTypes } from 'react';
+import BEMHelper from 'react-bem-helper';
 import './index.css';
 
+let classes = new BEMHelper({
+	name: 'tg-body'
+});
+
 let Disable = ({ state, children }) => {
-	let className = 'tg-disable-box ';
-
-	className += state ? 'is-active' : 'is-inactive';
-
 	return <div>
-				<div className={ className }> </div>
-				<div className="tg-tabs__search-results">
-					{ children }
-				</div>
+				<div { ...classes(null, 'disable', state ? 'is-active' : 'is-inactive') } />
+				<div className="tg-tabs__search-results"> { children } </div>
 			</div>;
 }
 
 Disable.propTypes = {
-	state   : PropTypes.bool.isRequired,
+	state   : PropTypes.any.isRequired,
 	children: PropTypes.node
 };
 

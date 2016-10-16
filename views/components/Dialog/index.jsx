@@ -48,7 +48,7 @@ class Dialog extends Component {
 				</button>
 
 				<p className="tg-block">
-					<input type="checkbox" id="confirm" ref="ignore" onChange={ this.ignoreTabDialog } />
+					<input type="checkbox" id="confirm" onChange={ this.ignoreTabDialog } />
 					<label htmlFor="confirm" className="tg-label">
 						{ chrome.i18n.getMessage('prevent_confirmation') }
 					</label>
