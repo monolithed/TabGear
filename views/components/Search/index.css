@@ -26,32 +26,33 @@
 		transition: box-shadow .4s cubic-bezier(.4, 0, 1, 1);
 		width: 100%;
 		z-index: 1;
-	}
 
-	.tg-search__input:focus {
-		box-shadow: 0 -12px 15px -16px var(--search-box-focus-color);
+		&:focus {
+			box-shadow: 0 -12px 15px -16px var(--search-box-focus-color);
+		}
 	}
 
 	.tg-search__clear {
 		transition: opacity .3s ease-in;
 		opacity: 0;
 		z-index: 0;
-	}
 
-	.tg-search__clear:after {
-		content: 'close';
-		color: var(--search-clear-color);
-		cursor: pointer;
-		font-size: var(--close-glyph-font-size);
-		font-family: 'Material';
-		line-height: var(--search-clear-line-height);
-		position: absolute;
-		right: var(--padding);
-		top: 19px;
-		-webkit-font-feature-settings: 'liga';
-		-webkit-font-smoothing: antialiased;
-		/*z-index: 1;*/
-	}
-		.tg-search__clear:hover:after {
+		&:after {
+			content: 'close';
+			color: var(--search-clear-color);
+			cursor: pointer;
+			font-size: var(--close-glyph-font-size);
+			font-family: 'Material';
+			line-height: var(--search-clear-line-height);
+			position: absolute;
+			right: var(--padding);
+			top: 19px;
+			-webkit-font-feature-settings: 'liga';
+			-webkit-font-smoothing: antialiased;
+			/*z-index: 1;*/
+		}
+
+		&:hover:after {
 			color: var(--search-color);
 		}
+	}

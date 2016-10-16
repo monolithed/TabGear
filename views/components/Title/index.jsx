@@ -72,7 +72,11 @@ export default class Title extends Component {
 		let { store, type } = this.props;
 
 		return <div className="tg-title">
+			<div className="tg-title__logo"></div>
+
+				<div className="tg-title__text">
 					{ this.getTitle(type, store) }
+					</div>
 
 					<div className="tg-icon tg-controls__more"
 					     onClick={ this.showCredentials }> </div>

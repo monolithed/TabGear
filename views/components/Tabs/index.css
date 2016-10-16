@@ -30,6 +30,14 @@
 		transition: background-color .3s ease-in-out;
 		will-change: background-color;
 		width: 100%;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		&:hover {
+			background-color: var(--tab-item-hover-color);
+		}
 	}
 
 		.tg-tabs__item-state_incognito {
@@ -52,12 +60,13 @@
 			/*justify-content: flex-start;*/
 			text-decoration: none;
 			width: 100%;
+
+			&:focus {
+				outline: 1px solid var(--tab-item-link-focus-color);
+				box-shadow: 1px 2px 12px var(--tab-item-link-focus-color);
+			}
 		}
 
-		.tg-tabs__item-link:focus {
-			outline: 1px solid var(--tab-item-link-focus-color);
-			box-shadow: 1px 2px 12px var(--tab-item-link-focus-color);
-		}
 
 			.tg-tabs__item-link:after,
 			.tg-tabs__item-close {
@@ -101,11 +110,3 @@
 			display: block;
 			margin-right: 22px;
 		}
-
-	.tg-tabs__item:last-child {
-		border-bottom: 0;
-	}
-
-	.tg-tabs__item:hover {
-		background-color: var(--tab-item-hover-color);
-	}
