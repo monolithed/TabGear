@@ -9,6 +9,10 @@ export default store => dispatch => action => {
 	let { type, api } = action;
 
 	try {
+		dispatch({
+			type: ActionTypes.SHOW_ERRORS
+		});
+
 		if (api) {
 			let name = camelCase(type);
 

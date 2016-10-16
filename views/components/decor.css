@@ -1,5 +1,5 @@
 :root {
-	--close-content: '✕';
+	--padding: 15px;
 	--body-font: normal 14px/21px Roboto, helvetica, arial, sans-serif;
 	--search-font-size: 20px;
 	--search-line-height: 22px;

@@ -51,8 +51,13 @@ export default class Title extends Component {
 			case ActionTypes.SHOW_DIALOG:
 			case ActionTypes.ITEMS_LOCKED:
 			case ActionTypes.SEARCH_TABS:
-				title = [type, store.searchResults.length];
+				let { length } = store.searchResults;
+
+				title = [type, length];
+
+			if (type !== ActionTypes.SEARCH_TABS || length) {
 				break;
+			}
 
 			default:
 				title = [ActionTypes.SHOW_TABS, store.tabs.length];

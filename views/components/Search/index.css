@@ -19,7 +19,7 @@
 		color: var(--search-color);
 		font-size: var(--search-font-size);
 		line-height: var(--search-line-height);
-		padding: 15px;
+		padding: var(--padding);
 		border: none;
 		outline: none;
 		position: relative;
@@ -46,7 +46,7 @@
 		font-family: 'Material';
 		line-height: var(--search-clear-line-height);
 		position: absolute;
-		right: 15px;
+		right: var(--padding);
 		top: 19px;
 		-webkit-font-feature-settings: 'liga';
 		-webkit-font-smoothing: antialiased;

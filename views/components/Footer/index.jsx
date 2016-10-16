@@ -76,7 +76,7 @@ export default class Footer extends Component {
 	render () {
 		return <div className="tg-panel">
 					<Link onClick={ this.showCredentials }>
-						{ chrome.i18n.getMessage('about') }
+						{ chrome.i18n.getMessage('show_credentials') }
 					</Link>
 
 					<Link onClick={ this.openExtensions } mods={[ 'block' ]}>

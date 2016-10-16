@@ -50,14 +50,14 @@ body {
 }
 
 .tg-panel {
-	margin: 15px 0;
+	margin: var(--padding) 0;
 	position: relative;
 	text-align: right;
 }
 
 .tg-box {
 	color: var(--body-box-color);
-	padding: 15px;
+	padding: var(--padding);
 }
 
 .tg-button {
@@ -125,7 +125,7 @@ body {
 	}
 
 	.tg-block {
-		margin-bottom: 15px;
+		margin-bottom: var(--padding);
 	}
 
 	.tg-block_small {
