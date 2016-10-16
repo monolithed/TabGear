@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Components from '../components/Index';
+import config from '../../config';
 import * as Actions from '../actions';
 
 window.localStorage.debug = 'tg:*';
@@ -24,6 +25,7 @@ class Application extends Component {
 Application.propTypes = {
 	store  : PropTypes.object,
 	type   : PropTypes.string,
+	config : PropTypes.object,
 	actions: PropTypes.object
 };
 
@@ -37,6 +39,7 @@ let mapStateToProps = (state, properties) => {
 			searchResults
 		},
 
+		config,
 		type
 	};
 };

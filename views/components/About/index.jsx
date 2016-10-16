@@ -35,6 +35,8 @@ class About extends Component {
 	}
 
 	render () {
+		let { email, legal } = this.props.config;
+
 		return <Text>
 					<p className="tg-block">
 						{ chrome.i18n.getMessage('description') }
@@ -51,11 +53,13 @@ class About extends Component {
 					<p className="tg-block_small">
 						{ chrome.i18n.getMessage('issues') }
 						&nbsp;
-						<Link href="mailto:monolihed@gmail.com" mods={[ 'external' ]}>
-							monolihed@gmail.com
+
+						<Link href={ `mailto:${email}` } mods={ ['external'] }>
+							{ email }
 						</Link>
+
 						<br />
-						{ chrome.i18n.getMessage('copyright') }
+						{ chrome.i18n.getMessage('copyright', [ legal ]) }
 					</p>
 
 					{/*<Share />*/}
@@ -64,6 +68,8 @@ class About extends Component {
 	}
 }
 
-About.propTypes = {};
+About.propTypes = {
+	config: PropTypes.object.isRequired
+};
 
 export default About;

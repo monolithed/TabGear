@@ -12,6 +12,7 @@ module.exports = {
 	entry: [
 		'webpack-hot-middleware/client',
 		'./_locales/ru/messages.json',
+		'./config.js',
 		'./views/index.jsx'
 	],
 
@@ -63,7 +64,10 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				loaders: ['babel'],
-				include: `${DIR_NAME}/views`
+				include: [
+					`${DIR_NAME}/views`,
+					`${DIR_NAME}/config.js`
+				]
 			},
 
 			{

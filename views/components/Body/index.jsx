@@ -25,7 +25,7 @@ class Body extends Component {
 	}
 
 	getComponent () {
-		let { store, actions, type } = this.props;
+		let { store, actions, type, config } = this.props;
 
 		switch (type) {
 			case ActionTypes.ITEMS_LOCKED:
@@ -35,7 +35,7 @@ class Body extends Component {
 				return <Dialog store={ store } actions={ actions } />;
 
 			case ActionTypes.SHOW_CREDENTIALS:
-				return <About />;
+				return <About config={ config } />;
 
 			case ActionTypes.SHOW_ERRORS:
 				return <Error />;
@@ -88,6 +88,7 @@ class Body extends Component {
 
 Body.propTypes = {
 	store  : PropTypes.object.isRequired,
+	config : PropTypes.object.isRequired,
 	type   : PropTypes.string.isRequired,
 	actions: PropTypes.object.isRequired
 };

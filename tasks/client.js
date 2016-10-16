@@ -11,7 +11,8 @@ const DIR_NAME = path.join(__dirname, '..');
 
 module.exports = {
 	entry: [
-		'./views/index.jsx'
+		'./views/index.jsx',
+		'./config.js',
 	],
 
 	output: {
@@ -47,9 +48,12 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test   : /\.(js|jsx)$/,
+				test: /\.(js|jsx)$/,
 				loaders: ['babel'],
-				include: `${DIR_NAME}/views`
+				include: [
+					`${DIR_NAME}/views`,
+					`${DIR_NAME}/config.js`
+				]
 			},
 
 			{

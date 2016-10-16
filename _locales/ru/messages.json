@@ -88,7 +88,7 @@
 	},
 
 	"copyright": {
-		"message": "Все права защищены. © LLC Pobedit Microsystems"
+		"message": "Все права защищены. $1"
 	},
 
 	"issues": {
