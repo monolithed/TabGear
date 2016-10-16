@@ -17,8 +17,8 @@ module.exports = {
 	],
 
 	output: {
-		path      : `${DIR_NAME}/cache`,
-		filename  : 'build.js',
+		path: `${DIR_NAME}/cache`,
+		filename: 'build.js',
 		publicPath: '/'
 	},
 
@@ -31,8 +31,8 @@ module.exports = {
 		}
 	},
 
-	debug  : true,
-	target : 'web',
+	debug: true,
+	target: 'web',
 	devtool: 'cheap-module-eval-source-map',
 
 	node: {

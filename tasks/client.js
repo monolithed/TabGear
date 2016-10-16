@@ -16,7 +16,7 @@ module.exports = {
 	],
 
 	output: {
-		path    : `${DIR_NAME}/cache`,
+		path: `${DIR_NAME}/cache`,
 		filename: 'build.js',
 	},
 
@@ -36,13 +36,7 @@ module.exports = {
 				ignore: [
 					'./**/*',
 					'*.{md,html,json}',
-					'node_modules/**/*',
-					'_locales/**/*',
-					'cache/**/*',
-					'debug/**/*',
-					'files/**/*',
-					'tasks/**/*'
-
+					'{_locales,node_modules,cache,debug,files,tasks}/**/*'
 				]
 			}
 		}),
