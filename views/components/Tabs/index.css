@@ -109,4 +109,6 @@
 		.tg-tabs__item-text {
 			display: block;
 			margin-right: 22px;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
