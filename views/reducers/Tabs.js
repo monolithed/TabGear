@@ -82,7 +82,7 @@ export default {
 	},
 
 	/**
-	 * Disables tab list
+	 * Show overlay
 	 *
 	 * @param {boolean} state
 	 * @param {Object} action

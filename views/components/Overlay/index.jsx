@@ -6,16 +6,16 @@ let classes = new BEMHelper({
 	name: 'tg-body'
 });
 
-let Disable = ({ state, children }) => {
+let Overlay = ({ state, children }) => {
 	return <div>
 				<div { ...classes(null, 'disable', state ? 'is-active' : 'is-inactive') } />
 				<div className="tg-tabs__search-results"> { children } </div>
 			</div>;
 }
 
-Disable.propTypes = {
+Overlay.propTypes = {
 	state   : PropTypes.any.isRequired,
 	children: PropTypes.node
 };
 
-export default Disable;
+export default Overlay;

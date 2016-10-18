@@ -6,7 +6,7 @@ import Tabs from '../Tabs';
 import Loading from '../Loading';
 import About from '../About';
 import Dialog from '../Dialog';
-import Disable from '../Disable';
+import Overlay from '../Overlay';
 import Error from '../Error';
 import Text from '../Text';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -58,10 +58,10 @@ class Body extends Component {
 				return <div>
 							<Tabs items={ tabs.actual } tabs={ state } { ...this.props } />
 
-							<Disable state={ state }>
+							<Overlay state={ state }>
 								<Tabs items={ tabs.search } state={ state }
 								      { ...this.props }  />
-							</Disable>
+							</Overlay>
 						</div>;
 		}
 	}
