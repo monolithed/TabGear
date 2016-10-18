@@ -1,6 +1,6 @@
 export default [
 	{
-		title : 'Google Cloud Computing, Hosting Services & APIs  |  Google Cloud Platform',
+		title : 'Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform',
 		url   : 'https://cloud.google.com',
 		favIconUrl: 'https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico',
 		id : 0,
@@ -11,7 +11,7 @@ export default [
 	},
 
 	{
-		title : 'Google Plus',
+		title : 'Google Plus +++++++++++++++++++++++++++++++++++++++++++',
 		url   : 'https://developers.google.com/+/',
 		favIconUrl: 'https://developers.google.com/site-assets/logo-google-plus-white.svg',
 		id : 1,

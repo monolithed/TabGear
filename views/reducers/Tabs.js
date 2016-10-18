@@ -88,7 +88,7 @@ export default {
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	disable (state = false, action) {
+	isMasked (state = false, action) {
 		let { type, error } = action;
 
 		switch (type) {

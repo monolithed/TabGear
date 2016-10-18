@@ -24,10 +24,10 @@ class Tabs extends Component {
 	 */
 	switchTab (event) {
 		let { index } = event.currentTarget.dataset;
-		let { actions, store } = this.props;
+		let { actions, tabs } = this.props;
 
 		actions.Tabs.switchTab(index);
-		actions.Tabs.disableTabs(store.tabs, false);
+		actions.Tabs.maskTabs(tabs.actual, false);
 
 		event.stopPropagation()
 		event.preventDefault();
@@ -97,7 +97,7 @@ class Tabs extends Component {
 
 Tabs.propTypes = {
 	items  : PropTypes.array.isRequired,
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	state  : PropTypes.string,
 	actions: PropTypes.object.isRequired
 };

@@ -33,15 +33,15 @@ export default class Header extends Component {
 	 * @param {Event} event
 	 */
 	closeAllTabs (event) {
-		let { store, actions } = this.props;
-		let { tabs } = store;
+		let { tabs, actions } = this.props;
+		let { actual } = tabs;
 
 		if (this.ignoreDialog) {
-			actions.Layout.closeAllTabs(tabs);
-			actions.Tabs.showTabs(tabs);
+			actions.Layout.closeAllTabs(actual);
+			actions.Tabs.showTabs(actual);
 		}
 		else {
-			actions.Layout.showDialog(tabs);
+			actions.Layout.showDialog(actual);
 		}
 
 		event.preventDefault();
@@ -53,9 +53,9 @@ export default class Header extends Component {
 	 * @param {Event} event
 	 */
 	showTabs (event) {
-		let { store, actions } = this.props;
+		let { tabs, actions } = this.props;
 
-		actions.Tabs.showTabs(store.tabs);
+		actions.Tabs.showTabs(tabs.actual);
 		event.preventDefault();
 	}
 
@@ -81,7 +81,8 @@ export default class Header extends Component {
 		}
 
 		return <div className="tg-panel">
-					<Link onClick={ this.showTabs } filter={ this.hasBack() } mods={[ 'back' ]}  index="2">
+					<Link onClick={ this.showTabs } filter={ this.hasBack() }
+					      mods={[ 'back' ]}  index="2">
 						{ chrome.i18n.getMessage('back') }
 					</Link>
 
@@ -94,7 +95,7 @@ export default class Header extends Component {
 
 Header.propTypes = {
 	type   : PropTypes.string.isRequired,
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

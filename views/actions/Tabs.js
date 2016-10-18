@@ -22,7 +22,7 @@ export const Tabs = {
 	 * @param {boolean} state
 	 * @returns {Object}
 	 */
-	disableTabs (tabs, state) {
+	maskTabs (tabs, state) {
 		return {
 			type: ActionTypes.DISABLE_TABS,
 			tabs,

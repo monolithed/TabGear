@@ -15,24 +15,24 @@ class Body extends Component {
 	constructor () {
 		super(...arguments);
 
-		this.state = { disable: false };
+		this.state = { masked: false };
 	}
 
 	componentWillReceiveProps (nextProps) {
-		let { disable } = nextProps.store;
+		let { masked } = nextProps.tabs;
 
-		this.setState({ disable: disable });
+		this.setState({ masked });
 	}
 
 	getComponent () {
-		let { store, actions, type, config } = this.props;
+		let { tabs, actions, type, config } = this.props;
 
 		switch (type) {
 			case ActionTypes.ITEMS_LOCKED:
-				return <Loading store={ store } />;
+				return <Loading tabs={ tabs } />;
 
 			case ActionTypes.SHOW_DIALOG:
-				return <Dialog store={ store } actions={ actions } />;
+				return <Dialog tabs={ tabs } actions={ actions } />;
 
 			case ActionTypes.SHOW_CREDENTIALS:
 				return <About config={ config } />;
@@ -41,25 +41,25 @@ class Body extends Component {
 				return <Error config={ config } />;
 
 			case ActionTypes.SEARCH_TABS:
-				if (!store.tabs.length) {
+				if (!tabs.actual.length) {
 					return <Text> { chrome.i18n.getMessage('nothing_found') } </Text>
 				}
 
 			default:
 				let state = '';
 
-				if (store.searchResults.length > 0) {
+				if (tabs.search.length > 0) {
 					state = 'is-active';
 				}
-				else if (this.state.disable) {
+				else if (this.state.masked) {
 					state = 'is-empty';
 				}
 
 				return <div>
-							<Tabs items={ store.tabs } state={ state } { ...this.props } />
+							<Tabs items={ tabs.actual } tabs={ state } { ...this.props } />
 
 							<Disable state={ state }>
-								<Tabs items={ store.searchResults } state={ state }
+								<Tabs items={ tabs.search } state={ state }
 								      { ...this.props }  />
 							</Disable>
 						</div>;
@@ -67,13 +67,12 @@ class Body extends Component {
 	}
 
 	render () {
-		let { store, actions } = this.props;
 		const transition = 700;
 
 		return <div className="tg-body">
 					<ReactCSSTransitionGroup
 						transitionName="tg-react"
-						transitionAppear={true}
+						transitionAppear={ true }
 						transitionAppearTimeout={ transition }
 						transitionEnterTimeout={ transition }
 						transitionLeaveTimeout={ transition }
@@ -85,9 +84,9 @@ class Body extends Component {
 }
 
 Body.propTypes = {
-	store  : PropTypes.object.isRequired,
-	config : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	type   : PropTypes.string.isRequired,
+	config : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

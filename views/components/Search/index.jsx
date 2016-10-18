@@ -58,43 +58,41 @@ class Search extends Component {
 	}
 
 	onFocus (event) {
-		let { actions, store } = this.props;
+		let { actions, tabs } = this.props;
 
-		let state = store.tabs.length != store.searchResults.length;
+		let state = tabs.actual.length != tabs.search.length;
 
-		actions.Tabs.disableTabs(store.tabs, state);
+		actions.Tabs.maskTabs(tabs.actual, state);
 	}
 
 	onBlur (event) {
-		let { actions, store, type } = this.props;
+		let { actions, tabs, type } = this.props;
 
 		// searchTabs event should be called before.
 		// Also we shouldn't care about "focusin" event
 		if (!event.relatedTarget || event.relatedTarget.dataset.name !== 'tab') {
-			actions.Tabs.disableTabs(store.tabs, false);
+			actions.Tabs.maskTabs(tabs.actual, false);
 		}
 	}
 
 	clearSearch (event) {
-		let { store, actions } = this.props;
+		let { tabs, actions } = this.props;
 
-		actions.Tabs.searchTabs(store.tabs);
+		actions.Tabs.searchTabs(tabs.actual);
 		this.setState({ value: '' });
 	}
 
 	searchTabs (event) {
-		let { store, actions } = this.props;
+		let { tabs, actions } = this.props;
 		let { value } = event.target;
 
 		this.setState({ value});
 
-		actions.Tabs.searchTabs(store.tabs, value);
+		actions.Tabs.searchTabs(tabs.actual, value);
 		event.stopPropagation();
 	}
 
 	render () {
-		console.log(1111)
-
 		let { value } = this.state;
 
 		let state = {
@@ -117,7 +115,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

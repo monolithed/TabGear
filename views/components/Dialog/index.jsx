@@ -20,10 +20,11 @@ class Dialog extends Component {
 	 * @param {Event} event
 	 */
 	closeAllTabs (event) {
-		let { store, actions } = this.props;
+		let { tabs, actions } = this.props;
+		let { actual } = tabs;
 
-		actions.Layout.closeAllTabs(store.tabs);
-		actions.Tabs.showTabs(store.tabs);
+		actions.Layout.closeAllTabs(actual);
+		actions.Tabs.showTabs(actual);
 
 		event.preventDefault();
 	}
@@ -58,7 +59,7 @@ class Dialog extends Component {
 }
 
 Dialog.propTypes = {
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

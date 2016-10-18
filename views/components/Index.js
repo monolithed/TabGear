@@ -19,7 +19,7 @@ export default class Index extends Component {
 	 *  @returns {boolean}
 	 */
 	hasSearch () {
-		let { type, store } = this.props;
+		let { type, tabs } = this.props;
 
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
@@ -29,7 +29,7 @@ export default class Index extends Component {
 				return false;
 
 			default:
-				if (type !== ActionTypes.SEARCH_TABS && store.tabs.length <= SearchValues.MIN_TABS_FOR_SEARCH) {
+				if (type !== ActionTypes.SEARCH_TABS &&  tabs.actual.length <= SearchValues.MIN_TABS_FOR_SEARCH) {
 					return false;
 				}
 		}
@@ -50,8 +50,6 @@ export default class Index extends Component {
 			Footer
 		];
 
-		let { type, store } = this.props;
-
 		if (this.hasSearch()) {
 			components.splice(2, 0, Search);
 		}
@@ -67,7 +65,7 @@ export default class Index extends Component {
 }
 
 Index.propTypes = {
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	type   : PropTypes.string.isRequired,
 	actions: PropTypes.object.isRequired
 };

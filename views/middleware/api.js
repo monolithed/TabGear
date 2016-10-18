@@ -99,11 +99,26 @@ export default {
 		let { tabs } = action;
 
 		if (tabs) {
+			let promises = [];
+
 			for (let tab of tabs) {
-				chrome.tabs.discard(tab.id, tab => {
-					dispatch(action);
+				let discard = new Promise((resolve, reject) => {
+					chrome.tabs.discard(tab.id, function () {
+						resolve();
+					});
 				});
+
+				promises.push(discard);
 			}
+
+			let result = Promise.all(promises);
+
+			result.then(result => {
+				this.showTabs(...arguments);
+			},
+			error => {
+				dispatch({ type: ActionTypes.TAB_COULD_NOT_BE_DISCARDED });
+			});
 		}
 		else {
 			dispatch({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });

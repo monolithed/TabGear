@@ -12,9 +12,9 @@ class Application extends Component {
 	constructor (properties) {
 		super(...arguments);
 
-		let { store, actions } = this.props;
+		let { tabs, actions } = this.props;
 
-		actions.Tabs.showTabs(store.tabs);
+		actions.Tabs.showTabs(tabs.actual);
 	}
 
 	render () {
@@ -23,22 +23,30 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	store  : PropTypes.object,
+	notify : PropTypes.object,
+	tabs   : PropTypes.object,
 	type   : PropTypes.string,
 	config : PropTypes.object,
 	actions: PropTypes.object
 };
 
 let mapStateToProps = (state, properties) => {
-	let { loadData: tabs, type, disable, searchResults } = state;
+	let {
+		loadData     : actual,
+		searchResults: search,
+		isMasked     : masked,
+		type,
+		notify,
+	} = state;
 
 	return {
-		store: {
-			tabs,
-			disable,
-			searchResults
+		tabs: {
+			actual,
+			masked,
+			search
 		},
 
+		notify,
 		config,
 		type
 	};

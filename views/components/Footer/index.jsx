@@ -24,9 +24,9 @@ export default class Footer extends Component {
 	 * @param {Event} event
 	 */
 	discardTabs (event) {
-		let { store, actions } = this.props;
+		let { tabs, actions } = this.props;
 
-		actions.Layout.discardTabs(store.tabs);
+		actions.Layout.discardTabs(tabs.actual);
 		event.preventDefault();
 	}
 
@@ -92,7 +92,7 @@ export default class Footer extends Component {
 }
 
 Footer.propTypes = {
-	store  : PropTypes.object.isRequired,
+	tabs   : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

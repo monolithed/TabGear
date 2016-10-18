@@ -2,13 +2,13 @@ import * as ActionTypes from '../constants/ActionTypes';
 
 export default {
 	/**
-	 * Disable box
+	 * Masked layer
 	 *
 	 * @param {boolean} state
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	disable (state = false, action) {
+	isMasked (state = false, action) {
 		let { type, error } = action;
 
 		switch (type) {

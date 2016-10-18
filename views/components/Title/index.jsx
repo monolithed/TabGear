@@ -47,7 +47,7 @@ export default class Title extends Component {
 		event.preventDefault();
 	}
 
-	getTitle (type, store) {
+	getTitle (type, tabs) {
 		let title = [];
 
 		switch (type) {
@@ -56,7 +56,7 @@ export default class Title extends Component {
 			case ActionTypes.SHOW_DIALOG:
 			case ActionTypes.ITEMS_LOCKED:
 			case ActionTypes.SEARCH_TABS:
-				let { length } = store.searchResults;
+				let { length } = tabs.search;
 
 				title = [type, length];
 
@@ -65,7 +65,7 @@ export default class Title extends Component {
 			}
 
 			default:
-				title = [ActionTypes.SHOW_TABS, store.tabs.length];
+				title = [ActionTypes.SHOW_TABS, tabs.actual.length];
 		}
 
 		let [ key, value ] = title;
@@ -74,13 +74,13 @@ export default class Title extends Component {
 	}
 
 	render () {
-		let { store, type } = this.props;
+		let { tabs, type } = this.props;
 
 		return <div { ...this.class() }>
 					<div { ...this.class('logo') } />
 
 					<div { ...this.class('text') }>
-						{ this.getTitle(type, store) }
+						{ this.getTitle(type, tabs) }
 					</div>
 
 					<a href="#" tabIndex="1" className="tg-icon tg-controls__more" onClick={ this.showCredentials } />
@@ -89,7 +89,7 @@ export default class Title extends Component {
 }
 
 Title.propTypes = {
-	store: PropTypes.object.isRequired,
+	tabs: PropTypes.object.isRequired,
 	type: PropTypes.string.isRequired
 };
 

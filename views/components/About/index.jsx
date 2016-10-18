@@ -54,12 +54,12 @@ class About extends Component {
 						{ chrome.i18n.getMessage('issues') }
 						{/*&nbsp;*/}
 
-						<Link href={ `mailto:${email}` } mods={ ['external'] }>
+						<Link href={ `mailto:${email}` } mods={ ['external', 'small'] }>
 							{ email }
 						</Link>
 
 						<br />
-						{ chrome.i18n.getMessage('copyright', [ legal ]) }
+						{ legal }
 					</p>
 
 					{/*<Share />*/}
