@@ -85,7 +85,7 @@ export default class Footer extends Component {
 
 					<Link onClick={ this.discardTabs } filter={
 						this.filter('discard') } mods={[ 'block' ]}>
-						{ chrome.i18n.getMessage('discard_tabs') }
+						{ chrome.i18n.getMessage('discard') }
 					</Link>
 				</div>;
 	}

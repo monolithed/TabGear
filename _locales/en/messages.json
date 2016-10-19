@@ -3,6 +3,10 @@
 		"message": "About"
 	},
 
+	"discard_tabs": {
+		"message": "Discarding tabs"
+	},
+
 	"show_errors": {
 		"message": "Error"
 	},
@@ -119,7 +123,7 @@
 		"message": "Open extensions"
 	},
 
-	"discard_tabs": {
+	"discard": {
 		"message": "Discard tabs"
 	},
 
