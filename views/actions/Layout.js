@@ -34,9 +34,9 @@ export const Layout = {
 	 * @param {Array} tabs — the list of tabs to close
 	 * @returns {Object}
 	 */
-	showDialog (tabs) {
+	showDialog (type, tabs) {
 		return {
-			type: ActionTypes.SHOW_DIALOG,
+			type,
 			tabs
 		};
 	},

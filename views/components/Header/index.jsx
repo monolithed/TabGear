@@ -41,7 +41,7 @@ export default class Header extends Component {
 			actions.Tabs.showTabs(actual);
 		}
 		else {
-			actions.Layout.showDialog(actual);
+			actions.Layout.showDialog(ActionTypes.CLOSE_ALL_TABS, actual);
 		}
 
 		event.preventDefault();
@@ -67,7 +67,7 @@ export default class Header extends Component {
 	hasBack () {
 		let types = [
 			ActionTypes.SHOW_CREDENTIALS,
-			ActionTypes.SHOW_DIALOG
+			ActionTypes.CLOSE_ALL_TABS
 		];
 
 		return types.includes(this.props.type);
@@ -76,7 +76,7 @@ export default class Header extends Component {
 	render () {
 		let closeMods = ['block'];
 
-		if (this.props.type === ActionTypes.SHOW_DIALOG) {
+		if (this.props.type === ActionTypes.CLOSE_ALL_TABS) {
 			closeMods.push('hide');
 		}
 
@@ -87,7 +87,7 @@ export default class Header extends Component {
 					</Link>
 
 					<Link onClick={ this.closeAllTabs } mods={ closeMods } index="3">
-						{ chrome.i18n.getMessage('close_all_tabs') }
+						{ chrome.i18n.getMessage('close_all') }
 					</Link>
 				</div>;
 	}

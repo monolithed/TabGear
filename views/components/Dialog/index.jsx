@@ -1,65 +1,27 @@
 import React, { Component, PropTypes } from 'react';
 
-import './index.css';
-import Text from '../Text';
+import * as ActionTypes from '../../constants/ActionTypes';
+import Error from '../Error';
+import Discard from './Discard';
+import Close from './Close';
 
-class Dialog extends Component {
-	constructor (properties) {
-		super(...arguments);
+let Dialog = ({ tabs, actions, type, config }) => {
+	switch (type) {
+		case ActionTypes.CLOSE_ALL_TABS:
+			return <Close tabs={ tabs } actions={ actions } />;
 
-		this.closeAllTabs =
-			this.closeAllTabs.bind(this);
+		case ActionTypes.DISCARD_TABS:
+			return <Discard tabs={ tabs } actions={ actions } />;
 
-		this.ignoreTabDialog =
-			this.ignoreTabDialog.bind(this);
+		default:
+			return <Error config={ config } />;
 	}
-
-	/**
-	 * Close all tabs
-	 *
-	 * @param {Event} event
-	 */
-	closeAllTabs (event) {
-		let { tabs, actions } = this.props;
-		let { actual } = tabs;
-
-		actions.Layout.closeAllTabs(actual);
-		actions.Tabs.showTabs(actual);
-
-		event.preventDefault();
-	}
-
-	/**
-	 * Close all tabs
-	 *
-	 * @param {Event} event
-	 */
-	ignoreTabDialog (event) {
-		window.localStorage.setItem('tg-dialog', event.target.checked);
-	}
-
-	render () {
-		return <Text className="tg-dialog">
-				<p className="tg-block">
-					{ chrome.i18n.getMessage('attention_closing') }
-				</p>
-
-				<button className="tg-button" onClick={ this.closeAllTabs } autoFocus="autoFocus">
-					{ chrome.i18n.getMessage('confirm') }
-				</button>
-
-				<p className="tg-block">
-					<input type="checkbox" id="confirm" onChange={ this.ignoreTabDialog } />
-					<label htmlFor="confirm" className="tg-label">
-						{ chrome.i18n.getMessage('prevent_confirmation') }
-					</label>
-				</p>
-			</Text>;
-	}
-}
+};
 
 Dialog.propTypes = {
 	tabs   : PropTypes.object.isRequired,
+	type   : PropTypes.string.isRequired,
+	config : PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired
 };
 

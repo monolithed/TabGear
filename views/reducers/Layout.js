@@ -2,22 +2,14 @@ import * as ActionTypes from '../constants/ActionTypes';
 
 export default {
 	/**
-	 * Masked layer
+	 * Detect type
 	 *
-	 * @param {boolean} state
+	 * @param {string} state
 	 * @param {Object} action
 	 * @returns {*}
 	 */
-	isMasked (state = false, action) {
-		let { type, error } = action;
-
-		switch (type) {
-			case ActionTypes.DISABLE_TABS:
-				return action.state;
-
-			default:
-				return state;
-		}
+	type (state, action) {
+		return action.type;
 	},
 
 	/**
@@ -36,40 +28,6 @@ export default {
 
 			case ActionTypes.UNKNOWN_ERROR:
 				return error;
-
-			default:
-				return state;
-		}
-	},
-
-	/**
-	 * Detect type
-	 *
-	 * @param {string} state
-	 * @param {Object} action
-	 * @returns {*}
-	 */
-	type (state, action) {
-		return action.type;
-	},
-
-	/**
-	 * Discards the tabs from memory
-	 *
-	 * @param {Array} state — the list of tabs to discard
-	 * @param {Object} action
-	 * @returns {*}
-	 */
-	discardTabs (state = [], action) {
-		let { type, tabs, error } = action;
-
-		switch (type) {
-			case ActionTypes.TAB_ITEMS_NOT_FOUND:
-			case ActionTypes.CHROME_API_EXCEPTION:
-				return error;
-
-			case ActionTypes.DISCARD_TABS:
-				return tabs;
 
 			default:
 				return state;
@@ -125,15 +83,7 @@ export default {
 	 * @returns {*}
 	 */
 	showDialog (state = false, action) {
-		let { type, tabs, error} = action;
-
-		switch (type) {
-			case ActionTypes.SHOW_DIALOG:
-				return true;
-
-			default:
-				return state;
-		}
+		return action.type || state;
 	},
 
 	/**

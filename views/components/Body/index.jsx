@@ -31,8 +31,9 @@ class Body extends Component {
 			case ActionTypes.ITEMS_LOCKED:
 				return <Loading tabs={ tabs } />;
 
-			case ActionTypes.SHOW_DIALOG:
-				return <Dialog tabs={ tabs } actions={ actions } />;
+			case ActionTypes.CLOSE_ALL_TABS:
+			case ActionTypes.DISCARD_TABS:
+				return <Dialog { ...this.props } />;
 
 			case ActionTypes.SHOW_CREDENTIALS:
 				return <About config={ config } />;

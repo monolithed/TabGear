@@ -1,10 +1,10 @@
 // General events
 export const SHOW_TABS = 'SHOW_TABS';
-export const SHOW_DIALOG = 'SHOW_DIALOG';
+export const CLOSE_ALL_TABS = 'CLOSE_ALL_TABS';
+export const SHOW_DIALOG_DISCARD = 'SHOW_DIALOG_DISCARD';
 export const SHOW_ERRORS = 'SHOW_ERRORS';
 export const SWITCH_TAB = 'SWITCH_TAB';
 export const CLOSE_TAB = 'CLOSE_TAB';
-export const CLOSE_ALL_TABS = 'CLOSE_ALL_TABS';
 export const DISCARD_TABS = 'DISCARD_TABS';
 export const OPEN_EXTENSIONS = 'OPEN_EXTENSIONS';
 export const SHOW_CREDENTIALS = 'SHOW_CREDENTIALS';

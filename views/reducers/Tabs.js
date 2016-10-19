@@ -101,6 +101,29 @@ export default {
 	},
 
 	/**
+	 * Discards the tabs from memory
+	 *
+	 * @param {Array} state — the list of tabs to discard
+	 * @param {Object} action
+	 * @returns {*}
+	 */
+	discardTabs (state = [], action) {
+		let { type, tabs, error } = action;
+
+		switch (type) {
+			case ActionTypes.TAB_ITEMS_NOT_FOUND:
+			case ActionTypes.CHROME_API_EXCEPTION:
+				return error;
+
+			case ActionTypes.DISCARD_TABS:
+				return tabs;
+
+			default:
+				return state;
+		}
+	},
+
+	/**
 	 * Closes selected tab — the tab id to close
 	 *
 	 * @param {string} state

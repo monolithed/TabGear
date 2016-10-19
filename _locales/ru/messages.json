@@ -7,7 +7,7 @@
 		"message": "Ошибка"
 	},
 
-	"show_dialog": {
+	"close_all_tabs": {
 		"message": "Предупреждение"
 	},
 
@@ -131,11 +131,19 @@
 		"message": "Назад"
 	},
 
+	"discarded": {
+		"message": "Ваши владки все еще видно, однако занимаемая ими память успешна осводождена."
+	},
+
+	"proceed": {
+		"message": "Продолжить"
+	},
+
 	"close": {
 		"message": "Закрыть"
 	},
 
-	"close_all_tabs": {
+	"close_all": {
 		"message": "Закрыть все вкладки"
 	},
 

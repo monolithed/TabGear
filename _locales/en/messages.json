@@ -7,7 +7,7 @@
 		"message": "Error"
 	},
 
-	"show_dialog": {
+	"close_all_tabs": {
 		"message": "Warning"
 	},
 
@@ -131,11 +131,19 @@
 		"message": "Back"
 	},
 
+	"discarded": {
+		"message": "Your tabs are still visible, but their memory was successfully freed."
+	},
+
+	"proceed": {
+		"message": "Proceed"
+	},
+
 	"close": {
 		"message": "Close"
 	},
 
-	"close_all_tabs": {
+	"close_all": {
 		"message": "Close all tabs"
 	},
 

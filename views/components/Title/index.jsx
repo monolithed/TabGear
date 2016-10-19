@@ -53,7 +53,7 @@ export default class Title extends Component {
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
 			case ActionTypes.SHOW_ERRORS:
-			case ActionTypes.SHOW_DIALOG:
+			case ActionTypes.CLOSE_ALL_TABS:
 			case ActionTypes.ITEMS_LOCKED:
 			case ActionTypes.SEARCH_TABS:
 				let { length } = tabs.search;

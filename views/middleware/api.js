@@ -12,9 +12,9 @@ export default {
 	 * @param {Object} action
 	 * @param {Function} dispatch
 	 */
-	showTabs (action, dispatch) {
+	showTabs ({ type }, dispatch) {
 		chrome.tabs.query({}, tabs => {
-			dispatch({ type: ActionTypes.SHOW_TABS, tabs });
+			dispatch({ type, tabs });
 		});
 	},
 
