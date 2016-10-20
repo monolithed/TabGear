@@ -54,7 +54,7 @@ module.exports = {
 			}
 		}),
 
-		new StatsPlugin('cache/stats.json', {
+		new StatsPlugin('./stats.json', {
 			chunkModules: true,
 			exclude     : [ ]
 		})
