@@ -42,7 +42,7 @@ export default {
 	 * @returns {*}
 	 */
 	openExtensions (state = false, action) {
-		let { type, tabs, error } = action;
+		let { type, error } = action;
 
 		switch (type) {
 			case ActionTypes.TAB_CLOSE_EXCEPTION:
@@ -64,7 +64,7 @@ export default {
 	 * @returns {*}
 	 */
 	showCredentials (state = false, action) {
-		let { type, error} = action;
+		let { type } = action;
 
 		switch (type) {
 			case ActionTypes.SHOW_CREDENTIALS:
@@ -94,7 +94,7 @@ export default {
 	 * @returns {*}
 	 */
 	ignoreTabDialog (state = false, action) {
-		let { type, tabs, error} = action;
+		let { type, tabs } = action;
 
 		switch (type) {
 			case ActionTypes.IGNORE_TAB_DIALOG:

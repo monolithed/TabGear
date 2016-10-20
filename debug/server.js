@@ -22,9 +22,7 @@ middleware = new WebpackHotMiddleware(webpack);
 express.use(middleware);
 
 express.use((request, result) => {
-	let file = path.join(__dirname, '../views/index.html');
-
-	result.sendFile(file);
+	result.sendFile(config.file);
 });
 
 const port = 3000;

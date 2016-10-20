@@ -18,7 +18,7 @@
 	"scripts": {
 		"build": "NODE_ENV=production webpack --optimize-minimize --progress --profile --display-error-details --config tasks/client.js",
 		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js",
-		"analyzer": "NODE_ENV=production webpack --optimize-minimize --progress --profile  --display-error-details --json --config tasks/client.js --json | webpack-bundle-size-analyzer",
+		"analyzer": "webpack --optimize-minimize --progress --profile  --display-error-details --json --config tasks/client.js --json | webpack-bundle-size-analyzer",
 		"start": "node debug/server.js"
 	},
 
@@ -82,6 +82,8 @@
 		"webpack-hot-middleware": "^2.2.0",
 		"webpack-bundle-size-analyzer": "2.2.0",
 		"unused-files-webpack-plugin": "^3.0.0",
+		"extract-text-webpack-plugin": "^1.0.1",
+		"optimize-css-assets-webpack-plugin": "^1.3.0",
 		"imports-loader": "^0.6.5",
 		"json-loader": "0.5.4",
 		"stats-webpack-plugin": "0.4.2",

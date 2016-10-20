@@ -1,12 +1,13 @@
 let path = require('path');
 
 let Webpack = require('webpack');
-// let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
 let UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
 let StatsPlugin = require('stats-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const DIR_NAME = path.join(__dirname, '..');
 
@@ -18,7 +19,7 @@ module.exports = {
 
 	output: {
 		path: `${DIR_NAME}/cache`,
-		filename: 'build.js',
+		filename: '[name].js',
 	},
 
 	resolve: {
@@ -29,9 +30,18 @@ module.exports = {
 	target : 'web',
 
 	plugins: [
+		new Webpack.optimize.OccurenceOrderPlugin(),
+		new Webpack.optimize.DedupePlugin(),
+
+		new ExtractTextPlugin('[name].css', {
+			allChunks: true
+		}),
+
+		new OptimizeCssAssetsPlugin(),
+
 		new Webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: JSON.stringify("production")
+				NODE_ENV: JSON.stringify('production')
 			}
 		}),
 
@@ -45,19 +55,20 @@ module.exports = {
 			}
 		}),
 
-		new Webpack.optimize.OccurenceOrderPlugin(),
-		new Webpack.optimize.DedupePlugin(),
-
 		new Webpack.optimize.UglifyJsPlugin({
-			compressor: {
-				warnings: false
-			}
+			compress: {
+				warnings : false,
+				screw_ie8: true
+			},
+
+			minimize: true,
+			comments: true
 		}),
 
-		// new StatsPlugin('./stats.json', {
-		// 	chunkModules: true,
-		// 	exclude     : [ ]
-		// })
+		new StatsPlugin('./stats.json', {
+			chunkModules: true,
+			exclude: [ ]
+		})
 	],
 
 	module: {
@@ -72,8 +83,12 @@ module.exports = {
 			},
 
 			{
-				test   : /\.css$/,
-				loaders: ['style', 'css', 'postcss']
+				test: /\.css$/,
+				loader: ExtractTextPlugin.extract(
+					'style-loader',
+					'css-loader',
+					'postcss-loader'
+				)
 			},
 
 			{

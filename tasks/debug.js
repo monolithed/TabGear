@@ -1,7 +1,6 @@
 let path = require('path');
 
 let Webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
@@ -16,9 +15,11 @@ module.exports = {
 		'./views/index.js'
 	],
 
+	file: `${DIR_NAME}/views/index.html`,
+
 	output: {
 		path: `${DIR_NAME}/cache`,
-		filename: 'build.js',
+		filename: '[name].js',
 		publicPath: '/'
 	},
 
@@ -50,7 +51,7 @@ module.exports = {
 
 		new Webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: JSON.stringify("development")
+				NODE_ENV: JSON.stringify('development')
 			}
 		})
 	],
@@ -76,17 +77,21 @@ module.exports = {
 			},
 
 			{
-				test   : /\.json/,
+				test: /\.json/,
 				loaders: ['json']
 			},
 
 			{
-				test   : /\.css$/,
-				loaders: ['style', 'css', 'postcss']
+				test: /\.css$/,
+				loaders: [
+					'style-loader',
+					'css-loader',
+					'postcss-loader'
+				]
 			},
 
 			{
-				test  : /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+				test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				loader: 'base64-inline-loader'
 			}
 		]
@@ -95,9 +100,7 @@ module.exports = {
 	postcss (Webpack) {
 		return [
 			PreCSS,
-			PostCSSImport({
-				addDependencyTo: Webpack
-			}),
+			PostCSSImport({ addDependencyTo: Webpack }),
 			Autoprefixer,
 		];
 	}

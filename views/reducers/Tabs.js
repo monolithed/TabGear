@@ -10,7 +10,7 @@ export default {
 	 * @returns {Array}
 	 */
 	loadData (state = [], action) {
-		let { type, tabs, error, text } = action;
+		let { type, tabs, text } = action;
 
 		switch (type) {
 			case ActionTypes.ITEMS_LOCKED:
@@ -89,7 +89,7 @@ export default {
 	 * @returns {*}
 	 */
 	isMasked (state = false, action) {
-		let { type, error } = action;
+		let { type } = action;
 
 		switch (type) {
 			case ActionTypes.DISABLE_TABS:

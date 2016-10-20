@@ -24,7 +24,7 @@
 	},
 
 	"search_tabs": {
-		"message": "Found tabs: $1 of $2"
+		"message": "Found tabs: $1"
 	},
 
 	"wait": {
