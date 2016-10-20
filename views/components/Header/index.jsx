@@ -4,7 +4,7 @@ import './index.css';
 import * as ActionTypes from '../../constants/ActionTypes';
 import Link from '../Link';
 
-export default class Header extends Component {
+class Header extends Component {
 	constructor (properties) {
 		super(...arguments);
 

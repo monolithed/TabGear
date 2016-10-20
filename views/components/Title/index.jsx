@@ -4,7 +4,7 @@ import BEMHelper from 'react-bem-helper';
 import * as ActionTypes from '../../constants/ActionTypes';
 import './index.css';
 
-export default class Title extends Component {
+class Title extends Component {
 	constructor (properties) {
 		super(...arguments);
 

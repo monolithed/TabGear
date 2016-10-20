@@ -4,7 +4,7 @@ import debug from 'debug';
 import './index.css';
 import Link from '../Link';
 
-export default class Footer extends Component {
+class Footer extends Component {
 	constructor (properties) {
 		super(...arguments);
 

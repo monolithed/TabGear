@@ -1,7 +1,7 @@
 let path = require('path');
 
 let Webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+// let HtmlWebpackPlugin = require('html-webpack-plugin');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
@@ -25,7 +25,7 @@ module.exports = {
 		extensions: ['', '.js', '.jsx', '.png']
 	},
 
-	// devtool: 'source-map',
+	devtool: 'source-map',
 	target : 'web',
 
 	plugins: [
@@ -54,10 +54,10 @@ module.exports = {
 			}
 		}),
 
-		new StatsPlugin('./stats.json', {
-			chunkModules: true,
-			exclude     : [ ]
-		})
+		// new StatsPlugin('./stats.json', {
+		// 	chunkModules: true,
+		// 	exclude     : [ ]
+		// })
 	],
 
 	module: {

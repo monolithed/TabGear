@@ -16,9 +16,9 @@
 	},
 
 	"scripts": {
-		"build": "webpack --optimize-minimize --progress --profile --display-error-details --json --config tasks/client.js",
+		"build": "NODE_ENV=production webpack --optimize-minimize --progress --profile --display-error-details --config tasks/client.js",
 		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js",
-		"analyzer": "webpack --optimize-minimize --progress --profile  --display-error-details --json --config tasks/client.js --json | webpack-bundle-size-analyzer",
+		"analyzer": "NODE_ENV=production webpack --optimize-minimize --progress --profile  --display-error-details --json --config tasks/client.js --json | webpack-bundle-size-analyzer",
 		"start": "node debug/server.js"
 	},
 
