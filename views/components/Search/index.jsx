@@ -50,8 +50,6 @@ class Search extends Component {
 	}
 
 	keepFocus (event) {
-		console.log(event.keyCode)
-
 		if (event.keyCode === 9) {
 			event.preventDefault();
 		}
