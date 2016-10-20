@@ -13,7 +13,7 @@ module.exports = {
 		'webpack-hot-middleware/client',
 		'./_locales/ru/messages.json',
 		'./config.js',
-		'./views/index.jsx'
+		'./views/index.js'
 	],
 
 	output: {

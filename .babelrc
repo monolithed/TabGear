@@ -5,11 +5,21 @@
 		"react"
 	],
 
-	"plugins": ["transform-object-rest-spread"],
+	"plugins": [
+		"transform-object-rest-spread"
+	],
 
 	"env": {
 		"development": {
-			"presets": ["react-hmre"]
+			"presets": [
+				"react-hmre"
+			]
+		},
+
+		"production": {
+			"plugins": [
+				"transform-react-remove-prop-types"
+			]
 		}
 	}
 }

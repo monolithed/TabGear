@@ -6,13 +6,14 @@ let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
 let UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
+let StatsPlugin = require('stats-webpack-plugin');
 
 const DIR_NAME = path.join(__dirname, '..');
 
 module.exports = {
 	entry: [
-		'./views/index.jsx',
-		'./config.js',
+		'./views/index.js',
+		'./config.js'
 	],
 
 	output: {
@@ -24,12 +25,15 @@ module.exports = {
 		extensions: ['', '.js', '.jsx', '.png']
 	},
 
-	devtool: 'source-map',
+	// devtool: 'source-map',
 	target : 'web',
 
 	plugins: [
-		new Webpack.optimize.OccurenceOrderPlugin(),
-		new Webpack.optimize.DedupePlugin(),
+		new Webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify("production")
+			}
+		}),
 
 		new UnusedFilesWebpackPlugin({
 			globOptions: {
@@ -41,16 +45,18 @@ module.exports = {
 			}
 		}),
 
-		new Webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: JSON.stringify("production")
-			}
-		}),
+		new Webpack.optimize.OccurenceOrderPlugin(),
+		new Webpack.optimize.DedupePlugin(),
 
 		new Webpack.optimize.UglifyJsPlugin({
 			compressor: {
 				warnings: false
 			}
+		}),
+
+		new StatsPlugin('cache/stats.json', {
+			chunkModules: true,
+			exclude     : [ ]
 		})
 	],
 

@@ -1,25 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import { Provider } from 'react-redux';
-
-import Application from './Application';
-import DevTools from './DevTools';
-
-export default class Root extends Component {
-	render () {
-		return (
-			<Provider store={ this.props.store }>
-				<div>
-					<Application />
-					{
-						process.env.NODE_ENV !== 'production' &&
-						<DevTools />
-					}
-				</div>
-			</Provider>
-		);
-	}
+if (process.env.NODE_ENV == 'production') {
+	module.exports = require('./Root.production.js');
 }
-
-Root.propTypes = {
-	store: PropTypes.object.isRequired
-};
+else {
+	module.exports = require('./Root.development.js');
+}
