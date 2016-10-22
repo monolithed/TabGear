@@ -1,20 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import debug from 'debug';
+import { bind } from 'decko';
 
 import Link from '../../Link';
 
 class Footer extends Component {
 	constructor (properties) {
 		super(...arguments);
-
-		this.openExtensions =
-			this.openExtensions.bind(this);
-
-		this.discardTabs =
-			this.discardTabs.bind(this);
-
-		this.showCredentials =
-			this.showCredentials.bind(this);
 	}
 
 	/**
@@ -22,6 +13,7 @@ class Footer extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	discardTabs (event) {
 		let { tabs, actions } = this.props;
 
@@ -34,6 +26,7 @@ class Footer extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	showCredentials (event) {
 		let { actions } = this.props;
 
@@ -46,6 +39,7 @@ class Footer extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	openExtensions (event) {
 		let { actions } = this.props;
 
@@ -65,7 +59,7 @@ class Footer extends Component {
 					return typeof chrome.tabs.discard !== 'undefined';
 				}
 				catch (error) {
-					debug('tg:error')('Could not find chrome.tabs.discard method');
+					console.log('Could not find chrome.tabs.discard method');
 				}
 
 			default:

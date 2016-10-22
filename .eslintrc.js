@@ -3,9 +3,10 @@ module.exports = {
 		'eslint-config-pobedit'
 	],
 
+	"parser": "babel-eslint",
+
 	'parserOptions': {
 		'sourceType': 'module',
-		'ecmaVersion': 8,
 		'ecmaFeatures': {
 			'experimentalObjectRestSpread': true,
 			"jsx": true
@@ -13,7 +14,7 @@ module.exports = {
 	},
 
 	'plugins': [
-		'react',
+		'react'
 	],
 
 	'rules': {

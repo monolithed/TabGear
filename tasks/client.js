@@ -11,6 +11,7 @@ let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 var VisualizerPlugin = require('webpack-visualizer-plugin');
 let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
+let findCacheDir = require('find-cache-dir');
 
 const DIR_NAME = path.join(__dirname, '..');
 
@@ -91,9 +92,7 @@ module.exports = {
 		preLoaders: [
 			{
 				test: /\.(js|jsx)$/,
-				loaders: [
-					'eslint-loader'
-				],
+				loader: 'eslint-loader',
 				exclude: /node_modules/
 			}
 		],
@@ -105,7 +104,12 @@ module.exports = {
 				include: [
 					`${DIR_NAME}/views`,
 					`${DIR_NAME}/config.js`
-				]
+				],
+				query: {
+					cacheDirectory: findCacheDir({
+						name: 'babel'
+					})
+				}
 			},
 
 			{

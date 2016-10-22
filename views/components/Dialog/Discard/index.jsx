@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { bind } from 'decko';
 
 import './index.css';
 import Text from '../../Text';
@@ -6,9 +7,6 @@ import Text from '../../Text';
 class Discard extends Component {
 	constructor (properties) {
 		super(...arguments);
-
-		this.showTabs =
-			this.showTabs.bind(this);
 	}
 
 	/**
@@ -16,6 +14,7 @@ class Discard extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	showTabs (event) {
 		let { tabs, actions } = this.props;
 		let { actual } = tabs;

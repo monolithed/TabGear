@@ -1,17 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-
+import { bind } from 'decko';
 import * as ActionTypes from '../../../constants/ActionTypes';
+
 import Link from '../../Link';
 
 class Header extends Component {
 	constructor (properties) {
 		super(...arguments);
-
-		this.closeAllTabs =
-			this.closeAllTabs.bind(this);
-
-		this.showTabs =
-			this.showTabs.bind(this);
 	}
 
 
@@ -20,6 +15,7 @@ class Header extends Component {
 	 *
 	 * @type {boolean}
 	 */
+	@bind
 	get ignoreDialog () {
 		let state = window.localStorage.getItem('tg-dialog');
 
@@ -31,6 +27,7 @@ class Header extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	closeAllTabs (event) {
 		let { tabs, actions } = this.props;
 		let { actual } = tabs;
@@ -51,6 +48,7 @@ class Header extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	showTabs (event) {
 		let { tabs, actions } = this.props;
 

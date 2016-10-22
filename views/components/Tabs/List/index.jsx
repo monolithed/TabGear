@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import BEMHelper from 'react-bem-helper';
+import { bind } from 'decko';
+
 import './index.css';
 
 class Tabs extends Component {
@@ -9,12 +11,6 @@ class Tabs extends Component {
 		this.class = new BEMHelper({
 			name: 'tg-tabs'
 		});
-
-		this.switchTab =
-			this.switchTab.bind(this);
-
-		this.closeTab =
-			this.closeTab.bind(this);
 	}
 
 	/**
@@ -22,6 +18,7 @@ class Tabs extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	switchTab (event) {
 		let { index } = event.currentTarget.dataset;
 		let { actions, tabs } = this.props;
@@ -38,6 +35,7 @@ class Tabs extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	closeTab (event) {
 		let { id } = event.currentTarget.dataset;
 		let { actions } = this.props;

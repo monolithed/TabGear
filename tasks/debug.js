@@ -77,7 +77,6 @@ module.exports = {
 					`${DIR_NAME}/views`,
 					`${DIR_NAME}/config.js`
 				],
-
 				query: {
 					cacheDirectory: findCacheDir({
 						name: 'babel'

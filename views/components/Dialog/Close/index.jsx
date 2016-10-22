@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { bind } from 'decko';
 
 import './index.css';
 import Text from '../../Text';
@@ -6,12 +7,6 @@ import Text from '../../Text';
 class Close extends Component {
 	constructor (properties) {
 		super(...arguments);
-
-		this.closeAllTabs =
-			this.closeAllTabs.bind(this);
-
-		this.ignoreTabDialog =
-			this.ignoreTabDialog.bind(this);
 	}
 
 	/**
@@ -19,6 +14,7 @@ class Close extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	closeAllTabs (event) {
 		let { tabs, actions } = this.props;
 		let { actual } = tabs;
@@ -34,6 +30,7 @@ class Close extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	ignoreTabDialog (event) {
 		window.localStorage.setItem('tg-dialog', event.target.checked);
 	}

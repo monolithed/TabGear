@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import BEMHelper from 'react-bem-helper';
+import { bind } from 'decko';
 
 import * as ActionTypes from '../../../constants/ActionTypes';
 import './index.css';
@@ -15,9 +16,6 @@ class Title extends Component {
 		this.state = {
 			credentials: false
 		};
-
-		this.showCredentials =
-			this.showCredentials.bind(this);
 	}
 
 	/**
@@ -25,6 +23,7 @@ class Title extends Component {
 	 *
 	 * @param {Event} event
 	 */
+	@bind
 	showCredentials (event) {
 		let { actions, type } = this.props;
 

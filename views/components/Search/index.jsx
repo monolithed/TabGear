@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import * as ActionTypes from '../../constants/ActionTypes';
 import BEMHelper from 'react-bem-helper';
+import { bind } from 'decko';
+
 import './index.css';
 
 class Search extends Component {
@@ -15,21 +17,6 @@ class Search extends Component {
 			value: '',
 			switchTab: false
 		};
-
-		this.searchTabs =
-			this.searchTabs.bind(this);
-
-		this.clearSearch =
-			this.clearSearch.bind(this);
-
-		this.onFocus =
-			this.onFocus.bind(this);
-
-		this.onBlur =
-			this.onBlur.bind(this);
-
-		this.keepFocus =
-			this.keepFocus.bind(this);
 	}
 
 	shouldComponentUpdate () {
@@ -55,6 +42,7 @@ class Search extends Component {
 		}
 	}
 
+	@bind
 	onFocus (event) {
 		let { actions, tabs } = this.props;
 
@@ -63,6 +51,7 @@ class Search extends Component {
 		actions.Tabs.maskTabs(tabs.actual, state);
 	}
 
+	@bind
 	onBlur (event) {
 		let { actions, tabs, type } = this.props;
 
@@ -73,6 +62,7 @@ class Search extends Component {
 		}
 	}
 
+	@bind
 	clearSearch (event) {
 		let { tabs, actions } = this.props;
 
@@ -80,6 +70,7 @@ class Search extends Component {
 		this.setState({ value: '' });
 	}
 
+	@bind
 	searchTabs (event) {
 		let { tabs, actions } = this.props;
 		let { value } = event.target;
