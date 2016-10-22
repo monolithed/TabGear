@@ -10,6 +10,7 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 var VisualizerPlugin = require('webpack-visualizer-plugin');
+let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
 
 const DIR_NAME = path.join(__dirname, '..');
 
@@ -87,14 +88,29 @@ module.exports = {
 	],
 
 	module: {
+		preLoaders: [
+			{
+				test: /\.(js|jsx)$/,
+				loaders: [
+					'eslint-loader'
+				],
+				exclude: /node_modules/
+			}
+		],
+
 		loaders: [
 			{
 				test: /\.(js|jsx)$/,
-				loaders: ['babel'],
+				loader: 'babel-loader',
 				include: [
 					`${DIR_NAME}/views`,
 					`${DIR_NAME}/config.js`
 				]
+			},
+
+			{
+				test: /\.json/,
+				loader: 'json'
 			},
 
 			{
@@ -104,7 +120,7 @@ module.exports = {
 			},
 
 			{
-				test   : /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+				test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
 				loader: 'base64-inline-loader'
 			}
 		]
@@ -113,10 +129,24 @@ module.exports = {
 	postcss (Webpack) {
 		return [
 			PreCSS,
-			Autoprefixer,
+
+			Autoprefixer({
+				browsers: [
+					'>1%',
+					'last 4 versions',
+					'not ie < 9'
+				]
+			}),
+
 			PostCSSImport({
 				addDependencyTo: Webpack
 			})
 		];
+	},
+
+	eslint: {
+		formatter: ESLintFriendlyFormatter,
+		fix: true,
+		cache: true
 	}
 };

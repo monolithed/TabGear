@@ -7,7 +7,6 @@ import Tabs from '../../Tabs';
 import Loading from '../../Loading';
 import About from '../../About';
 import Dialog from '../../Dialog';
-import Overlay from '../../Overlay';
 import Error from '../../Error';
 import Text from '../../Text';
 
@@ -56,14 +55,7 @@ class Body extends Component {
 					state = 'is-empty';
 				}
 
-				return <div>
-							<Tabs items={ tabs.actual } tabs={ state } { ...this.props } />
-
-							<Overlay state={ state }>
-								<Tabs items={ tabs.search } state={ state }
-								      { ...this.props } />
-							</Overlay>
-						</div>;
+				return <Tabs state={ state } { ...this.props } />;
 		}
 	}
 

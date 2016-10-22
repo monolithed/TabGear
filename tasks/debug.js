@@ -4,7 +4,6 @@ let Webpack = require('webpack');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
-let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
 let WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 let findCacheDir = require('find-cache-dir');
 
@@ -13,7 +12,7 @@ const DIR_NAME = path.join(__dirname, '..');
 module.exports = {
 	debug: true,
 	target: 'web',
-	devtool: 'cheap-module-eval-source-map',
+	devtool: 'eval-source-map',
 
 	entry: [
 		'webpack-hot-middleware/client',
@@ -52,7 +51,7 @@ module.exports = {
 	plugins: [
 		new Webpack.HotModuleReplacementPlugin(),
 		new Webpack.NoErrorsPlugin(),
-		new WatchMissingNodeModulesPlugin(`${DIR_NAME}/node_modules`),
+		// new WatchMissingNodeModulesPlugin(`${DIR_NAME}/node_modules`),
 
 		new Webpack.ProvidePlugin({
 			'chrome': 'chrome-stub'
@@ -66,25 +65,14 @@ module.exports = {
 	],
 
 	module: {
-		preLoaders: [
-			{
-				test: /\.(js|jsx)$/,
-				loaders: [
-					'babel-loader',
-					'eslint-loader'
-				],
-				exclude: /node_modules/
-			}
-		],
-
 		noParse: [
 			/sinon/
 		],
 
 		loaders: [
 			{
-				test   : /\.(js|jsx|json)$/,
-				loader: 'babel',
+				test   : /\.(js|jsx)$/,
+				loader: 'babel-loader',
 				include: [
 					`${DIR_NAME}/views`,
 					`${DIR_NAME}/config.js`
@@ -117,7 +105,7 @@ module.exports = {
 			},
 
 			{
-				test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+				test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
 				loader: 'base64-inline-loader'
 			}
 		]
@@ -126,21 +114,18 @@ module.exports = {
 	postcss (Webpack) {
 		return [
 			PreCSS,
-			PostCSSImport({ addDependencyTo: Webpack }),
+
+			PostCSSImport({
+				addDependencyTo: Webpack
+			}),
+
 			Autoprefixer({
 				browsers: [
 					'>1%',
 					'last 4 versions',
-					'Firefox ESR',
 					'not ie < 9'
 				]
 			})
 		];
-	},
-
-	eslint: {
-		formatter: ESLintFriendlyFormatter,
-		fix: true,
-		cache: true
 	}
 };

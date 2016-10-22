@@ -1,4 +1,4 @@
-@import "../decor.css";
+@import "../../decor.css";
 
 .tg-tabs {
 	border-top: 1px solid var(--search-bottom-color);
@@ -65,6 +65,10 @@
 				outline: none;
 				/*outline: 1px solid var(--tab-item-link-focus-color);*/
 				/*box-shadow: 1px 2px 12px var(--tab-item-link-focus-color);*/
+			}
+
+			&:active {
+				box-shadow: 0 0 1px var(--tab-item-link-focus-color);
 			}
 		}
 
