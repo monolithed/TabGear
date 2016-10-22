@@ -51,7 +51,7 @@ module.exports = {
 	plugins: [
 		new Webpack.HotModuleReplacementPlugin(),
 		new Webpack.NoErrorsPlugin(),
-		// new WatchMissingNodeModulesPlugin(`${DIR_NAME}/node_modules`),
+		new WatchMissingNodeModulesPlugin(`${DIR_NAME}/node_modules`),
 
 		new Webpack.ProvidePlugin({
 			'chrome': 'chrome-stub'
@@ -97,11 +97,7 @@ module.exports = {
 
 			{
 				test: /\.css$/,
-				loaders: [
-					'style-loader',
-					'css-loader',
-					'postcss-loader'
-				]
+				loader: 'style!css?importLoaders=1!postcss'
 			},
 
 			{

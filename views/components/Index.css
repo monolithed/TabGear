@@ -52,6 +52,7 @@ body {
 .tg-panel {
 	margin: var(--padding) 0;
 	position: relative;
+	overflow: hidden;
 	text-align: right;
 }
 

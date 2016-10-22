@@ -9,6 +9,14 @@
 }
 
 .tg-link {
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		color: var(--link-hover-color);
+	}
+
 	&--block,
 	&--small {
 		font-size: var(--link-small-font-size);
@@ -41,5 +49,10 @@
 			margin-right: 5px;
 			display: inline-block;
 		}
+	}
+
+	&--close {
+		display: block;
+		float: right;
 	}
 }

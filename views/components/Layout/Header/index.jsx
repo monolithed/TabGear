@@ -73,10 +73,23 @@ class Header extends Component {
 	}
 
 	/**
+	 * Show the close link?
+	 *
+	 * @returns {boolean}
+	 */
+	hasClose () {
+		let types = [
+			ActionTypes.CLOSE_ALL_TABS
+		];
+
+		return !types.includes(this.props.type);
+	}
+
+	/**
 	 * @returns {JSX}
 	 */
 	render () {
-		let closeMods = ['block'];
+		let closeMods = ['close'];
 
 		if (this.props.type === ActionTypes.CLOSE_ALL_TABS) {
 			closeMods.push('hide');
@@ -88,7 +101,8 @@ class Header extends Component {
 						{ chrome.i18n.getMessage('back') }
 					</Link>
 
-					<Link onClick={ this.closeAllTabs } mods={ closeMods } index="3">
+					<Link onClick={ this.closeAllTabs } filter={ this.hasClose() }
+					      mods={ closeMods } index="3">
 						{ chrome.i18n.getMessage('close_all') }
 					</Link>
 				</div>;
