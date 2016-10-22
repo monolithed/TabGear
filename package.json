@@ -16,14 +16,10 @@
 	},
 
 	"scripts": {
-		"build": "NODE_ENV=production webpack --optimize-minimize --progress --profile --display-error-details --config tasks/client.js",
-		"analyzer": "webpack --optimize-minimize --progress --profile  --display-error-details --json --config tasks/client.js --json | webpack-bundle-size-analyzer",
-		"start": "node debug/server.js"
-	},
-
-	"pre-commit": {
-		"silent": true,
-		"run": [ ]
+		"build": ". ./utils/build.sh",
+		"stat": ". ./utils/build.sh --stat",
+		"start": "node debug/server.js",
+		"webpack": "webpack"
 	},
 
 	"dependencies": {
@@ -42,16 +38,17 @@
 	},
 
 	"devDependencies": {
-		"chrome-stub": "1.4.0",
+		"chrome-stub": "1.5.0",
 
-		"autoprefixer": "^6.3.7",
+		"autoprefixer": "^6.5.1",
 		"precss": "^1.4.0",
 
-		"babel-core": "^6.10.4",
-		"babel-loader": "^6.2.4",
-		"babel-preset-es2015": "^6.9.0",
-		"babel-preset-es2016": "^6.11.3",
-		"babel-preset-react": "^6.3.13",
+		"babel-core": "^6.17.0",
+		"babel-loader": "^6.2.5",
+		"babel-preset-es2015": "^6.16.0",
+		"babel-preset-es2016": "^6.16.0",
+		"babel-preset-es2017": "^6.16.0",
+		"babel-preset-react": "^6.16.0",
 		"babel-preset-react-hmre": "1.1.1",
 		"babel-plugin-transform-object-rest-spread": "6.8.0",
 		"babel-plugin-transform-react-remove-prop-types": "0.2.10",
@@ -64,8 +61,6 @@
 		"eslint-config-pobedit": "^0.0.5",
 		"eslint-friendly-formatter": "^2.0.5",
 		"eslint-plugin-react": "^5.2.0",
-
-		"pre-commit": "^1.1.3",
 
 		"react-transform-hmr": "^1.0.4",
 		"react-dev-utils": "^0.2.1",

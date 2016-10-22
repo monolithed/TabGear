@@ -78,11 +78,7 @@ class Header extends Component {
 	 * @returns {boolean}
 	 */
 	hasClose () {
-		let types = [
-			ActionTypes.CLOSE_ALL_TABS
-		];
-
-		return !types.includes(this.props.type);
+		return this.props.type !== ActionTypes.CLOSE_ALL_TABS;
 	}
 
 	/**

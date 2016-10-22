@@ -55,8 +55,8 @@ let mapStateToProps = (state, properties) => {
 let mapDispatchToProps = dispatch => {
 	let actions = {};
 
-	for (let name of Object.keys(Actions)) {
-		actions[name] = bindActionCreators(Actions[name], dispatch);
+	for (let [name, value] of Object.entries(Actions)) {
+		actions[name] = bindActionCreators(value, dispatch);
 	}
 
 	return { actions };

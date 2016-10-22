@@ -30,6 +30,7 @@ class Title extends Component {
 
 		let types = [
 			ActionTypes.SHOW_TABS,
+			ActionTypes.SEARCH_TABS,
 			ActionTypes.DISABLE_TABS
 		];
 
