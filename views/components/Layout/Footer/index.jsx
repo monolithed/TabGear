@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import debug from 'debug';
 
-import Link from '../Link';
+import Link from '../../Link';
 
 class Footer extends Component {
 	constructor (properties) {

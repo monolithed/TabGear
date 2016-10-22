@@ -1,11 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
 import './index.css';
-import Title from './Title';
-import Header from './Header';
+import Layout from './Layout';
 import Search from './Search';
-import Body from './Body';
-import Footer from './Footer';
 import * as SearchValues from '../constants/SearchValues';
 import * as ActionTypes from '../constants/ActionTypes';
 
@@ -45,18 +42,13 @@ export default class Index extends Component {
 	 * @returns {Array<Component>}
 	 */
 	getComponents () {
-		let components = [
-			Title,
-			Header,
-			Body,
-			Footer
-		];
+		let layout = Layout();
 
 		if (this.hasSearch()) {
-			components.splice(2, 0, Search);
+			layout.splice(2, 0, Search);
 		}
 
-		return components.map((Component, key) => {
+		return layout.map((Component, key) => {
 			return <Component { ...this.props } key={ key } />;
 		});
 	}

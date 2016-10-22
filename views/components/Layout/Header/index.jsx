@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
-import * as ActionTypes from '../../constants/ActionTypes';
-import Link from '../Link';
+import * as ActionTypes from '../../../constants/ActionTypes';
+import Link from '../../Link';
 
 class Header extends Component {
 	constructor (properties) {

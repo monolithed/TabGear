@@ -1,4 +1,4 @@
-@import "../decor.css";
+@import "../../decor.css";
 
 .tg-body {
 	background: var(--body-color);

@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import * as ActionTypes from '../../constants/ActionTypes';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import * as ActionTypes from '../../../constants/ActionTypes';
 
 import './index.css';
-import Tabs from '../Tabs';
-import Loading from '../Loading';
-import About from '../About';
-import Dialog from '../Dialog';
-import Overlay from '../Overlay';
-import Error from '../Error';
-import Text from '../Text';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Tabs from '../../Tabs';
+import Loading from '../../Loading';
+import About from '../../About';
+import Dialog from '../../Dialog';
+import Overlay from '../../Overlay';
+import Error from '../../Error';
+import Text from '../../Text';
 
 class Body extends Component {
 	constructor () {
