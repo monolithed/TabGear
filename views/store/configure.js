@@ -1,6 +1,4 @@
-'use strict';
-
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
 	module.exports = require('./configure.production.js');
 }
 else {

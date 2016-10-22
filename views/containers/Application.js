@@ -36,7 +36,7 @@ let mapStateToProps = (state, properties) => {
 		searchResults: search,
 		isMasked     : masked,
 		type,
-		notify,
+		notify
 	} = state;
 
 	return {

@@ -29,7 +29,7 @@ class Tabs extends Component {
 		actions.Tabs.switchTab(index);
 		actions.Tabs.maskTabs(tabs.actual, false);
 
-		event.stopPropagation()
+		event.stopPropagation();
 		event.preventDefault();
 	}
 
@@ -44,7 +44,7 @@ class Tabs extends Component {
 
 		actions.Tabs.closeTab(id);
 
-		event.stopPropagation()
+		event.stopPropagation();
 		event.preventDefault();
 	}
 
@@ -52,6 +52,7 @@ class Tabs extends Component {
 	 * Get tabs
 	 *
 	 * @param {string} name
+	 * @returns {JSX}
 	 */
 	getItems (name) {
 		let { items } = this.props;

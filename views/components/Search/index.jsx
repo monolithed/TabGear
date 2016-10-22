@@ -58,7 +58,7 @@ class Search extends Component {
 	onFocus (event) {
 		let { actions, tabs } = this.props;
 
-		let state = tabs.actual.length != tabs.search.length;
+		let state = tabs.actual.length !== tabs.search.length;
 
 		actions.Tabs.maskTabs(tabs.actual, state);
 	}

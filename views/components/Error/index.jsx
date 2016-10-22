@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import './index.css';
 import Link from '../Link';
 import Text from '../Text';
 

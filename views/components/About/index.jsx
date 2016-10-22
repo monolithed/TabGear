@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import './index.css';
 import Link from '../Link';
 import Text from '../Text';
 // import Share from '../Share';
@@ -52,7 +51,7 @@ class About extends Component {
 
 					<p className="tg-block_small">
 						{ chrome.i18n.getMessage('issues') }
-						{/*&nbsp;*/}
+						{/* &nbsp;*/}
 
 						<Link href={ `mailto:${email}` } mods={ ['external', 'small'] }>
 							{ email }
@@ -62,7 +61,7 @@ class About extends Component {
 						{ legal }
 					</p>
 
-					{/*<Share />*/}
+					{/* <Share />*/}
 
 				</Text>;
 	}

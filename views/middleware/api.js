@@ -73,7 +73,7 @@ export default {
 		let { tabs } = action;
 
 		if (tabs) {
-			let tabs = tabs.map(({ id }) => id);
+			tabs = tabs.map(({ id }) => id);
 
 			chrome.tabs.remove(tabs, window => {
 				chrome.tabs.create({

@@ -11,7 +11,7 @@ export const Layout = {
 		return {
 			type: ActionTypes.CLOSE_ALL_TABS,
 			api: true,
-			tabs,
+			tabs
 		};
 	},
 
@@ -31,6 +31,7 @@ export const Layout = {
 	/**
 	 * Show the dialog to prevent closing multiple tabs
 	 *
+	 * @param {string} type
 	 * @param {Array} tabs — the list of tabs to close
 	 * @returns {Object}
 	 */
@@ -49,7 +50,7 @@ export const Layout = {
 	openExtensions () {
 		return {
 			type: ActionTypes.OPEN_EXTENSIONS,
-			api: true,
+			api: true
 		};
 	},
 

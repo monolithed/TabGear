@@ -17,7 +17,7 @@ let Link = ({ children, href = '#', mods = [], filter, index, onClick }) => {
 	}
 
 	return null;
-}
+};
 
 Link.propTypes = {
 	children: PropTypes.node,

@@ -4,12 +4,13 @@ import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
 import Inspector from 'redux-devtools-inspector';
 
-export default createDevTools(
+
+let DevTools =
 	<DockMonitor toggleVisibilityKey="ctrl-h"
-	             changePositionKey="ctrl-w"
-	             changeMonitorKey="ctrl-m"
-	>
+				 changePositionKey="ctrl-w"
+				 changeMonitorKey="ctrl-m">
 		<Inspector />
 		<LogMonitor />
-	</DockMonitor>
-);
+	</DockMonitor>;
+
+export default createDevTools(DevTools);

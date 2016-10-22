@@ -11,7 +11,7 @@ let Overlay = ({ state, children }) => {
 				<div { ...classes(null, 'disable', state ? 'is-active' : 'is-inactive') } />
 				<div className="tg-tabs__search-results"> { children } </div>
 			</div>;
-}
+};
 
 Overlay.propTypes = {
 	state   : PropTypes.any.isRequired,

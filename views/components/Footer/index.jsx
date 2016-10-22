@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import debug from 'debug';
 
-import './index.css';
 import Link from '../Link';
 
 class Footer extends Component {
@@ -57,6 +56,7 @@ class Footer extends Component {
 	/**
 	 * Event filter
 	 * @param {string} event
+	 * @returns {boolean}
 	 */
 	filter (event) {
 		switch (event) {

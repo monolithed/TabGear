@@ -30,7 +30,8 @@ export default class Index extends Component {
 				return false;
 
 			default:
-				if (type !== ActionTypes.SEARCH_TABS &&  tabs.actual.length <= SearchValues.MIN_TABS_FOR_SEARCH) {
+				if (type !== ActionTypes.SEARCH_TABS &&
+					tabs.actual.length <= SearchValues.MIN_TABS_FOR_SEARCH) {
 					return false;
 				}
 		}

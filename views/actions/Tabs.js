@@ -4,14 +4,14 @@ export const Tabs = {
 	/**
 	 * Show tabs
 	 *
-	 * @param {Array}
+	 * @param {Array} tabs
 	 * @returns {Object}
 	 */
-	showTabs (tabs, text) {
+	showTabs (tabs) {
 		return {
 			type: ActionTypes.SHOW_TABS,
 			api: true,
-			tabs,
+			tabs
 		};
 	},
 
@@ -33,7 +33,8 @@ export const Tabs = {
 	/**
 	 * Search tabs
 	 *
-	 * @param {Array}
+	 * @param {Array} tabs
+	 * @param {string} text
 	 * @returns {Object}
 	 */
 	searchTabs (tabs, text) {

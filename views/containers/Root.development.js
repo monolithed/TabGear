@@ -6,14 +6,12 @@ import DevTools from './DevTools';
 
 export default class Root extends Component {
 	render () {
-		return (
-			<Provider store={ this.props.store }>
-				<div>
-					<Application />
-					<DevTools />
-				</div>
-			</Provider>
-		);
+		return <Provider store={ this.props.store }>
+					<div>
+						<Application />
+						<DevTools />
+					</div>
+				</Provider>;
 	}
 }
 

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import BEMHelper from 'react-bem-helper';
-import './index.css';
 
 let classes = new BEMHelper({
 	name: 'tg-box'
@@ -8,7 +7,7 @@ let classes = new BEMHelper({
 
 let Text = ({ className = '', children }) => {
 	return <div { ...classes({ extra: className }) }> { children } </div>;
-}
+};
 
 Text.propTypes = {
 	children : PropTypes.node.isRequired,

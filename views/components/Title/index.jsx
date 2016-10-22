@@ -14,7 +14,7 @@ class Title extends Component {
 
 		this.state = {
 			credentials: false
-		}
+		};
 
 		this.showCredentials =
 			this.showCredentials.bind(this);
@@ -60,9 +60,9 @@ class Title extends Component {
 
 				title = [type, length];
 
-			if (type !== ActionTypes.SEARCH_TABS || length) {
-				break;
-			}
+				if (type !== ActionTypes.SEARCH_TABS || length) {
+					break;
+				}
 
 			default:
 				title = [ActionTypes.SHOW_TABS, tabs.actual.length];
@@ -83,7 +83,8 @@ class Title extends Component {
 						{ this.getTitle(type, tabs) }
 					</div>
 
-					<a href="#" tabIndex="1" className="tg-icon tg-controls__more" onClick={ this.showCredentials } />
+					<a href="#" tabIndex="1" className="tg-icon tg-controls__more"
+					   onClick={ this.showCredentials } />
 				</div>;
 	}
 }

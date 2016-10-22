@@ -3,24 +3,30 @@ module.exports = {
 		'eslint-config-pobedit'
 	],
 
+	'parserOptions': {
+		'sourceType': 'module',
+		'ecmaVersion': 8,
+		'ecmaFeatures': {
+			'experimentalObjectRestSpread': true,
+			"jsx": true
+		}
+	},
+
 	'plugins': [
-		'react'
+		'react',
 	],
 
 	'rules': {
 		'array-callback-return': 'off',
-		'require-jsdoc': [
-			'error', {
-				'require': {
-					'FunctionDeclaration': true,
-					'MethodDefinition'   : false,
-					'ClassDeclaration'   : false
-				}
+		'no-mixed-spaces-and-tabs': 'error',
+		'no-mixed-requires': 1,
+		"react/jsx-filename-extension": [ 1, {
+				"extensions": [".js", ".jsx"]
 			}
 		],
 
-		'no-mixed-spaces-and-tabs': 'error',
-		'no-mixed-requires': 1
+		'no-mixed-spaces-and-tabs': 'off',
+		'new-cap': 'off'
 	},
 
 	'env': {
@@ -28,11 +34,6 @@ module.exports = {
 		'node'   : true,
 		'es6'    : true,
 		'mocha'  : true
-	},
-
-	'parserOptions': {
-		'sourceType': 'module',
-		'ecmaVersion': 6
 	},
 
 	'globals': {

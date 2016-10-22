@@ -17,7 +17,6 @@
 
 	"scripts": {
 		"build": "NODE_ENV=production webpack --optimize-minimize --progress --profile --display-error-details --config tasks/client.js",
-		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js",
 		"analyzer": "webpack --optimize-minimize --progress --profile  --display-error-details --json --config tasks/client.js --json | webpack-bundle-size-analyzer",
 		"start": "node debug/server.js"
 	},
@@ -61,13 +60,15 @@
 		"express": "^4.13.3",
 
 		"eslint": "^3.0.1",
-		"eslint-config-pobedit": "^0.0.4",
+		"eslint-loader": "^1.6.0",
+		"eslint-config-pobedit": "^0.0.5",
 		"eslint-friendly-formatter": "^2.0.5",
-		"eslint-plugin-react": "^3.16.1",
+		"eslint-plugin-react": "^5.2.0",
 
 		"pre-commit": "^1.1.3",
 
 		"react-transform-hmr": "^1.0.4",
+		"react-dev-utils": "^0.2.1",
 		"redux-devtools": "^3.3.1",
 		"redux-devtools-dock-monitor": "^1.1.1",
 		"redux-devtools-log-monitor": "^1.0.11",
@@ -81,16 +82,17 @@
 		"webpack-dev-middleware": "^1.2.0",
 		"webpack-hot-middleware": "^2.2.0",
 		"webpack-bundle-size-analyzer": "2.2.0",
+		"webpack-visualizer-plugin": "0.1.5",
+		"clean-webpack-plugin": "^0.1.13",
 		"unused-files-webpack-plugin": "^3.0.0",
 		"extract-text-webpack-plugin": "^1.0.1",
 		"optimize-css-assets-webpack-plugin": "^1.3.0",
 		"imports-loader": "^0.6.5",
 		"json-loader": "0.5.4",
+		"find-cache-dir": "0.1.1",
 		"stats-webpack-plugin": "0.4.2",
-
 		"postcss-loader": "^0.9.1",
-		"postcss-import": "^8.1.2",
-		"base64-inline-loader": "0.0.1",
+		"base64-inline-loader": "^0.0.1",
 		"css-loader": "^0.23.0",
 		"style-loader" : "^0.13.0"
 	},

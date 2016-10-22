@@ -4,10 +4,17 @@ let Webpack = require('webpack');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
 let Autoprefixer = require('autoprefixer');
+let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
+let WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
+let findCacheDir = require('find-cache-dir');
 
 const DIR_NAME = path.join(__dirname, '..');
 
 module.exports = {
+	debug: true,
+	target: 'web',
+	devtool: 'cheap-module-eval-source-map',
+
 	entry: [
 		'webpack-hot-middleware/client',
 		'./_locales/ru/messages.json',
@@ -24,7 +31,7 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.json', '.css', '.png'],
+		extensions: ['', '.js', '.jsx', '.json', '.css'],
 
 		alias: {
 			'sinon': 'sinon/pkg/sinon',
@@ -32,18 +39,20 @@ module.exports = {
 		}
 	},
 
-	debug: true,
-	target: 'web',
-	devtool: 'cheap-module-eval-source-map',
-
 	node: {
-		__dirname: true
+		__dirname: true,
+
+		// Some libraries import Node modules but don't use them in the browser.
+		// Tell Webpack to provide empty mocks for them so importing them works.
+		fs : 'empty',
+		net: 'empty',
+		tls: 'empty'
 	},
 
 	plugins: [
-		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.HotModuleReplacementPlugin(),
 		new Webpack.NoErrorsPlugin(),
+		new WatchMissingNodeModulesPlugin(`${DIR_NAME}/node_modules`),
 
 		new Webpack.ProvidePlugin({
 			'chrome': 'chrome-stub'
@@ -57,18 +66,35 @@ module.exports = {
 	],
 
 	module: {
+		preLoaders: [
+			{
+				test: /\.(js|jsx)$/,
+				loaders: [
+					'babel-loader',
+					'eslint-loader'
+				],
+				exclude: /node_modules/
+			}
+		],
+
 		noParse: [
 			/sinon/
 		],
 
 		loaders: [
 			{
-				test: /\.(js|jsx)$/,
-				loaders: ['babel'],
+				test   : /\.(js|jsx|json)$/,
+				loader: 'babel',
 				include: [
 					`${DIR_NAME}/views`,
 					`${DIR_NAME}/config.js`
-				]
+				],
+
+				query: {
+					cacheDirectory: findCacheDir({
+						name: 'babel'
+					})
+				}
 			},
 
 			{
@@ -78,7 +104,7 @@ module.exports = {
 
 			{
 				test: /\.json/,
-				loaders: ['json']
+				loader: 'json'
 			},
 
 			{
@@ -101,7 +127,20 @@ module.exports = {
 		return [
 			PreCSS,
 			PostCSSImport({ addDependencyTo: Webpack }),
-			Autoprefixer,
+			Autoprefixer({
+				browsers: [
+					'>1%',
+					'last 4 versions',
+					'Firefox ESR',
+					'not ie < 9'
+				]
+			})
 		];
+	},
+
+	eslint: {
+		formatter: ESLintFriendlyFormatter,
+		fix: true,
+		cache: true
 	}
 };

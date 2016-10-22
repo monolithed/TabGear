@@ -1,13 +1,15 @@
 let path = require('path');
 
 let Webpack = require('webpack');
-let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
+let PreCSS = require('precss');
 let Autoprefixer = require('autoprefixer');
-let UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
+let UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin').default;
 let StatsPlugin = require('stats-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+let CleanWebpackPlugin = require('clean-webpack-plugin');
+var VisualizerPlugin = require('webpack-visualizer-plugin');
 
 const DIR_NAME = path.join(__dirname, '..');
 
@@ -19,7 +21,7 @@ module.exports = {
 
 	output: {
 		path: `${DIR_NAME}/cache`,
-		filename: '[name].js',
+		filename: '[name].js'
 	},
 
 	resolve: {
@@ -29,7 +31,18 @@ module.exports = {
 	devtool: 'source-map',
 	target : 'web',
 
+	node: {
+		__dirname: true,
+
+		// Some libraries import Node modules but don't use them in the browser.
+		// Tell Webpack to provide empty mocks for them so importing them works.
+		fs : 'empty',
+		net: 'empty',
+		tls: 'empty'
+	},
+
 	plugins: [
+		new CleanWebpackPlugin(['./cache']),
 		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.optimize.DedupePlugin(),
 
@@ -68,7 +81,9 @@ module.exports = {
 		new StatsPlugin('./stats.json', {
 			chunkModules: true,
 			exclude: [ ]
-		})
+		}),
+
+		new VisualizerPlugin()
 	],
 
 	module: {
@@ -85,10 +100,7 @@ module.exports = {
 			{
 				test: /\.css$/,
 				loader: ExtractTextPlugin.extract(
-					'style-loader',
-					'css-loader',
-					'postcss-loader'
-				)
+					'style', 'css?importLoaders=1&-autoprefixer!postcss')
 			},
 
 			{

@@ -43,7 +43,7 @@ class Body extends Component {
 
 			case ActionTypes.SEARCH_TABS:
 				if (!tabs.actual.length) {
-					return <Text> { chrome.i18n.getMessage('nothing_found') } </Text>
+					return <Text> { chrome.i18n.getMessage('nothing_found') } </Text>;
 				}
 
 			default:
@@ -61,7 +61,7 @@ class Body extends Component {
 
 							<Overlay state={ state }>
 								<Tabs items={ tabs.search } state={ state }
-								      { ...this.props }  />
+								      { ...this.props } />
 							</Overlay>
 						</div>;
 		}

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import './index.css';
 import * as ActionTypes from '../../constants/ActionTypes';
 import Link from '../Link';
 
@@ -62,7 +61,7 @@ class Header extends Component {
 	/**
 	 * Show the back link?
 	 *
-	 * @param {boolean}
+	 * @returns {boolean}
 	 */
 	hasBack () {
 		let types = [
@@ -73,6 +72,9 @@ class Header extends Component {
 		return types.includes(this.props.type);
 	}
 
+	/**
+	 * @returns {JSX}
+	 */
 	render () {
 		let closeMods = ['block'];
 
@@ -82,7 +84,7 @@ class Header extends Component {
 
 		return <div className="tg-panel">
 					<Link onClick={ this.showTabs } filter={ this.hasBack() }
-					      mods={[ 'back' ]}  index="2">
+					      mods={[ 'back' ]} index="2">
 						{ chrome.i18n.getMessage('back') }
 					</Link>
 
