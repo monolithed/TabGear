@@ -23,7 +23,7 @@ export const Layout = {
 	 */
 	ignoreTabDialog (state = false) {
 		return {
-			type: ActionTypes.IGNORE_TAB_DIALOG,
+			type: ActionTypes.IGNORE_WARNING_DIALOG,
 			state
 		};
 	},

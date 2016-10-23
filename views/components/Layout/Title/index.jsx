@@ -54,7 +54,7 @@ class Title extends Component {
 			case ActionTypes.SHOW_CREDENTIALS:
 			case ActionTypes.SHOW_ERRORS:
 			case ActionTypes.DISCARD_TABS:
-			case ActionTypes.ITEMS_LOCKED:
+			case ActionTypes.TABS_LOCKED:
 			case ActionTypes.SEARCH_TABS:
 				let { length } = tabs.search;
 

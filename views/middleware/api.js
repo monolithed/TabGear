@@ -145,7 +145,7 @@ export default {
 			}
 			else {
 				chrome.tabs.create({ url }, tab => {
-					// dispatch(action);
+					dispatch(action);
 					window.close();
 				});
 			}

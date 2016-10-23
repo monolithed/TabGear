@@ -13,7 +13,7 @@ export default {
 		let { type, tabs, text } = action;
 
 		switch (type) {
-			case ActionTypes.ITEMS_LOCKED:
+			case ActionTypes.TABS_LOCKED:
 				return state;
 
 			case ActionTypes.SHOW_TABS:

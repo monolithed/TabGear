@@ -27,7 +27,7 @@ class Body extends Component {
 		let { tabs, actions, type, config } = this.props;
 
 		switch (type) {
-			case ActionTypes.ITEMS_LOCKED:
+			case ActionTypes.TABS_LOCKED:
 				return <Loading tabs={ tabs } />;
 
 			case ActionTypes.CLOSE_ALL_TABS:

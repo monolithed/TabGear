@@ -23,7 +23,7 @@ export default {
 		let { type, error } = action;
 
 		switch (type) {
-			case ActionTypes.ITEMS_FAILED:
+			case ActionTypes.TABS_COULD_NOT_BE_LOADED:
 				return error;
 
 			case ActionTypes.UNKNOWN_ERROR:
@@ -97,7 +97,7 @@ export default {
 		let { type, tabs } = action;
 
 		switch (type) {
-			case ActionTypes.IGNORE_TAB_DIALOG:
+			case ActionTypes.IGNORE_WARNING_DIALOG:
 				return true;
 
 			default:

@@ -23,7 +23,7 @@ export default class Index extends Component {
 			case ActionTypes.DISCARD_TABS:
 			case ActionTypes.CLOSE_ALL_TABS:
 			case ActionTypes.SHOW_ERRORS:
-			case ActionTypes.ITEMS_LOCKED:
+			case ActionTypes.TABS_LOCKED:
 				return false;
 
 			default:

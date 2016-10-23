@@ -10,7 +10,7 @@ export default store => dispatch => action => {
 
 	try {
 		dispatch({
-			type: ActionTypes.SHOW_ERRORS
+			type: ActionTypes.TABS_LOCKED
 		});
 
 		if (api) {
