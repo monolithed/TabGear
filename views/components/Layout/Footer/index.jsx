@@ -63,7 +63,9 @@ class Footer extends Component {
 	 * @returns {boolean}
 	 */
 	hasExtensions () {
-		return !window.location.href.includes('chrome://extensions');
+		let { tabs } = this.props;
+
+		return tabs.active.url !== 'chrome://extensions/';
 	}
 
 	/**

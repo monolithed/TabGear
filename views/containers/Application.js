@@ -36,13 +36,15 @@ let mapStateToProps = (state, properties) => {
 		searchResults: search,
 		isMasked     : masked,
 		type,
-		notify
+		notify,
+		active
 	} = state;
 
 	return {
 		tabs: {
 			actual,
 			masked,
+			active,
 			search
 		},
 

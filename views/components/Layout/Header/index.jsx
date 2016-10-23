@@ -13,12 +13,17 @@ class Header extends Component {
 	/**
 	 * Get initial dialog state
 	 *
-	 * @type {boolean}
+	 * @returns {boolean}
 	 */
 	ignoreDialog () {
 		let state = window.localStorage.getItem('tg-dialog');
 
-		return JSON.parse(state);
+		try {
+			return JSON.parse(state);
+		}
+		catch (error) {
+			return false;
+		}
 	}
 
 	/**

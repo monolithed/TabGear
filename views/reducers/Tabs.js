@@ -26,6 +26,23 @@ export default {
 	},
 
 	/**
+	 * Get active tab
+	 *
+	 * @param {Array} state
+	 * @param {Object} action
+	 * @returns {Object}
+	 */
+	active (state = {}, action) {
+		let { type, tabs } = action;
+
+		if (tabs) {
+			return tabs.find(tab => tab.active) || state;
+		}
+
+		return state;
+	},
+
+	/**
 	 * Search results
 	 *
 	 * @param {Array} state
