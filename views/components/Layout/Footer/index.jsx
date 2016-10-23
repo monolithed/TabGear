@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bind } from 'decko';
 
+import * as ActionTypes from '../../../constants/ActionTypes';
 import Link from '../../Link';
 
 class Footer extends Component {
@@ -48,37 +49,58 @@ class Footer extends Component {
 	}
 
 	/**
-	 * Event filter
-	 * @param {string} event
+	 * Show the credentials link?
+	 *
 	 * @returns {boolean}
 	 */
-	filter (event) {
-		switch (event) {
-			case 'discard':
-				try {
-					return typeof chrome.tabs.discard !== 'undefined';
-				}
-				catch (error) {
-					console.log('Could not find chrome.tabs.discard method');
-				}
+	hasCredentials () {
+		return this.props.type !== ActionTypes.SHOW_CREDENTIALS;
+	}
 
-			default:
+	/**
+	 * Show the extensions link?
+	 *
+	 * @returns {boolean}
+	 */
+	hasExtensions () {
+		return !window.location.href.includes('chrome://extensions');
+	}
+
+	/**
+	 * Show the discard link?
+	 *
+	 * @returns {boolean}
+	 */
+	hasDiscard () {
+		let { tabs, type } = this.props;
+
+		try {
+			if (type === ActionTypes.DISCARD_TABS || typeof chrome.tabs.discard === 'undefined') {
 				return false;
+			}
+
+			return tabs.some(tab => {
+				return tab.autoDiscardable && !tab.discarded && !tab.active;
+			});
+		}
+		catch (error) {
+			console.log('Could not find chrome.tabs.discard method');
 		}
 	}
 
 	render () {
 		return <div className="tg-panel">
-					<Link onClick={ this.showCredentials }>
+					<Link onClick={ this.showCredentials } filter={ this.hasCredentials() }>
 						{ chrome.i18n.getMessage('show_credentials') }
 					</Link>
 
-					<Link onClick={ this.openExtensions } mods={[ 'block' ]}>
+					<Link onClick={ this.openExtensions } filter={ this.hasExtensions() }
+					      mods={[ 'block' ]}>
 						{ chrome.i18n.getMessage('open_extensions') }
 					</Link>
 
-					<Link onClick={ this.discardTabs } filter={
-						this.filter('discard') } mods={[ 'block' ]}>
+					<Link onClick={ this.discardTabs } filter={ this.hasDiscard() }
+					      mods={[ 'block' ]}>
 						{ chrome.i18n.getMessage('discard') }
 					</Link>
 				</div>;

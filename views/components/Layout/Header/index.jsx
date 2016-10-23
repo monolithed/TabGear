@@ -15,8 +15,7 @@ class Header extends Component {
 	 *
 	 * @type {boolean}
 	 */
-	@bind
-	get ignoreDialog () {
+	ignoreDialog () {
 		let state = window.localStorage.getItem('tg-dialog');
 
 		return JSON.parse(state);
@@ -32,7 +31,7 @@ class Header extends Component {
 		let { tabs, actions } = this.props;
 		let { actual } = tabs;
 
-		if (this.ignoreDialog) {
+		if (this.ignoreDialog()) {
 			actions.Layout.closeAllTabs(actual);
 			actions.Tabs.showTabs(actual);
 		}
@@ -79,9 +78,6 @@ class Header extends Component {
 		return this.props.type !== ActionTypes.CLOSE_ALL_TABS;
 	}
 
-	/**
-	 * @returns {JSX}
-	 */
 	render () {
 		let closeMods = ['close'];
 
