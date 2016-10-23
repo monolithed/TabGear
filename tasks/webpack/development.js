@@ -7,7 +7,7 @@ let Autoprefixer = require('autoprefixer');
 let WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 let findCacheDir = require('find-cache-dir');
 
-const DIR_NAME = path.join(__dirname, '..');
+const DIR_NAME = path.join(__dirname, '../..');
 
 module.exports = {
 	debug: true,
@@ -65,6 +65,9 @@ module.exports = {
 	],
 
 	module: {
+		// It's used to suppress warnings about chrome-stub
+		exprContextCritical: false,
+
 		noParse: [
 			/sinon/
 		],
@@ -73,10 +76,13 @@ module.exports = {
 			{
 				test   : /\.(js|jsx)$/,
 				loader: 'babel-loader',
+
 				include: [
 					`${DIR_NAME}/views`,
+					`${DIR_NAME}/stubs`,
 					`${DIR_NAME}/config.js`
 				],
+
 				query: {
 					cacheDirectory: findCacheDir({
 						name: 'babel'

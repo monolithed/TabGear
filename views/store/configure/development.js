@@ -2,9 +2,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import Middleware from '../middleware';
-import rootReducer from '../reducers';
-import DevTools from '../containers/DevTools';
+import Middleware from '../../middleware';
+import rootReducer from '../../reducers';
+import DevTools from '../../containers/DevTools';
 
 export default function (initialState) {
 	let middleware = Middleware;
@@ -13,7 +13,7 @@ export default function (initialState) {
 	middleware = compose(middleware, DevTools.instrument());
 
 	if (module.hot) {
-		module.hot.accept('../reducers', () => {
+		module.hot.accept('../../reducers', () => {
 			store.replaceReducer(rootReducer.default);
 		});
 	}

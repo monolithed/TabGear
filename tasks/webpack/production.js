@@ -13,7 +13,7 @@ var VisualizerPlugin = require('webpack-visualizer-plugin');
 let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
 let findCacheDir = require('find-cache-dir');
 
-const DIR_NAME = path.join(__dirname, '..');
+const DIR_NAME = path.join(__dirname, '../../');
 
 module.exports = {
 	entry: [
@@ -32,6 +32,14 @@ module.exports = {
 
 	devtool: 'source-map',
 	target : 'web',
+
+	/*
+	externals: {
+		'react/addons': true,
+		'react/lib/ExecutionEnvironment': true,
+		'react/lib/ReactContext': true
+	},
+	*/
 
 	node: {
 		__dirname: true,

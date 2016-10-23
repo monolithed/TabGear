@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RedBox from 'redbox-react';
 
-import '../stubs';
+import '../../stubs';
 import Root from '../containers/Root';
 import Store from '../store/configure';
 

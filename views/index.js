@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV === 'production') {
-	require('./render/index.production.js');
+	require('./render/production.js');
 }
 else {
-	require('./render/index.development.js');
+	require('./render/development.js');
 }

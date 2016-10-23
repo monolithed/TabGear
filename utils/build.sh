@@ -6,5 +6,5 @@ npm run webpack -- \
 	--progress \
 	--profile \
 	--display-error-details \
-	--config ./tasks/client.js && \
-	cat cache/stats.json | npm run analyzer;
+	--config ./tasks/webpack/production.js && \
+cat cache/stats.json | npm run analyzer;

@@ -1,5 +1,5 @@
 import tabs from './tabs';
-import locale from '../../_locales/ru/messages.json';
+import locale from '../_locales/ru/messages.json';
 
 chrome.i18n._locales = locale;
 
