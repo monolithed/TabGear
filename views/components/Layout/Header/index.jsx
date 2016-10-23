@@ -9,7 +9,6 @@ class Header extends Component {
 		super(...arguments);
 	}
 
-
 	/**
 	 * Get initial dialog state
 	 *
