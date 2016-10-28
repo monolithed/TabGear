@@ -95,7 +95,7 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				loader: 'eslint-loader',
-				exclude: /node_modules|bower_components/
+				exclude: /node_modules|/
 			}
 		],
 
@@ -123,7 +123,8 @@ module.exports = {
 
 			{
 				test: /\.css$/,
-				loader: 'style!css?importLoaders=1!postcss'
+				loader: ExtractTextPlugin.extract(
+					'style', 'css?importLoaders=1&-autoprefixer!postcss')
 			},
 
 			{

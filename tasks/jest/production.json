@@ -1,0 +1,26 @@
+{
+	"verbose": true,
+
+	"automock": true,
+	"testPathDirs": [
+		"./tests"
+	],
+
+	"cacheDirectory": "./cache",
+
+	"testRegex": ".*(js[x]?)",
+
+	"unmockedModulePathPatterns": [
+		"react",
+		"react-dom",
+		"react-addons-test-utils",
+		"enzyme",
+		"source-map"
+	],
+
+	"scriptPreprocessor": "node_modules/jest-css-modules",
+
+	"moduleNameMapper": {
+		"^.+\\.(css)$": "identity-obj-proxy"
+	}
+}
