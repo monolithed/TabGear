@@ -13,13 +13,18 @@ var VisualizerPlugin = require('webpack-visualizer-plugin');
 let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
 let findCacheDir = require('find-cache-dir');
 
-const DIR_NAME = path.join(__dirname, '../../');
+const DIR_NAME = path.join(__dirname, '../..');
 
 module.exports = {
+	target: 'web',
+	devtool: 'source-map',
+
 	entry: [
-		'./views/index.js',
-		'./config.js'
+		'./config.js',
+		'./views/index.js'
 	],
+
+	file: `${DIR_NAME}/views/index.html`,
 
 	output: {
 		path: `${DIR_NAME}/cache`,
@@ -27,19 +32,8 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.png']
+		extensions: ['', '.js', '.jsx', '.json', '.css']
 	},
-
-	devtool: 'source-map',
-	target : 'web',
-
-	/*
-	externals: {
-		'react/addons': true,
-		'react/lib/ExecutionEnvironment': true,
-		'react/lib/ReactContext': true
-	},
-	*/
 
 	node: {
 		__dirname: true,
@@ -52,21 +46,21 @@ module.exports = {
 	},
 
 	plugins: [
-		new CleanWebpackPlugin(['./cache']),
 		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.optimize.DedupePlugin(),
-
-		new ExtractTextPlugin('[name].css', {
-			allChunks: true
-		}),
-
-		new OptimizeCssAssetsPlugin(),
+		new CleanWebpackPlugin(['./cache']),
 
 		new Webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: JSON.stringify('production')
 			}
 		}),
+
+		new ExtractTextPlugin('[name].css', {
+			allChunks: true
+		}),
+
+		new OptimizeCssAssetsPlugin(),
 
 		new UnusedFilesWebpackPlugin({
 			globOptions: {
@@ -101,7 +95,7 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				loader: 'eslint-loader',
-				exclude: /node_modules/
+				exclude: /node_modules|bower_components/
 			}
 		],
 
@@ -109,10 +103,12 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				loader: 'babel-loader',
+
 				include: [
 					`${DIR_NAME}/views`,
 					`${DIR_NAME}/config.js`
 				],
+
 				query: {
 					cacheDirectory: findCacheDir({
 						name: 'babel'
@@ -127,8 +123,7 @@ module.exports = {
 
 			{
 				test: /\.css$/,
-				loader: ExtractTextPlugin.extract(
-					'style', 'css?importLoaders=1&-autoprefixer!postcss')
+				loader: 'style!css?importLoaders=1!postcss'
 			},
 
 			{
@@ -142,21 +137,22 @@ module.exports = {
 		return [
 			PreCSS,
 
+			PostCSSImport({
+				addDependencyTo: Webpack
+			}),
+
 			Autoprefixer({
 				browsers: [
 					'>1%',
 					'last 4 versions',
 					'not ie < 9'
 				]
-			}),
-
-			PostCSSImport({
-				addDependencyTo: Webpack
 			})
 		];
 	},
 
 	eslint: {
+		configFile: `${DIR_NAME}/.eslintrc.js`,
 		formatter: ESLintFriendlyFormatter,
 		fix: true,
 		cache: true

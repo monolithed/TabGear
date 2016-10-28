@@ -7,4 +7,4 @@ import Store from '../store/configure';
 let store = Store(),
 	index = document.getElementById('root');
 
-ReactDOM.render(<Root store={ Store() } />, index);
+ReactDOM.render(<Root store={ store } />, index);

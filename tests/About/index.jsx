@@ -1,12 +1,12 @@
 import assert from 'assert';
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import '../../views/components/About';
+import renderer from 'react-test-renderer';
+// import { shallow, mount, render } from 'enzyme';
 
-describe('About component', () => {
-	it('contains spec with an expectation', () => {
-		// shallow(<Foo />).is('.foo')
+import About from '../../views/components/About';
 
-		assert(true);
-	});
+test('Contains spec with an expectation', () => {
+	// shallow(<Foo />).is('.foo')
+
+	assert(true);
 });

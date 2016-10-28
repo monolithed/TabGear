@@ -10,9 +10,9 @@ let findCacheDir = require('find-cache-dir');
 const DIR_NAME = path.join(__dirname, '../..');
 
 module.exports = {
-	debug: true,
 	target: 'web',
 	devtool: 'eval-source-map',
+	debug: true,
 
 	entry: [
 		'webpack-hot-middleware/client',
@@ -74,7 +74,7 @@ module.exports = {
 
 		loaders: [
 			{
-				test   : /\.(js|jsx)$/,
+				test: /\.(js|jsx)$/,
 				loader: 'babel-loader',
 
 				include: [

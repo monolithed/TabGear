@@ -4,7 +4,8 @@ import Link from '../Link';
 import Text from '../Text';
 // import Share from '../Share';
 
-class About extends Component {
+class About extends Component
+{
 	constructor (properties) {
 		super(...arguments);
 	}
