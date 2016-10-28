@@ -19,7 +19,7 @@
 		"build": ". ./utils/build.sh",
 		"analyzer": "webpack-bundle-size-analyzer",
 		"start": "node debug/server.js",
-		"test": "jest",
+		"test": "jest --config=tasks/jest/production.json",
 		"test:watch": "karma start --auto-watch",
 		"webpack": "webpack"
 	},
@@ -46,6 +46,7 @@
 		"precss": "^1.4.0",
 		"enzyme": "^2.5.1",
 		"jest": "^16.0.1",
+		"jest-css-modules": "1.1.0",
 		"isparta": "^4.0.0",
 		"express": "^4.13.3",
 
