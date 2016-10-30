@@ -17,6 +17,8 @@
 
 	"scripts": {
 		"build": ". ./utils/build.sh",
+		"webpack": "webpack",
+		"analyzer": "webpack-bundle-size-analyzer",
 		"start": "node debug/server.js",
 		"test": "jest --config=tasks/jest.config.json"
 	},
