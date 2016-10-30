@@ -6,5 +6,5 @@ npm run webpack -- \
 	--progress \
 	--profile \
 	--display-error-details \
-	--config ./tasks/webpack/production.js && \
-cat cache/stats.json | npm run analyzer;
+	--config ./tasks/webpack.config.js && \
+cat cache/stats.json | node_modules/webpack-bundle-size-analyzer/analyzer;
