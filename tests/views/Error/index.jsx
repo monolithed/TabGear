@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 // import { shallow, mount, render } from 'enzyme';
 
 import config from '../../../config';
-import Error from '../../../views/components/About';
+import Error from '../../../views/components/Error';
 
 test('Error view', () => {
 	let component = renderer.create(<Error config={ config } />);
