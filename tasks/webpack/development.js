@@ -3,7 +3,6 @@ let path = require('path');
 let Webpack = require('webpack');
 let PreCSS = require('precss');
 let PostCSSImport = require('postcss-import');
-let Autoprefixer = require('autoprefixer');
 let WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 let findCacheDir = require('find-cache-dir');
 
@@ -118,14 +117,6 @@ module.exports = {
 
 			PostCSSImport({
 				addDependencyTo: Webpack
-			}),
-
-			Autoprefixer({
-				browsers: [
-					'>1%',
-					'last 4 versions',
-					'not ie < 9'
-				]
 			})
 		];
 	}

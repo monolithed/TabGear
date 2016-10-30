@@ -5,7 +5,6 @@ let PostCSSImport = require('postcss-import');
 let PreCSS = require('precss');
 let Autoprefixer = require('autoprefixer');
 let UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin').default;
-let StatsPlugin = require('stats-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -48,13 +47,14 @@ module.exports = {
 	plugins: [
 		new Webpack.optimize.OccurenceOrderPlugin(),
 		new Webpack.optimize.DedupePlugin(),
-		new CleanWebpackPlugin(['./cache']),
 
 		new Webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: JSON.stringify('production')
 			}
 		}),
+
+		new CleanWebpackPlugin(['./cache']),
 
 		new ExtractTextPlugin('[name].css', {
 			allChunks: true
@@ -80,11 +80,6 @@ module.exports = {
 
 			minimize: true,
 			comments: true
-		}),
-
-		new StatsPlugin('./stats.json', {
-			chunkModules: true,
-			exclude: [ ]
 		}),
 
 		new VisualizerPlugin()
