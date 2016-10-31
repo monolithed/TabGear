@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { bind } from 'decko';
 
-import './index.css';
-import Text from '../../Text';
-
 class Discard extends Component {
 	constructor (properties) {
 		super(...arguments);
@@ -25,17 +22,17 @@ class Discard extends Component {
 	}
 
 	render () {
-		return <Text className="tg-dialog">
-				<p className="tg-block">
-					{ chrome.i18n.getMessage('discarded') }
-				</p>
+		return <div>
+					<p className="tg-block">
+						{ chrome.i18n.getMessage('discarded') }
+					</p>
 
-				<p className="tg-block">
-					<button className="tg-button" onClick={ this.showTabs } autoFocus="autoFocus">
-						{ chrome.i18n.getMessage('proceed') }
-					</button>
-				</p>
-			</Text>;
+					<p className="tg-block">
+						<button className="tg-button" onClick={ this.showTabs } autoFocus="autoFocus">
+							{ chrome.i18n.getMessage('proceed') }
+						</button>
+					</p>
+				</div>;
 	}
 }
 

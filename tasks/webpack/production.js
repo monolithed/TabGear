@@ -5,10 +5,10 @@ let PostCSSImport = require('postcss-import');
 let PreCSS = require('precss');
 let Autoprefixer = require('autoprefixer');
 let UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin').default;
+let StatsPlugin = require('stats-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
-var VisualizerPlugin = require('webpack-visualizer-plugin');
 let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
 let findCacheDir = require('find-cache-dir');
 
@@ -17,6 +17,23 @@ const DIR_NAME = path.join(__dirname, '../..');
 module.exports = {
 	target: 'web',
 	devtool: 'source-map',
+
+	profile: true,
+	progress: true,
+
+	stats: {
+		colors: true,
+		modules: true,
+		cached: true,
+		chunks: true,
+		children: false,
+		entrypoints: true,
+		// exclude: true,
+		usedExports: true,
+		verbose: true,
+		reasons: true,
+		errorDetails: true
+	},
 
 	entry: [
 		'./config.js',
@@ -63,12 +80,9 @@ module.exports = {
 		new OptimizeCssAssetsPlugin(),
 
 		new UnusedFilesWebpackPlugin({
+			pattern: '**/*.*',
 			globOptions: {
-				ignore: [
-					'./**/*',
-					'*.{md,html,json}',
-					'{_locales,node_modules,cache,debug,files,tasks}/**/*'
-				]
+				cwd: path.join(process.cwd(), 'views')
 			}
 		}),
 
@@ -82,7 +96,10 @@ module.exports = {
 			comments: true
 		}),
 
-		new VisualizerPlugin()
+		new StatsPlugin('./stats.json', {
+			chunkModules: true,
+			exclude: [ ]
+		})
 	],
 
 	module: {

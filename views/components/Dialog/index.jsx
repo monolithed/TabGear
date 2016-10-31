@@ -1,22 +1,32 @@
 import React, { Component, PropTypes } from 'react';
-
 import * as ActionTypes from '../../constants/ActionTypes';
+
+import './index.css';
 import Error from '../Error';
 import Discard from './Discard';
 import Close from './Close';
+import Text from '../Text';
 
-let Dialog = ({ tabs, actions, type, config }) => {
-	switch (type) {
-		case ActionTypes.CLOSE_ALL_TABS:
-			return <Close tabs={ tabs } actions={ actions } />;
+class Dialog extends Component {
+	getComponent () {
+		let { tabs, actions, type, config } = this.props;
 
-		case ActionTypes.DISCARD_TABS:
-			return <Discard tabs={ tabs } actions={ actions } />;
+		switch (type) {
+			case ActionTypes.CLOSE_ALL_TABS:
+				return <Close tabs={ tabs } actions={ actions } />;
 
-		default:
-			return <Error config={ config } />;
+			case ActionTypes.DISCARD_TABS:
+				return <Discard tabs={ tabs } actions={ actions } />;
+
+			default:
+				return <Error config={ config } />;
+		}
 	}
-};
+
+	render () {
+		return <Text className="tg-dialog">{ this.getComponent() }</Text>
+	}
+}
 
 Dialog.propTypes = {
 	tabs   : PropTypes.object.isRequired,

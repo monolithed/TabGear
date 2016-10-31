@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { bind } from 'decko';
 
-import './index.css';
-import Text from '../../Text';
-
 class Close extends Component {
 	constructor (properties) {
 		super(...arguments);
@@ -36,22 +33,22 @@ class Close extends Component {
 	}
 
 	render () {
-		return <Text className="tg-dialog">
-				<p className="tg-block">
-					{ chrome.i18n.getMessage('attention_closing') }
-				</p>
+		return <div>
+					<p className="tg-block">
+						{ chrome.i18n.getMessage('attention_closing') }
+					</p>
 
-				<button className="tg-button" onClick={ this.closeAllTabs } autoFocus="autoFocus">
-					{ chrome.i18n.getMessage('confirm') }
-				</button>
+					<button className="tg-button" onClick={ this.closeAllTabs } autoFocus="autoFocus">
+						{ chrome.i18n.getMessage('confirm') }
+					</button>
 
-				<p className="tg-block">
-					<input type="checkbox" id="confirm" onChange={ this.ignoreTabDialog } />
-					<label htmlFor="confirm" className="tg-label">
-						{ chrome.i18n.getMessage('prevent_confirmation') }
-					</label>
-				</p>
-			</Text>;
+					<p className="tg-block">
+						<input type="checkbox" id="confirm" onChange={ this.ignoreTabDialog } />
+						<label htmlFor="confirm" className="tg-label">
+							{ chrome.i18n.getMessage('prevent_confirmation') }
+						</label>
+					</p>
+				</div>;
 	}
 }
 

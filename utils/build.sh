@@ -1,7 +1,9 @@
 export NODE_ENV=production;
 
+# https://webpack.js.org/api/cli/
+
 npm run webpack -- \
-	--display-reasons\
+	--display-reasons \
 	--optimize-minimize \
 	--progress \
 	--profile \
