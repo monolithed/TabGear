@@ -6,7 +6,7 @@ export default [
 					'/images/cloud/icons/favicons/favicon.ico',
 		id : 0,
 		index : 0,
-		active: false,
+		active: true,
 		highlighted: false,
 		incognito: false
 	},

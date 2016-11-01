@@ -23,7 +23,6 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-	notify : PropTypes.object,
 	tabs   : PropTypes.object,
 	type   : PropTypes.string,
 	config : PropTypes.object,
@@ -36,7 +35,6 @@ let mapStateToProps = (state, properties) => {
 		searchResults: search,
 		isMasked     : masked,
 		type,
-		notify,
 		active
 	} = state;
 
@@ -48,7 +46,6 @@ let mapStateToProps = (state, properties) => {
 			search
 		},
 
-		notify,
 		config,
 		type
 	};
