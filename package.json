@@ -21,7 +21,7 @@
 		"analyzer": "webpack-bundle-size-analyzer",
 		"start": "node debug/server.js",
 		"test": "jest --config=tasks/jest.config.json",
-		"test:reset": "find tests/* -type d -name __snapshots__ -exec rm -rf -- {} +"
+		"test:clean": "find tests/* -type d -name __snapshots__ -exec rm -rf -- {} +"
 	},
 
 	"dependencies": {
