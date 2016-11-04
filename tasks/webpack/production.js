@@ -1,16 +1,18 @@
 let path = require('path');
 
 let Webpack = require('webpack');
+let Autoprefixer = require('autoprefixer');
+let CleanWebpackPlugin = require('clean-webpack-plugin');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
+let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 let PostCSSImport = require('postcss-import');
 let PreCSS = require('precss');
-let Autoprefixer = require('autoprefixer');
-let UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin').default;
 let StatsPlugin = require('stats-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-let CleanWebpackPlugin = require('clean-webpack-plugin');
-let ESLintFriendlyFormatter = require('eslint-friendly-formatter');
-let findCacheDir = require('find-cache-dir');
+let UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin').default;
+let ZipPlugin = require('zip-webpack-plugin');
+let FindCacheDir = require('find-cache-dir');
 
 const DIR_NAME = path.join(__dirname, '../..');
 
@@ -22,17 +24,7 @@ module.exports = {
 	progress: true,
 
 	stats: {
-		colors: true,
-		modules: true,
-		cached: true,
-		chunks: true,
-		children: false,
-		entrypoints: true,
-		// exclude: true,
-		usedExports: true,
-		verbose: true,
-		reasons: true,
-		errorDetails: true
+		children: false
 	},
 
 	entry: [
@@ -43,7 +35,7 @@ module.exports = {
 	file: `${DIR_NAME}/views/index.html`,
 
 	output: {
-		path: `${DIR_NAME}/cache`,
+		path: `${DIR_NAME}/cache/build`,
 		filename: '[name].js'
 	},
 
@@ -71,20 +63,16 @@ module.exports = {
 			}
 		}),
 
-		new CleanWebpackPlugin(['./cache']),
+		new CleanWebpackPlugin(['cache'], {
+			root: DIR_NAME,
+			verbose: true
+		}),
 
 		new ExtractTextPlugin('[name].css', {
 			allChunks: true
 		}),
 
 		new OptimizeCssAssetsPlugin(),
-
-		new UnusedFilesWebpackPlugin({
-			pattern: '**/*.*',
-			globOptions: {
-				cwd: path.join(process.cwd(), 'views')
-			}
-		}),
 
 		new Webpack.optimize.UglifyJsPlugin({
 			compress: {
@@ -96,9 +84,41 @@ module.exports = {
 			comments: true
 		}),
 
-		new StatsPlugin('./stats.json', {
-			chunkModules: true,
-			exclude: [ ]
+		// new StatsPlugin('stats.json', {
+		// 	chunkModules: true,
+		// 	exclude: [ ]
+		// }),
+
+		new CopyWebpackPlugin([
+			{
+				from: '_locales',
+				to: '_locales'
+			},
+
+			{
+				from: 'files',
+				to: 'files'
+			},
+
+			{
+				from: 'manifest.json'
+			},
+
+			{
+				from: 'index.html'
+			}
+		]),
+
+		new ZipPlugin({
+			path: '.',
+			filename: 'build.zip'
+		}),
+
+		new UnusedFilesWebpackPlugin({
+			pattern: '**/*.*',
+			globOptions: {
+				cwd: path.join(process.cwd(), 'views')
+			}
 		})
 	],
 
@@ -122,7 +142,7 @@ module.exports = {
 				],
 
 				query: {
-					cacheDirectory: findCacheDir({
+					cacheDirectory: FindCacheDir({
 						name: 'babel'
 					})
 				}

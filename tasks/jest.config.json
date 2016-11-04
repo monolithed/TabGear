@@ -9,7 +9,7 @@
 		"./tests/setup.js"
 	],
 
-	"cacheDirectory": "./cache",
+	"cacheDirectory": "./cache/jest",
 
 	"testRegex": ".*(js[x]?)",
 
