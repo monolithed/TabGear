@@ -9,7 +9,7 @@ export default {
 	/**
 	 * Loads data
 	 *
-	 * @param {Object} action
+	 * @param {Object} action.type
 	 * @param {Function} dispatch
 	 */
 	showTabs ({ type }, dispatch) {
@@ -145,7 +145,6 @@ export default {
 			}
 			else {
 				chrome.tabs.create({ url }, tab => {
-					dispatch(action);
 					window.close();
 				});
 			}

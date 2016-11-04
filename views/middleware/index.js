@@ -9,9 +9,9 @@ export default store => dispatch => action => {
 	let { type, api } = action;
 
 	try {
-		dispatch({
-			type: ActionTypes.TABS_LOCKED
-		});
+		if (type !== ActionTypes.OPEN_EXTENSIONS) {
+			dispatch({ type: ActionTypes.TABS_LOCKED });
+		}
 
 		if (api) {
 			let name = camelCase(type);

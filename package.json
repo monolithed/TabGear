@@ -20,7 +20,8 @@
 		"webpack": "webpack",
 		"analyzer": "webpack-bundle-size-analyzer",
 		"start": "node debug/server.js",
-		"test": "jest --config=tasks/jest.config.json"
+		"test": "jest --config=tasks/jest.config.json",
+		"test:reset": "find tests/* -type d -name __snapshots__ -exec rm -rf -- {} +"
 	},
 
 	"dependencies": {
@@ -31,7 +32,7 @@
 		"decko": "^1.1.3",
 		"fuse.js": "2.5.0",
 		"react": "^15.3.2",
-		"react-dom": "^15.2.1",
+		"react-dom": "^15.3.2",
 		"react-redux": "^4.4.5",
 		"react-iframe": "^0.0.4",
 		"react-addons-css-transition-group": "^15.3.2",

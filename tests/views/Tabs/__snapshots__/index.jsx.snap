@@ -1,0 +1,1355 @@
+exports[`test Tabs view 1`] = `
+<div>
+  <ul
+    className="tg-tabs">
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={0}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={0}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={1}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/site-assets/logo-google-plus-white.svg" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Plus +++++++++++++++++++++++++++++++++++++++++++
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={1}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={2}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/_static/cc7442d8c7/images/favicon.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Play
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={2}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item tg-tabs__item--incognito">
+      <a
+        className="tg-tabs__item-link"
+        data-index={3}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://www.google.com/images/branding/product/ico/maps_32dp.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Maps
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={3}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={4}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://translate.google.ru/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Translate
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={4}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={5}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developer.android.com/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Android
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={5}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item tg-tabs__item--highlighted">
+      <a
+        className="tg-tabs__item-link"
+        data-index={6}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://www.google.com/images/icons/product/chrome-32.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Chrome
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={6}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={8}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Developers
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={8}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={8}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Firebase
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={8}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+  </ul>
+  <div>
+    <div
+      className="tg-body tg-body--disable is-inactive" />
+    <div
+      className="tg-tabs__search-results">
+       
+      <ul
+        className="tg-tabs">
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={0}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={0}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={1}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/site-assets/logo-google-plus-white.svg" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Plus +++++++++++++++++++++++++++++++++++++++++++
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={1}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={2}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/_static/cc7442d8c7/images/favicon.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Play
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={2}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item tg-tabs__item--incognito">
+          <a
+            className="tg-tabs__item-link"
+            data-index={3}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://www.google.com/images/branding/product/ico/maps_32dp.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Maps
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={3}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={4}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://translate.google.ru/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Translate
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={4}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={5}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developer.android.com/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Android
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={5}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item tg-tabs__item--highlighted">
+          <a
+            className="tg-tabs__item-link"
+            data-index={6}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://www.google.com/images/icons/product/chrome-32.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Chrome
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={6}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={8}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Developers
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={8}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={8}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Firebase
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={8}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+      </ul>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Tabs view 2`] = `
+<div>
+  <ul
+    className="tg-tabs is-active">
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={0}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={0}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={1}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/site-assets/logo-google-plus-white.svg" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Plus +++++++++++++++++++++++++++++++++++++++++++
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={1}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={2}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/_static/cc7442d8c7/images/favicon.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Play
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={2}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item tg-tabs__item--incognito">
+      <a
+        className="tg-tabs__item-link"
+        data-index={3}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://www.google.com/images/branding/product/ico/maps_32dp.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Maps
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={3}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={4}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://translate.google.ru/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Translate
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={4}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={5}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developer.android.com/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Android
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={5}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item tg-tabs__item--highlighted">
+      <a
+        className="tg-tabs__item-link"
+        data-index={6}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://www.google.com/images/icons/product/chrome-32.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Chrome
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={6}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={8}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Developers
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={8}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={8}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Firebase
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={8}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+  </ul>
+  <div>
+    <div
+      className="tg-body tg-body--disable is-active" />
+    <div
+      className="tg-tabs__search-results">
+       
+      <ul
+        className="tg-tabs is-active">
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={0}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={0}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={1}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/site-assets/logo-google-plus-white.svg" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Plus +++++++++++++++++++++++++++++++++++++++++++
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={1}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={2}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/_static/cc7442d8c7/images/favicon.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Play
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={2}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item tg-tabs__item--incognito">
+          <a
+            className="tg-tabs__item-link"
+            data-index={3}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://www.google.com/images/branding/product/ico/maps_32dp.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Maps
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={3}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={4}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://translate.google.ru/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Translate
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={4}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={5}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developer.android.com/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Android
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={5}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item tg-tabs__item--highlighted">
+          <a
+            className="tg-tabs__item-link"
+            data-index={6}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://www.google.com/images/icons/product/chrome-32.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Chrome
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={6}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={8}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Developers
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={8}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={8}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Firebase
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={8}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+      </ul>
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test Tabs view 3`] = `
+<div>
+  <ul
+    className="tg-tabs is-empty">
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={0}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={0}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={1}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/site-assets/logo-google-plus-white.svg" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Plus +++++++++++++++++++++++++++++++++++++++++++
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={1}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={2}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/_static/cc7442d8c7/images/favicon.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Play
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={2}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item tg-tabs__item--incognito">
+      <a
+        className="tg-tabs__item-link"
+        data-index={3}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://www.google.com/images/branding/product/ico/maps_32dp.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Maps
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={3}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={4}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://translate.google.ru/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Translate
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={4}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={5}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developer.android.com/favicon.ico" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Android
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={5}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item tg-tabs__item--highlighted">
+      <a
+        className="tg-tabs__item-link"
+        data-index={6}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://www.google.com/images/icons/product/chrome-32.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Chrome
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={6}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={8}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Developers
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={8}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+    <li
+      className="tg-tabs__item">
+      <a
+        className="tg-tabs__item-link"
+        data-index={8}
+        data-name="tab"
+        href="#"
+        onClick={[Function]}>
+        <img
+          className="tg-tabs__item-icon"
+          src="https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png" />
+        <span
+          className="tg-tabs__item-text">
+           
+          Google Firebase
+           
+        </span>
+        <span
+          className="tg-tabs__item-close tg-icon"
+          data-id={8}
+          onClick={[Function]}
+          title="Close" />
+      </a>
+    </li>
+  </ul>
+  <div>
+    <div
+      className="tg-body tg-body--disable is-active" />
+    <div
+      className="tg-tabs__search-results">
+       
+      <ul
+        className="tg-tabs is-empty">
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={0}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://cloud.google.com/_static/cc7442d8c7/images/cloud/icons/favicons/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Cloud Computing, Hosting Services & APIs | Google Cloud Platform
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={0}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={1}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/site-assets/logo-google-plus-white.svg" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Plus +++++++++++++++++++++++++++++++++++++++++++
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={1}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={2}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/_static/cc7442d8c7/images/favicon.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Play
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={2}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item tg-tabs__item--incognito">
+          <a
+            className="tg-tabs__item-link"
+            data-index={3}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://www.google.com/images/branding/product/ico/maps_32dp.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Maps
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={3}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={4}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://translate.google.ru/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Translate
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={4}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={5}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developer.android.com/favicon.ico" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Android
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={5}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item tg-tabs__item--highlighted">
+          <a
+            className="tg-tabs__item-link"
+            data-index={6}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://www.google.com/images/icons/product/chrome-32.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Chrome
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={6}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={8}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Developers
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={8}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+        <li
+          className="tg-tabs__item">
+          <a
+            className="tg-tabs__item-link"
+            data-index={8}
+            data-name="tab"
+            href="#"
+            onClick={[Function]}>
+            <img
+              className="tg-tabs__item-icon"
+              src="https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png" />
+            <span
+              className="tg-tabs__item-text">
+               
+              Google Firebase
+               
+            </span>
+            <span
+              className="tg-tabs__item-close tg-icon"
+              data-id={8}
+              onClick={[Function]}
+              title="Close" />
+          </a>
+        </li>
+      </ul>
+       
+    </div>
+  </div>
+</div>
+`;
