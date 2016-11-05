@@ -15,7 +15,7 @@ class Header extends Component {
 	 * @returns {boolean}
 	 */
 	ignoreDialog () {
-		let state = window.localStorage.getItem('tg-dialog');
+		let state = window.localStorage.getItem('tg-option-dialog');
 
 		try {
 			return JSON.parse(state);

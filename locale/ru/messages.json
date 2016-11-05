@@ -1,4 +1,20 @@
 {
+	"extension_name": {
+		"message": "Tab Gear"
+	},
+
+	"extension_description": {
+		"message": "Расширение для браузера Chrome, которое позволяет управлять вкладками"
+	},
+
+	"extension_options": {
+		"message": "Опции расширения Tab Gear"
+	},
+
+	"extension_options__prevent_closing": {
+		"message": "Хотите предотвратить случайное закрытие всех вкладок?"
+	},
+
 	"show_credentials": {
 		"message": "О приложении"
 	},

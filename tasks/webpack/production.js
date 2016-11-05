@@ -84,14 +84,9 @@ module.exports = {
 			comments: true
 		}),
 
-		// new StatsPlugin('stats.json', {
-		// 	chunkModules: true,
-		// 	exclude: [ ]
-		// }),
-
 		new CopyWebpackPlugin([
 			{
-				from: '_locales',
+				from: 'locale',
 				to: '_locales'
 			},
 
@@ -106,6 +101,11 @@ module.exports = {
 
 			{
 				from: 'index.html'
+			},
+
+			{
+				from: 'views/containers/Options',
+				to: 'options'
 			}
 		]),
 
@@ -120,6 +120,11 @@ module.exports = {
 				cwd: path.join(process.cwd(), 'views')
 			}
 		})
+
+		// new StatsPlugin('stats.json', {
+		// 	chunkModules: true,
+		// 	exclude: [ ]
+		// })
 	],
 
 	module: {

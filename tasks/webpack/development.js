@@ -15,7 +15,7 @@ module.exports = {
 
 	entry: [
 		'webpack-hot-middleware/client',
-		'./_locales/ru/messages.json',
+		'./_locale/ru/messages.json',
 		'./config.js',
 		'./views/index.js'
 	],

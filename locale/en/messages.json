@@ -1,4 +1,20 @@
 {
+	"extension_name": {
+		"message": "Tab Gear"
+	},
+
+	"extension_description": {
+		"message": "Chrome extension for tab management"
+	},
+
+	"extension_options": {
+		"message": "Tab Gear options"
+	},
+
+	"extension_options__prevent_closing": {
+		"message": "Do you want to prevent closing multiple tabs?"
+	},
+
 	"show_credentials": {
 		"message": "About"
 	},
@@ -80,7 +96,7 @@
 	},
 
 	"feature_close_tabs": {
-		"message": "Сlosing selective tabs."
+		"message": "Closing selective tabs."
 	},
 
 	"feature_close_all_tabs": {

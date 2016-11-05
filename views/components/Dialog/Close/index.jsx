@@ -29,7 +29,7 @@ class Close extends Component {
 	 */
 	@bind
 	ignoreTabDialog (event) {
-		window.localStorage.setItem('tg-dialog', event.target.checked);
+		window.localStorage.setItem('tg-option-dialog', event.target.checked);
 	}
 
 	render () {
