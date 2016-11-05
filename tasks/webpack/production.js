@@ -18,7 +18,7 @@ const DIR_NAME = path.join(__dirname, '../..');
 
 module.exports = {
 	target: 'web',
-	devtool: 'source-map',
+	// devtool: 'source-map',
 
 	profile: true,
 	progress: true,
