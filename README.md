@@ -2,6 +2,11 @@
 
 > Chrome extension for tab management
 
+### Preview
+
+![List](./files/usage/0.png)
+
+
 ### Installation
 
 ```
