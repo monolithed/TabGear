@@ -37,7 +37,7 @@ Some of the features that will come handy:
 
 #### Tab discarding
 
-![List](./files/usage/5.png
+![List](./files/usage/5.png)
 
 #### Closing all open tabs
 
