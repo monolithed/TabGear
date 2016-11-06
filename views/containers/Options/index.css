@@ -20,55 +20,52 @@ body {
 	display: none;
 }
 
-.content {
-	margin-top: 100px;
-	text-align: center;
-}
-
-.title {
-	text-transform: uppercase;
-}
-
 .list {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 20px;
+}
+
+.list__item {
+	display: table;
+	margin: 20px 0;
 }
 
 	.list__item--control,
 	.list__item--text {
-		display: inline-block;
+		display: table-cell;
 	}
 
 	.list__item--text {
-		font-size: 16px;
-		margin-left: 10px;
+		font-size: 15px;
+		padding-left: 15px;
 		vertical-align: text-bottom;
 	}
 
 	.list__item--control__label {
-		position: relative;
-		display: block;
-		height: 16px;
-		width: 42px;
 		background: #898989;
 		border-radius: 100px;
 		cursor: pointer;
+		display: block;
+		position: relative;
+		width: 42px;
+		height: 16px;
 		transition: all 0.3s ease;
+		top: 2px;
 	}
 
 		.list__item--control__label:after {
-			position: absolute;
-			left: -2px;
-			top: -4px;
 			display: block;
+			content: '';
+			background: #fff;
+			border-radius: 100px;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+			position: absolute;
+			top: -4px;
+			left: -2px;
+			transition: all 0.3s ease;
 			width: 23px;
 			height: 23px;
-			border-radius: 100px;
-			background: #fff;
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
-			content: '';
-			transition: all 0.3s ease;
 		}
 
 			.list__item--control__label:active:after {

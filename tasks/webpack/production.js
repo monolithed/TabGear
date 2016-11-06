@@ -91,8 +91,8 @@ module.exports = {
 			},
 
 			{
-				from: 'files',
-				to: 'files'
+				from: 'files/icons',
+				to: 'files/icons'
 			},
 
 			{
