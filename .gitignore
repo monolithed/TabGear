@@ -34,7 +34,6 @@ npm-debug.log
 .idea_modules/
 .eslintcache
 .grunt
-phantomjsdriver.log
-config.local.js
+key.pem
 cache
 TODO.md
