@@ -36,3 +36,4 @@ npm test
 * [Manifest File](https://developer.chrome.com/extensions/manifest)
 * [Developer Dashboard](https://chrome.google.com/webstore/developer)
 * [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
+* [HTML Entities](https://dev.w3.org/html5/html-author/charref)

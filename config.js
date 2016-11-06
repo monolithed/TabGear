@@ -1,4 +1,4 @@
 export default {
 	email: 'podebit.ms@gmail.com',
-	legal: '© LLC Pobedit Microsystems'
+	legal: 'Copyright \xA9 2016 LLC Pobedit Microsystems.'
 };

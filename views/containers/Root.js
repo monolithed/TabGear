@@ -1,6 +1,1 @@
-if (process.env.NODE_ENV === 'production') {
-	module.exports = require('./Root/production.js');
-}
-else {
-	module.exports = require('./Root/development.js');
-}
+module.exports = require(`./Root/${process.env.NODE_ENV}`);
