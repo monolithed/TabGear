@@ -33,9 +33,11 @@ npm test
 
 ### Updating
 
+* `npm run build`
 * Open [Extensions](chrome://extensions/)
 * Click "Pack extension"
-* Fill "Extension root directory" and "Private key file"
+* Use `cache/build/` to fill "Extension root directory" and "Private key file"
+* Move `cache/build/build.crx` to `build/<version>.crx`
 * Actualize "update.xml"
 
 
