@@ -31,6 +31,14 @@ npm test
 * Upload extension using [Developer Dashboard](https://chrome.google.com/webstore/developer)
 
 
+### Updating
+
+* Open [Extensions](chrome://extensions/)
+* Click "Pack extension"
+* Fill "Extension root directory" and "Private key file"
+* Actualize "update.xml"
+
+
 ### Links
 
 * [Manifest File](https://developer.chrome.com/extensions/manifest)
