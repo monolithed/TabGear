@@ -33,7 +33,6 @@ npm test
 
 ### Links
 
-[Manifest File](https://developer.chrome.com/extensions/manifest)
-[Developer Dashboard](https://chrome.google.com/webstore/developer)
-[Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
-
+* [Manifest File](https://developer.chrome.com/extensions/manifest)
+* [Developer Dashboard](https://chrome.google.com/webstore/developer)
+* [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
