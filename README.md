@@ -54,7 +54,7 @@ Some of the features that will come handy:
 npm install
 ```
 
-### Usage
+### Development
 
 ```
 npm start

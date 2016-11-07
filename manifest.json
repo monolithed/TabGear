@@ -53,5 +53,5 @@
 		"index.html"
 	],
 
-	"content_security_policy": "default-src 'self' blob:; font-src * data: blob:; script-src 'self' https://ssl.google-analytics.com; object-src 'self'; style-src 'self' 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'"
+	"content_security_policy": "default-src 'self' blob:; font-src * data: blob:; script-src 'self' https://*.google-analytics.com; object-src 'self'; style-src 'self' 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'"
 }

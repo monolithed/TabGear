@@ -104,6 +104,10 @@ module.exports = {
 			},
 
 			{
+				from: 'ga.js'
+			},
+
+			{
 				from: 'views/containers/Options',
 				to: 'options'
 			}
