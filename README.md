@@ -19,33 +19,7 @@ Some of the features that will come handy:
 
 ### Preview
 
-#### List of all open tabs
-
-![List](./files/usage/0.png)
-
-#### Closing selective tabs
-
-![List](./files/usage/1.png)
-
-#### Search view
-
-![List](./files/usage/2.png)
-
-#### Search results
-
-![List](./files/usage/3.png)
-
-#### Tab discarding
-
-![List](./files/usage/5.png)
-
-#### Closing all open tabs
-
-![List](./files/usage/6.png)
-
-#### Options
-
-![List](./files/usage/7.png)
+![List](./files/preview.png)
 
 
 ### Installation

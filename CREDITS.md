@@ -1,10 +1,9 @@
 ## Resources
 
-### Image tools:
+### Tools:
 
-* http://picresize.com
 * http://onlinefavicon.com
-* http://imagesplitter.net/
+* http://imagesplitter.net
 
 
 ### Fonts:
