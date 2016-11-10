@@ -30,7 +30,7 @@ exports[`test About view 1`] = `
     </li>
     <li
       className="tg-list__item">
-      Сlosing selective tabs.
+      Closing selective tabs.
     </li>
     <li
       className="tg-list__item">
@@ -64,7 +64,7 @@ exports[`test About view 1`] = `
       podebit.ms@gmail.com
     </a>
     <br />
-    © LLC Pobedit Microsystems
+    Copyright © 2016 LLC Pobedit Microsystems.
   </p>
    
 </div>

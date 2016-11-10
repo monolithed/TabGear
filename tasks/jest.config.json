@@ -9,6 +9,8 @@
 		"./tests/setup.js"
 	],
 
+	"testPathIgnorePatterns":["__snapshots__"],
+
 	"cacheDirectory": "./cache/jest",
 
 	"testRegex": ".*(js[x]?)",
