@@ -24,7 +24,7 @@ class Dialog extends Component {
 	}
 
 	render () {
-		return <Text className="tg-dialog">{ this.getComponent() }</Text>
+		return <Text className="tg-dialog">{ this.getComponent() }</Text>;
 	}
 }
 

@@ -19,6 +19,7 @@
 		"build": ". ./utils/build.sh",
 		"webpack": "webpack",
 		"analyzer": "webpack-bundle-size-analyzer",
+		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js --ext .jsx --fix",
 		"start": "node debug/server.js",
 		"test": "jest --config=tasks/jest.config.json",
 		"test:clean": "find tests/* -type d -name __snapshots__ -exec rm -rf -- {} +"

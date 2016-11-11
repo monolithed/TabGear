@@ -15,7 +15,7 @@ class Share extends Component {
 			share     : 'false',
 			width     : '450',
 			height    : '80'
-		}
+		};
 
 		for (let key in query) {
 			if (Object.prototype.hasOwnProperty.call(query, key)) {

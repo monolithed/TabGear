@@ -10,5 +10,6 @@ test('Dialog::Close view', () => {
 	let view = component.toJSON();
 
 	let actual = expect(view);
+
 	actual.toMatchSnapshot();
 });
