@@ -9,7 +9,7 @@
 		"./tests/setup.js"
 	],
 
-	"testPathIgnorePatterns":["__snapshots__"],
+	"testPathIgnorePatterns": ["__snapshots__"],
 
 	"cacheDirectory": "./cache/jest",
 
