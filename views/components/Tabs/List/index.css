@@ -25,6 +25,7 @@
 	}
 
 	.tg-tabs__item {
+		background-color: var(--body-color);
 		border-bottom: 1px solid var(--tab-item-border-color);
 		position: relative;
 		transition: background-color .3s ease-in-out, box-shadow .2s ease-in-out;
@@ -117,3 +118,7 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}
+
+.sortable-ghost {
+	visibility: hidden;
+}

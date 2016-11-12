@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import * as ActionTypes from '../../constants/ActionTypes';
 import BEMHelper from 'react-bem-helper';
 import { bind } from 'decko';
+import { KeyKit } from 'keykit';
 
 import './index.css';
 
@@ -29,16 +30,33 @@ class Search extends Component {
 	}
 
 	componentDidMount () {
-		document.addEventListener('keydown', this.keepFocus);
+		document.addEventListener('keydown', this.onKeyDown);
 	}
 
 	componentWillUnmount () {
-		document.removeEventListener('keydown', this.keepFocus);
+		document.removeEventListener('keydown', this.onKeyDown);
 	}
 
-	keepFocus (event) {
-		if (event.keyCode === 9) {
-			event.preventDefault();
+	@bind
+	onKeyDown (event) {
+		switch (event.key) {
+			case 'Tab':
+				return event.preventDefault();
+
+			case 'Escape':
+				return this.input.blur();
+
+			default:
+				try {
+					let { visible, printable } = KeyKit.key(event.keyCode);
+
+					if (visible && printable) {
+						 this.input.focus();
+					}
+				}
+				catch (error) {
+					console.error(error);
+				}
 		}
 	}
 
@@ -75,7 +93,7 @@ class Search extends Component {
 		let { tabs, actions } = this.props;
 		let { value } = event.target;
 
-		this.setState({ value});
+		this.setState({ value });
 
 		actions.Tabs.searchTabs(tabs.actual, value);
 		event.stopPropagation();
@@ -93,6 +111,7 @@ class Search extends Component {
 		return <div { ...this.class(state) }>
 					<input className="tg-search__input" type="text"
 					       value={ value }
+					       ref={ input => this.input = input }
 					       placeholder={ chrome.i18n.getMessage('search') }
 					       onFocus={ this.onFocus }
 					       onBlur={ this.onBlur}

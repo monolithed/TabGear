@@ -134,14 +134,17 @@ export default {
 	moveTabs (action, dispatch) {
 		let { ids, tabs } = action;
 
+		// Converting string indices to numeric
 		ids = ids.map(ids => Number.parseInt(ids));
 
+		// Find the required index
 		let { index } = tabs.find((tab, index) => {
 			return ids.indexOf(tab.id) !== index;
 		});
 
 		chrome.tabs.move(ids, { index }, tabs => {
-			dispatch({ type: action.type, tabs });
+			// We should care about actual indices due to Chrome's bug,
+			this.showTabs({ type: ActionTypes.SHOW_TABS }, dispatch);
 		});
 	},
 

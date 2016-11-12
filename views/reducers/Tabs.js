@@ -66,7 +66,7 @@ export default {
 					threshold    : 0.3,
 					caseSensitive: false,
 					shouldSort   : true,
-					keys         : [ 'title' ]
+					keys         : [ 'title', 'url' ]
 				});
 
 				return fuse.search(text);

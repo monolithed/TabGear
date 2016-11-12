@@ -71,7 +71,7 @@ class Tabs extends Component {
 		let { items } = this.props;
 
 		return items.map((tab, key) => {
-			let { id, index, title, incognito, favIconUrl, highlighted } = tab;
+			let { id, index, title, url, incognito, favIconUrl, highlighted } = tab;
 
 			let state = [];
 
@@ -81,6 +81,10 @@ class Tabs extends Component {
 
 			if (highlighted) {
 				state.push('highlighted');
+			}
+
+			if (!title.trim()) {
+				title = url;
 			}
 
 			return <li { ...this.class('item', state) } key={ key } data-id={ id }>

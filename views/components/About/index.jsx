@@ -13,11 +13,13 @@ class About extends Component
 	getFeatures () {
 		let features = [
 			'feature_tab_list',
+			'feature_search',
 			'feature_incognito',
 			'feature_discarding',
-			'feature_total_tabs',
+			'feature_moving',
 			'feature_close_tabs',
 			'feature_close_all_tabs',
+			'feature_total_tabs',
 			'feature_open_extensions',
 			'feature_i18n',
 			'feature_shortcuts',

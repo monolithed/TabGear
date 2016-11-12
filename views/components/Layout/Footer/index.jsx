@@ -81,7 +81,7 @@ class Footer extends Component {
 				return false;
 			}
 
-			return tabs.some(tab => {
+			return tabs.actual.some(tab => {
 				return tab.autoDiscardable && !tab.discarded && !tab.active;
 			});
 		}
