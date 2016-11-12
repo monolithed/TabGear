@@ -80,8 +80,8 @@ export default [
 		title : 'Google Developers',
 		url   : 'https://developers.google.com/web/',
 		favIconUrl: 'https://developers.google.com/web/images/web-fundamentals-icon192x192.png',
-		id : 8,
-		index : 8,
+		id : 7,
+		index : 7,
 		active: false,
 		highlighted: false,
 		incognito: false
@@ -91,8 +91,8 @@ export default [
 		title : 'Google Firebase',
 		url   : 'https://firebase.google.com/',
 		favIconUrl: 'https://firebase.google.com/_static/cc7442d8c7/images/firebase/favicon.png',
-		id : 8,
-		index : 8,
+		id : 9,
+		index : 9,
 		highlighted: false,
 		active: false
 	}

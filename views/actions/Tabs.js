@@ -16,6 +16,22 @@ export const Tabs = {
 	},
 
 	/**
+	 * Move tabs
+	 *
+	 * @param {Object} tabs
+	 * @param {Array} ids
+	 * @returns {Object}
+	 */
+	moveTabs (tabs, ids) {
+		return {
+			type: ActionTypes.MOVE_TABS,
+			api: true,
+			tabs,
+			ids
+		};
+	},
+
+	/**
 	 * Disable tabs
 	 *
 	 * @param {Array} tabs

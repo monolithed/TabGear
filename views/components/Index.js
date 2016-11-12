@@ -11,6 +11,10 @@ export default class Index extends Component {
 		super(...arguments);
 	}
 
+	// shouldComponentUpdate (nextProps, nextState) {
+	// 	return nextProps.type !== ActionTypes.MOVE_TABS;
+	// }
+
 	/**
 	 *  Detects search bar
 	 *  @returns {boolean}

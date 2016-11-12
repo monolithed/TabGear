@@ -9,7 +9,7 @@ export default {
 	/**
 	 * Loads data
 	 *
-	 * @param {Object} action.type
+	 * @param {string} action.type
 	 * @param {Function} dispatch
 	 */
 	showTabs ({ type }, dispatch) {
@@ -123,6 +123,26 @@ export default {
 		else {
 			dispatch({ type: ActionTypes.TAB_ITEMS_NOT_FOUND });
 		}
+	},
+
+	/**
+	 * Move tabs
+	 *
+	 * @param {Object} action
+	 * @param {Function} dispatch
+	 */
+	moveTabs (action, dispatch) {
+		let { ids, tabs } = action;
+
+		ids = ids.map(ids => Number.parseInt(ids));
+
+		let { index } = tabs.find((tab, index) => {
+			return ids.indexOf(tab.id) !== index;
+		});
+
+		chrome.tabs.move(ids, { index }, tabs => {
+			dispatch({ type: action.type, tabs });
+		});
 	},
 
 	/**

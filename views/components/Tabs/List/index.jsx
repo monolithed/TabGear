@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import BEMHelper from 'react-bem-helper';
 import { bind } from 'decko';
+import Sortable from 'react-sortablejs';
 
 import './index.css';
 
@@ -47,6 +48,20 @@ class Tabs extends Component {
 	}
 
 	/**
+	 * Move tabs
+	 *
+	 * @param {Array} ids
+	 * @param {Object} options
+	 * @param {Event} event
+	 */
+	@bind
+	moveTabs (ids, options, event) {
+		let { tabs, actions } = this.props;
+
+		actions.Tabs.moveTabs(tabs.actual, ids);
+	}
+
+	/**
 	 * Get tabs
 	 *
 	 * @param {string} name
@@ -68,7 +83,7 @@ class Tabs extends Component {
 				state.push('highlighted');
 			}
 
-			return <li { ...this.class('item', state) } key={ key }>
+			return <li { ...this.class('item', state) } key={ key } data-id={ id }>
 						<a { ...this.class('item-link') } href="#"
 						   data-index={ index }
 						   data-name="tab"
@@ -88,9 +103,12 @@ class Tabs extends Component {
 	}
 
 	render () {
-		return <ul { ...this.class({ extra: this.props.state }) }>
+		return <Sortable tag="ul"
+		                 options={ { animation: 150 } }
+		                 onChange={ this.moveTabs }
+		                 { ...this.class({ extra: this.props.state }) }>
 					{ this.getItems('tg-tabs__item') }
-				</ul>;
+				</Sortable>;
 	}
 }
 

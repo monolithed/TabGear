@@ -9,7 +9,12 @@ export default store => dispatch => action => {
 	let { type, api } = action;
 
 	try {
-		if (type !== ActionTypes.OPEN_EXTENSIONS) {
+		let skip = [
+			ActionTypes.OPEN_EXTENSIONS,
+			ActionTypes.MOVE_TABS
+		];
+
+		if (!skip.includes(type)) {
 			dispatch({ type: ActionTypes.TABS_LOCKED });
 		}
 
@@ -22,9 +27,10 @@ export default store => dispatch => action => {
 		return dispatch({ ...action, tabs: state.loadData });
 	}
 	catch (error) {
-		dispatch({
-			type : ActionTypes.CHROME_API_EXCEPTION,
-			error: chrome.runtime.lastError || error.message
-		});
+		error = chrome.runtime.lastError || error.message;
+
+		dispatch({ type : ActionTypes.CHROME_API_EXCEPTION, error });
+
+		console.error(error);
 	}
 };

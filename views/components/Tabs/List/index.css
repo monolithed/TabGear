@@ -27,7 +27,7 @@
 	.tg-tabs__item {
 		border-bottom: 1px solid var(--tab-item-border-color);
 		position: relative;
-		transition: background-color .3s ease-in-out;
+		transition: background-color .3s ease-in-out, box-shadow .2s ease-in-out;
 		will-change: background-color;
 		width: 100%;
 
@@ -37,6 +37,7 @@
 
 		&:hover {
 			background-color: var(--tab-item-hover-color);
+			/*box-shadow: -3px 0 0 rgba(0, 157, 255, 0.09);*/
 		}
 	}
 

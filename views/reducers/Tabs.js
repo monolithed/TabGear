@@ -10,13 +10,14 @@ export default {
 	 * @returns {Array}
 	 */
 	loadData (state = [], action) {
-		let { type, tabs, text } = action;
+		let { type, tabs, ids, text } = action;
 
 		switch (type) {
 			case ActionTypes.TABS_LOCKED:
 				return state;
 
 			case ActionTypes.SHOW_TABS:
+			case ActionTypes.MOVE_TABS:
 			case ActionTypes.DISABLE_TABS:
 				return tabs;
 

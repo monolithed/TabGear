@@ -8,6 +8,7 @@ chrome.i18n._locales = locale;
 let methods = [
 	'query',
 	'remove',
+	'move',
 	'create',
 	'discard',
 	'highlight'

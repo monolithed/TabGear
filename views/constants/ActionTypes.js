@@ -10,6 +10,7 @@ export const OPEN_EXTENSIONS = 'OPEN_EXTENSIONS';
 export const SHOW_CREDENTIALS = 'SHOW_CREDENTIALS';
 export const SEARCH_TABS = 'SEARCH_TABS';
 export const DISABLE_TABS = 'DISABLE_TABS';
+export const MOVE_TABS = 'MOVE_TABS';
 
 // Tab-specific errors
 export const TAB_ID_NOT_FOUND = 'TAB_ID_NOT_FOUND';
