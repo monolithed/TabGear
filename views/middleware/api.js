@@ -55,7 +55,7 @@ export default {
 			id = Number.parseInt(id);
 
 			chrome.tabs.remove(id, window => {
-				dispatch(action);
+				this.showTabs({ type: ActionTypes.SHOW_TABS }, dispatch);
 			});
 		}
 		else {
@@ -142,8 +142,8 @@ export default {
 			return ids.indexOf(tab.id) !== index;
 		});
 
+		// We should care about actual indices due (tabs is not relevant)
 		chrome.tabs.move(ids, { index }, tabs => {
-			// We should care about actual indices due to Chrome's bug,
 			this.showTabs({ type: ActionTypes.SHOW_TABS }, dispatch);
 		});
 	},

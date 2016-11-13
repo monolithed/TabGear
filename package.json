@@ -16,7 +16,7 @@
 	},
 
 	"scripts": {
-		"build": ". ./utils/build.sh",
+		"build": "npm test &&. ./utils/build.sh",
 		"webpack": "webpack",
 		"analyzer": "webpack-bundle-size-analyzer",
 		"lint": "eslint . --cache --format node_modules/eslint-friendly-formatter --ext .js --ext .jsx --fix",
