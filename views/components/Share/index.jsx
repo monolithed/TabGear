@@ -17,10 +17,8 @@ class Share extends Component {
 			height    : '80'
 		};
 
-		for (let key in query) {
-			if (Object.prototype.hasOwnProperty.call(query, key)) {
-				url.searchParams.append(key, query[key]);
-			}
+		for (let [key, value] in Object.entries(query)) {
+			url.searchParams.append(key, value);
 		}
 
 		return <Iframe url={url.href} width="400" height="20" position="relative" />;

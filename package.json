@@ -1,7 +1,7 @@
 {
-	"name": "tabgear",
+	"name": "@pobedit/tab-gear",
 	"version": "0.0.1",
-	"author": "Abashkkin Alexander",
+	"author": "Abashkin Alexander",
 	"description": "Chrome extension for tab management",
 	"license": "UNLICENSED",
 

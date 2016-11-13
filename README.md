@@ -19,6 +19,7 @@ Some of the features that will come handy:
 * Press Ctrl+Shift+T or ⌘+⇧+T keys to show or hide the browser action popup.
 * Do you want to prevent closing multiple tabs? It's possible by default and configurable!
 
+
 ### Preview
 
 ![List](./files/promo/preview.png)
@@ -63,8 +64,20 @@ npm test
 * Actualize "update.xml"
 
 
+### Todo
+
+- [ ] Bookmarks
+- [ ] Pins
+- [ ] Reopen closed tabs
+- [ ] Sharing
+- [ ] Context menu
+- [ ] Top menu
+- [ ] Replace `localStorage` with `chrome.storage`
+
+
 ### Links
 
 * [Manifest File](https://developer.chrome.com/extensions/manifest)
 * [Developer Dashboard](https://chrome.google.com/webstore/developer)
 * [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
+* [Supplying Images](https://developer.chrome.com/webstore/images)

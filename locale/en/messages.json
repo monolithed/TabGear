@@ -116,7 +116,7 @@
 	},
 
 	"copyright": {
-		"message": "All rights reserved. $1"
+		"message": "All rights reserved. $1, $2"
 	},
 
 	"issues": {

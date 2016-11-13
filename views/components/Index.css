@@ -112,9 +112,14 @@ body {
 	padding-left: 4px;
 }
 
+.tg-center {
+	text-align: center;
+}
+
 .tg-list {
 	line-height: 28px;
 	padding-left: 25px;
+	margin-bottom: 15px;
 }
 	.tg-list__item {
 		display: flex;
@@ -130,9 +135,9 @@ body {
 		margin-bottom: var(--padding);
 	}
 
-	.tg-block_small {
-		font-size: 13px;
-	}
+		.tg-block_small {
+			font-size: 13px;
+		}
 
 .tg-react-appear {
 	opacity: 0.01;

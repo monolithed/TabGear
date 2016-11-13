@@ -4,40 +4,43 @@ import Link from '../Link';
 import Text from '../Text';
 // import Share from '../Share';
 
-class About extends Component
-{
+class About extends Component {
 	constructor (properties) {
 		super(...arguments);
 	}
 
+	componentDidMount () {
+		window.scrollTo(0, 0);
+	}
+
 	getFeatures () {
 		let features = [
-			'feature_tab_list',
-			'feature_search',
-			'feature_incognito',
-			'feature_discarding',
-			'feature_moving',
-			'feature_close_tabs',
-			'feature_close_all_tabs',
-			'feature_total_tabs',
-			'feature_open_extensions',
-			'feature_i18n',
-			'feature_shortcuts',
-			'feature_prevent_closing'
-			// 'feature_highlighting',
-			// 'feature_confirmation'
-			// 'feature_navigation',
+			'tab_list',
+			'search',
+			'incognito',
+			'discarding',
+			'moving',
+			'close_tabs',
+			'close_all_tabs',
+			'total_tabs',
+			'open_extensions',
+			'i18n',
+			'shortcuts',
+			'prevent_closing',
+			'highlighting',
+			// 'confirmation'
+			// 'navigation',
 		];
 
 		return features.map((feature, index) => {
 			return <li className="tg-list__item" key={ index }>
-						{ chrome.i18n.getMessage(feature) }
+						{ chrome.i18n.getMessage(`feature_${feature}`) }
 					</li>;
 		});
 	}
 
 	render () {
-		let { email, legal } = this.props.config;
+		let { email, legal, year } = this.props.config;
 
 		return <Text>
 					<p className="tg-block">
@@ -52,20 +55,11 @@ class About extends Component
 						{ this.getFeatures() }
 					</ul>
 
-					<p className="tg-block_small">
-						{ chrome.i18n.getMessage('issues') }
-						{/* &nbsp;*/}
-
-						<Link href={ `mailto:${email}` } mods={ ['external', 'small'] }>
-							{ email }
-						</Link>
-
-						<br />
-						{ legal }
+					<p className="tg-block_small tg-center">
+						{ `@ ${legal}, ${year}` }.
 					</p>
 
 					{/* <Share />*/}
-
 				</Text>;
 	}
 }
