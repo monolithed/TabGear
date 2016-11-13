@@ -68,11 +68,11 @@
 	},
 
 	"feature_moving": {
-		"message": "You can change the order of tabs — just drag and drop them!"
+		"message": "Move your tabs in a preferred order — just drag and drop them!"
 	},
 
 	"feature_search": {
-		"message": "Search by title and URL (just start typing)"
+		"message": "Search by title and URL — just start typing."
 	},
 
 	"feature_discarding": {

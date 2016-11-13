@@ -8,6 +8,8 @@ Some of the features that will come handy:
 
 * List of all open tabs.
 * See incognito tabs.
+* Move your tabs in a preferred order — just drag and drop them!
+* Search by title and URL — just start typing.
 * Tab discarding. Allows Chrome to automatically discard tabs that aren't of great interest to you when it's detected that system memory is running pretty low.
 * Displays the number of tabs you currently have open in all your Chrome windows.
 * Closing selective tabs.
@@ -19,7 +21,7 @@ Some of the features that will come handy:
 
 ### Preview
 
-![List](./files/preview.png)
+![List](./files/promo/preview.png)
 
 
 ### Installation
@@ -66,4 +68,3 @@ npm test
 * [Manifest File](https://developer.chrome.com/extensions/manifest)
 * [Developer Dashboard](https://chrome.google.com/webstore/developer)
 * [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
-* [HTML Entities](https://dev.w3.org/html5/html-author/charref)

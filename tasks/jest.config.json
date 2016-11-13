@@ -1,5 +1,6 @@
 {
 	"verbose": true,
+	"automock": true,
 
 	"testPathDirs": [
 		"./tests/views"
@@ -19,5 +20,17 @@
 
 	"moduleNameMapper": {
 		"^.+\\.(css)$": "identity-obj-proxy"
-	}
+	},
+
+	"unmockedModulePathPatterns": [
+		"react",
+		"react-dom",
+		"react-addons-test-utils",
+		"react-addons-css-transition-group",
+		"react-sortablejs",
+		"chrome-stub",
+		"sortablejs",
+		"fbjs",
+		"sinon"
+	]
 }

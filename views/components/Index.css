@@ -57,6 +57,7 @@ body {
 }
 
 .tg-box {
+	background-color: var(--body-color);
 	color: var(--body-box-color);
 	padding: var(--padding);
 }

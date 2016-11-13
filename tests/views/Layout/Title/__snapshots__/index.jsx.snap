@@ -1,16 +1,1 @@
-exports[`test Layout::Title view 1`] = `
-<div
-  className="tg-title">
-  <div
-    className="tg-title__logo" />
-  <div
-    className="tg-title__text">
-    Active tabs: 9
-  </div>
-  <a
-    className="tg-icon tg-controls__more"
-    href="#"
-    onClick={[Function]}
-    tabIndex="1" />
-</div>
-`;
+exports[`test Layout::Title view 1`] = `null`;

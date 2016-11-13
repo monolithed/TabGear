@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import BEMHelper from 'react-bem-helper';
 import { bind } from 'decko';
-import Sortable from 'react-sortablejs';
+import ReactSortable from 'react-sortablejs';
 
 import './index.css';
 
@@ -107,12 +107,12 @@ class Tabs extends Component {
 	}
 
 	render () {
-		return <Sortable tag="ul"
+		return <ReactSortable tag="ul"
 		                 options={ { animation: 150 } }
 		                 onChange={ this.moveTabs }
 		                 { ...this.class({ extra: this.props.state }) }>
 					{ this.getItems('tg-tabs__item') }
-				</Sortable>;
+				</ReactSortable>;
 	}
 }
 

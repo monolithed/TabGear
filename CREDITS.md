@@ -2,8 +2,9 @@
 
 ### Tools:
 
-* http://onlinefavicon.com
-* http://imagesplitter.net
+* [OnlineFavicon](http://onlinefavicon.com)
+* [ImageSplitter](http://imagesplitter.net)
+* [HTML Entities](https://dev.w3.org/html5/html-author/charref)
 
 
 ### Fonts:
@@ -21,3 +22,5 @@
 6. [Matt Benson](https://unsplash.com/photos/MKLRMeKctI4)
 7. [Annie Spratt](https://unsplash.com/photos/cIRE4VQrwZI)
 8. [Kyle Szegedi](https://unsplash.com/photos/JSmc0GmSV1o)
+9. [Matthew Henry](https://unsplash.com/photos/I3xo-4LpcY4)
+9. [Nadine Shaabana](https://unsplash.com/photos/ZPP-zP8HYG0)

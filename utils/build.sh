@@ -1,6 +1,6 @@
 export NODE_ENV=production;
 
-#npm test && \
+npm test && \
 	npm run webpack -- \
 	--display-reasons \
 	--optimize-minimize \
