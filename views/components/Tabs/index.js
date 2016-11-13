@@ -7,10 +7,10 @@ class Tabs extends Component {
 		let { tabs, state } = this.props;
 
 		return <div>
-					<List items={ tabs.actual } tabs={ state } { ...props } />
+					<List items={ tabs.actual } tabs={ state } { ...this.props } />
 
 					<Overlay state={ state }>
-						<List items={ tabs.search } state={ state } { ...props } />
+						<List items={ tabs.search } state={ state } { ...this.props } />
 					</Overlay>
 				</div>;
 	}
