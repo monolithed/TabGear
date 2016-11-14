@@ -2,6 +2,9 @@
 
 > Tag Gears is an extension for Google Chrome that provides an intuitive tabs management.
 
+# MOVED TO https://github.com/pobedit-instruments/tab-gear
+
+
 ### Features
 
 Some of the features that will come handy:
